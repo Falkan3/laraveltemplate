@@ -3,10 +3,10 @@
 @section('title', 'index')
 @section('description', '')
 @section('custom_css')
-    {{ Html::style('css/xxx.css') }}
+    <link rel="stylesheet" href="{{ URL::asset('css/xxx.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
-    {{ Html::script('js/xxx.js') }}
+    <script src="{{ URL::asset('js/xxx.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')

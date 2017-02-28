@@ -7,12 +7,12 @@
     <div class="wrapper full-height">
         <div class="page big-form">
             <div class="main-logo header">
-                <a href="https://finansowyplaner.pl/"><img src="{{asset('images/content/logo.png')}}" alt="logo"/></a>
+                <a href="https://finansowyplaner.pl/"><img src="{{asset('images/content/logo.png', env('HTTPS'))}}" alt="logo"/></a>
             </div>
             <div class="container">
                 <h1 class="text-center margin-bottom">Formularz kontaktowy</h1>
 
-                {!! Form::open(['url' => 'api/submitLead', 'method' => 'post', 'class' =>'contact-form']) !!}
+                {!! Form::open(['url' => url('api/submitLead', null, env('HTTPS')), 'method' => 'post', 'class' =>'contact-form']) !!}
 
                 <div class="row fields">
                     <div class="col-xs-12 col-sm-6 col-md-6">
@@ -106,7 +106,7 @@
                         <input type="submit" value="Złóż wniosek"/>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
-                        <img src="{{asset('images/ajax-loader.gif')}}" alt="loading..." class="loading_ajax hidden"/>
+                        <img src="{{asset('images/ajax-loader.gif', env('HTTPS'))}}" alt="loading..." class="loading_ajax hidden"/>
                         <div class="status"></div>
                     </div>
                 </div>
