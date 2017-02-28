@@ -1,0 +1,231 @@
+body, input, textarea, select {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #000;
+}
+
+div.bged, section.bged, article.bged {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+div.bged::before, section.bged::before, article.bged::before {
+    content: '';
+    background: rgba(0,0,0,0.6);
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    z-index: 0;
+}
+div.bged.bgcolor_transparent::before {
+    content: none;
+}
+div.bged.bgcolor1::before {
+    background: rgba(0, 0, 0, 0.6);
+}
+div.bged.circle::before {
+    border-radius: 50%;
+}
+
+img.lazy {
+    background-color: transparent;
+    display: none;
+}
+
+/* -------------------------------------------------------- HEADER -------------------------------------------------------- */
+header {
+    z-index: 10;
+}
+/* ---------------------------- NAVBAR ---------------------------- */
+nav.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+}
+.navbar-brand {
+    padding: 5px;
+}
+.navbar-brand>img {
+    max-height: 40px;
+}
+/* ---------------------------- NAVBAR ---------------------------- */
+
+/* -------------------------------------------------------- /HEADER -------------------------------------------------------- */
+
+/* -------------------------------------------------------- CONTENT -------------------------------------------------------- */
+
+/* ---------------------------- Full-screen ---------------------------- */
+div.full-height, section.full-height, article.full-height {
+    min-height: 100%;
+    margin: 0;
+}
+div.height-100, section.height-100, article.height-100 {
+    height: 100%
+}
+
+@media (max-width: 991px) {
+    div.full-height, section.full-height, article.full-height {
+        min-height: 900px;
+    }
+}
+/* ---------------------------- /Full-screen ---------------------------- */
+
+div.lazy, section.lazy, article.lazy {
+    background-color: #434343 !important;
+}
+
+/* /////// */
+
+div.zebra, section.zebra, article.zebra {
+    background-color: #fff;
+    color: #000;
+}
+div.zebra:nth-child(odd), section.zebra:nth-child(odd), article.zebra:nth-child(odd) {
+    background-color: #163A51;
+    color: #fff;
+}
+div.zebra:nth-child(odd) h1, div.zebra:nth-child(odd) h2, div.zebra:nth-child(odd) h3, div.zebra:nth-child(odd) h4, div.zebra:nth-child(odd) p,
+section.zebra:nth-child(odd) h1, section.zebra:nth-child(odd) h2, section.zebra:nth-child(odd) h3, section.zebra:nth-child(odd) h4, section.zebra:nth-child(odd) p,
+article.zebra:nth-child(odd) h1, article.zebra:nth-child(odd) h2, article.zebra:nth-child(odd) h3, article.zebra:nth-child(odd) h4, article.zebra:nth-child(odd) p
+{
+    color: #fff;
+}
+div.page, section.page, article.page {
+    padding: 70px 0;
+}
+
+div.row > h1, div.row > h2, div.row > h3, div.row > h4, div.row > p {
+    padding: 0 15px;
+}
+h1 {
+    font-size: 275%;
+    color: #696464;
+}
+h2 {
+    font-size: 175%;
+}
+h3 {
+    font-size: 150%;
+}
+p {
+    font-size: 115%;
+    color: #343434;
+    font-weight: 300;
+}
+
+p.line-height-150 {
+    line-height: 150%;
+}
+
+.wrapper .container h1 {
+    margin-bottom: 50px;
+}
+
+span.highlight {
+    font-size: 125%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+span.colored {
+    color: #163A51;
+}
+span.colored2 {
+    color: #22AED1;
+}
+span.colored3 {
+    color: #ff9c10;
+}
+
+h2.highlight {
+    padding: 20px 5px;
+    text-transform: uppercase;
+    font-size: 275%;
+}
+@media (max-width: 967px) {
+    h2.highlight {
+        font-size: 175%;
+    }
+}
+
+/* Flippers */
+
+#page_cards div {
+    padding: 0;
+}
+#page_cards .row {
+    margin: 0;
+}
+.flipper {
+    background-size: cover;
+}
+.flipper img {
+    width: 100%;
+    max-height: 300px;
+}
+
+.flipper-height {
+    height: 480px;
+}
+
+.flipper p {
+    color: #fff;
+}
+
+.flipper.color_1 {
+    background: #ff9c10;
+}
+.flipper.color_1 p {
+    color: #000;
+}
+.flipper.color_2 {
+    background: #000;
+}
+.flipper.color_3 {
+    background: #ddd;
+}
+.flipper.color_3 p {
+    color: #000;
+}
+
+/* Form */
+
+form {
+    position: relative;
+}
+
+a.read-more-click {
+    text-decoration: none;
+    color: #b7b7b7;
+    font-size: 100%;
+}
+
+div.read-more {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    color: #000;
+    padding: 24px 8px 8px 8px;
+    z-index: 999;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px #ccc;
+    margin-bottom: 10px;
+    background: url(https://static.fdtc.edu/_img/icon/forms/close.png) #fff;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: top right;
+    cursor: pointer;
+}
+div.read-more p {
+    font-size: 100%;
+    line-height: 110%;
+    color: #000;
+}
+
+/* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
