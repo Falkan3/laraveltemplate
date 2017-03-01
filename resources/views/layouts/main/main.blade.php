@@ -12,6 +12,8 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
 
+    {{Html::favicon('favicon.ico')}}
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap-theme.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
