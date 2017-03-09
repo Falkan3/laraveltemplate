@@ -57,7 +57,7 @@ $("a").click(function (e) {
 //ANCHORS /--------------------------------------------------------
 
 $(window).scroll(function () {
-
+    Scroll_BackToTop();
 });
 
 $(window).on('resize', function () {
@@ -67,3 +67,19 @@ $(window).on('resize', function () {
 $(window).on("load", function () {
 
 });
+
+/* ----------------------------  Misc functions ----------------------------  */
+
+/* ---- Back to top visibility ---- */
+
+var backToTop = $('#backtotop');
+function Scroll_BackToTop() {
+    if ($(window).scrollTop() > 100) {
+        backToTop.addClass('visible');
+    }
+    else {
+        backToTop.removeClass('visible');
+    }
+}
+
+/* ---- /Back to top visibility ---- */
