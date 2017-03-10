@@ -1,16 +1,25 @@
 var G_Main_Controller = (function () {
     var Global_vars_lapp_app = {
         'elements': {
+            'hideAll': null,
             'backToTop': null,
         }
     };
 
     return {
         initElements: function () {
+            //hideAll
+            Global_vars_lapp_app.elements.hideAll = $('#hideAll');
+            //backToTop
             Global_vars_lapp_app.elements.backToTop = $('#backtotop');
+            //nav
+            Global_vars_lapp_ak.elements.nav = $('.navbar.navbar-default');
         },
 
         /* ---- Back to top visibility ---- */
+        Load_hideAll: function() {
+            Global_vars_lapp_app.elements.hideAll.css('display', 'none');
+        },
         Scroll_backToTop: function () {
             if ($(window).scrollTop() > 100) {
                 Global_vars_lapp_app.elements.backToTop.addClass('visible');
@@ -20,12 +29,24 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Back to top visibility ---- */
+        /* ---- Shrink navbar ---- */
+        Scroll_navbarShrink: function () {
+            if ($(window).scrollTop() > 0) {
+                Global_vars_lapp_app.elements.nav.addClass('shrinked');
+            }
+            else {
+                Global_vars_lapp_app.elements.nav.removeClass('shrinked');
+            }
+        }
+        /* ---- /Shrink navbar ---- */
 
     };
 })();
 
+G_Main_Controller.initElements();
+
 $(document).ready(function (e) {
-    G_Main_Controller.initElements();
+
 });
 
 /* Lazy loading */
@@ -90,6 +111,7 @@ $("a").click(function (e) {
 
 $(window).scroll(function () {
     G_Main_Controller.Scroll_backToTop();
+    G_Main_Controller.Scroll_navbarShrink();
 });
 
 $(window).on('resize', function () {

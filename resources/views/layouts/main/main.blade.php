@@ -40,6 +40,10 @@
     </script>
 </head>
 <body>
+<div id="hideAll">&nbsp;</div>
+<script type="text/javascript">
+    document.getElementById("hideAll").style.display = "block";
+</script>
 
 @include('layouts.main.includes.header')
 
