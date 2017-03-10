@@ -47,7 +47,7 @@
 
 @include('layouts.main.includes.footer')
 
-<a id="backtotop" href="#"><i class="fa fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- Scripts -->
 <script src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>

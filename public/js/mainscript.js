@@ -1,6 +1,34 @@
-$(document).ready(function (e) {
+var G_Main_Controller = (function () {
+    var Global_vars_lapp_app = {
+        'elements': {
+            'backToTop': null,
+        }
+    };
 
+    return {
+        initElements: function () {
+            Global_vars_lapp_app.elements.backToTop = $('#backtotop');
+        },
+
+        /* ---- Back to top visibility ---- */
+        Scroll_backToTop: function () {
+            if ($(window).scrollTop() > 100) {
+                Global_vars_lapp_app.elements.backToTop.addClass('visible');
+            }
+            else {
+                Global_vars_lapp_app.elements.backToTop.removeClass('visible');
+            }
+        },
+        /* ---- /Back to top visibility ---- */
+
+    };
+})();
+
+$(document).ready(function (e) {
+    G_Main_Controller.initElements();
 });
+
+/* Lazy loading */
 
 $("div.lazy, sectgion.lazy, article.lazy").css('background-image', "none");
 $("div.lazy, sectgion.lazy, article.lazy").lazyload({
@@ -16,8 +44,11 @@ $("img.lazy").lazyload({
     threshold: 0
 }).trigger("lazyload");
 
+/* /Lazy loading */
+
 //ANCHORS -------------------------------------------------------
 
+/*
 $("#backtotop").click(function (e) {
     e.preventDefault();
     $("body,html").animate({
@@ -25,6 +56,7 @@ $("#backtotop").click(function (e) {
     }, 600);
     return false;
 });
+*/
 
 $("a").click(function (e) {
     var dest = $(this).attr('href');
@@ -57,7 +89,7 @@ $("a").click(function (e) {
 //ANCHORS /--------------------------------------------------------
 
 $(window).scroll(function () {
-    Scroll_BackToTop();
+    G_Main_Controller.Scroll_backToTop();
 });
 
 $(window).on('resize', function () {
@@ -69,17 +101,3 @@ $(window).on("load", function () {
 });
 
 /* ----------------------------  Misc functions ----------------------------  */
-
-/* ---- Back to top visibility ---- */
-
-var backToTop = $('#backtotop');
-function Scroll_BackToTop() {
-    if ($(window).scrollTop() > 100) {
-        backToTop.addClass('visible');
-    }
-    else {
-        backToTop.removeClass('visible');
-    }
-}
-
-/* ---- /Back to top visibility ---- */
