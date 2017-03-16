@@ -59,6 +59,8 @@
 <script src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/flippers.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/iterator.js', env('HTTPS')) }}"></script>
 @yield('custom_js')
 
 </body>

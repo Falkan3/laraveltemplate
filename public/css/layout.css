@@ -192,6 +192,20 @@ h2.highlight {
     color: #000;
 }
 
+/* Iterators */
+
+.iterator > div {
+    background-color: #eee;
+    width: 100%;
+    height: 200px;
+    transition: ease-in-out 0.3s;
+}
+.iterator > div.hover {
+    background-color: #ff9c10;
+}
+
+/* /Iterators */
+
 /* Form */
 
 form {

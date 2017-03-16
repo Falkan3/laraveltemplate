@@ -201,7 +201,8 @@ body {
 /* flip the pane when hovered */
 /* .flip-container:hover .flipper, */
 .flip-container.hover .flipper {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
+    transition-delay:0s;
 }
 
 .flip-container, .flipper .front, .flipper .back {
@@ -212,10 +213,9 @@ body {
 /* flip speed goes here */
 .flipper {
     transition: 0.6s;
+    transition-delay:0.6s;
     transform-style: preserve-3d;
-
     position: relative;
-
     height: 100%;
 }
 
@@ -234,12 +234,12 @@ body {
 .flipper .front {
     z-index: 2;
     /* for firefox 31 */
-    transform: rotateY(0deg);
+    transform: rotateX(0deg);
 }
 
 /* back, initially hidden pane */
 .flipper .back {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
 /* FLIPPER ///////////////////////////////////////////////// */
@@ -274,6 +274,17 @@ div.aligner.all {
     justify-content: center;
     height: 200px;
     resize: vertical;
+}
+.flex-center.all.vertical-center {
+    align-items: center;
+    justify-content: flex-start;
+}
+.flex-center.all.absolute-center {
+    align-items: center;
+    justify-content: center;
+}
+.flex-center.all.flex-row {
+    flex-direction: row;
 }
 .flex-center.all p {
     margin: 0;
@@ -347,6 +358,17 @@ div.aligner.all {
         justify-content: center;
         height: 200px;
         resize: vertical;
+    }
+    .flex-center.vertical-center {
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .flex-center.absolute-center {
+        align-items: center;
+        justify-content: center;
+    }
+    .flex-center.flex-row {
+        flex-direction: row;
     }
     .flex-center p {
         margin: 0;
