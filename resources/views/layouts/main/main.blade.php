@@ -20,18 +20,14 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('fonts/fontawesome/fontawesome-4.3.0.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
 
+    @yield('custom_css')
     <link rel="stylesheet" href="{{ URL::asset('css/framework.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/layout.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/style.css', env('HTTPS')) }}" type="text/css" media="all"/>
-    @yield('custom_css')
 
     <!-- Scripts -->
     <script src="{{ URL::asset('js/jquery/jquery-3.1.1.min.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/bootstrap/bootstrap.min.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/jquery/jquery-inputmask.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/jquery/jquery.counterup.min.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -54,6 +50,10 @@
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- Scripts -->
+<script src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/jquery/jquery-inputmask.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/jquery/jquery.counterup.min.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
