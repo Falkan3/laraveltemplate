@@ -134,8 +134,8 @@ $("a").click(function (e) {
                     }, 600);
                 }
             }
+            return false;
         }
-        return false;
     }
 });
 
