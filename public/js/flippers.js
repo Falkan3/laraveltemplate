@@ -59,7 +59,7 @@ var Flippers_controller = (function () {
                     $(this).addClass('hover');
                 });
                 settings.flippers.mouseleave(function (e) {
-                    $(this).delay(300).queue(function() {
+                    $(this).delay(400).queue(function() {
                         $(this).removeClass('hover').dequeue();
                     });
                 });
