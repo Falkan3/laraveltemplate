@@ -1,4 +1,5 @@
-//Flippers are cards that turn on mouseover
+//Author: Adam Kocić [Falkan3]
+//Flippers are equal width/height cards that turn on mouseover, revealing their backside. Requires css.
 var FlipperGlobalVars = {
     'elements' : {
         'flippers' : []
@@ -13,9 +14,6 @@ var Flippers_controller = (function () {
 
     return {
         initElements: function () {
-        },
-        getElement: function (input) {
-            return config.elements[input];
         },
         resize_flippers: function () {
             if (FlipperGlobalVars.elements.flippers) {

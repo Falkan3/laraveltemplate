@@ -1,3 +1,4 @@
+//Author: Adam Kocić [Falkan3]
 //Iterator loops through items and applies active class to the currently selected element
 
 var IteratorGlobalVars = {

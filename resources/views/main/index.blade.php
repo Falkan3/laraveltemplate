@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="{{ URL::asset('css/xxx.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
-    <script src="{{ URL::asset('js/xxx.js', env('HTTPS')) }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')
