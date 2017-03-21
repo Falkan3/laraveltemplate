@@ -12,3 +12,9 @@
         </div>
     </div><!-- /.container-fluid -->
 </nav>
+
+<noscript>
+    <div class="noscript-warning">
+        <p>Strona wykorzystuje JavaScript. Brak jego obsługi może powodować poważne utrudnienia w nawigacji strony.</p>
+    </div>
+</noscript>

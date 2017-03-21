@@ -18,12 +18,20 @@ $(document).ready(function () {
         setValidateFields($(current_form));
         var response = validateFields();
         if (response[0] == false) {
-            sendAjax(current_form);
+            if(form.attr('data-ajax')=='true')
+                sendAjax(current_form);
+            else
+                sendPost(current_form);
         }
         else {
-            $(response[1]).each(function (e) {
-                $(this).addClass('wrong-input');
-            });
+            if(response[1].length) {
+                $(response[1]).each(function (e) {
+                    $(this).addClass('wrong-input');
+                });
+                $("body,html").animate({
+                    scrollTop: $(response[1][0]).offset().top - 120
+                }, 600);
+            }
         }
     });
 });

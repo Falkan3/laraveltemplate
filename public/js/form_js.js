@@ -32,7 +32,7 @@ var email_fields;
 var telephone_fields;
 var agreement_fields;
 
-var all_telephone_fields = $('input[type="text"].telephone');
+var all_telephone_fields = $('input[type="text"].telephone, input[type="tel"].telephone');
 var phones = [{"mask": "###-###-###"}, {"mask": "## ###-##-##"}];
 all_telephone_fields.inputmask({
     mask: phones,
@@ -53,7 +53,12 @@ function validateFields() {
 
     name_fields = validateForm.find('input[type="text"].name');
     email_fields = validateForm.find('input[type="text"].email');
-    telephone_fields = validateForm.find('input[type="text"].telephone');
+    telephone_fields = validateForm.find('input[type="text"].telephone, input[type="tel"].telephone');
+    pesel_fields = validateForm.find('input[type="text"].pesel');
+    city_fields = validateForm.find('input[type="text"].city');
+    postcode_fields = validateForm.find('input[type="text"].postcode');
+    street_fields = validateForm.find('input[type="text"].street');
+    streetno_fields = validateForm.find('input[type="text"].streetno');
     agreement_fields = validateForm.find('.agreements input[type="checkbox"]');
     var error = false;
     var wrong_inputs = [];
@@ -87,6 +92,43 @@ function validateFields() {
         }
     });
 
+    //optional
+    pesel_fields.each(function (e) {
+        if (validate_pesel($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">PESEL jest błędny</span>');
+        }
+    });
+    city_fields.each(function (e) {
+        if (validate_city($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Miasto jest błędne</span>');
+        }
+    });
+    postcode_fields.each(function (e) {
+        if (validate_postcode($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Kod pocztowy jest błędny</span>');
+        }
+    });
+    street_fields.each(function (e) {
+        if (validate_street($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Ulica jest błędna</span>');
+        }
+    });
+    streetno_fields.each(function (e) {
+        if (validate_streetno($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Numer domu/mieszkania jest błędny</span>');
+        }
+    });
+
     return [error, wrong_inputs];
 }
 
@@ -98,7 +140,12 @@ inputs.blur(function(e) {
 
 name_fields = $('input[type="text"].name');
 email_fields = $('input[type="text"].email');
-telephone_fields = $('input[type="text"].telephone');
+//telephone_fields = $('input[type="text"].telephone, input[type="tel"].telephone');
+pesel_fields = $('input[type="text"].pesel');
+city_fields = $('input[type="text"].city');
+postcode_fields = $('input[type="text"].postcode');
+street_fields = $('input[type="text"].street');
+streetno_fields = $('input[type="text"].streetno');
 
 name_fields.blur(function(e) {
     if(validate_name($(this).val())==true)
@@ -112,8 +159,38 @@ email_fields.blur(function(e) {
     else
         $(this).removeClass('right-input');
 });
-telephone_fields.blur(function(e) {
+all_telephone_fields.blur(function(e) {
     if(validate_phone_number($(this).val())==true)
+        $(this).addClass('right-input');
+    else
+        $(this).removeClass('right-input');
+});
+pesel_fields.blur(function (e) {
+    if (validate_pesel($(this).val()) == true)
+        $(this).addClass('right-input');
+    else
+        $(this).removeClass('right-input');
+});
+city_fields.blur(function (e) {
+    if (validate_city($(this).val()) == true)
+        $(this).addClass('right-input');
+    else
+        $(this).removeClass('right-input');
+});
+postcode_fields.blur(function (e) {
+    if (validate_postcode($(this).val()) == true)
+        $(this).addClass('right-input');
+    else
+        $(this).removeClass('right-input');
+});
+street_fields.blur(function (e) {
+    if (validate_street($(this).val()) == true)
+        $(this).addClass('right-input');
+    else
+        $(this).removeClass('right-input');
+});
+streetno_fields.blur(function (e) {
+    if (validate_streetno($(this).val()) == true)
         $(this).addClass('right-input');
     else
         $(this).removeClass('right-input');
@@ -123,7 +200,7 @@ function validate_name(input) {
     if(input.length == 0)
         return false;
 
-    var regex = /^[a-zA-Z\s\,\.\']*$/;
+    var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
     return regex.test(input);
 }
 
@@ -148,10 +225,49 @@ function validate_phone_number(input) {
 }
 
 function validate_agreements(input) {
-    if(input.prop("checked"))
-        return true;
-    else
+    return !!input.prop("checked");
+}
+
+//optional
+
+function validate_pesel(input) {
+    if (input.length == 0)
         return false;
+
+    var regex = /^\d{11}$/;
+    return regex.test(input);
+}
+
+function validate_city(input) {
+    if (input.length == 0)
+        return false;
+
+    var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
+    return regex.test(input);
+}
+
+function validate_postcode(input) {
+    if (input.length == 0)
+        return false;
+
+    var regex = /^\d{2}-\d{3}$/;
+    return regex.test(input);
+}
+
+function validate_street(input) {
+    if (input.length == 0)
+        return false;
+
+    var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\s\-0-9A-Za-z_\'\"&\(\),\.]*$/;
+    return regex.test(input);
+}
+
+function validate_streetno(input) {
+    if (input.length == 0)
+        return false;
+
+    var regex = /^[\s\\\/\-0-9A-Za-z_&\(\),\.]*$/;
+    return regex.test(input);
 }
 
 // -----------------------------
