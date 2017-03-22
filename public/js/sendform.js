@@ -28,8 +28,14 @@ $(document).ready(function () {
                 $(response[1]).each(function (e) {
                     $(this).addClass('wrong-input');
                 });
+                var offsetTop = $(response[1][0]).offset().top - 120;
+                if(offsetTop <=0) {
+                    $(response[1][0]).show();
+                    offsetTop = $(response[1][0]).offset().top - 120;
+                    $(response[1][0]).hide();
+                }
                 $("body,html").animate({
-                    scrollTop: $(response[1][0]).offset().top - 120
+                    scrollTop: offsetTop
                 }, 600);
             }
         }
