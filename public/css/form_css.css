@@ -1,0 +1,60 @@
+/* ----------------------------- Form ----------------------------- */
+
+form {
+    position: relative;
+}
+
+a.read-more-click {
+    text-decoration: none;
+    color: #757575;
+    font-size: 100%;
+}
+
+div.read-more {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #757575;
+    padding: 24px 8px 8px 8px;
+    z-index: 999;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px #ccc;
+    margin-bottom: 10px;
+    background: url(../images/els/wrong.png) #fff;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: top right;
+    cursor: pointer;
+}
+div.read-more p {
+    font-size: 100%;
+    line-height: 110%;
+    color: #757575;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    display: inline;
+}
+
+input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -2px 15px 0 22px;
+    vertical-align: middle;
+    background: url(../images/els/check_radio_sheet_w.png) left -20px no-repeat;
+}
+input[type="checkbox"] + label:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background: url(../images/els/check_radio_sheet_w.png) -22px -20px no-repeat;
+}
+
+/* ----------------------------- /Form ----------------------------- */

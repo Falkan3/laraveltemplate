@@ -3,6 +3,15 @@
 @section('title', 'index')
 @section('description', '')
 
+@section('custom_css')
+    <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
+@stop
+@section('custom_js')
+    <script src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+@stop
+
 @section('content')
     <div class="wrapper full-height">
         <div class="page big-form">
@@ -36,6 +45,24 @@
                         {{ Form::label('txt_email', 'E-mail', ['class' => 'control-label']) }}
                         {{Form::text('txt_email', null, ['id' => 'txt_email', 'class' => 'email'])}}
                     </div>
+                </div>
+
+                <div class="row">
+                    {!! Form::hidden('test', null, ['required', 'data-container' => 'true', 'data-index' => '0']) !!}
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="tools" data-index="0" data-val="test"></button></div><p>Remont</p></div>
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="sun" data-index="0"  data-val="test2"></button></div><p>Wakacje</p></div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="rings"></button></div><p>Ślub</p></div>
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="taxes"></button></div><p>Rachunki</p></div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="car"></button></div><p>Samochód</p></div>
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="house"></button></div><p>Mieszkanie</p></div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="mortarboard"></button></div><p>Szkolenie</p></div>
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="monitor"></button></div><p>Sprzęt</p></div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="wallet"></button></div><p>Spłata kredytu</p></div>
+                    <div class="col-xs-12 col-sm-6 col-md-15"><div class="box-image"><button type="button" class="star"></button></div><p>Inne</p></div>
                 </div>
 
                 <div style="margin-top: 20px;" class="agreements">

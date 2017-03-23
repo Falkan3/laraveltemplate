@@ -1,5 +1,42 @@
-$(document).ready(function (e) {
+//Author: Adam Kocić [Falkan3]
 
+var G_Form_Controller = (function () {
+    var Global_vars_form = {
+        'elements': {
+            'buttons' : [],
+            'data_containers' : []
+        }
+    };
+
+    return {
+        initElements: function () {
+            //buttons
+            Global_vars_form.elements.buttons = $('button[type="button"]');
+            Global_vars_form.elements.buttons.on('click', function(){G_Form_Controller.ButtonClick($(this));});
+            //data-containers
+            Global_vars_form.elements.data_containers = $('input[data-container="true"]');
+        },
+        //buttons
+        ButtonClick: function (btn) {
+            var searchindex = btn.attr('data-index');
+            Global_vars_form.elements.data_containers.each(function() {
+                if($(this).attr('data-index')===searchindex) {
+                    $(this).val(btn.attr('data-val'));
+                    $(this).removeClass('wrong-input');
+                    $(this).prev('span.errormsg').remove();
+                }
+            });
+            var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
+            $(btnToDeactivate).removeClass('active');
+            btn.addClass('active');
+        }
+    };
+})();
+
+//
+
+$(document).ready(function (e) {
+    G_Form_Controller.initElements();
 });
 
 $(window).on('scroll', function () {
@@ -30,7 +67,13 @@ var validateForm;
 var name_fields;
 var email_fields;
 var telephone_fields;
+var pesel_fields;
+var city_fields;
+var postcode_fields;
+var street_fields;
+var streetno_fields;
 var agreement_fields;
+var hidden_fields;
 
 var all_telephone_fields = $('input[type="text"].telephone, input[type="tel"].telephone');
 var phones = [{"mask": "###-###-###"}, {"mask": "## ###-##-##"}];
@@ -60,6 +103,8 @@ function validateFields() {
     street_fields = validateForm.find('input[type="text"].street');
     streetno_fields = validateForm.find('input[type="text"].streetno');
     agreement_fields = validateForm.find('.agreements input[type="checkbox"]');
+    hidden_fields = validateForm.find('input[type="hidden"][required]');
+
     var error = false;
     var wrong_inputs = [];
 
@@ -126,6 +171,13 @@ function validateFields() {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Numer domu/mieszkania jest błędny</span>');
+        }
+    });
+    hidden_fields.each(function (e) {
+        if (validate_hidden($(this).val()) == false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Należy zaznaczyć opcję</span>');
         }
     });
 
@@ -268,6 +320,10 @@ function validate_streetno(input) {
 
     var regex = /^[\s\\\/\-0-9A-Za-z_&\(\),\.]*$/;
     return regex.test(input);
+}
+
+function validate_hidden(input) {
+    return input.length != 0;
 }
 
 // -----------------------------

@@ -1,9 +1,12 @@
+//Author: Adam Kocić [Falkan3]
+
 var G_Main_Controller = (function () {
     var Global_vars_lapp_app = {
         'elements': {
             'hideAll': null,
             'backToTop': null,
-        },
+            'nav': null,
+        }
     };
 
     return {

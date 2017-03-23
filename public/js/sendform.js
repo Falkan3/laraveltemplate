@@ -30,9 +30,7 @@ $(document).ready(function () {
                 });
                 var offsetTop = $(response[1][0]).offset().top - 120;
                 if(offsetTop <=0) {
-                    $(response[1][0]).show();
-                    offsetTop = $(response[1][0]).offset().top - 120;
-                    $(response[1][0]).hide();
+                    offsetTop = showHiddenElement($(response[1][0]));
                 }
                 $("body,html").animate({
                     scrollTop: offsetTop
@@ -41,6 +39,21 @@ $(document).ready(function () {
         }
     });
 });
+
+function showHiddenElement(el) {
+    var offsetTop;
+    var isInputHidden = el.is('input[type="hidden"]');
+    el.show();
+    if(isInputHidden) {
+        el.attr('type', 'text');
+    }
+    offsetTop = el.offset().top - 120;
+    el.hide();
+    if(isInputHidden) {
+        el.attr('type', 'hidden');
+    }
+    return offsetTop;
+}
 
 function sendAjax(form) {
     var current_form = form;
