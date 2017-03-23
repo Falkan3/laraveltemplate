@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="wrapper full-height">
-        <div class="page big-form">
+        <section class="page big-form">
             <div class="main-logo header">
                 <a href="https://finansowyplaner.pl/"><img src="{{asset('images/content/logo.png', env('HTTPS'))}}" alt="logo"/></a>
             </div>
@@ -142,6 +142,6 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 form-thank-you"></div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 @stop
