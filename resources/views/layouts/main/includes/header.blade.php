@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{'/'}}"><img src="{{asset('images/logo.png')}}" alt="logo"></a>
+            <a class="navbar-brand" href="{{url('lang_' . $app->getLocale())}}"><img src="{{asset('images/logo.png')}}" alt="logo"></a>
         </div>
     </div><!-- /.container-fluid -->
 </nav>
