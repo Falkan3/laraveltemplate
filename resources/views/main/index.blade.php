@@ -22,7 +22,9 @@
             </div>
 
             <div class="container">
-                <p>Congrats!</p>
+                <p>{{__('pages/index.congrats')}}</p>
+                <p>{{__('pages/index.lang_is')}}: {{$app->getLocale()}}</p>
+                <p><a href="{{url('form')}}">Go to form</a></p>
 
                 <div class="col-xs-12 col-sm-4">
                     <div class="flipper-main-container">
