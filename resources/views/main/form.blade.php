@@ -15,11 +15,8 @@
 @section('content')
     <div class="wrapper full-height">
         <section class="page big-form">
-            <div class="main-logo header">
-                <a href="https://finansowyplaner.pl/"><img src="{{asset('images/content/logo.png', env('HTTPS'))}}" alt="logo"/></a>
-            </div>
             <div class="container">
-                <h1 class="text-center margin-bottom">Formularz kontaktowy</h1>
+                <h1 class="text-center">Formularz kontaktowy</h1>
 
                 {!! Form::open(['url' => url('api/submitLead', null, env('HTTPS')), 'method' => 'post', 'class' =>'contact-form']) !!}
 

@@ -1,4 +1,4 @@
-/* ----------------------------- Form ----------------------------- */
+/* Form */
 
 form {
     position: relative;
@@ -6,31 +6,32 @@ form {
 
 a.read-more-click {
     text-decoration: none;
-    color: #757575;
+    color: #b7b7b7;
     font-size: 100%;
 }
 
 div.read-more {
     display: none;
     position: absolute;
+    max-height: 200px;
+    overflow: auto;
     bottom: 0;
     right: 0;
-    color: #757575;
-    padding: 24px 8px 8px 8px;
+    color: #212121;
+    padding: 24px 24px 12px 24px;
     z-index: 999;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     box-shadow: 1px 1px 3px #ccc;
     margin-bottom: 10px;
-    background: url(../images/els/wrong.png) #fff;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    background-position: top right;
+    background: #fff;
+    /*background: url(https://static.fdtc.edu/_img/icon/forms/close.png) #fff no-repeat top right 24px / 24px 24px;*/
     cursor: pointer;
 }
 div.read-more p {
     font-size: 100%;
     line-height: 110%;
-    color: #757575;
+    color: #212121;
 }
 
 input[type="checkbox"] {
@@ -58,3 +59,18 @@ input[type="checkbox"]:checked + label span {
 }
 
 /* ----------------------------- /Form ----------------------------- */
+
+/* Nicescroll */
+.nicescroll-rails > div,
+.nicescroll-rails > div
+{
+    width: 4px !important;
+    transition: ease-in-out 0.3s;
+}
+.nicescroll-rails:hover,
+.nicescroll-rails:active,
+.nicescroll-rails > div:hover,
+.nicescroll-rails > div:active
+{
+    width: 8px !important;
+}

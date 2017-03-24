@@ -4,7 +4,9 @@ var G_Form_Controller = (function () {
     var Global_vars_form = {
         'elements': {
             'buttons' : [],
-            'data_containers' : []
+            'data_containers' : [],
+            'readmore_click' : [],
+            'readmore' : []
         }
     };
 
@@ -15,6 +17,11 @@ var G_Form_Controller = (function () {
             Global_vars_form.elements.buttons.on('click', function(){G_Form_Controller.ButtonClick($(this));});
             //data-containers
             Global_vars_form.elements.data_containers = $('input[data-container="true"]');
+            //readmore
+            Global_vars_form.elements.readmore_click = $('a.read-more-click');
+            Global_vars_form.elements.readmore = $('div.read-more');
+            G_Form_Controller.ReadMoreInit();
+            //
         },
         //buttons
         ButtonClick: function (btn) {
@@ -29,6 +36,16 @@ var G_Form_Controller = (function () {
             var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
             $(btnToDeactivate).removeClass('active');
             btn.addClass('active');
+        },
+        ReadMoreInit: function () {
+            Global_vars_form.elements.readmore.niceScroll({cursorborder:"",cursorcolor:"#333333",cursorwidth:"8px",autohidemode:false});
+            Global_vars_form.elements.readmore_click.on('click', function(e) {
+                Global_vars_form.elements.readmore.hide();
+                $(this).next('div.read-more').show();
+            });
+            Global_vars_form.elements.readmore.on('click', function(e) {
+                $(this).hide();
+            });
         }
     };
 })();
@@ -49,17 +66,6 @@ $(window).on('resize', function () {
 
 $(window).on("load", function () {
 
-});
-
-var read_more_click = $('a.read-more-click');
-var read_more = $('div.read-more');
-
-read_more_click.on('click', function(e) {
-    read_more.hide();
-    $(this).next('div.read-more').toggle();
-});
-read_more.on('click', function(e) {
-    $(this).hide();
 });
 
 var validationForms = $('form');

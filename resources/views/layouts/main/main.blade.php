@@ -56,6 +56,7 @@
 <script src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/jquery/jquery.nicescroll.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
 @yield('custom_js')
 

@@ -23,13 +23,13 @@ div.bged::before, section.bged::before, article.bged::before {
 
     z-index: 0;
 }
-div.bged.bgcolor_transparent::before {
+div.bged.bgcolor_transparent::before, section.bged.bgcolor_transparent::before, article.bged.bgcolor_transparent::before {
     content: none;
 }
-div.bged.bgcolor1::before {
+div.bged.bgcolor1::before, section.bged.bgcolor1::before, article.bged.bgcolor1::before {
     background: rgba(0, 0, 0, 0.6);
 }
-div.bged.circle::before {
+div.bged.circle::before, section.bged.circle::before, article.bged.circle::before {
     border-radius: 50%;
 }
 
@@ -53,7 +53,13 @@ nav.navbar {
 .navbar-brand>img {
     max-height: 40px;
 }
-/* ---------------------------- NAVBAR ---------------------------- */
+
+@media (max-width: 991px) {
+    .navbar-brand>img {
+        max-height: 30px;
+    }
+}
+/* ---------------------------- /NAVBAR ---------------------------- */
 
 /* -------------------------------------------------------- /HEADER -------------------------------------------------------- */
 
@@ -205,42 +211,6 @@ h2.highlight {
 }
 
 /* /Iterators */
-
-/* Form */
-
-form {
-    position: relative;
-}
-
-a.read-more-click {
-    text-decoration: none;
-    color: #b7b7b7;
-    font-size: 100%;
-}
-
-div.read-more {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #fff;
-    color: #000;
-    padding: 24px 8px 8px 8px;
-    z-index: 999;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 3px #ccc;
-    margin-bottom: 10px;
-    background: url(https://static.fdtc.edu/_img/icon/forms/close.png) #fff;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    background-position: top right;
-    cursor: pointer;
-}
-div.read-more p {
-    font-size: 100%;
-    line-height: 110%;
-    color: #000;
-}
 
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
 
