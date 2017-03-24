@@ -38,10 +38,10 @@ var G_Form_Controller = (function () {
             btn.addClass('active');
         },
         ReadMoreInit: function () {
-            Global_vars_form.elements.readmore.niceScroll({cursorborder:"",cursorcolor:"#333333",cursorwidth:"8px",autohidemode:false});
+            Global_vars_form.elements.readmore.niceScroll({cursorborder:"",cursorcolor:"#ffaa00",cursorwidth:"8px",autohidemode:false});
             Global_vars_form.elements.readmore_click.on('click', function(e) {
                 Global_vars_form.elements.readmore.hide();
-                $(this).next('div.read-more').show();
+                $(this).next('div.read-more').slideToggle();
             });
             Global_vars_form.elements.readmore.on('click', function(e) {
                 $(this).hide();

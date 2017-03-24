@@ -127,7 +127,7 @@
 
                 <div class="row submit-row">
                     <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
-                        <input type="submit" value="Złóż wniosek"/>
+                        <input type="submit" value="Złóż wniosek" class="button sliding_bg" />
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
                         <img src="{{asset('images/ajax-loader.gif', env('HTTPS'))}}" alt="loading..." class="loading_ajax hidden"/>

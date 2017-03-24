@@ -212,7 +212,50 @@ h2.highlight {
 
 /* /Iterators */
 
+/* Buttons */
+
+.button.sliding_bg {
+    color: #31302B;
+    background: #FFF;
+    padding: 12px 17px;
+    margin: 25px;
+    border: 3px solid #31302B;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #31302B;
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    transition: all ease 0.8s;
+}
+.button.sliding_bg:hover {
+    box-shadow: inset 0 100px 0 0 #31302B;
+    color: #FFF;
+}
+
+/* /Buttons */
+
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
+
+/* Nicescroll */
+.nicescroll-rails div,
+.nicescroll-rails > div
+{
+    width: 4px !important;
+    transition: ease-in-out 0.3s;
+}
+.nicescroll-rails:hover,
+.nicescroll-rails:active,
+.nicescroll-rails > div:hover,
+.nicescroll-rails > div:active
+{
+    width: 8px !important;
+}
 
 /* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
 
