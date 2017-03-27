@@ -47,6 +47,11 @@ header {
     z-index: 10;
 }
 
+.alert-success, .alert-warning, .alert-danger {
+    background-image: none;
+    border-radius: 0;
+}
+
 /* ---------------------------- NAVBAR ---------------------------- */
 nav.navbar {
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
