@@ -1,4 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.main.main')
+
+@section('title', __('system.resetpassword'))
+@section('description', '')
+@section('custom_css')
+    <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/auth.css', env('HTTPS')) }}" type="text/css" media="all"/>
+@stop
 
 @section('content')
 <div class="container">
