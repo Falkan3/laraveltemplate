@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'web', 'prefix' => '{lang?}'], function () {
+Route::group(['prefix' => '{lang?}'], function () {
     Route::get('/', 'MainController@index');
     Route::get('form', 'MainController@form');
 

@@ -18,7 +18,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
 
     /**
      * Where to redirect users after login.
@@ -35,5 +37,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    protected function authenticated($request,$user)
+    {
+        /*
+        if(\Auth::user()->isAdmin()){
+            return redirect()->intended('dashboard');
+        }
+        */
+
+        return redirect()->intended('lang_' . \Lang::getLocale() . '/home');
+    }
+
+    public function logout(\Illuminate\Http\Request $request)
+    {
+        $this->performLogout($request);
+        return redirect('lang_' . \Lang::getLocale());
+        //return redirect()->back();
     }
 }

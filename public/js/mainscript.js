@@ -21,7 +21,7 @@ var G_Main_Controller = (function () {
 
         /* ---- Back to top visibility ---- */
         Load_hideAll: function () {
-            Global_vars_lapp_app.elements.hideAll.fadeOut();
+            Global_vars_lapp_app.elements.hideAll.slideUp();
         },
         Scroll_backToTop: function () {
             if ($(window).scrollTop() > 100) {
