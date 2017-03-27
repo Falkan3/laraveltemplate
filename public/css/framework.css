@@ -236,7 +236,7 @@ body {
 
 .flip-container, .flipper .front, .flipper .back {
     width: 100%;
-    height: 480px;
+    height: auto;
 }
 
 /* flip speed goes here */

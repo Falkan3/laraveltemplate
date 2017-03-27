@@ -76,9 +76,11 @@ var Flippers_controller = (function () {
 
 /* -------------------------------------------------------------------------------- */
 
-Flippers_controller.initElements();
-
-$('.flipper-main-container').flipper({'container': true});
+$(document).ready(function (e) {
+    Flippers_controller.initElements();
+    $('.flipper-main-container').flipper({'container': true});
+    Flippers_controller.resize_flippers();
+});
 
 $(window).on('resize', function (e) {
     Flippers_controller.resize_flippers();

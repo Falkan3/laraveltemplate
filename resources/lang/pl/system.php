@@ -17,5 +17,6 @@ return [
     'resetpassword' => 'Zresetuj hasło',
     'sendpasswordresetlink' => 'Wyślij link do resetowania hasła',
     'home' => 'Panel',
-    'youareloggedin' => 'Jesteś zalogowany!'
+    'youareloggedin' => 'Jesteś zalogowany!',
+    'adminpanel' => 'Panel admina'
 ];

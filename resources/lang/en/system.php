@@ -17,5 +17,6 @@ return [
     'resetpassword' => 'Reset password',
     'sendpasswordresetlink' => 'Send password reset link',
     'home' => 'Dashboard',
-    'youareloggedin' => 'You are logged in!'
+    'youareloggedin' => 'You are logged in!',
+    'adminpanel' => 'Admin panel'
 ];
