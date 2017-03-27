@@ -65,7 +65,7 @@
                                         </button>
 
                                         <a class="btn btn-link"
-                                           href="{{ url('lang_' . $app->getLocale(), 'password/reset') }}">
+                                           href="{{ url('lang_' . $app->getLocale() . '/password/reset') }}">
                                             {{__('system.forgotpassword')}}
                                         </a>
                                     </div>
