@@ -75,8 +75,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary  button sliding_bg">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-primary button sliding_bg">
                                             {{__('system.resetpassword')}}
                                         </button>
                                     </div>
