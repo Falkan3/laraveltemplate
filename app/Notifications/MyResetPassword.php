@@ -50,7 +50,7 @@ class MyResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('emails.greeting')
+                    ->greeting(__('emails.greeting'))
                     ->line(__('emails.introduction'))
                     ->action(__('emails.resetpassword'), url('lang_' . \Lang::getLocale() . '/password/reset/' . $this->token))
                     ->line(__('emails.ending'))
