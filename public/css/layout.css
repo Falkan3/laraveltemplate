@@ -90,16 +90,11 @@ nav.navbar {
     transition: ease-in-out 0.2s;
 }
 
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #fff;
-    background-color: #ff9c10;
+.navbar-default .navbar-nav > li > a:focus {
+    color: #212121;
 }
 
-/* li bg */
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
-    background-image: none;
-    background-color: #ff9c10;
-    box-shadow: none;
+.navbar-default .navbar-nav li:hover > a {
     color: #fff;
 }
 
@@ -107,19 +102,57 @@ nav.navbar {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
     color: #fff;
+}
+
+/* li bg */
+.navbar-nav > li {
+    transition: ease-in-out 0.2s;
+}
+
+.navbar-nav > li.active {
     background-color: #ff9c10;
 }
 
+.navbar-default .navbar-nav > li:hover {
+    background-color: #ff9c10;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
+    background-image: none;
+    background-color: #ff9c10;
+    box-shadow: none;
+    color: #fff;
+}
+
 /* dropdown */
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+.dropdown-menu > li > a:focus, .dropdown-menu > li:hover {
     background-color: #ff9c10;
     background-image: none;
 }
 
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    background-color: transparent;
+    background-image: none;
+}
+
+.navbar-default .navbar-nav > .open {
+    background-color: #ff9c10;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-nav .open .dropdown-menu {
+    background-color: #fff;
+    border-radius: 0;
+}
+
 @media (min-width: 992px) {
     .navbar-nav > li {
-        margin-left: 1em;
-        margin-right: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
 
@@ -127,6 +160,7 @@ nav.navbar {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: #212121;
     }
+
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
         color: #fff;
         background-color: #ff9c10;
@@ -189,7 +223,7 @@ div.row > h1, div.row > h2, div.row > h3, div.row > h4, div.row > p {
 
 h1 {
     font-size: 275%;
-    color: #696464;
+    color: #212121;
 }
 
 h2 {
@@ -202,7 +236,7 @@ h3 {
 
 p {
     font-size: 115%;
-    color: #343434;
+    color: #212121;
     font-weight: 300;
 }
 

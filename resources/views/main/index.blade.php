@@ -16,8 +16,13 @@
     <div class="wrapper full-height">
         <section class="page">
             <div class="container-fluid">
-                <div style="position: relative; height: 400px; margin-bottom: 50px;">
-                    <div class="slideInRightResize animated wow" data-wow-duration="1.5s" style="width: 100%; height:100%; background-color: #ff9c10;"></div>
+                <div class="row">
+                    <div style="position: absolute; width: 100%; height: 400px; margin-bottom: 50px;  z-index: 1;">
+                        <div class="slideInRightResize animated wow" data-wow-duration="1.5s" style="width: 100%; height:100%; background-color: #ff9c10; float: left;"></div>
+                    </div>
+                    <div style="position: relative; width: 100%; height: 400px; margin-bottom: 50px; background-color: #212121;">
+
+                    </div>
                 </div>
             </div>
 
