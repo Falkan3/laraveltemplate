@@ -43,7 +43,7 @@
 
 <!-- Salutation -->
 @if (! empty($salutation))
-{{ $salutation }}
+{{ $salutation }},<br>{{ config('app.name') }}
 @else
 Regards,<br>{{ config('app.name') }}
 @endif
@@ -51,8 +51,7 @@ Regards,<br>{{ config('app.name') }}
 <!-- Subcopy -->
 @if (isset($actionText))
 @component('mail::subcopy')
-If you’re having trouble clicking the "{{ $actionText }}" button, copy and paste the URL below
-into your web browser: [{{ $actionUrl }}]({{ $actionUrl }})
+    {{__('emails.trouble1')}} "{{ $actionText }}" {{__('emails.trouble2')}} [{{ $actionUrl }}]({{ $actionUrl }})
 @endcomponent
 @endif
 @endcomponent

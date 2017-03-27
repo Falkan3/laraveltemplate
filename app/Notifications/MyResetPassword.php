@@ -49,9 +49,11 @@ class MyResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line(__('system.introduction'))
-                    ->action(__('system.resetpassword'), route('password.reset', ['token' => $this->token]))
-                    ->line(__('system.ending'));
+                    ->greeting('emails.greeting')
+                    ->line(__('emails.introduction'))
+                    ->action(__('emails.resetpassword'), route('password.reset', ['token' => $this->token]))
+                    ->line(__('emails.ending'))
+                    ->salutation(__('emails.salutation'));
     }
 
     /**
