@@ -1,0 +1,71 @@
+/* panel */
+.panel {
+    margin: 20px 0;
+    background-color: #fff;
+    border: solid 2px #ff9c10;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.panel .panel-body {
+    padding: 30px;
+}
+
+.panel .auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Form elements */
+.panel .form-group:last-child {
+    margin-bottom: 0;
+}
+.panel .checkbox {
+    float: right;
+}
+
+.panel .form-horizontal .control-label {
+    width: 100%;
+    font-size: 75%;
+    text-align: center;
+}
+.panel input[type="text"], input[type="email"], input[type="password"], .panel input[type="tel"] {
+    padding: 15px 10px;
+    border-radius: 0;
+    border-color: #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.panel input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, .panel input[type="tel"]:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #ff9c10;
+}
+.has-error .form-control, .has-error .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.help-block {
+    font-size: 80%
+}
+
+.panel .btn {
+    white-space: normal;
+}
+.panel button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    background-color: #fff;
+    background-image: none;
+    border: solid 3px #212121;
+    border-radius: 0;
+    color: #212121;
+    text-shadow: none;
+}
+.panel .btn.btn-link {
+    display: block;
+    width: 100%;
+    border: none;
+}

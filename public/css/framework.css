@@ -135,7 +135,7 @@ hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
 .font-x2{font-size:1.8rem;}
 .font-x3{font-size:2.8rem;}
 
-.wrapper{display:block; width:100%; margin:0; padding:20px 0; text-align:left; word-wrap:break-word;}
+.wrapper{display:block; width:100%; margin:0; padding:20px 0; text-align:left; word-wrap:break-word; white-space:normal;}
 
 /* HTML 5 Overrides
 --------------------------------------------------------------------------------------------------------------- */

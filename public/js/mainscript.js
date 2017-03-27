@@ -17,6 +17,8 @@ var G_Main_Controller = (function () {
             Global_vars_lapp_app.elements.backToTop = $('#backtotop');
             //nav
             Global_vars_lapp_app.elements.nav = $('.navbar.navbar-default');
+
+            G_Main_Controller.Scroll_navbarShrink();
         },
 
         /* ---- Back to top visibility ---- */

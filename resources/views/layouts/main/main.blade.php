@@ -43,7 +43,9 @@
 
 @include('layouts.main.includes.header')
 
-@yield('content')
+<div class="wrapper">
+    @yield('content')
+</div>
 
 @include('layouts.main.includes.footer')
 
