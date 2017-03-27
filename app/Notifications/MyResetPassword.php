@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Lang;
 
 class MyResetPassword extends Notification
 {
@@ -51,7 +52,7 @@ class MyResetPassword extends Notification
         return (new MailMessage)
                     ->greeting('emails.greeting')
                     ->line(__('emails.introduction'))
-                    ->action(__('emails.resetpassword'), route('password.reset', ['token' => $this->token]))
+                    ->action(__('emails.resetpassword'), url('lang_' . \Lang::getLocale() . '/password/reset/' . $this->token))
                     ->line(__('emails.ending'))
                     ->salutation(__('emails.salutation'));
     }
