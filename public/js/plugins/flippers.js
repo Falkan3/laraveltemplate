@@ -69,6 +69,8 @@ var Flippers_controller = (function () {
             if ($.isFunction(settings.complete)) {
                 settings.complete.call(this);
             }
+
+            Flippers_controller.resize_flippers();
         });
     }
 
@@ -77,9 +79,9 @@ var Flippers_controller = (function () {
 /* -------------------------------------------------------------------------------- */
 
 $(document).ready(function (e) {
-    Flippers_controller.initElements();
-    $('.flipper-main-container').flipper({'container': true});
-    Flippers_controller.resize_flippers();
+    //Flippers_controller.initElements();
+    //$('.flipper-main-container').flipper({'container': true});
+    //Flippers_controller.resize_flippers();
 });
 
 $(window).on('resize', function (e) {

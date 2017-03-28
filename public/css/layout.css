@@ -1,3 +1,7 @@
+body {
+    background-color: #212121;
+}
+
 body, input, textarea, select {
     font-family: 'Kanit', sans-serif;
     font-size: 16px;
@@ -22,7 +26,7 @@ div.bged::before, section.bged::before, article.bged::before {
     left: 0;
     position: absolute;
 
-    z-index: 0;
+    z-index: 1;
 }
 
 div.bged.bgcolor_transparent::before, section.bged.bgcolor_transparent::before, article.bged.bgcolor_transparent::before {
@@ -91,6 +95,7 @@ nav.navbar {
 /* a text */
 .navbar-default .navbar-nav > li > a {
     color: #212121;
+    font-weight: 700;
     text-shadow: none;
     transition: ease-in-out 0.2s;
 }
@@ -155,9 +160,15 @@ nav.navbar {
 }
 
 @media (min-width: 992px) {
-    .navbar-nav > li {
+    .navbar-nav .navbar-default .navbar-nav > li a {
         padding-left: 1em;
         padding-right: 1em;
+    }
+    nav.navbar.navbar-default .navbar-nav > li a {
+        color: #fff;
+    }
+    nav.navbar.shrinked.navbar-default .navbar-nav > li a {
+        color: #212121;
     }
 }
 
@@ -221,6 +232,21 @@ article.zebra:nth-child(odd) h1, article.zebra:nth-child(odd) h2, article.zebra:
 div.page, section.page, article.page {
     padding: 70px 0;
 }
+
+div.page.no-padding, section.page.no-padding, article.page.no-padding {
+    padding: 0;
+}
+
+/* carousel */
+
+.carousel {
+    margin-top: -70px;
+}
+.carousel-control {
+    z-index: 1;
+}
+
+/* carousel */
 
 div.row > h1, div.row > h2, div.row > h3, div.row > h4, div.row > p {
     padding: 0 15px;

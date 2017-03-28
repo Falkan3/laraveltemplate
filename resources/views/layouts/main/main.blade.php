@@ -43,7 +43,7 @@
 
 @include('layouts.main.includes.header')
 
-<div class="wrapper">
+<div class="wrapper full-height">
     @yield('content')
 </div>
 

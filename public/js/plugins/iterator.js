@@ -93,12 +93,14 @@ var Iterators_controller = (function () {
 
 //
 
+/*
 $('.iterator-container-1').iterator({
 
 });
 $('.iterator-container-2').iterator({
 
 });
+*/
 
 $(window).on("load", function () {
     Iterators_controller.rotateIterators();
