@@ -170,6 +170,13 @@ nav.navbar {
     nav.navbar.shrinked.navbar-default .navbar-nav > li a {
         color: #212121;
     }
+    nav.navbar.shrinked.navbar-default .navbar-nav > li:hover > a,
+    nav.navbar.shrinked.navbar-default .navbar-nav > li > a:focus,
+    nav.navbar.shrinked.navbar-default .navbar-nav > li.active > a,
+    nav.navbar.shrinked.navbar-default .navbar-nav li.open > a,
+    nav.navbar.shrinked.navbar-default .navbar-nav li.open .dropdown-menu li:hover a {
+        color: #fff;
+    }
 }
 
 @media (max-width: 767px) {
@@ -346,7 +353,7 @@ h2.highlight {
     font-size: 275%;
 }
 
-@media (max-width: 967px) {
+@media (max-width: 991px) {
     h2.highlight {
         font-size: 175%;
     }
