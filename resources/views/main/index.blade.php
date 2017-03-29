@@ -54,7 +54,7 @@
         <div class="container">
             <p>{{__('pages/index.congrats')}}</p>
             <p>{{__('pages/index.lang_is')}}: {{$app->getLocale()}}</p>
-            <p><a href="{{url('lang_' . $app->getLocale(), 'form')}}">Go to form</a></p>
+            <p><a href="{{url('lang_' . $app->getLocale() . '/form', env('HTTPS'))}}">Go to form</a></p>
 
             <div class="col-xs-12 col-sm-4">
                 <div class="flipper-main-container">

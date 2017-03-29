@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('lang_' . $app->getLocale())}}"><img src="{{asset('images/logo.png', env('HTTPS'))}}" alt="logo"></a>
+            <a class="navbar-brand" href="{{url('lang_' . $app->getLocale() . '/', env('HTTPS'))}}"><img src="{{asset('images/logo.png', env('HTTPS'))}}" alt="logo"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,8 +44,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{ url('lang_' . $app->getLocale(), 'login') }}">{{__('system.login')}}</a></li>
-                    <li><a href="{{ url('lang_' . $app->getLocale(), 'register') }}">{{__('system.register')}}</a></li>
+                    <li><a href="{{ url('lang_' . $app->getLocale() . '/login', env('HTTPS')) }}">{{__('system.login')}}</a></li>
+                    <li><a href="{{ url('lang_' . $app->getLocale() . '/register', env('HTTPS')) }}">{{__('system.register')}}</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -54,13 +54,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="{{ url('lang_' . $app->getLocale(), 'logout') }}"
+                                <a href="{{ url('lang_' . $app->getLocale() . '/logout', env('HTTPS')) }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{__('system.logout')}}
                                 </a>
 
-                                <form id="logout-form" action="{{ url('lang_' . $app->getLocale(), 'logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('lang_' . $app->getLocale() . '/logout', env('HTTPS')) }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>

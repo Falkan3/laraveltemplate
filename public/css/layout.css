@@ -208,7 +208,7 @@ div.height-100, section.height-100, article.height-100 {
 
 @media (max-width: 991px) {
     div.full-height, section.full-height, article.full-height {
-        min-height: 900px;
+        min-height: 400px;
     }
 }
 

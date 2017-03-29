@@ -21,7 +21,7 @@
                         @endif
 
                         <form class="form-horizontal" role="form" method="POST"
-                              action="{{ url('lang_' . $app->getLocale() . '/password/reset') }}">
+                              action="{{ url('lang_' . $app->getLocale() . '/password/reset', env('HTTPS')) }}">
                             {{ csrf_field() }}
 
                             <input type="hidden" name="token" value="{{ $token }}">

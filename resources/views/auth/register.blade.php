@@ -14,7 +14,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST"
-                              action="{{ url('lang_' . $app->getLocale(), 'register') }}">
+                              action="{{ url('lang_' . $app->getLocale() . '/register', env('HTTPS')) }}">
                             {{ csrf_field() }}
 
                             <div class="auth-container">
