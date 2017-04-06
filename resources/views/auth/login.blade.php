@@ -59,7 +59,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="col-md-12">
+                                    <div class="col-xs-12">
                                         <button type="submit" class="btn btn-primary button sliding_bg">
                                             {{__('system.logmein')}}
                                         </button>
