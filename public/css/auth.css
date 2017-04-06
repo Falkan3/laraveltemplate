@@ -30,7 +30,8 @@
     text-align: center;
 }
 .panel input[type="text"], input[type="email"], input[type="password"], .panel input[type="tel"] {
-    padding: 15px 10px;
+    height: auto;
+    padding: 6px 10px;
     border-radius: 0;
     border-color: #ddd;
     -webkit-box-shadow: none;
