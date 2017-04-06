@@ -20,7 +20,7 @@ var G_Index_Controller = (function () {
 })();
 
 $(document).ready(function (e) {
-    $('.carousel .carousel-container').slick({
+    $('.carousel').slick({
         lazyLoad: 'ondemand',
         autoplay: true,
         autoplaySpeed: 3000,
