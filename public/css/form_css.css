@@ -62,4 +62,22 @@ input[type="checkbox"]:checked + label span {
     position: relative;
 }
 
+.loading_ajax {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991px) {
+    .agreements {
+        text-align: left;
+    }
+    .agreements .checkbox label, .agreements .radio label {
+        padding-left: 0;
+    }
+    .agreements .checkbox label span, .agreements .radio label span {
+        margin-left: 0;
+    }
+}
+
 /* ----------------------------- /Form ----------------------------- */

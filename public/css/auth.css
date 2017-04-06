@@ -70,3 +70,9 @@
     width: 100%;
     border: none;
 }
+
+@media (max-width: 991px) {
+    .panel .checkbox {
+        float: none;
+    }
+}
