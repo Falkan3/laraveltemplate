@@ -206,52 +206,84 @@ street_fields = $('input[type="text"].street');
 streetno_fields = $('input[type="text"].streetno');
 
 name_fields.blur(function(e) {
-    if(validate_name($(this).val())==true)
+    if(validate_name($(this).val())==true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 email_fields.blur(function(e) {
-    if(validate_email($(this).val())==true)
+    if(validate_email($(this).val())==true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 all_telephone_fields.blur(function(e) {
-    if(validate_phone_number($(this).val())==true)
+    if(validate_phone_number($(this).val())==true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 pesel_fields.blur(function (e) {
-    if (validate_pesel($(this).val()) == true)
+    if (validate_pesel($(this).val()) == true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 city_fields.blur(function (e) {
-    if (validate_city($(this).val()) == true)
+    if (validate_city($(this).val()) == true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 postcode_fields.blur(function (e) {
-    if (validate_postcode($(this).val()) == true)
+    if (validate_postcode($(this).val()) == true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 street_fields.blur(function (e) {
-    if (validate_street($(this).val()) == true)
+    if (validate_street($(this).val()) == true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 streetno_fields.blur(function (e) {
-    if (validate_streetno($(this).val()) == true)
+    if (validate_streetno($(this).val()) == true) {
         $(this).addClass('right-input');
-    else
+        $(this).removeClass('wrong-input');
+    }
+    else {
+        $(this).addClass('wrong-input');
         $(this).removeClass('right-input');
+    }
 });
 
 function validate_name(input) {

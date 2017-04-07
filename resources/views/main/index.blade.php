@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/libs/slick.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/libs/slick-theme.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/libs/fancySelect.css', env('HTTPS')) }}" type="text/css"
+          media="all"/>
 @stop
 @section('custom_js')
     <script src="{{ URL::asset('js/libs/wow.js', env('HTTPS')) }}"></script>
@@ -16,6 +18,7 @@
     <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/indexscript.js', env('HTTPS')) }}"></script>
 @stop
 
@@ -105,6 +108,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-xs-12">
+                <select class="basic">
+                    <option value="">Select something…</option>
+                    <option>Lorem</option>
+                    <option>Ipsum</option>
+                    <option>Dolor</option>
+                    <option>Sit</option>
+                    <option>Amet</option>
+                </select>
             </div>
         </div>
     </section>

@@ -35,6 +35,7 @@ $(document).ready(function (e) {
     $('.flipper-main-container').flipper({'container': true});
     $('.iterator-container-1').iterator({});
     $('.iterator-container-2').iterator({});
+    $('select').fancySelect().niceScroll({cursorborder:"",cursorcolor:"#ffaa00",cursorwidth:"8px",autohidemode:false});
 });
 
 $(window).scroll(function () {
