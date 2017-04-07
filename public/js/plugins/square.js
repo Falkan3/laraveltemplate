@@ -1,4 +1,6 @@
-//Flippers are cards that turn on mouseover
+//Author: Adam Kocić [Falkan3]
+//Make objects square in size
+
 var SquaresGlobalVars = {
     'elements' : {
         'squares' : []

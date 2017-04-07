@@ -15,6 +15,7 @@
     <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/indexscript.js', env('HTTPS')) }}"></script>
 @stop
 
@@ -83,6 +84,27 @@
                 <div class="iterator-item"></div>
                 <div class="iterator-item"></div>
                 <div class="iterator-item"></div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="accordion-container">
+                    <div class="accordion-item active">
+                        <a href="#">
+                            <p><i class="fa fa-plus" aria-hidden="true"></i> Accordion1</p>
+                        </a>
+                        <div class="accordion-item-content">
+                            <p>Content</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item active">
+                        <a href="#">
+                            <p><i class="fa fa-plus" aria-hidden="true"></i> Accordion2</p>
+                        </a>
+                        <div class="accordion-item-content">
+                            <p>Content</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

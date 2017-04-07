@@ -1,5 +1,6 @@
 //Author: Adam Kocić [Falkan3]
 //Flippers are equal width/height cards that turn on mouseover, revealing their backside. Requires css.
+
 var FlipperGlobalVars = {
     'elements' : {
         'flippers' : []
