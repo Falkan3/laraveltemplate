@@ -29,8 +29,12 @@ $(document).ready(function () {
                     $(this).addClass('wrong-input');
                 });
                 var offsetTop = $(response[1][0]).offset().top - 120;
-                if(offsetTop <=0) {
-                    offsetTop = showHiddenElement($(response[1][0]));
+                if(offsetTop<=0) {
+                    var parent = $(this);
+                    while(offsetTop <=0) {
+                        parent = parent.parent();
+                        offsetTop = parent.offset().top - 120;
+                    }
                 }
                 $("body,html").animate({
                     scrollTop: offsetTop
@@ -40,6 +44,7 @@ $(document).ready(function () {
     });
 });
 
+/*
 function showHiddenElement(el) {
     var offsetTop;
     var isInputHidden = el.is('input[type="hidden"]');
@@ -54,6 +59,7 @@ function showHiddenElement(el) {
     }
     return offsetTop;
 }
+*/
 
 function sendAjax(form) {
     var current_form = form;

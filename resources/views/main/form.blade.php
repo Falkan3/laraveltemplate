@@ -58,45 +58,45 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="rings"></button>
+                        <button type="button" class="rings" data-index="0" data-val="test3"></button>
                     </div>
                     <p>Ślub</p></div>
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="taxes"></button>
+                        <button type="button" class="taxes" data-index="0" data-val="test4"></button>
                     </div>
                     <p>Rachunki</p></div>
 
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="car"></button>
+                        <button type="button" class="car" data-index="0" data-val="test5"></button>
                     </div>
                     <p>Samochód</p></div>
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="house"></button>
+                        <button type="button" class="house" data-index="0" data-val="test6"></button>
                     </div>
                     <p>Mieszkanie</p></div>
 
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="mortarboard"></button>
+                        <button type="button" class="mortarboard" data-index="0" data-val="test7"></button>
                     </div>
                     <p>Szkolenie</p></div>
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="monitor"></button>
+                        <button type="button" class="monitor" data-index="0" data-val="test8"></button>
                     </div>
                     <p>Sprzęt</p></div>
 
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="wallet"></button>
+                        <button type="button" class="wallet" data-index="0" data-val="test9"></button>
                     </div>
                     <p>Spłata kredytu</p></div>
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
-                        <button type="button" class="star"></button>
+                        <button type="button" class="star" data-index="0" data-val="test10"></button>
                     </div>
                     <p>Inne</p></div>
             </div>
