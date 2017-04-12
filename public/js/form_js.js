@@ -26,16 +26,34 @@ var G_Form_Controller = (function () {
         //buttons
         ButtonClick: function (btn) {
             var searchindex = btn.attr('data-index');
+            var btnval = btn.attr('data-val');
             Global_vars_form.elements.data_containers.each(function() {
                 if($(this).attr('data-index')===searchindex) {
-                    $(this).val(btn.attr('data-val'));
+                    if($(this).attr('data-multiselect')==='true') {
+                        value = $(this).val().split(',');
+                        var is_found = false;
+                        for(var i=0; i<value.length;i++) {
+                            if(value[i] === btnval) {
+                                value.splice(i,1);
+                                is_found = true;
+                                break;
+                            }
+                        }
+                        if(is_found === false) {
+                            value.push(btnval);
+                        }
+                        var new_val = value.filter(function(el) {return el.length != 0});
+                        $(this).val(new_val);
+                    } else {
+                        $(this).val(btnval);
+                    }
                     $(this).removeClass('wrong-input');
                     $(this).prev('span.errormsg').remove();
                 }
             });
-            var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
-            $(btnToDeactivate).removeClass('active');
-            btn.addClass('active');
+            //var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
+            //$(btnToDeactivate).removeClass('active');
+            btn.toggleClass('active');
         },
         ReadMoreInit: function () {
             Global_vars_form.elements.readmore.niceScroll({cursorborder:"",cursorcolor:"#ffaa00",cursorwidth:"8px",autohidemode:false});

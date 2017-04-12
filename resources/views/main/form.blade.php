@@ -44,7 +44,7 @@
             </div>
 
             <div class="row">
-                {!! Form::hidden('test', null, ['required', 'data-container' => 'true', 'data-index' => '0']) !!}
+                {!! Form::hidden('test', null, ['required', 'data-container' => 'true', 'data-index' => '0', 'data-multiselect' => 'true']) !!}
                 <div class="col-xs-12 col-sm-6 col-md-15">
                     <div class="box-image">
                         <button type="button" class="tools" data-index="0" data-val="test"></button>
