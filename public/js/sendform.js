@@ -17,9 +17,11 @@ $(document).ready(function () {
         //Check if inputs are valid
         setValidateFields($(current_form));
         var response = validateFields();
-        if (response[0] == false) {
-            if(form.attr('data-ajax')=='true')
+        if (response[0] === false) {
+            if(form.attr('data-ajax')==='true')
                 sendAjax(current_form);
+            else if(form.attr('data-ajax')==='notify')
+                sendAjax_notification(current_form);
             else
                 sendPost(current_form);
         }
@@ -110,6 +112,72 @@ function sendAjax(form) {
                 status_text.append("<p>" + data.message[index] + '</p>');
             }
             status_text.css("display", "block");
+        }
+    });
+}
+
+function sendAjax_notification(form) {
+    var current_form = form;
+    var formdata = $(current_form).serialize();
+    var status_text = '';
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    });
+    $.ajax({
+        url: $(current_form).attr("action"),//form.attr('action'),
+        type: "POST",
+        data: formdata,
+        enctype: 'multipart/form-data',
+        dataType: 'json',
+        processData: false,
+        success: function (data) {
+            if(data.message.length > 0) {
+                if (data.success) {
+                    for (var index in data.message) {
+                        status_text+=data.message[index];
+                    }
+                    $(current_form).find("input[type='text'], input[type='tel'], textarea").val("");
+                    $(current_form).find("select").val(null);
+                    $(current_form).find("input[type='checkbox']").prop('checked', 'checked');
+
+                    //EXAMPLE FOR CUSTOM FIELDS
+                    if($(current_form).attr('data-ajax-id') === 'image') {
+                        var container = $(current_form).parent().parent();
+                        container.fadeOut(500, function() {
+                            container.remove();
+                        });
+                    }
+                    // -----------------------
+                    $.notify(
+                        status_text,
+                        { position:"bottom",className:'success' }
+                    );
+                }
+                else {
+                    for (var index in data.message) {
+                        status_text+=data.message[index];
+                    }
+                    $(current_form).notify(
+                        status_text,
+                        { position:"bottom",className:'error' }
+                    );
+                }
+            }
+        },
+        error: function (data) {
+            // Error...
+            for (var index in data.message) {
+                status_text+="<p>" + data.message[index] + '</p>';
+            }
+            $(current_form).notify(
+                status_text,
+                { position:"bottom",className:'error' }
+            );
         }
     });
 }

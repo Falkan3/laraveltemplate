@@ -50,6 +50,8 @@
 @include('layouts.main.includes.footer')
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<img src="{{asset('images/ajax-loader2.gif', env('HTTPS'))}}" alt="loading..."
+     class="global_ajax_loader loading_ajax hidden"/>
 
 <!-- Scripts -->
 <script src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
@@ -59,6 +61,7 @@
 <script src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/jquery/jquery.nicescroll.min.js', env('HTTPS')) }}"></script>
+<script src="{{ URL::asset('js/libs/notify.min.js', env('HTTPS')) }}"></script>
 <script src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
 @yield('custom_js')
 
