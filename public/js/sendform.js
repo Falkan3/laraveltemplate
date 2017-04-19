@@ -18,7 +18,7 @@ $(document).ready(function () {
         setValidateFields($(current_form));
         var response = validateFields();
         if (response[0] === false) {
-            if(form.attr('data-ajax')==='true')
+            if(current_form.attr('data-ajax')==='true')
                 sendAjax(current_form);
             else if(form.attr('data-ajax')==='notify')
                 sendAjax_notification(current_form);
@@ -180,4 +180,8 @@ function sendAjax_notification(form) {
             );
         }
     });
+}
+
+function sendPost(form) {
+    form.submit();
 }
