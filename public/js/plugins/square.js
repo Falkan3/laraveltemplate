@@ -19,7 +19,7 @@ var Squares_controller = (function () {
         },
 
         resize_squares: function () {
-            if (SquaresGlobalVars.elements.squares) {
+            if (SquaresGlobalVars.elements.squares.length) {
                 $(SquaresGlobalVars.elements.squares).each(function (e) {
                     $(this).height($(this).width());
                 });
@@ -63,7 +63,9 @@ var Squares_controller = (function () {
 /* -------------------------------------------------------------------------------- */
 
 $(window).on('resize', function (e) {
-    Squares_controller.resize_squares();
+    if (SquaresGlobalVars.elements.squares.length) {
+        Squares_controller.resize_squares();
+    }
 });
 
 //

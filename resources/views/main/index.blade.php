@@ -49,7 +49,7 @@
                     <div class="slideInRightResize animated wow" data-wow-duration="1.5s"
                          style="width: 100%; height:100%; background-color: #ff9c10; float: left;"></div>
                 </div>
-                <div style="position: relative; width: 100%; height: 400px; margin-bottom: 50px; background-color: #212121;">
+                <div style="position: relative; width: 50%; height: 400px; margin-bottom: 50px; background-color: #fff; margin-left: auto;">
 
                 </div>
             </div>

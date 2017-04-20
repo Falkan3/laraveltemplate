@@ -44,61 +44,75 @@
             </div>
 
             <div class="row">
-                {!! Form::hidden('test', null, ['required', 'data-container' => 'true', 'data-index' => '0', 'data-multiselect' => 'true']) !!}
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="tools" data-index="0" data-val="test"></button>
-                    </div>
-                    <p>Remont</p></div>
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="sun" data-index="0" data-val="test2"></button>
-                    </div>
-                    <p>Wakacje</p></div>
+                <p class="header">Lorem ipsum</p>
 
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="rings" data-index="0" data-val="test3"></button>
-                    </div>
-                    <p>Ślub</p></div>
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="taxes" data-index="0" data-val="test4"></button>
-                    </div>
-                    <p>Rachunki</p></div>
+                <div class="container-fluid boxes-container">
+                    <div class="row">
+                        {!! Form::hidden('test', "1,3", ['required', 'data-container' => 'true', 'data-index' => '0', 'data-multiselect' => 'true']) !!}
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="tools" data-index="0" data-val="0"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="sun" data-index="0" data-val="1"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="car" data-index="0" data-val="test5"></button>
-                    </div>
-                    <p>Samochód</p></div>
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="house" data-index="0" data-val="test6"></button>
-                    </div>
-                    <p>Mieszkanie</p></div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="rings" data-index="0" data-val="2"></button>
+                            </div>
+                            <p>Lorem Ipsum</p></div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="taxes" data-index="0" data-val="3"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="mortarboard" data-index="0" data-val="test7"></button>
-                    </div>
-                    <p>Szkolenie</p></div>
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="monitor" data-index="0" data-val="test8"></button>
-                    </div>
-                    <p>Sprzęt</p></div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="car" data-index="0" data-val="4"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="house" data-index="0" data-val="5"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="wallet" data-index="0" data-val="test9"></button>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="mortarboard" data-index="0" data-val="6"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="monitor" data-index="0" data-val="7"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="wallet" data-index="0" data-val="8"></button>
+                            </div>
+                            <p>Lorem Ipsum</p></div>
+                        <div class="col-xs-12 col-sm-6 col-md-15">
+                            <div class="box-image">
+                                <button type="button" class="star" data-index="0" data-val="9"></button>
+                            </div>
+                            <p>Lorem Ipsum</p>
+                        </div>
                     </div>
-                    <p>Spłata kredytu</p></div>
-                <div class="col-xs-12 col-sm-6 col-md-15">
-                    <div class="box-image">
-                        <button type="button" class="star" data-index="0" data-val="test10"></button>
-                    </div>
-                    <p>Inne</p></div>
+                </div>
             </div>
 
             <div style="margin-top: 20px;" class="agreements">

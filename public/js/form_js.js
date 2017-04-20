@@ -3,10 +3,10 @@
 var G_Form_Controller = (function () {
     var Global_vars_form = {
         'elements': {
-            'buttons' : [],
-            'data_containers' : [],
-            'readmore_click' : [],
-            'readmore' : []
+            'buttons': [],
+            'data_containers': [],
+            'readmore_click': [],
+            'readmore': []
         }
     };
 
@@ -14,9 +14,34 @@ var G_Form_Controller = (function () {
         initElements: function () {
             //buttons
             Global_vars_form.elements.buttons = $('button[type="button"]');
-            Global_vars_form.elements.buttons.on('click', function(){G_Form_Controller.ButtonClick($(this));});
+            Global_vars_form.elements.buttons.on('click', function () {
+                G_Form_Controller.ButtonClick($(this));
+            });
             //data-containers
             Global_vars_form.elements.data_containers = $('input[data-container="true"]');
+            Global_vars_form.elements.data_containers.each(function () {
+                var $this = $(this);
+                //check if value is set, and click corresponding buttons accordingly
+                if ($this.val() !== undefined && $this.val() !== null) {
+                    var btnToClick;
+                    if ($this.attr('data-multiselect') === 'true') {
+                        var value = $this.val().split(',');
+                        for (var i = 0; i < value.length; i++) {
+                            btnToClick = $.grep(Global_vars_form.elements.buttons, function (e) {
+                                var $e = $(e);
+                                return ($e.attr('data-index') === $this.attr('data-index')) && ($e.attr('data-val') === value[i]);
+                            });
+                            G_Form_Controller.ButtonClick($(btnToClick), false);
+                        }
+                    } else {
+                        btnToClick = $.grep(Global_vars_form.elements.buttons, function (e) {
+                            var $e = $(e);
+                            return ($e.attr('data-index') === $this.attr('data-index')) && ($e.attr('data-val') === $this.val());
+                        });
+                        G_Form_Controller.ButtonClick($(btnToClick), false);
+                    }
+                }
+            });
             //readmore
             Global_vars_form.elements.readmore_click = $('a.read-more-click');
             Global_vars_form.elements.readmore = $('div.read-more');
@@ -24,44 +49,56 @@ var G_Form_Controller = (function () {
             //
         },
         //buttons
-        ButtonClick: function (btn) {
-            var searchindex = btn.attr('data-index');
-            var btnval = btn.attr('data-val');
-            Global_vars_form.elements.data_containers.each(function() {
-                if($(this).attr('data-index')===searchindex) {
-                    if($(this).attr('data-multiselect')==='true') {
-                        value = $(this).val().split(',');
-                        var is_found = false;
-                        for(var i=0; i<value.length;i++) {
-                            if(value[i] === btnval) {
-                                value.splice(i,1);
-                                is_found = true;
-                                break;
+        ButtonClick: function (btn, change_val) {
+            if (change_val === undefined)
+                change_val = true;
+            if (change_val === true) {
+                var searchindex = btn.attr('data-index');
+                var btnval = btn.attr('data-val');
+                Global_vars_form.elements.data_containers.each(function () {
+                    var $this = $(this);
+                    if ($this.attr('data-index') === searchindex) {
+                        if ($this.attr('data-multiselect') === 'true') {
+                            var value = $this.val().split(',');
+                            var is_found = false;
+                            for (var i = 0; i < value.length; i++) {
+                                if (value[i] === btnval) {
+                                    value.splice(i, 1);
+                                    is_found = true;
+                                    break;
+                                }
                             }
+                            if (is_found === false) {
+                                value.push(btnval);
+                            }
+                            var new_val = value.filter(function (el) {
+                                return el.length !== 0
+                            });
+                            $this.val(new_val);
+                        } else {
+                            $this.val(btnval);
                         }
-                        if(is_found === false) {
-                            value.push(btnval);
-                        }
-                        var new_val = value.filter(function(el) {return el.length != 0});
-                        $(this).val(new_val);
-                    } else {
-                        $(this).val(btnval);
+                        $this.removeClass('wrong-input');
+                        $this.prev('span.errormsg').remove();
                     }
-                    $(this).removeClass('wrong-input');
-                    $(this).prev('span.errormsg').remove();
-                }
-            });
+                });
+            }
             //var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
             //$(btnToDeactivate).removeClass('active');
             btn.toggleClass('active');
         },
         ReadMoreInit: function () {
-            Global_vars_form.elements.readmore.niceScroll({cursorborder:"",cursorcolor:"#ffaa00",cursorwidth:"8px",autohidemode:false});
-            Global_vars_form.elements.readmore_click.on('click', function(e) {
+            Global_vars_form.elements.readmore.niceScroll({
+                cursorborder: "",
+                cursorcolor: "#ffaa00",
+                cursorwidth: "8px",
+                autohidemode: false
+            });
+            Global_vars_form.elements.readmore_click.on('click', function (e) {
                 Global_vars_form.elements.readmore.hide();
                 $(this).next('div.read-more').slideToggle();
             });
-            Global_vars_form.elements.readmore.on('click', function(e) {
+            Global_vars_form.elements.readmore.on('click', function (e) {
                 $(this).hide();
             });
         }
@@ -87,6 +124,7 @@ $(window).on("load", function () {
 });
 
 var validationForms = $('form');
+var all_input_text = $('input[type="text"], input[type="tel"]');
 var validateForm;
 var name_fields;
 var email_fields;
@@ -106,13 +144,27 @@ all_telephone_fields.inputmask({
     greedy: false,
     definitions: {'#': {validator: "[0-9]", cardinality: 1}}
 });
+var all_pesel_fields = all_input_text.filter('.pesel');
+var pesels = [{"mask": "###########"}];
+all_pesel_fields.inputmask({
+    mask: pesels,
+    greedy: false,
+    definitions: {'#': {validator: "[0-9]", cardinality: 1}}
+});
+var all_postcode_fields = all_input_text.filter('.postcode');
+var postcodes = [{"mask": "##-###"}];
+all_postcode_fields.inputmask({
+    mask: postcodes,
+    greedy: false,
+    definitions: {'#': {validator: "[0-9]", cardinality: 1}}
+});
 
 function setValidateFields(input) {
     validateForm = input;
 }
 
 function validateFields() {
-    if(validateForm.length == 0)
+    if (validateForm.length === 0)
         return false;
 
     //remove error messages
@@ -132,29 +184,29 @@ function validateFields() {
     var error = false;
     var wrong_inputs = [];
 
-    name_fields.each(function(e) {
-        if(validate_name($(this).val()) == false) {
+    name_fields.each(function (e) {
+        if (validate_name($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Nieprawidłowa wartość pola</span>');
         }
     });
-    email_fields.each(function(e) {
-        if(validate_email($(this).val()) == false) {
+    email_fields.each(function (e) {
+        if (validate_email($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Niewłaściwa postać adresu e-mail</span>');
         }
     });
-    telephone_fields.each(function(e) {
-        if(validate_phone_number($(this).val()) == false) {
+    telephone_fields.each(function (e) {
+        if (validate_phone_number($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Numer telefonu jest błędny</span>');
         }
     });
-    agreement_fields.each(function(e) {
-        if(validate_agreements($(this)) == false) {
+    agreement_fields.each(function (e) {
+        if (validate_agreements($(this)) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Proszę zaznaczyć zgodę</span>');
@@ -163,42 +215,42 @@ function validateFields() {
 
     //optional
     pesel_fields.each(function (e) {
-        if (validate_pesel($(this).val()) == false) {
+        if (validate_pesel($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">PESEL jest błędny</span>');
         }
     });
     city_fields.each(function (e) {
-        if (validate_city($(this).val()) == false) {
+        if (validate_city($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Miasto jest błędne</span>');
         }
     });
     postcode_fields.each(function (e) {
-        if (validate_postcode($(this).val()) == false) {
+        if (validate_postcode($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Kod pocztowy jest błędny</span>');
         }
     });
     street_fields.each(function (e) {
-        if (validate_street($(this).val()) == false) {
+        if (validate_street($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Ulica jest błędna</span>');
         }
     });
     streetno_fields.each(function (e) {
-        if (validate_streetno($(this).val()) == false) {
+        if (validate_streetno($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Numer domu/mieszkania jest błędny</span>');
         }
     });
     hidden_fields.each(function (e) {
-        if (validate_hidden($(this).val()) == false) {
+        if (validate_hidden($(this).val()) === false) {
             error = true;
             wrong_inputs.push($(this));
             $(this).before('<span class="errormsg">Należy zaznaczyć opcję</span>');
@@ -209,7 +261,7 @@ function validateFields() {
 }
 
 var inputs = $('input');
-inputs.blur(function(e) {
+inputs.blur(function (e) {
     $(this).removeClass('wrong-input');
     $(this).prev('span.errormsg').remove();
 });
@@ -223,8 +275,8 @@ postcode_fields = $('input[type="text"].postcode');
 street_fields = $('input[type="text"].street');
 streetno_fields = $('input[type="text"].streetno');
 
-name_fields.blur(function(e) {
-    if(validate_name($(this).val())==true) {
+name_fields.blur(function (e) {
+    if (validate_name($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -233,8 +285,8 @@ name_fields.blur(function(e) {
         $(this).removeClass('right-input');
     }
 });
-email_fields.blur(function(e) {
-    if(validate_email($(this).val())==true) {
+email_fields.blur(function (e) {
+    if (validate_email($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -243,8 +295,8 @@ email_fields.blur(function(e) {
         $(this).removeClass('right-input');
     }
 });
-all_telephone_fields.blur(function(e) {
-    if(validate_phone_number($(this).val())==true) {
+all_telephone_fields.blur(function (e) {
+    if (validate_phone_number($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -254,7 +306,7 @@ all_telephone_fields.blur(function(e) {
     }
 });
 pesel_fields.blur(function (e) {
-    if (validate_pesel($(this).val()) == true) {
+    if (validate_pesel($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -264,7 +316,7 @@ pesel_fields.blur(function (e) {
     }
 });
 city_fields.blur(function (e) {
-    if (validate_city($(this).val()) == true) {
+    if (validate_city($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -274,7 +326,7 @@ city_fields.blur(function (e) {
     }
 });
 postcode_fields.blur(function (e) {
-    if (validate_postcode($(this).val()) == true) {
+    if (validate_postcode($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -284,7 +336,7 @@ postcode_fields.blur(function (e) {
     }
 });
 street_fields.blur(function (e) {
-    if (validate_street($(this).val()) == true) {
+    if (validate_street($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -294,7 +346,7 @@ street_fields.blur(function (e) {
     }
 });
 streetno_fields.blur(function (e) {
-    if (validate_streetno($(this).val()) == true) {
+    if (validate_streetno($(this).val()) === true) {
         $(this).addClass('right-input');
         $(this).removeClass('wrong-input');
     }
@@ -305,7 +357,7 @@ streetno_fields.blur(function (e) {
 });
 
 function validate_name(input) {
-    if(input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
@@ -313,7 +365,7 @@ function validate_name(input) {
 }
 
 function validate_email(input) {
-    if(input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -321,15 +373,14 @@ function validate_email(input) {
 }
 
 function validate_phone_number(input) {
-    if(input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^[0-9]{3}(-|\s)?[0-9]{3}(-|\s)?[0-9]{3}$/;
     var regex2 = /^[0]?([0-9]{2})(-|\s)?[0-9]{3}(-|\s)?[0-9]{2}(-|\s)?[0-9]{2}$/;
     var regex3 = /^[0]{3}(-|\s)?[0]{3}(-|\s)?[0]{3}$/;
 
-    var result = !regex3.test(input) && (regex.test(input) || regex2.test(input));
-    return result;
+    return !regex3.test(input) && (regex.test(input) || regex2.test(input));
 }
 
 function validate_agreements(input) {
@@ -339,7 +390,7 @@ function validate_agreements(input) {
 //optional
 
 function validate_pesel(input) {
-    if (input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^\d{11}$/;
@@ -347,7 +398,7 @@ function validate_pesel(input) {
 }
 
 function validate_city(input) {
-    if (input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
@@ -355,7 +406,7 @@ function validate_city(input) {
 }
 
 function validate_postcode(input) {
-    if (input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^\d{2}-\d{3}$/;
@@ -363,7 +414,7 @@ function validate_postcode(input) {
 }
 
 function validate_street(input) {
-    if (input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\s\-0-9A-Za-z_\'\"&\(\),\.]*$/;
@@ -371,7 +422,7 @@ function validate_street(input) {
 }
 
 function validate_streetno(input) {
-    if (input.length == 0)
+    if (input.length === 0)
         return false;
 
     var regex = /^[\s\\\/\-0-9A-Za-z_&\(\),\.]*$/;
@@ -379,7 +430,7 @@ function validate_streetno(input) {
 }
 
 function validate_hidden(input) {
-    return input.length != 0;
+    return input.length !== 0;
 }
 
 // -----------------------------
