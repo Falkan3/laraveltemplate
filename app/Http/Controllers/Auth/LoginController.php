@@ -41,11 +41,9 @@ class LoginController extends Controller
 
     protected function authenticated($request,$user)
     {
-        /*
-        if(\Auth::user()->isAdmin()){
-            return redirect()->intended('dashboard');
+        if($user->isAdmin()){
+            return redirect()->intended('lang_' . \Lang::getLocale() . '/admin');
         }
-        */
 
         return redirect()->intended('lang_' . \Lang::getLocale() . '/home');
     }
