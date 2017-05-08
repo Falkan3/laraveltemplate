@@ -1,5 +1,9 @@
 //Author: Adam Kocić [Falkan3]
 
+var Global_vars_lapp_ak = {
+    ResizeGlobalTimer: [],
+};
+
 var G_Main_Controller = (function () {
     var Global_vars_lapp_app = {
         'elements': {
@@ -73,6 +77,28 @@ var G_Main_Controller = (function () {
                 this.stop();
                 this.start();
             }
+        },
+        Delayed_resize: function(fn, time) {
+            if(time === undefined || time === null)
+                time = 1000;
+
+            Global_vars_lapp_ak.ResizeGlobalTimer.push(new G_Main_Controller.Interval(fn,time));
+
+            $(window).on('resize', function () {
+                if(Global_vars_lapp_ak.ResizeGlobalTimer.length) {
+                    for(var i=0;i<Global_vars_lapp_ak.ResizeGlobalTimer.length;i++) {
+                        Global_vars_lapp_ak.ResizeGlobalTimer[i].reset();
+                    }
+                }
+            });
+        },
+        Delayed_resize_stopAll: function() {
+            if(Global_vars_lapp_ak.ResizeGlobalTimer.length) {
+                for(var i=0;i<Global_vars_lapp_ak.ResizeGlobalTimer.length;i++) {
+                    Global_vars_lapp_ak.ResizeGlobalTimer[i].stop();
+                }
+            }
+            Global_vars_lapp_ak.ResizeGlobalTimer = [];
         },
         RemoveBaseUrl : function (url, rm_first_slash) {
             /*
