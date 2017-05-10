@@ -177,7 +177,6 @@ lazyImgs.lazyload({
 
 $("a").click(function (e) {
     var dest = G_Main_Controller.RemoveBaseUrl($(this).attr('href'), 1);
-    console.log(dest)
     if (dest[0] === '\#') {
         if (dest.length > 1) {
             if (dest === '\#top') {
