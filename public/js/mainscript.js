@@ -1,6 +1,6 @@
 //Author: Adam Kocić [Falkan3]
 
-var Global_vars_lapp_ak = {
+var Global_vars_lapp_app = {
     ResizeGlobalTimer: [],
 };
 
@@ -23,6 +23,8 @@ var G_Main_Controller = (function () {
             Global_vars_lapp_app.elements.nav = $('.navbar.navbar-default');
 
             G_Main_Controller.Scroll_navbarShrink();
+
+            G_Main_Controller.Delayed_resize_init();
         },
 
         /* ---- Back to top visibility ---- */
@@ -48,6 +50,9 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Shrink navbar ---- */
+        fn: function() {
+
+        },
 
         /* --- Helpers --- */
         Viewport: function () {
@@ -78,27 +83,33 @@ var G_Main_Controller = (function () {
                 this.start();
             }
         },
-        Delayed_resize: function(fn, time) {
-            if(time === undefined || time === null)
-                time = 1000;
-
-            Global_vars_lapp_ak.ResizeGlobalTimer.push(new G_Main_Controller.Interval(fn,time));
+        Delayed_resize_init: function() {
+            Global_vars_lapp_app.ResizeGlobalTimer = [];
 
             $(window).on('resize', function () {
-                if(Global_vars_lapp_ak.ResizeGlobalTimer.length) {
-                    for(var i=0;i<Global_vars_lapp_ak.ResizeGlobalTimer.length;i++) {
-                        Global_vars_lapp_ak.ResizeGlobalTimer[i].reset();
+                if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
+                    for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
+                        Global_vars_lapp_app.ResizeGlobalTimer[i].reset();
                     }
                 }
             });
         },
+        Delayed_resize: function(name, fn, time) {
+            if(time === undefined || time === null)
+                time = 1000;
+
+            if(name in Global_vars_lapp_app.ResizeGlobalTimer)
+                Global_vars_lapp_app.ResizeGlobalTimer[name].reset();
+            else
+                Global_vars_lapp_app.ResizeGlobalTimer[name] = new G_Main_Controller.Interval(fn,time);
+        },
         Delayed_resize_stopAll: function() {
-            if(Global_vars_lapp_ak.ResizeGlobalTimer.length) {
-                for(var i=0;i<Global_vars_lapp_ak.ResizeGlobalTimer.length;i++) {
-                    Global_vars_lapp_ak.ResizeGlobalTimer[i].stop();
+            if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
+                for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
+                    Global_vars_lapp_app.ResizeGlobalTimer[i].stop();
                 }
             }
-            Global_vars_lapp_ak.ResizeGlobalTimer = [];
+            Global_vars_lapp_app.ResizeGlobalTimer = [];
         },
         RemoveBaseUrl : function (url, rm_first_slash) {
             /*
@@ -203,7 +214,7 @@ $(window).scroll(function () {
 });
 
 $(window).on('resize', function () {
-
+    G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn(), 500);
 });
 
 $(window).on("load", function () {
