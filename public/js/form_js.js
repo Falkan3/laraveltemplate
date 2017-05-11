@@ -134,6 +134,7 @@ var city_fields;
 var postcode_fields;
 var street_fields;
 var streetno_fields;
+var number_fields;
 var agreement_fields;
 var hidden_fields;
 
@@ -178,6 +179,7 @@ function validateFields() {
     postcode_fields = validateForm.find('input[type="text"].postcode');
     street_fields = validateForm.find('input[type="text"].street');
     streetno_fields = validateForm.find('input[type="text"].streetno');
+    number_fields = validateForm.find('input[type="text"].number, input[type="number"].number');
     agreement_fields = validateForm.find('.agreements input[type="checkbox"]');
     hidden_fields = validateForm.find('input[type="hidden"][required]');
 
@@ -249,6 +251,13 @@ function validateFields() {
             $(this).before('<span class="errormsg">Numer domu/mieszkania jest błędny</span>');
         }
     });
+    number_fields.each(function (e) {
+        if (validate_number($(this).val()) === false) {
+            error = true;
+            wrong_inputs.push($(this));
+            $(this).before('<span class="errormsg">Pole numeryczne jest puste / zawiera niedozwolone znaki</span>');
+        }
+    });
     hidden_fields.each(function (e) {
         if (validate_hidden($(this).val()) === false) {
             error = true;
@@ -265,6 +274,10 @@ inputs.blur(function (e) {
     $(this).removeClass('wrong-input');
     $(this).prev('span.errormsg').remove();
 });
+inputs.filter('input[type="checkbox"]').on('change', function (e) {
+    $(this).removeClass('wrong-input');
+    $(this).prev('span.errormsg').remove();
+});
 
 name_fields = $('input[type="text"].name');
 email_fields = $('input[type="text"].email');
@@ -274,6 +287,9 @@ city_fields = $('input[type="text"].city');
 postcode_fields = $('input[type="text"].postcode');
 street_fields = $('input[type="text"].street');
 streetno_fields = $('input[type="text"].streetno');
+number_fields = $('input[type="text"].number, input[type="number"].number');
+agreement_fields = $('.agreements input[type="checkbox"]');
+hidden_fields = $('input[type="hidden"][required]');
 
 name_fields.blur(function (e) {
     if (validate_name($(this).val()) === true) {
@@ -355,6 +371,23 @@ streetno_fields.blur(function (e) {
         $(this).removeClass('right-input');
     }
 });
+number_fields.blur(function (e) {
+    if (validate_number($(this).val()) === true) {
+        $(this).removeClass('wrong-input');
+        $(this).addClass('right-input');
+    }
+    else {
+        $(this).removeClass('right-input');
+        $(this).addClass('wrong-input');
+    }
+});
+number_fields.on('input', function() {
+    this.value = this.value.replace(/[^\d]/g, "");
+});
+hidden_fields.blur(function (e) {
+    $(this).removeClass('wrong-input');
+    $(this).prev('span.errormsg').remove();
+});
 
 function validate_name(input) {
     if (input.length === 0)
@@ -426,6 +459,14 @@ function validate_streetno(input) {
         return false;
 
     var regex = /^[\s\\\/\-0-9A-Za-z_&\(\),\.]*$/;
+    return regex.test(input);
+}
+
+function validate_number(input) {
+    if (input.length === 0)
+        return false;
+
+    var regex = /^\d*$/;
     return regex.test(input);
 }
 
