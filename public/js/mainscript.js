@@ -14,7 +14,7 @@ var G_Main_Controller = (function () {
     };
 
     return {
-        initElements: function () {
+        initElementsPrim: function () {
             //hideAll
             Global_vars_lapp_app.elements.hideAll = $('#hideAll');
             //backToTop
@@ -23,7 +23,9 @@ var G_Main_Controller = (function () {
             Global_vars_lapp_app.elements.nav = $('.navbar.navbar-default');
 
             G_Main_Controller.Scroll_navbarShrink();
-
+        },
+        initElements: function () {
+            G_Main_Controller.Scroll_backToTop();
             G_Main_Controller.Delayed_resize_init();
         },
 
@@ -137,10 +139,10 @@ var G_Main_Controller = (function () {
     };
 })();
 
-G_Main_Controller.initElements();
+G_Main_Controller.initElementsPrim();
 
 $(document).ready(function (e) {
-
+    G_Main_Controller.initElements();
 });
 
 /* Lazy loading */
