@@ -201,6 +201,8 @@ $("a").click(function (e) {
                     }
                 }
             }
+        } else {
+            e.preventDefault();
         }
     }
 });
