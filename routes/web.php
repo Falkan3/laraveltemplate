@@ -39,3 +39,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
 });
+
+//Helper routes
+Route::group(['prefix' => 'helper'], function() {
+    //lang
+    Route::get('switch_lang/{new_lang}', 'HelperController@switchLanguage');
+});

@@ -156,8 +156,17 @@ nav.navbar {
 
 .navbar-nav .open .dropdown-menu {
     background-color: #fff;
+    border: none;
     border-radius: 0;
 }
+
+/* flags */
+
+.flag-icons img, .nav li.flag-icons>a>img {
+    max-width: 24px;
+}
+
+/* mobile */
 
 @media (min-width: 992px) {
     .navbar-nav .navbar-default .navbar-nav > li a {

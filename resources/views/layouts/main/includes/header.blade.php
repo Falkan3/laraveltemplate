@@ -43,6 +43,23 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown flag-icons">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <img src="{{ asset('images/els/country_flag_icons/' . $app->getLocale() . '.png', env('HTTPS')) }}" alt="{{ $app->getLocale() }}" /> <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        @foreach(config('app.locales') as $key => $locale)
+                            @if($app->getLocale() !== $key)
+                                <li>
+                                    <a href="{{ url('lang_' . $app->getLocale() . '/helper/switch_lang/' . $key, env('HTTPS')) }}">
+                                        <img src="{{ asset('images/els/country_flag_icons/' . $key . '.png', env('HTTPS')) }}" alt="{{ $locale }}" /> {{ $locale }}
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </li>
                 @if (Auth::guest())
                     <li><a href="{{ url('lang_' . $app->getLocale() . '/login', env('HTTPS')) }}">{{__('system.login')}}</a></li>
                     <li><a href="{{ url('lang_' . $app->getLocale() . '/register', env('HTTPS')) }}">{{__('system.register')}}</a></li>
