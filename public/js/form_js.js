@@ -426,7 +426,7 @@ function validate_pesel(input) {
     if (input.length === 0)
         return false;
 
-    var regex = /^\d{11}$/;
+    var regex = /^[0-9]{2}(?!00)[0-9]{2}(?!00)[0-3]{1}[0-9]{1}[0-9]{5}$/;
     return regex.test(input);
 }
 
