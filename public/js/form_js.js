@@ -277,6 +277,10 @@ function rightInput(ele) {
     ele.addClass('right-input');
     ele.removeClass('wrong-input');
 }
+function wrongInput(ele) {
+    ele.addClass('wrong-input');
+    ele.removeClass('right-input');
+}
 
 var inputs = $('input, select');
 inputs.blur(function (e) {
@@ -306,8 +310,7 @@ name_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 email_fields.blur(function (e) {
@@ -326,8 +329,7 @@ all_telephone_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 pesel_fields.blur(function (e) {
@@ -336,8 +338,7 @@ pesel_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 city_fields.blur(function (e) {
@@ -346,8 +347,7 @@ city_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 postcode_fields.blur(function (e) {
@@ -356,8 +356,7 @@ postcode_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 street_fields.blur(function (e) {
@@ -366,8 +365,7 @@ street_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 streetno_fields.blur(function (e) {
@@ -376,8 +374,7 @@ streetno_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).addClass('wrong-input');
-        $(this).removeClass('right-input');
+        wrongInput($this);
     }
 });
 number_fields.blur(function (e) {
@@ -386,8 +383,7 @@ number_fields.blur(function (e) {
         rightInput($this);
     }
     else {
-        $(this).removeClass('right-input');
-        $(this).addClass('wrong-input');
+        wrongInput($this);
     }
 });
 number_fields.on('input', function() {
