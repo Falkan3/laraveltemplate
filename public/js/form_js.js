@@ -269,14 +269,23 @@ function validateFields() {
     return [error, wrong_inputs];
 }
 
-var inputs = $('input');
+function removeErrorMsg(ele) {
+    ele.removeClass('wrong-input');
+    ele.prev('span.errormsg').remove();
+}
+function rightInput(ele) {
+    ele.addClass('right-input');
+    ele.removeClass('wrong-input');
+}
+
+var inputs = $('input, select');
 inputs.blur(function (e) {
-    $(this).removeClass('wrong-input');
-    $(this).prev('span.errormsg').remove();
+    var $this = $(this);
+    removeErrorMsg($this);
 });
 inputs.filter('input[type="checkbox"]').on('change', function (e) {
-    $(this).removeClass('wrong-input');
-    $(this).prev('span.errormsg').remove();
+    var $this = $(this);
+    removeErrorMsg($this);
 });
 
 name_fields = $('input[type="text"].name');
@@ -292,9 +301,9 @@ agreement_fields = $('.agreements input[type="checkbox"]');
 hidden_fields = $('input[type="hidden"][required]');
 
 name_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_name($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -302,9 +311,9 @@ name_fields.blur(function (e) {
     }
 });
 email_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_email($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -312,9 +321,9 @@ email_fields.blur(function (e) {
     }
 });
 all_telephone_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_phone_number($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -322,9 +331,9 @@ all_telephone_fields.blur(function (e) {
     }
 });
 pesel_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_pesel($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -332,9 +341,9 @@ pesel_fields.blur(function (e) {
     }
 });
 city_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_city($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -342,9 +351,9 @@ city_fields.blur(function (e) {
     }
 });
 postcode_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_postcode($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -352,9 +361,9 @@ postcode_fields.blur(function (e) {
     }
 });
 street_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_street($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -362,9 +371,9 @@ street_fields.blur(function (e) {
     }
 });
 streetno_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_streetno($(this).val()) === true) {
-        $(this).addClass('right-input');
-        $(this).removeClass('wrong-input');
+        rightInput($this);
     }
     else {
         $(this).addClass('wrong-input');
@@ -372,9 +381,9 @@ streetno_fields.blur(function (e) {
     }
 });
 number_fields.blur(function (e) {
+    var $this = $(this);
     if (validate_number($(this).val()) === true) {
-        $(this).removeClass('wrong-input');
-        $(this).addClass('right-input');
+        rightInput($this);
     }
     else {
         $(this).removeClass('right-input');
@@ -385,8 +394,8 @@ number_fields.on('input', function() {
     this.value = this.value.replace(/[^\d]/g, "");
 });
 hidden_fields.blur(function (e) {
-    $(this).removeClass('wrong-input');
-    $(this).prev('span.errormsg').remove();
+    var $this = $(this);
+    removeErrorMsg($this);
 });
 
 function validate_name(input) {
