@@ -88,27 +88,37 @@ var G_Main_Controller = (function () {
         Delayed_resize_init: function() {
             Global_vars_lapp_app.ResizeGlobalTimer = [];
 
-            $(window).on('resize', function () {
-                if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
-                    for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
-                        Global_vars_lapp_app.ResizeGlobalTimer[i].reset();
-                    }
-                }
-            });
+            /*
+             $(window).on('resize', function () {
+             if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
+             for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
+             Global_vars_lapp_app.ResizeGlobalTimer[i].reset();
+             }
+             }
+             });
+             */
         },
         Delayed_resize: function(name, fn, time) {
             if(time === undefined || time === null)
                 time = 1000;
 
-            if(name in Global_vars_lapp_app.ResizeGlobalTimer)
-                Global_vars_lapp_app.ResizeGlobalTimer[name].reset();
-            else
-                Global_vars_lapp_app.ResizeGlobalTimer[name] = new G_Main_Controller.Interval(fn,time);
+            if(!Global_vars_lapp_app.ResizeGlobalTimer)
+                Global_vars_lapp_app.ResizeGlobalTimer = [];
+            if(name in Global_vars_lapp_app.ResizeGlobalTimer) {
+                clearTimeout(Global_vars_lapp_app.ResizeGlobalTimer[name]);
+                Global_vars_lapp_app.ResizeGlobalTimer[name] = setTimeout(fn, time);
+                //Global_vars_lapp_app.ResizeGlobalTimer[name].reset();
+            }
+            else {
+                Global_vars_lapp_app.ResizeGlobalTimer[name] = setTimeout(fn, time);
+                //Global_vars_lapp_app.ResizeGlobalTimer[name] = new G_Main_Controller.Interval(fn,time);
+            }
         },
         Delayed_resize_stopAll: function() {
             if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
                 for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
-                    Global_vars_lapp_app.ResizeGlobalTimer[i].stop();
+                    clearTimeout(Global_vars_lapp_app.ResizeGlobalTimer[i]);
+                    //Global_vars_lapp_app.ResizeGlobalTimer[i].stop();
                 }
             }
             Global_vars_lapp_app.ResizeGlobalTimer = [];
@@ -217,7 +227,7 @@ $(window).scroll(function () {
 });
 
 $(window).on('resize', function () {
-    G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn(), 500);
+    //G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn, 500);
 });
 
 $(window).on("load", function () {

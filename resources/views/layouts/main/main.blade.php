@@ -12,7 +12,15 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
 
-    {{Html::favicon('favicon.ico')}}
+    <link rel="shortcut icon" href="{{ asset('favicon.ico', env('HTTPS')) }}" type="image/x-icon">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#212121" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#212121" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap.min.css', env('HTTPS')) }}" type="text/css" media="all"/>

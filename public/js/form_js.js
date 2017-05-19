@@ -83,9 +83,14 @@ var G_Form_Controller = (function () {
                     }
                 });
             }
-            //var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
-            //$(btnToDeactivate).removeClass('active');
-            btn.toggleClass('active');
+
+            if (btn.attr('data-multiselect') === 'true') {
+                btn.toggleClass('active');
+            } else {
+                var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
+                $(btnToDeactivate).removeClass('active');
+                btn.addClass('active');
+            }
         },
         ReadMoreInit: function () {
             Global_vars_form.elements.readmore.niceScroll({
