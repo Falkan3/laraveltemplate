@@ -65,9 +65,9 @@ function showHiddenElement(el) {
 
 function sendAjax(form) {
     var current_form = form;
-    var formdata = $(current_form).serialize();
-    var status_text = $(current_form).find('div.status');
-    var formThankYou = $(current_form).closest('.container').find('.form-thank-you');
+    var formdata = current_form.serialize();
+    var status_text = current_form.find('div.status');
+    var formThankYou = current_form.closest('.container').find('.form-thank-you');
 
     status_text.html("");
     $.ajaxSetup({
@@ -78,7 +78,7 @@ function sendAjax(form) {
         }
     });
     $.ajax({
-        url: $(current_form).attr("action"),//form.attr('action'),
+        url: current_form.attr("action"),//form.attr('action'),
         type: "POST",
         data: formdata,
         enctype: 'multipart/form-data',
@@ -91,10 +91,10 @@ function sendAjax(form) {
                     for (var index in data.message) {
                         status_text.append("<p>" + data.message[index] + "</p>");
                     }
-                    $(current_form).find("input[type='text'], textarea").val("");
-                    $(current_form).find("select").val(null);
-                    $(current_form).find("input[type='checkbox']").prop('checked', 'checked');
-                    $(current_form).slideUp();
+                    current_form.find("input[type='text'], textarea").val("");
+                    current_form.find("select").val(null);
+                    current_form.find("input[type='checkbox']").prop('checked', 'checked');
+                    current_form.slideUp();
                     formThankYou.html('<p>Dziękujemy za kontakt.</p>');
                     formThankYou.slideDown();
                 }
@@ -118,7 +118,7 @@ function sendAjax(form) {
 
 function sendAjax_notification(form) {
     var current_form = form;
-    var formdata = $(current_form).serialize();
+    var formdata = current_form.serialize();
     var status_text = '';
 
     $.ajaxSetup({
@@ -129,7 +129,7 @@ function sendAjax_notification(form) {
         }
     });
     $.ajax({
-        url: $(current_form).attr("action"),//form.attr('action'),
+        url: current_form.attr("action"),//form.attr('action'),
         type: "POST",
         data: formdata,
         enctype: 'multipart/form-data',
@@ -141,13 +141,13 @@ function sendAjax_notification(form) {
                     for (var index in data.message) {
                         status_text+=data.message[index];
                     }
-                    $(current_form).find("input[type='text'], input[type='tel'], textarea").val("");
-                    $(current_form).find("select").val(null);
-                    $(current_form).find("input[type='checkbox']").prop('checked', 'checked');
+                    current_form.find("input[type='text'], input[type='tel'], textarea").val("");
+                    current_form.find("select").val(null);
+                    current_form.find("input[type='checkbox']").prop('checked', 'checked');
 
                     //EXAMPLE FOR CUSTOM FIELDS
-                    if($(current_form).attr('data-ajax-id') === 'image') {
-                        var container = $(current_form).parent().parent();
+                    if(current_form.attr('data-ajax-id') === 'image') {
+                        var container = current_form.parent().parent();
                         container.fadeOut(500, function() {
                             container.remove();
                         });
@@ -162,7 +162,7 @@ function sendAjax_notification(form) {
                     for (var index in data.message) {
                         status_text+=data.message[index];
                     }
-                    $(current_form).notify(
+                    current_form.notify(
                         status_text,
                         { position:"bottom",className:'error' }
                     );
@@ -174,7 +174,7 @@ function sendAjax_notification(form) {
             for (var index in data.message) {
                 status_text+="<p>" + data.message[index] + '</p>';
             }
-            $(current_form).notify(
+            current_form.notify(
                 status_text,
                 { position:"bottom",className:'error' }
             );
