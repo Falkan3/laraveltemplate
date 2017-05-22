@@ -13,7 +13,7 @@ var G_Form_Controller = (function () {
     return {
         initElements: function () {
             //buttons
-            Global_vars_form.elements.buttons = $('button[type="button"]');
+            Global_vars_form.elements.buttons = $('button[type="button"][data-index]');
             Global_vars_form.elements.buttons.on('click', function () {
                 G_Form_Controller.ButtonClick($(this));
             });
