@@ -91,12 +91,13 @@ function sendAjax(form) {
         processData: false,
         success: function (data) {
             status_text.html("");
+            status_text.hide();
             if(data.message.length > 0) {
                 if (data.success) {
                     for (var index in data.message) {
                         status_text.append("<p>" + data.message[index] + "</p>");
                     }
-                    current_form.find("input[type='text'], textarea").val("");
+                    current_form.find("input[type='text'], input[type='tel'], input[type='numeric'], textarea").val("");
                     current_form.find("select").val(null);
                     current_form.find("input[type='checkbox']").prop('checked', 'checked');
                     current_form.slideUp();
@@ -108,15 +109,17 @@ function sendAjax(form) {
                         status_text.append("<p><span class='ajax-error'>" + data.message[index] + "</span></p>");
                     }
                 }
-                status_text.css("display", "block");
+                status_text.show();
             }
         },
         error: function (data) {
             // Error...
+            status_text.html("");
+            status_text.hide();
             for (var index in data.message) {
                 status_text.append("<p>" + data.message[index] + '</p>');
             }
-            status_text.css("display", "block");
+            status_text.show();
         }
     });
 }
