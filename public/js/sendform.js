@@ -43,7 +43,7 @@ $(document).ready(function () {
                         offsetTop = parent.offset().top - 120;
                     }
                 }
-                $("body,html").animate({
+                Global_vars_lapp_app.body_html.animate({
                     scrollTop: offsetTop
                 }, 600);
             }

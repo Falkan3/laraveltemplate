@@ -1,11 +1,12 @@
 //Author: Adam Kocić [Falkan3]
 
 var Global_vars_lapp_app = {
+    body_html: null,
     ResizeGlobalTimer: [],
 };
 
 var G_Main_Controller = (function () {
-    var Global_vars_lapp_app = {
+    var Local_vars_main_controller = {
         'elements': {
             'hideAll': null,
             'backToTop': null,
@@ -15,12 +16,14 @@ var G_Main_Controller = (function () {
 
     return {
         initElementsPrim: function () {
+            //body, html
+            Global_vars_lapp_app.body_html = $("body, html");
             //hideAll
-            Global_vars_lapp_app.elements.hideAll = $('#hideAll');
+            Local_vars_main_controller.elements.hideAll = $('#hideAll');
             //backToTop
-            Global_vars_lapp_app.elements.backToTop = $('#backtotop');
+            Local_vars_main_controller.elements.backToTop = $('#backtotop');
             //nav
-            Global_vars_lapp_app.elements.nav = $('.navbar.navbar-default');
+            Local_vars_main_controller.elements.nav = $('.navbar.navbar-default');
 
             G_Main_Controller.Scroll_navbarShrink();
         },
@@ -31,24 +34,24 @@ var G_Main_Controller = (function () {
 
         /* ---- Back to top visibility ---- */
         Load_hideAll: function () {
-            Global_vars_lapp_app.elements.hideAll.slideUp();
+            Local_vars_main_controller.elements.hideAll.slideUp();
         },
         Scroll_backToTop: function () {
             if ($(window).scrollTop() > 100) {
-                Global_vars_lapp_app.elements.backToTop.addClass('visible');
+                Local_vars_main_controller.elements.backToTop.addClass('visible');
             }
             else {
-                Global_vars_lapp_app.elements.backToTop.removeClass('visible');
+                Local_vars_main_controller.elements.backToTop.removeClass('visible');
             }
         },
         /* ---- /Back to top visibility ---- */
         /* ---- Shrink navbar ---- */
         Scroll_navbarShrink: function () {
             if ($(window).scrollTop() > 0) {
-                Global_vars_lapp_app.elements.nav.addClass('shrinked');
+                Local_vars_main_controller.elements.nav.addClass('shrinked');
             }
             else {
-                Global_vars_lapp_app.elements.nav.removeClass('shrinked');
+                Local_vars_main_controller.elements.nav.removeClass('shrinked');
             }
         },
         /* ---- /Shrink navbar ---- */
@@ -180,7 +183,7 @@ lazyImgs.lazyload({
 /*
  $("#backtotop").click(function (e) {
  e.preventDefault();
- $("body,html").animate({
+ Global_vars_lapp_app.body_html.animate({
  scrollTop: 0
  }, 600);
  return false;
@@ -192,7 +195,7 @@ $("a").click(function (e) {
     if (dest[0] === '\#') {
         if (dest.length > 1) {
             if (dest === '\#top') {
-                $("body,html").animate({
+                Global_vars_lapp_app.body_html.animate({
                     scrollTop: 0
                 }, 600);
                 return false;
@@ -202,12 +205,12 @@ $("a").click(function (e) {
                 if($dest.length) {
                     e.preventDefault();
                     if ($(window).scrollTop() > 150) {
-                        $("body,html").animate({
+                        Global_vars_lapp_app.body_html.animate({
                             scrollTop: $dest.offset().top - 70
                         }, 600);
                     }
                     else {
-                        $("body,html").animate({
+                        Global_vars_lapp_app.body_html.animate({
                             scrollTop: $dest.offset().top - 100
                         }, 600);
                     }
