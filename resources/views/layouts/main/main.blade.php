@@ -58,8 +58,7 @@
 @include('layouts.main.includes.footer')
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<img src="{{asset('images/ajax-loader2.gif', env('HTTPS'))}}" alt="loading..."
-     class="global_ajax_loader loading_ajax hidden"/>
+<div class="loader global_ajax_loader loading_ajax hidden"></div>
 
 <!-- Scripts -->
 <script src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>

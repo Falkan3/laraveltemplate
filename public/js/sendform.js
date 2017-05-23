@@ -75,6 +75,7 @@ function sendAjax(form) {
     var formThankYou = current_form.closest('.container').find('.form-thank-you');
 
     status_text.html("");
+    status_text.hide();
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -90,8 +91,6 @@ function sendAjax(form) {
         dataType: 'json',
         processData: false,
         success: function (data) {
-            status_text.html("");
-            status_text.hide();
             if(data.message.length > 0) {
                 if (data.success) {
                     for (var index in data.message) {
@@ -114,8 +113,6 @@ function sendAjax(form) {
         },
         error: function (data) {
             // Error...
-            status_text.html("");
-            status_text.hide();
             for (var index in data.message) {
                 status_text.append("<p>" + data.message[index] + '</p>');
             }
