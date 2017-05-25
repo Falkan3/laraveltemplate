@@ -61,15 +61,15 @@
 <div class="loader global_ajax_loader loading_ajax hidden"></div>
 
 <!-- Scripts -->
-<script src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery-inputmask.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery.counterup.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/jquery/jquery.nicescroll.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/libs/notify.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery-inputmask.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.counterup.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.nicescroll.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/libs/notify.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
 @yield('custom_js')
 
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />

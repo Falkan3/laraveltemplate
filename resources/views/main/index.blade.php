@@ -19,7 +19,7 @@
     <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/indexscript.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/pages/indexscript.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')

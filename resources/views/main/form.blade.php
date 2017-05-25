@@ -4,12 +4,16 @@
 @section('description', '')
 
 @section('custom_css')
+    <link rel="stylesheet" href="{{ URL::asset('css/libs/roundslider.min.css', env('HTTPS')) }}" type="text/css"
+          media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
-    <script src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/pages/form.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')
@@ -178,6 +182,16 @@
                 </div>
             </div>
 
+            <div class="row" style="margin: 30px 0;">
+                <div class="col-xs-12">
+                    <input id="f_n_amount" type="range" name="f_n_amount" min="1000"
+                           max="100000"
+                           step="1000" value="5000"
+                           required
+                    />
+                </div>
+            </div>
+
             <div class="row submit-row">
                 <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
                     <input type="submit" value="Złóż wniosek" class="button sliding_bg"/>
@@ -188,6 +202,7 @@
                 </div>
             </div>
             {!! Form::close() !!}
+
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 form-thank-you"></div>
             </div>

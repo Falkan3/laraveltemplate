@@ -1,7 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 
 var G_Index_Controller = (function () {
-    var Global_index_vars = {
+    var Local_index_vars = {
         'elements': {
 
         }
