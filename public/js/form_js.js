@@ -52,13 +52,14 @@ var G_Form_Controller = (function () {
         ButtonClick: function (btn, change_val) {
             if (change_val === undefined)
                 change_val = true;
-            if (change_val === true) {
-                var searchindex = btn.attr('data-index');
-                var btnval = btn.attr('data-val');
-                Global_vars_form.elements.data_containers.each(function () {
-                    var $this = $(this);
-                    if ($this.attr('data-index') === searchindex) {
-                        if ($this.attr('data-multiselect') === 'true') {
+
+            var searchindex = btn.attr('data-index');
+            var btnval = btn.attr('data-val');
+            Global_vars_form.elements.data_containers.each(function () {
+                var $this = $(this);
+                if ($this.attr('data-index') === searchindex) {
+                    if ($this.attr('data-multiselect') === 'true') {
+                        if (change_val === true) {
                             var value = $this.val().split(',');
                             var is_found = false;
                             for (var i = 0; i < value.length; i++) {
@@ -75,22 +76,23 @@ var G_Form_Controller = (function () {
                                 return el.length !== 0
                             });
                             $this.val(new_val);
-                        } else {
+                        }
+                        btn.toggleClass('active');
+                    } else {
+                        if (change_val === true) {
                             $this.val(btnval);
                         }
-                        $this.removeClass('wrong-input');
-                        $this.prev('span.errormsg').remove();
+                        //Deactivate all buttons belonging to this data container
+                        var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function (e) {
+                            return $(e).attr('data-index') == searchindex;
+                        });
+                        $(btnToDeactivate).removeClass('active');
+                        btn.addClass('active');
                     }
-                });
-            }
-
-            if (btn.attr('data-multiselect') === 'true') {
-                btn.toggleClass('active');
-            } else {
-                var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function(e){ return $(e).attr('data-index') == searchindex; });
-                $(btnToDeactivate).removeClass('active');
-                btn.addClass('active');
-            }
+                    $this.removeClass('wrong-input');
+                    $this.prev('span.errormsg').remove();
+                }
+            });
         },
         ReadMoreInit: function () {
             Global_vars_form.elements.readmore.niceScroll({
@@ -391,7 +393,7 @@ number_fields.blur(function (e) {
         wrongInput($this);
     }
 });
-number_fields.on('input', function() {
+number_fields.on('input', function () {
     this.value = this.value.replace(/[^\d]/g, "");
 });
 hidden_fields.blur(function (e) {

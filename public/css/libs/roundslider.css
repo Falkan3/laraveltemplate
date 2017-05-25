@@ -269,7 +269,7 @@ div.rs-block { -webkit-border-radius: 1000px; border-radius: 1000px; }
 }
 .rs-range-color { background-color: #7e3593; }
 .rs-tooltip-text {
-    font-size: 130%;
+    font-size: 100%;
     font-weight: 700;
     border-radius: 7px;
     text-align: center;
@@ -278,43 +278,13 @@ input.rs-input.rs-tooltip-text {
     font-size: 100%;
 }
 
-@media (max-width: 1399px) {
+@media (max-width: 1199px) {
     .rs-tooltip-text {
         font-size: 90%;
     }
     .rs-chrome.rs-control, .rs-container.full {
-        width: 140px !important;
-        height: 140px !important;
-    }
-}
-
-@media (max-width: 1199px) {
-    .rs-tooltip-text {
-        font-size: 150%;
-    }
-    .rs-chrome.rs-control, .rs-container.full {
         width: 240px !important;
         height: 240px !important;
-    }
-}
-
-@media (max-width: 767px) {
-    .rs-tooltip-text {
-        font-size: 115%;
-    }
-    .rs-chrome.rs-control, .rs-container.full {
-        width: 200px !important;
-        height: 200px !important;
-    }
-}
-
-@media (max-width: 550px) {
-    .rs-tooltip-text {
-        font-size: 100%;
-    }
-    .rs-chrome.rs-control, .rs-container.full {
-        width: 160px !important;
-        height: 160px !important;
     }
 }
 

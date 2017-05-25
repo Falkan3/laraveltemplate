@@ -23,11 +23,11 @@ var G_Form_Page_Controller = (function () {
             //Amount
             var input_el = $("#f_n_amount");
             var slider = input_el.roundSlider({
-                radius: 100,
+                radius: 120,
                 width: 3,
                 handleSize: "+32",
                 handleShape: "dot",
-                sliderType: "min-range",
+                sliderType: "range", //min-range
                 startAngle: 90,
                 step: 1000,
                 max: 100000,
@@ -49,6 +49,8 @@ var G_Form_Page_Controller = (function () {
             $(window).on('resize', function () {
                 G_Main_Controller.Delayed_resize('range_sliders_resize_refresh', G_Form_Page_Controller.refreshRoundSliders, 250);
             });
+
+            //slider.roundSlider("setValue", 4000);
         },
         refreshRoundSliders: function() {
             for(var i=0;i<Global_Form_Page_vars.elements.roundsliders.length;i++) {
