@@ -183,6 +183,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * TrustedProxy service provider
+         */
+        Fideloper\Proxy\TrustedProxyServiceProvider::class
     ],
 
     /*
