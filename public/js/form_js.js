@@ -188,7 +188,7 @@ function validateFields() {
     streetno_fields = validateForm.find('input[type="text"].streetno');
     number_fields = validateForm.find('input[type="text"].number, input[type="number"].number');
     agreement_fields = validateForm.find('.agreements input[type="checkbox"]');
-    hidden_fields = validateForm.find('input[type="hidden"][required]');
+    hidden_fields = validateForm.find('input[type="hidden"][required], select[required]');
 
     var error = false;
     var wrong_inputs = [];
@@ -289,8 +289,12 @@ function wrongInput(ele) {
     ele.removeClass('right-input');
 }
 
-var inputs = $('input, select');
+var inputs = $('input, textarea, select');
 inputs.blur(function (e) {
+    var $this = $(this);
+    removeErrorMsg($this);
+});
+inputs.on('click', function (e) {
     var $this = $(this);
     removeErrorMsg($this);
 });
@@ -309,7 +313,7 @@ street_fields = $('input[type="text"].street');
 streetno_fields = $('input[type="text"].streetno');
 number_fields = $('input[type="text"].number, input[type="number"].number');
 agreement_fields = $('.agreements input[type="checkbox"]');
-hidden_fields = $('input[type="hidden"][required]');
+hidden_fields = $('input[type="hidden"][required], select[required]');
 
 name_fields.blur(function (e) {
     var $this = $(this);

@@ -35,6 +35,21 @@ $(document).ready(function () {
                 $(response[1]).each(function (e) {
                     $(this).addClass('wrong-input');
                 });
+
+                //sort array by position in DOM
+                var test = response[1].sort(function(a,b) {
+                    if( a[0] === b[0]) return 0;
+                    if( !a[0].compareDocumentPosition) {
+                        // support for IE8 and below
+                        return a[0].sourceIndex - b.sourceIndex;
+                    }
+                    if( a[0].compareDocumentPosition(b[0]) & 2) {
+                        // b comes before a
+                        return 1;
+                    }
+                    return -1;
+                });
+
                 var offsetTop = $(response[1][0]).offset().top - 120;
                 if(offsetTop<=0) {
                     var parent = $(this);
@@ -160,7 +175,7 @@ function sendAjax_notification(form) {
                     // -----------------------
                     $.notify(
                         status_text,
-                        { position:"bottom",className:'success' }
+                        { position:"bottom",className:"success" }
                     );
                 }
                 else {
@@ -169,7 +184,7 @@ function sendAjax_notification(form) {
                     }
                     current_form.notify(
                         status_text,
-                        { position:"bottom",className:'error' }
+                        { position:"bottom",className:"error" }
                     );
                 }
             }
@@ -181,7 +196,7 @@ function sendAjax_notification(form) {
             }
             current_form.notify(
                 status_text,
-                { position:"bottom",className:'error' }
+                { position:"bottom",className:"error" }
             );
         }
     });
