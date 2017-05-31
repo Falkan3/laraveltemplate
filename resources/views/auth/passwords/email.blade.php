@@ -20,7 +20,7 @@
                         @endif
 
                         <form class="form-horizontal" role="form" method="POST"
-                              action="{{ url('lang_' . $app->getLocale() . '/password/email', env('HTTPS')) }}">
+                              action="{{ url('lang_' . $app->getLocale() . '/password/email', null, env('HTTPS')) }}">
                             {{ csrf_field() }}
 
                             <div class="auth-container">

@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('lang_' . $app->getLocale() . '/', env('HTTPS'))}}"><img src="{{asset('images/logo.png', env('HTTPS'))}}" alt="logo"></a>
+            <a class="navbar-brand" href="{{url('lang_' . $app->getLocale() . '/', null, env('HTTPS'))}}"><img src="{{asset('images/logo.png', env('HTTPS'))}}" alt="logo"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,15 +45,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown flag-icons">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <img src="{{ asset('images/els/country_flag_icons/' . $app->getLocale() . '.png', env('HTTPS')) }}" alt="{{ $app->getLocale() }}" /> <span class="caret"></span>
+                        <img src="{{ asset('images/els/country_flag_icons/' . $app->getLocale() . '.png', null, env('HTTPS')) }}" alt="{{ $app->getLocale() }}" /> <span class="caret"></span>
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
                         @foreach(config('app.locales') as $key => $locale)
                             @if($app->getLocale() !== $key)
                                 <li>
-                                    <a href="{{ url('lang_' . $app->getLocale() . '/helper/switch_lang/' . $key, env('HTTPS')) }}">
-                                        <img src="{{ asset('images/els/country_flag_icons/' . $key . '.png', env('HTTPS')) }}" alt="{{ $locale }}" /> {{ $locale }}
+                                    <a href="{{ url('lang_' . $app->getLocale() . '/helper/switch_lang/' . $key, null, env('HTTPS')) }}">
+                                        <img src="{{ asset('images/els/country_flag_icons/' . $key . '.png', null, env('HTTPS')) }}" alt="{{ $locale }}" /> {{ $locale }}
                                     </a>
                                 </li>
                             @endif
@@ -61,8 +61,8 @@
                     </ul>
                 </li>
                 @if (Auth::guest())
-                    <li><a href="{{ url('lang_' . $app->getLocale() . '/login', env('HTTPS')) }}">{{__('system.login')}}</a></li>
-                    <li><a href="{{ url('lang_' . $app->getLocale() . '/register', env('HTTPS')) }}">{{__('system.register')}}</a></li>
+                    <li><a href="{{ url('lang_' . $app->getLocale() . '/login', null, env('HTTPS')) }}">{{__('system.login')}}</a></li>
+                    <li><a href="{{ url('lang_' . $app->getLocale() . '/register', null, env('HTTPS')) }}">{{__('system.register')}}</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -71,13 +71,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="{{ url('lang_' . $app->getLocale() . '/logout', env('HTTPS')) }}"
+                                <a href="{{ url('lang_' . $app->getLocale() . '/logout', null, env('HTTPS')) }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{__('system.logout')}}
                                 </a>
 
-                                <form id="logout-form" action="{{ url('lang_' . $app->getLocale() . '/logout', env('HTTPS')) }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('lang_' . $app->getLocale() . '/logout', null, env('HTTPS')) }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
