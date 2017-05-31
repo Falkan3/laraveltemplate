@@ -195,7 +195,7 @@ function validateFields() {
 
     name_fields.each(function () {
         var $this = $(this);
-        var is_valid = validate_name($this.val());
+        var is_valid = validate_name($this.val()); //validate_input_val($this.val(), {minval: 0, maxval: 20, regex: /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/});
         if (is_valid[0] === false) {
             error = true;
             wrong_inputs.push($this);
@@ -429,6 +429,38 @@ hidden_fields.blur(function (e) {
     removeErrorMsg($this);
 });
 
+function validate_input_val(value, options) {
+    if(!options.minval)
+        options.minval = 0;
+    if(!options.maxval)
+        options.maxval = 20;
+
+    var valid = true;
+    var msg = '';
+    console.log(options); console.log(value);
+    if (value.length === options.minval) {
+        valid = false;
+        msg = 'Pole nie może być puste.';
+        return [valid, msg];
+    }
+    else if(value.length > options.maxval) {
+        valid = false;
+        msg = 'Pole jest za długie. (Max: ' + options.maxval + ')';
+        return [valid, msg];
+    }
+
+    if(options.regex) {
+        var regex = options.regex;
+        valid = regex.test(value);
+
+        if(valid === false) {
+            msg = 'Pole zawiera niedozwolone znaki.'
+        }
+    }
+
+    return [valid, msg];
+}
+
 function validate_name(input) {
     var valid = true;
     var msg = '';
@@ -436,19 +468,19 @@ function validate_name(input) {
     if (input.length === 0) {
         valid = false;
         msg = 'Pole nie może być puste.';
+        return [valid, msg];
     }
     else if(input.length > 20) {
         valid = false;
         msg = 'Pole jest za długie. (Max: 20)';
+        return [valid, msg];
     }
 
-    if(valid !== false) {
-        var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
-        valid = regex.test(input);
+    var regex = /^[ĄĆĘŁŃÓŚŹŻąćęłńóśźż\sA-Za-z\'\"&\(\),\.]*$/;
+    valid = regex.test(input);
 
-        if(valid === false) {
-            msg = 'Pole zawiera niedozwolone znaki.'
-        }
+    if(valid === false) {
+        msg = 'Pole zawiera niedozwolone znaki.'
     }
 
     return [valid, msg];
