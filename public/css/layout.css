@@ -112,6 +112,7 @@ nav.navbar {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
     color: #fff;
+    background: #ff9c10;
 }
 
 /* li bg */
@@ -176,9 +177,16 @@ nav.navbar {
     nav.navbar.navbar-default .navbar-nav > li > a {
         color: #fff;
     }
+    nav.navbar.navbar-default .navbar-nav li:hover > a, nav.navbar.navbar-default .navbar-nav li:active > a {
+        color: #fff;
+    }
     nav.navbar.shrinked.navbar-default .navbar-nav > li a {
         color: #212121;
     }
+    nav.navbar.navbar-default .navbar-nav > li:hover > a,
+    nav.navbar.navbar-default .navbar-nav > li > a:focus,
+    nav.navbar.navbar-default .navbar-nav > li.active > a,
+    nav.navbar.navbar-default .navbar-nav > li.open > a,
     nav.navbar.shrinked.navbar-default .navbar-nav > li:hover > a,
     nav.navbar.shrinked.navbar-default .navbar-nav > li > a:focus,
     nav.navbar.shrinked.navbar-default .navbar-nav > li.active > a,
