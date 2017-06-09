@@ -50,4 +50,16 @@ $(window).on("load", function () {
 
 });
 
+//Check if mouse leaves the document
+document.addEventListener('mouseout', function(e){
+    var top = e.pageY;
+    var right = document.body.clientWidth - e.pageX;
+    var bottom = document.body.clientHeight - e.pageY;
+    var left = e.pageX;
+
+    if(top < 20 || right < 20 || bottom < 10 || left < 10){
+        console.log("Mouse out of document bounds")
+    }
+});
+
 /* ----------------------------  Misc functions ----------------------------  */
