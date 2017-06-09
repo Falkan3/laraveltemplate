@@ -13,9 +13,9 @@ $(document).ready(function () {
     form.submit(function (e) {
         e.preventDefault();
 
-        var current_form = this;
+        var current_form = $(this);
         //Check if inputs are valid
-        setValidateFields($(current_form));
+        setValidateFields(current_form);
         var response = validateFields();
         if (response[0] === false) {
             var data_ajax = current_form.attr('data-ajax');
