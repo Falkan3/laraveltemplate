@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="main-nav">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                <li class="color_1"><a href="#">Link</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -30,8 +30,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
+                <li class="color_2"><a href="#">Link</a></li>
+                <li class="dropdown color_3">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
@@ -43,7 +43,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown flag-icons">
+                <li class="dropdown flag-icons color_7">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <img src="{{ asset('images/els/country_flag_icons/' . $app->getLocale() . '.png', null, env('HTTPS')) }}" alt="{{ $app->getLocale() }}" /> <span class="caret"></span>
                     </a>
@@ -61,16 +61,16 @@
                     </ul>
                 </li>
                 @if (Auth::guest())
-                    <li><a href="{{ url('lang_' . $app->getLocale() . '/login', null, env('HTTPS')) }}">{{__('system.login')}}</a></li>
-                    <li><a href="{{ url('lang_' . $app->getLocale() . '/register', null, env('HTTPS')) }}">{{__('system.register')}}</a></li>
+                    <li class="color_5"><a href="{{ url('lang_' . $app->getLocale() . '/login', null, env('HTTPS')) }}">{{__('system.login')}}</a></li>
+                    <li class="color_6"><a href="{{ url('lang_' . $app->getLocale() . '/register', null, env('HTTPS')) }}">{{__('system.register')}}</a></li>
                 @else
-                    <li class="dropdown">
+                    <li class="dropdown color_3">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li>
+                            <li class="color_1">
                                 <a href="{{ url('lang_' . $app->getLocale() . '/logout', null, env('HTTPS')) }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

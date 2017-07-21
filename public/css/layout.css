@@ -64,6 +64,21 @@ nav.navbar {
     border: none;
     transition: ease-in-out 0.2s;
 }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none;
+}
+.navbar-default.background .navbar-collapse, .navbar-default.background .navbar-form {
+    border-top: solid 1px #e7e7e7;
+}
+.nav>li>a {
+    padding: 10px 20px;
+}
+.navbar-nav {
+    margin: 0;
+}
+.navbar-nav.background {
+    margin: 7.5px -15px;
+}
 
 .navbar-brand {
     padding: 5px;
@@ -74,14 +89,14 @@ nav.navbar {
 }
 
 @media (min-width: 992px) {
-    nav.navbar.shrinked {
+    nav.navbar.background.shrinked {
         background: #fff;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
     }
 }
 
 @media (max-width: 991px) {
-    nav.navbar {
+    nav.navbar.background {
         /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
         background: #fff;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
@@ -90,17 +105,25 @@ nav.navbar {
     .navbar-brand > img {
         max-height: 30px;
     }
+
+    .navbar-right {
+        float: left!important;
+        margin-right: 0;
+    }
 }
 
 /* a text */
-.navbar-default .navbar-nav > li > a {
-    color: #212121;
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
     font-weight: 700;
     text-shadow: none;
     transition: ease-in-out 0.2s;
 }
+.navbar-default.background .navbar-nav > li > a {
+    color: #212121;
+}
 
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default.background .navbar-nav > li > a:focus {
     color: #212121;
 }
 
@@ -117,8 +140,33 @@ nav.navbar {
 
 /* li bg */
 .navbar-nav > li {
+    background-color: #3F88C5;
     transition: ease-in-out 0.2s;
 }
+/* backgrounds */
+.navbar-nav > li.color_1 {
+    background-color: #4CB944;
+}
+.navbar-nav > li.color_2 {
+    background-color: #F06543;
+}
+.navbar-nav > li.color_3 {
+    background-color: #042A2B;
+}
+.navbar-nav > li.color_4 {
+    background-color: #2F4858;
+}
+.navbar-nav > li.color_5 {
+    background-color: #FF206E;
+}
+.navbar-nav > li.color_6 {
+    background-color: #4B4E6D;
+}
+.navbar-nav > li.color_7 {
+    background-color: #B6174B;
+}
+
+/* -- */
 
 .navbar-nav > li.active {
     background-color: #ff9c10;
@@ -156,9 +204,13 @@ nav.navbar {
 }
 
 .navbar-nav .open .dropdown-menu {
+    padding: 0;
     background-color: #fff;
     border: none;
     border-radius: 0;
+}
+.dropdown-header, .dropdown-menu>li>a {
+    padding: 8px 20px;
 }
 
 /* flags */
@@ -180,24 +232,31 @@ nav.navbar {
     nav.navbar.navbar-default .navbar-nav li:hover > a, nav.navbar.navbar-default .navbar-nav li:active > a {
         color: #fff;
     }
-    nav.navbar.shrinked.navbar-default .navbar-nav > li a {
+    nav.navbar.background.shrinked.navbar-default .navbar-nav > li a {
         color: #212121;
     }
     nav.navbar.navbar-default .navbar-nav > li:hover > a,
-    nav.navbar.navbar-default .navbar-nav > li > a:focus,
     nav.navbar.navbar-default .navbar-nav > li.active > a,
     nav.navbar.navbar-default .navbar-nav > li.open > a,
-    nav.navbar.shrinked.navbar-default .navbar-nav > li:hover > a,
-    nav.navbar.shrinked.navbar-default .navbar-nav > li > a:focus,
-    nav.navbar.shrinked.navbar-default .navbar-nav > li.active > a,
-    nav.navbar.shrinked.navbar-default .navbar-nav li.open > a,
-    nav.navbar.shrinked.navbar-default .navbar-nav li.open .dropdown-menu li:hover a {
+    nav.navbar.background.shrinked.navbar-default .navbar-nav > li:hover > a,
+    nav.navbar.background.shrinked.navbar-default .navbar-nav > li.active > a,
+    nav.navbar.background.shrinked.navbar-default .navbar-nav li.open > a,
+    nav.navbar.background.shrinked.navbar-default .navbar-nav li.open .dropdown-menu li:hover a {
+        padding-bottom: 25px;
         color: #fff;
     }
+
+    /* backgrounds */
+    /*
+    nav.navbar.navbar-default .navbar-nav > li.color_7 > a {
+        color: #212121;
+    }
+    */
+    /* -- */
 }
 
 @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    .navbar-default.background .navbar-nav .open .dropdown-menu > li > a {
         color: #212121;
     }
 
