@@ -1,4 +1,10 @@
+var Global_vars_sendform = {
+    ajax_processing: false
+};
+
 $(document).ready(function () {
+    Global_vars_sendform.ajax_processing = false;
+
     var form = $("form.contact-form");
     var loading_gif = $(".loading_ajax");
 
@@ -98,42 +104,49 @@ function sendAjax(form) {
             'X-Requested-With': 'XMLHttpRequest'
         }
     });
-    $.ajax({
-        url: current_form.attr("action"),//form.attr('action'),
-        type: "POST",
-        data: formdata,
-        enctype: 'multipart/form-data',
-        dataType: 'json',
-        processData: false,
-        success: function (data) {
-            if(data.message.length > 0) {
-                if (data.success) {
-                    for (var index in data.message) {
-                        status_text.append("<p>" + data.message[index] + "</p>");
+    if(!Global_vars_sendform.ajax_processing) {
+        Global_vars_sendform.ajax_processing = true;
+        $.ajax({
+            url: current_form.attr("action"),//form.attr('action'),
+            type: "POST",
+            data: formdata,
+            enctype: 'multipart/form-data',
+            dataType: 'json',
+            processData: false,
+            success: function (data) {
+                if(data.message.length > 0) {
+                    if (data.success) {
+                        for (var index in data.message) {
+                            status_text.append("<p>" + data.message[index] + "</p>");
+                        }
+                        current_form.find("input[type='text'], input[type='tel'], input[type='numeric'], textarea").val("");
+                        current_form.find("select").val(null);
+                        current_form.find("input[type='checkbox']").prop('checked', 'checked');
+                        current_form.slideUp();
+                        formThankYou.html('<p>Dziękujemy za kontakt.</p>');
+                        formThankYou.slideDown();
                     }
-                    current_form.find("input[type='text'], input[type='tel'], input[type='numeric'], textarea").val("");
-                    current_form.find("select").val(null);
-                    current_form.find("input[type='checkbox']").prop('checked', 'checked');
-                    current_form.slideUp();
-                    formThankYou.html('<p>Dziękujemy za kontakt.</p>');
-                    formThankYou.slideDown();
+                    else {
+                        for (var index in data.message) {
+                            status_text.append("<p><span class='ajax-error'>" + data.message[index] + "</span></p>");
+                        }
+                    }
+                    status_text.show();
                 }
-                else {
-                    for (var index in data.message) {
-                        status_text.append("<p><span class='ajax-error'>" + data.message[index] + "</span></p>");
-                    }
+
+                Global_vars_sendform.ajax_processing = false;
+            },
+            error: function (data) {
+                // Error...
+                for (var index in data.message) {
+                    status_text.append("<p>" + data.message[index] + '</p>');
                 }
                 status_text.show();
+
+                Global_vars_sendform.ajax_processing = false;
             }
-        },
-        error: function (data) {
-            // Error...
-            for (var index in data.message) {
-                status_text.append("<p>" + data.message[index] + '</p>');
-            }
-            status_text.show();
-        }
-    });
+        });
+    }
 }
 
 function sendAjax_notification(form) {
@@ -148,58 +161,65 @@ function sendAjax_notification(form) {
             'X-Requested-With': 'XMLHttpRequest'
         }
     });
-    $.ajax({
-        url: current_form.attr("action"),//form.attr('action'),
-        type: "POST",
-        data: formdata,
-        enctype: 'multipart/form-data',
-        dataType: 'json',
-        processData: false,
-        success: function (data) {
-            if(data.message.length > 0) {
-                if (data.success) {
-                    for (var index in data.message) {
-                        status_text+=data.message[index];
-                    }
-                    current_form.find("input[type='text'], input[type='tel'], textarea").val("");
-                    current_form.find("select").val(null);
-                    current_form.find("input[type='checkbox']").prop('checked', 'checked');
+    if(!Global_vars_sendform.ajax_processing) {
+        Global_vars_sendform.ajax_processing = true;
+        $.ajax({
+            url: current_form.attr("action"),//form.attr('action'),
+            type: "POST",
+            data: formdata,
+            enctype: 'multipart/form-data',
+            dataType: 'json',
+            processData: false,
+            success: function (data) {
+                if (data.message.length > 0) {
+                    if (data.success) {
+                        for (var index in data.message) {
+                            status_text += data.message[index];
+                        }
+                        current_form.find("input[type='text'], input[type='tel'], textarea").val("");
+                        current_form.find("select").val(null);
+                        current_form.find("input[type='checkbox']").prop('checked', 'checked');
 
-                    //EXAMPLE FOR CUSTOM FIELDS
-                    if(current_form.attr('data-ajax-id') === 'image') {
-                        var container = current_form.parent().parent();
-                        container.fadeOut(500, function() {
-                            container.remove();
-                        });
+                        //EXAMPLE FOR CUSTOM FIELDS
+                        if (current_form.attr('data-ajax-id') === 'image') {
+                            var container = current_form.parent().parent();
+                            container.fadeOut(500, function () {
+                                container.remove();
+                            });
+                        }
+                        // -----------------------
+                        $.notify(
+                            status_text,
+                            {position: "bottom", className: "success"}
+                        );
                     }
-                    // -----------------------
-                    $.notify(
-                        status_text,
-                        { position:"bottom",className:"success" }
-                    );
-                }
-                else {
-                    for (var index in data.message) {
-                        status_text+=data.message[index];
+                    else {
+                        for (var index in data.message) {
+                            status_text += data.message[index];
+                        }
+                        current_form.notify(
+                            status_text,
+                            {position: "bottom", className: "error"}
+                        );
                     }
-                    current_form.notify(
-                        status_text,
-                        { position:"bottom",className:"error" }
-                    );
                 }
+
+                Global_vars_sendform.ajax_processing = false;
+            },
+            error: function (data) {
+                // Error...
+                for (var index in data.message) {
+                    status_text += "<p>" + data.message[index] + '</p>';
+                }
+                current_form.notify(
+                    status_text,
+                    {position: "bottom", className: "error"}
+                );
+
+                Global_vars_sendform.ajax_processing = false;
             }
-        },
-        error: function (data) {
-            // Error...
-            for (var index in data.message) {
-                status_text+="<p>" + data.message[index] + '</p>';
-            }
-            current_form.notify(
-                status_text,
-                { position:"bottom",className:"error" }
-            );
-        }
-    });
+        });
+    }
 }
 
 function sendPost(form) {
