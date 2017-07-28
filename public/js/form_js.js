@@ -1,7 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 
 var G_Form_Controller = (function () {
-    var Global_vars_form = {
+    var Local_vars = {
         'elements': {
             'buttons': [],
             'data_containers': [],
@@ -13,13 +13,13 @@ var G_Form_Controller = (function () {
     return {
         initElements: function () {
             //buttons
-            Global_vars_form.elements.buttons = $('button[type="button"][data-index]');
-            Global_vars_form.elements.buttons.on('click', function () {
+            Local_vars.elements.buttons = $('button[type="button"][data-index]');
+            Local_vars.elements.buttons.on('click', function () {
                 G_Form_Controller.ButtonClick($(this));
             });
             //data-containers
-            Global_vars_form.elements.data_containers = $('input[data-container="true"]');
-            Global_vars_form.elements.data_containers.each(function () {
+            Local_vars.elements.data_containers = $('input[data-container="true"]');
+            Local_vars.elements.data_containers.each(function () {
                 var $this = $(this);
                 //check if value is set, and click corresponding buttons accordingly
                 if ($this.val() !== undefined && $this.val() !== null) {
@@ -27,14 +27,14 @@ var G_Form_Controller = (function () {
                     if ($this.attr('data-multiselect') === 'true') {
                         var value = $this.val().split(',');
                         for (var i = 0; i < value.length; i++) {
-                            btnToClick = $.grep(Global_vars_form.elements.buttons, function (e) {
+                            btnToClick = $.grep(Local_vars.elements.buttons, function (e) {
                                 var $e = $(e);
                                 return ($e.attr('data-index') === $this.attr('data-index')) && ($e.attr('data-val') === value[i]);
                             });
                             G_Form_Controller.ButtonClick($(btnToClick), false);
                         }
                     } else {
-                        btnToClick = $.grep(Global_vars_form.elements.buttons, function (e) {
+                        btnToClick = $.grep(Local_vars.elements.buttons, function (e) {
                             var $e = $(e);
                             return ($e.attr('data-index') === $this.attr('data-index')) && ($e.attr('data-val') === $this.val());
                         });
@@ -43,8 +43,8 @@ var G_Form_Controller = (function () {
                 }
             });
             //readmore
-            Global_vars_form.elements.readmore_click = $('a.read-more-click');
-            Global_vars_form.elements.readmore = $('div.read-more');
+            Local_vars.elements.readmore_click = $('a.read-more-click');
+            Local_vars.elements.readmore = $('div.read-more');
             G_Form_Controller.ReadMoreInit();
             //
         },
@@ -55,7 +55,7 @@ var G_Form_Controller = (function () {
 
             var searchindex = btn.attr('data-index');
             var btnval = btn.attr('data-val');
-            Global_vars_form.elements.data_containers.each(function () {
+            Local_vars.elements.data_containers.each(function () {
                 var $this = $(this);
                 if ($this.attr('data-index') === searchindex) {
                     if ($this.attr('data-multiselect') === 'true') {
@@ -83,7 +83,7 @@ var G_Form_Controller = (function () {
                             $this.val(btnval);
                         }
                         //Deactivate all buttons belonging to this data container
-                        var btnToDeactivate = $.grep(Global_vars_form.elements.buttons, function (e) {
+                        var btnToDeactivate = $.grep(Local_vars.elements.buttons, function (e) {
                             return $(e).attr('data-index') == searchindex;
                         });
                         $(btnToDeactivate).removeClass('active');
@@ -95,17 +95,20 @@ var G_Form_Controller = (function () {
             });
         },
         ReadMoreInit: function () {
-            Global_vars_form.elements.readmore.niceScroll({
+            Local_vars.elements.readmore.mCustomScrollbar();
+            /*
+            Local_vars.elements.readmore.niceScroll({
                 cursorborder: "",
                 cursorcolor: "#ffaa00",
                 cursorwidth: "8px",
                 autohidemode: false
             });
-            Global_vars_form.elements.readmore_click.on('click', function (e) {
-                Global_vars_form.elements.readmore.hide();
+            */
+            Local_vars.elements.readmore_click.on('click', function (e) {
+                Local_vars.elements.readmore.hide();
                 $(this).next('div.read-more').slideToggle();
             });
-            Global_vars_form.elements.readmore.on('click', function (e) {
+            Local_vars.elements.readmore.on('click', function (e) {
                 $(this).hide();
             });
         }

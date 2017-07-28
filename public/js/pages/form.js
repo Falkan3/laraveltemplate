@@ -7,15 +7,16 @@ var Global_Form_Page_vars = {
 };
 
 var G_Form_Page_Controller = (function () {
-    var Local_pageform_vars = {
+    var Local_vars = {
         'elements': {
-
+            range_sliders: null
         }
     };
 
     return {
         initElements: function () {
             G_Form_Page_Controller.initRoundSliders();
+            G_Form_Page_Controller.initRangeSliders();
         },
         
         /* ---- fncs ---- */
@@ -52,6 +53,30 @@ var G_Form_Page_Controller = (function () {
 
             //slider.roundSlider("setValue", 4000);
         },
+        initRangeSliders: function () {
+            Local_vars.elements.range_sliders = $('.cst-range-slider');
+            Local_vars.elements.range_sliders.each(function () {
+                var $this = $(this);
+                $this.ionRangeSlider({
+                    type: "double",
+                    grid: true,
+                    min: $this.attr('min'),
+                    max: $this.attr('max'),
+                    from: $this.attr('data-val-min') === '' ? $this.attr('min') : $this.attr('data-val-min'),
+                    to: $this.attr('data-val-max') === '' ? $this.attr('max') : $this.attr('data-val-max'),
+                    postfix: " zł",
+                    onStart: function (data) {
+                        $this.attr('value', data.from + ';' + data.to)
+                    },
+                    onChange: function (data) {
+                        $this.attr('value', data.from + ';' + data.to)
+                    },
+                    onFinish: function (data) {
+                        $this.attr('value', data.from + ';' + data.to)
+                    }
+                });
+            });
+        },
         refreshRoundSliders: function() {
             for(var i=0;i<Global_Form_Page_vars.elements.roundsliders.length;i++) {
                 Global_Form_Page_vars.elements.roundsliders[i].slider.roundSlider("refresh");
@@ -75,6 +100,7 @@ var G_Form_Page_Controller = (function () {
 
 $(document).ready(function (e) {
     G_Form_Page_Controller.initElements();
+    $('select').fancySelect();
 });
 
 $(window).scroll(function () {

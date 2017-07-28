@@ -3,22 +3,23 @@
 @section('title', 'index')
 @section('description', '')
 @section('custom_css')
+    <!-- libs -->
     <link rel="stylesheet" href="{{ URL::asset('css/libs/animate_custom.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/libs/slick.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/libs/slick-theme.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/fancySelect.css', env('HTTPS')) }}" type="text/css"
-          media="all"/>
 @stop
 @section('custom_js')
+    <!-- libs -->
     <script src="{{ URL::asset('js/libs/wow.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/libs/slick.min.js', env('HTTPS')) }}"></script>
+    <!-- plugins -->
     <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
+    <!-- main -->
     <script src="{{ URL::asset('js/pages/indexscript.js', env('HTTPS')) }}"></script>
 @stop
 
@@ -109,17 +110,43 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-xs-12">
-                <select class="basic">
-                    <option value="">Select something…</option>
-                    <option>Lorem</option>
-                    <option>Ipsum</option>
-                    <option>Dolor</option>
-                    <option>Sit</option>
-                    <option>Amet</option>
-                </select>
-            </div>
+        <div class="container custom-scroll-box"
+             style="height: 1000px; max-height: 300px; padding: 25px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper consectetur fringilla. Morbi
+                egestas enim in egestas porttitor. Ut convallis mollis ipsum, ut scelerisque mi tristique et. Fusce nunc
+                elit, laoreet sed odio vitae, tincidunt malesuada lacus. Mauris leo neque, feugiat at dui id, aliquam
+                molestie arcu. Nulla vitae sem viverra, fermentum urna vel, pellentesque sapien. Maecenas at fringilla
+                elit. Suspendisse potenti. Fusce quis maximus justo.</p>
+
+            <p>Nam lorem turpis, aliquet ac felis eu, ornare volutpat diam. Aliquam leo mi, aliquam quis risus et,
+                consequat sollicitudin dui. Nam maximus, nisl vitae efficitur pharetra, urna urna posuere dui, mollis
+                eleifend mauris magna vitae sapien. Donec lectus elit, gravida sit amet massa non, finibus tempus orci.
+                Integer mattis vel nulla et pellentesque. Sed imperdiet condimentum nibh, id volutpat mi mattis lacinia.
+                Donec at ex urna. Pellentesque dictum mauris ut orci rutrum venenatis. Sed nisl urna, finibus non diam
+                sed, aliquam sodales lacus. Sed blandit augue at mi rutrum, nec aliquet lacus fermentum. Sed ipsum arcu,
+                rhoncus et cursus non, bibendum sed libero. Aenean eu risus non massa ullamcorper ultricies id aliquam
+                leo. Etiam fermentum odio est, vel sodales tortor hendrerit a.</p>
+
+            <p>Etiam interdum nisl diam, sed tristique justo mattis non. Integer sit amet ante rutrum, auctor risus
+                vel, eleifend odio. Fusce mattis massa interdum ante tristique faucibus. Suspendisse potenti. Phasellus
+                ut justo ac justo hendrerit suscipit at at nunc. Cras eleifend orci ut mauris sodales, vitae iaculis
+                nibh consequat. Donec congue ex sit amet augue placerat, commodo malesuada sapien porta. Nulla facilisi.
+                Vestibulum in ante vitae dolor dapibus tempor. Phasellus dolor metus, placerat ac maximus eu, feugiat
+                sit amet mi. Fusce lacinia viverra lectus, non sodales lorem ultricies ut. Praesent eget elit consequat,
+                tempor magna ac, sollicitudin ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam
+                in finibus purus. Donec justo lacus, elementum ac consectetur id, condimentum sit amet nibh.</p>
+
+            <p>Donec eget tempus ligula. Maecenas tellus urna, condimentum ac est non, sollicitudin rhoncus massa. Cras
+                dictum metus eget enim egestas congue. Vivamus dictum fringilla blandit. Donec scelerisque augue a risus
+                ornare accumsan. Praesent tristique odio justo, sed faucibus urna tempus sed. Proin sed commodo
+                metus.</p>
+
+            <p> Praesent feugiat eu quam ut dictum. Proin leo lacus, maximus a velit quis, cursus viverra orci. In sit
+                amet luctus lorem. Phasellus efficitur consectetur augue, id eleifend augue fringilla sit amet. Fusce
+                consectetur risus non lacus tempor fermentum. Cras venenatis dui a justo scelerisque pharetra. Nulla
+                vulputate nisi ac ullamcorper malesuada.</p>
         </div>
     </section>
 @stop

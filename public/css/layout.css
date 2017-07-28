@@ -570,6 +570,17 @@ a.stretch {
 
 /* /Accordion */
 
+/* Input range plugin */
+
+.input-container.custom-range .irs-single {
+    background: #2aabff;
+}
+.input-container.custom-range .irs-from:after, .input-container.custom-range .irs-to:after, .input-container.custom-range .irs-single:after {
+    border-top-color: #2aabff;
+}
+
+/* /Input range plugin */
+
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
 
 /* Nicescroll */

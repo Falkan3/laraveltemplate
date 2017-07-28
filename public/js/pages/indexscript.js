@@ -1,7 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 
 var G_Index_Controller = (function () {
-    var Local_index_vars = {
+    var Local_vars = {
         'elements': {
 
         }
@@ -35,7 +35,7 @@ $(document).ready(function (e) {
     $('.flipper-main-container').flipper({'container': true});
     $('.iterator-container-1').iterator({});
     $('.iterator-container-2').iterator({});
-    $('select').fancySelect().niceScroll({cursorborder:"",cursorcolor:"#ffaa00",cursorwidth:"8px",autohidemode:false});
+    $('.custom-scroll-box').mCustomScrollbar();
 });
 
 $(window).scroll(function () {

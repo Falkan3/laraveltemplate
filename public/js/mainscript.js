@@ -6,7 +6,7 @@ var Global_vars_lapp_app = {
 };
 
 var G_Main_Controller = (function () {
-    var Local_vars_main_controller = {
+    var Local_vars = {
         'elements': {
             'hideAll': null,
             'backToTop': null,
@@ -19,11 +19,11 @@ var G_Main_Controller = (function () {
             //body, html
             Global_vars_lapp_app.body_html = $("body, html");
             //hideAll
-            Local_vars_main_controller.elements.hideAll = $('#hideAll');
+            Local_vars.elements.hideAll = $('#hideAll');
             //backToTop
-            Local_vars_main_controller.elements.backToTop = $('#backtotop');
+            Local_vars.elements.backToTop = $('#backtotop');
             //nav
-            Local_vars_main_controller.elements.nav = $('.navbar.navbar-default');
+            Local_vars.elements.nav = $('.navbar.navbar-default');
 
             G_Main_Controller.Scroll_navbarShrink();
         },
@@ -34,24 +34,24 @@ var G_Main_Controller = (function () {
 
         /* ---- Back to top visibility ---- */
         Load_hideAll: function () {
-            Local_vars_main_controller.elements.hideAll.slideUp();
+            Local_vars.elements.hideAll.slideUp();
         },
         Scroll_backToTop: function () {
             if ($(window).scrollTop() > 100) {
-                Local_vars_main_controller.elements.backToTop.addClass('visible');
+                Local_vars.elements.backToTop.addClass('visible');
             }
             else {
-                Local_vars_main_controller.elements.backToTop.removeClass('visible');
+                Local_vars.elements.backToTop.removeClass('visible');
             }
         },
         /* ---- /Back to top visibility ---- */
         /* ---- Shrink navbar ---- */
         Scroll_navbarShrink: function () {
             if ($(window).scrollTop() > 0) {
-                Local_vars_main_controller.elements.nav.addClass('shrinked');
+                Local_vars.elements.nav.addClass('shrinked');
             }
             else {
-                Local_vars_main_controller.elements.nav.removeClass('shrinked');
+                Local_vars.elements.nav.removeClass('shrinked');
             }
         },
         /* ---- /Shrink navbar ---- */

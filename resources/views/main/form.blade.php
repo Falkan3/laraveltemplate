@@ -4,12 +4,24 @@
 @section('description', '')
 
 @section('custom_css')
+    <!-- libs -->
+    <link rel="stylesheet" href="{{ URL::asset('css/libs/fancySelect.css', env('HTTPS')) }}" type="text/css"
+          media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/libs/roundslider.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/libs/ion_range_slider/ion.rangeSlider.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/libs/ion_range_slider/ion.rangeSlider.skinFlat.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <!-- main -->
     <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
+    <!-- libs -->
+    <script src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/ion.rangeSlider.min.js', env('HTTPS')) }}"></script>
+    <!-- plugins -->
     <script type="text/javascript" src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+    <!-- main -->
     <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
@@ -189,6 +201,40 @@
                            step="1000" value="5000"
                            required
                     />
+                </div>
+            </div>
+
+            <div class="row" style="margin: 30px 0;">
+                <div class="col-xs-12" style="margin: 30px 0;">
+                    <select class="basic">
+                        <option value="">Select something…</option>
+                        <option>Lorem</option>
+                        <option>Ipsum</option>
+                        <option>Dolor</option>
+                        <option>Sit</option>
+                        <option>Amet</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="input-container custom-range">
+                        <?php
+                            if(!isset($filter_info)) {
+                                $filter_info['rate']['min'] = 0;
+                                $filter_info['rate']['max'] = 100;
+                            }
+                        ?>
+
+                        {!! Form::hidden('rate_min_helper', isset($filter_info['rate']['val_min']) ? $filter_info['rate']['val_min'] : '') !!}
+                        {!! Form::hidden('rate_max_helper', isset($filter_info['rate']['val_max']) ? $filter_info['rate']['val_max'] : '') !!}
+                        {{Form::text('rate_full', null, ['id' => 'sel_rate_full', 'class' => 'custom-input cst-range-slider',
+                            'title' => 'Stawka',
+                            'min' => $filter_info['rate']['min'],
+                            'max' => $filter_info['rate']['max'],
+                            'data-val-min' => isset($filter_info['rate']['val_min']) ? $filter_info['rate']['val_min'] : $filter_info['rate']['min'],
+                            'data-val-max' => isset($filter_info['rate']['val_max']) ? $filter_info['rate']['val_max'] : $filter_info['rate']['max'],
+                        ])}}
+                    </div>
                 </div>
             </div>
 
