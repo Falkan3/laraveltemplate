@@ -1,6 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 
 var Global_vars_lapp_app = {
+    window: null,
     body_html: null,
     ResizeGlobalTimer: [],
 };
@@ -16,8 +17,12 @@ var G_Main_Controller = (function () {
 
     return {
         initElementsPrim: function () {
+            //window
+            Global_vars_lapp_app.window = $(window);
             //body, html
             Global_vars_lapp_app.body_html = $("body, html");
+        },
+        initElements: function () {
             //hideAll
             Local_vars.elements.hideAll = $('#hideAll');
             //backToTop
@@ -26,10 +31,17 @@ var G_Main_Controller = (function () {
             Local_vars.elements.nav = $('.navbar.navbar-default');
 
             G_Main_Controller.Scroll_navbarShrink();
-        },
-        initElements: function () {
             G_Main_Controller.Scroll_backToTop();
             G_Main_Controller.Delayed_resize_init();
+
+            Global_vars_lapp_app.window.on("load", function () {
+                G_Main_Controller.Load_hideAll();
+            });
+
+            Global_vars_lapp_app.window.scroll(function () {
+                G_Main_Controller.Scroll_backToTop();
+                G_Main_Controller.Scroll_navbarShrink();
+            });
         },
 
         /* ---- Back to top visibility ---- */
@@ -37,7 +49,7 @@ var G_Main_Controller = (function () {
             Local_vars.elements.hideAll.slideUp();
         },
         Scroll_backToTop: function () {
-            if ($(window).scrollTop() > 100) {
+            if (Global_vars_lapp_app.window.scrollTop() > 100) {
                 Local_vars.elements.backToTop.addClass('visible');
             }
             else {
@@ -47,7 +59,7 @@ var G_Main_Controller = (function () {
         /* ---- /Back to top visibility ---- */
         /* ---- Shrink navbar ---- */
         Scroll_navbarShrink: function () {
-            if ($(window).scrollTop() > 0) {
+            if (Global_vars_lapp_app.window.scrollTop() > 0) {
                 Local_vars.elements.nav.addClass('shrinked');
             }
             else {
@@ -67,6 +79,26 @@ var G_Main_Controller = (function () {
                 e = document.documentElement || document.body;
             }
             return {width: e[a + 'Width'], height: e[a + 'Height']};
+        },
+        Timeout: function (fn, time) {
+            var timer = false;
+            this.start = function () {
+                if (!this.isRunning())
+                    timer = setTimeout(fn, time);
+            };
+            this.stop = function () {
+                if (this.isRunning()) {
+                    clearTimeout(timer);
+                    timer = false;
+                }
+            };
+            this.isRunning = function () {
+                return timer !== false;
+            };
+            this.reset = function () {
+                this.stop();
+                this.start();
+            }
         },
         Interval: function(fn, time) {
             var timer = false;
@@ -92,7 +124,7 @@ var G_Main_Controller = (function () {
             Global_vars_lapp_app.ResizeGlobalTimer = [];
 
             /*
-             $(window).on('resize', function () {
+             Global_vars_lapp_app.window.on('resize', function () {
              if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
              for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
              Global_vars_lapp_app.ResizeGlobalTimer[i].reset();
@@ -204,7 +236,7 @@ $("a").click(function (e) {
                 var $dest = $(dest);
                 if($dest.length) {
                     e.preventDefault();
-                    if ($(window).scrollTop() > 150) {
+                    if (Global_vars_lapp_app.window.scrollTop() > 150) {
                         Global_vars_lapp_app.body_html.animate({
                             scrollTop: $dest.offset().top - 70
                         }, 600);
@@ -224,17 +256,16 @@ $("a").click(function (e) {
 
 //ANCHORS /--------------------------------------------------------
 
-$(window).scroll(function () {
-    G_Main_Controller.Scroll_backToTop();
-    G_Main_Controller.Scroll_navbarShrink();
+Global_vars_lapp_app.window.scroll(function () {
+
 });
 
-$(window).on('resize', function () {
+Global_vars_lapp_app.window.on('resize', function () {
     //G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn, 500);
 });
 
-$(window).on("load", function () {
-    G_Main_Controller.Load_hideAll();
+Global_vars_lapp_app.window.on("load", function () {
+
 });
 
 /* ----------------------------  Misc functions ----------------------------  */
