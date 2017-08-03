@@ -1,0 +1,117 @@
+/* Form */
+
+form {
+  position: relative;
+}
+
+a.read-more-click {
+  text-decoration: none;
+  color: #b7b7b7;
+  font-size: 100%;
+}
+
+div.read-more {
+  display: none;
+  position: absolute;
+  max-height: 200px;
+  overflow: auto;
+  bottom: 0;
+  right: 0;
+  color: #31302B;
+  padding: 24px 24px 12px 24px;
+  z-index: 999;
+  border: 3px solid #31302B;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #ccc;
+  margin-bottom: 10px;
+  background: #fff;
+  /*background: url(https://static.fdtc.edu/_img/icon/forms/close.png) #fff no-repeat top right 24px / 24px 24px;*/
+  cursor: pointer;
+  p {
+    font-size: 100%;
+    line-height: 110%;
+    color: #212121;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+  + label {
+    display: inline;
+    span {
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      margin: -2px 15px 0 22px;
+      vertical-align: middle;
+      background: url(../images/els/check_radio_sheet_w.png) left -20px no-repeat;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &:checked + label span {
+    background: url(../images/els/check_radio_sheet_w.png) -22px -20px no-repeat;
+  }
+}
+
+.agreements > div {
+  position: relative;
+}
+
+.loading_ajax {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 991px) {
+  .agreements {
+    text-align: left;
+    .checkbox label, .radio label {
+      padding-left: 0;
+    }
+    .checkbox label span, .radio label span {
+      margin-left: 0;
+    }
+  }
+}
+
+/* Boxes */
+
+@media (min-width: 1200px) {
+  .boxes-container .box-image {
+    min-width: 200px;
+    min-height: 200px;
+    position: relative;
+    min-width: 150px;
+    width: 100%;
+    height: 150px;
+    margin: 0 auto 30px;
+  }
+}
+
+.boxes-container .box-image > button {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 160, 0);
+  background-size: 35%;
+  box-shadow: none;
+  margin: 0;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    box-shadow: rgb(102, 102, 102) 0px 0px 10px;
+  }
+  &.active {
+    background-color: rgb(255, 87, 34);
+  }
+}
+
+/* ----------------------------- /Form ----------------------------- */
