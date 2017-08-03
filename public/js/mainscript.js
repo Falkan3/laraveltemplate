@@ -19,10 +19,11 @@ var G_Main_Controller = (function () {
         initElementsPrim: function () {
             //window
             Global_vars_lapp_app.window = $(window);
-            //body, html
-            Global_vars_lapp_app.body_html = $("body, html");
         },
         initElements: function () {
+            //body, html
+            Global_vars_lapp_app.body_html = $("body, html");
+
             //hideAll
             Local_vars.elements.hideAll = $('#hideAll');
             //backToTop
@@ -80,6 +81,45 @@ var G_Main_Controller = (function () {
             }
             return {width: e[a + 'Width'], height: e[a + 'Height']};
         },
+
+        //ANCHORS -------------------------------------------------------
+
+        IgnoreNullLinks: function() {
+            $("a").click(function (e) {
+                var dest = G_Main_Controller.RemoveBaseUrl($(this).attr('href'), 1);
+                if (dest[0] === '\#') {
+                    if (dest.length > 1) {
+                        if (dest === '\#top') {
+                            Global_vars_lapp_app.body_html.animate({
+                                scrollTop: 0
+                            }, 600);
+                            return false;
+                        }
+                        else {
+                            var $dest = $(dest);
+                            if($dest.length) {
+                                e.preventDefault();
+                                if (Global_vars_lapp_app.window.scrollTop() > 150) {
+                                    Global_vars_lapp_app.body_html.animate({
+                                        scrollTop: $dest.offset().top - 70
+                                    }, 600);
+                                }
+                                else {
+                                    Global_vars_lapp_app.body_html.animate({
+                                        scrollTop: $dest.offset().top - 100
+                                    }, 600);
+                                }
+                            }
+                        }
+                    } else {
+                        e.preventDefault();
+                    }
+                }
+            });
+        },
+
+        //ANCHORS /--------------------------------------------------------
+
         Timeout: function (fn, time) {
             var timer = false;
             this.start = function () {
@@ -188,6 +228,7 @@ G_Main_Controller.initElementsPrim();
 
 $(document).ready(function (e) {
     G_Main_Controller.initElements();
+    G_Main_Controller.IgnoreNullLinks();
 });
 
 /* Lazy loading */
@@ -209,52 +250,6 @@ lazyImgs.lazyload({
 }).trigger("lazyload");
 
 /* /Lazy loading */
-
-//ANCHORS -------------------------------------------------------
-
-/*
- $("#backtotop").click(function (e) {
- e.preventDefault();
- Global_vars_lapp_app.body_html.animate({
- scrollTop: 0
- }, 600);
- return false;
- });
- */
-
-$("a").click(function (e) {
-    var dest = G_Main_Controller.RemoveBaseUrl($(this).attr('href'), 1);
-    if (dest[0] === '\#') {
-        if (dest.length > 1) {
-            if (dest === '\#top') {
-                Global_vars_lapp_app.body_html.animate({
-                    scrollTop: 0
-                }, 600);
-                return false;
-            }
-            else {
-                var $dest = $(dest);
-                if($dest.length) {
-                    e.preventDefault();
-                    if (Global_vars_lapp_app.window.scrollTop() > 150) {
-                        Global_vars_lapp_app.body_html.animate({
-                            scrollTop: $dest.offset().top - 70
-                        }, 600);
-                    }
-                    else {
-                        Global_vars_lapp_app.body_html.animate({
-                            scrollTop: $dest.offset().top - 100
-                        }, 600);
-                    }
-                }
-            }
-        } else {
-            e.preventDefault();
-        }
-    }
-});
-
-//ANCHORS /--------------------------------------------------------
 
 Global_vars_lapp_app.window.scroll(function () {
 
