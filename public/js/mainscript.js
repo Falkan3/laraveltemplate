@@ -37,14 +37,12 @@ var G_Main_Controller = (function () {
             G_Main_Controller.Scroll_backToTop();
             G_Main_Controller.Delayed_resize_init();
 
-            Global_vars_lapp_app.window.on("load", function () {
-                G_Main_Controller.Load_hideAll();
-            });
-
             Global_vars_lapp_app.window.scroll(function () {
                 G_Main_Controller.Scroll_backToTop();
                 G_Main_Controller.Scroll_navbarShrink();
             });
+
+            G_Main_Controller.Load_hideAll();
         },
 
         /* ---- Back to top visibility ---- */
@@ -52,7 +50,10 @@ var G_Main_Controller = (function () {
             if(!Local_vars.elements.hideAll) {
                 Local_vars.elements.hideAll = $('#hideAll');
             }
-            Local_vars.elements.hideAll.slideUp();
+
+            if(Local_vars.elements.hideAll) {
+                Local_vars.elements.hideAll.slideUp();
+            }
         },
         Scroll_backToTop: function () {
             if (Global_vars_lapp_app.window.scrollTop() > 100) {
