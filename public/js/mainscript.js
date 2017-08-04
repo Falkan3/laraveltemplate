@@ -26,8 +26,10 @@ var G_Main_Controller = (function () {
 
             //hideAll
             Local_vars.elements.hideAll = $('#hideAll');
+
             //backToTop
             Local_vars.elements.backToTop = $('#backtotop');
+
             //nav
             Local_vars.elements.nav = $('.navbar.navbar-default');
 
@@ -260,7 +262,7 @@ Global_vars_lapp_app.window.on('resize', function () {
 });
 
 Global_vars_lapp_app.window.on("load", function () {
-
+    G_Main_Controller.Load_hideAll();
 });
 
 /* ----------------------------  Misc functions ----------------------------  */
