@@ -49,7 +49,9 @@ var G_Main_Controller = (function () {
 
         /* ---- Back to top visibility ---- */
         Load_hideAll: function () {
-            Local_vars.elements.hideAll.slideUp();
+            if(Local_vars.elements.hideAll) {
+                Local_vars.elements.hideAll.slideUp();
+            }
         },
         Scroll_backToTop: function () {
             if (Global_vars_lapp_app.window.scrollTop() > 100) {
