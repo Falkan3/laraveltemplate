@@ -51,7 +51,7 @@ class LoginController extends Controller
     public function logout(\Illuminate\Http\Request $request)
     {
         $this->performLogout($request);
-        return redirect('lang_' . \Lang::getLocale());
-        //return redirect()->back();
+        return redirect()->back();
+        //return redirect('lang_' . \Lang::getLocale());
     }
 }
