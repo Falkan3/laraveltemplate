@@ -16,11 +16,17 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if ( Auth::check() && Auth::user()->role === 'admin' )
+        if (Auth::check())
         {
-            return $next($request);
+            if(Auth::user()->isAdmin()) {
+                return $next($request);
+            }
+
+            return redirect()->guest('lang_' . \Lang::getLocale() . '/home')->with('error', __('auth.admin_only'));
         }
 
-        return redirect('lang_' . \Lang::getLocale() . '/home');
+        return redirect()->guest('lang_' . \Lang::getLocale() . '/login');
+        //return redirect()->intended('lang_' . \Lang::getLocale() . '/home');
+        //return redirect('lang_' . \Lang::getLocale() . '/home');
     }
 }
