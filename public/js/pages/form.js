@@ -98,7 +98,7 @@ var G_Form_Page_Controller = (function () {
         },
         initFancySelect: function() {
             $('select').fancySelect();
-            $('.fancySelect .options').mCustomScrollbar();
+            $('.fancy-select .options').mCustomScrollbar();
         }
     };
 })();
