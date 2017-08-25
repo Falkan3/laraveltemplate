@@ -17,6 +17,7 @@ var G_Form_Page_Controller = (function () {
         initElements: function () {
             G_Form_Page_Controller.initRoundSliders();
             G_Form_Page_Controller.initRangeSliders();
+            G_Form_Page_Controller.initFancySelect();
         },
         
         /* ---- fncs ---- */
@@ -95,12 +96,15 @@ var G_Form_Page_Controller = (function () {
                 ')'
             );
         },
+        initFancySelect: function() {
+            $('select').fancySelect();
+            $('.fancySelect .options').mCustomScrollbar();
+        }
     };
 })();
 
 $(document).ready(function (e) {
     G_Form_Page_Controller.initElements();
-    $('select').fancySelect();
 });
 
 $(window).scroll(function () {

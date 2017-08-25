@@ -656,11 +656,12 @@ a.stretch {
 /* Input range plugin */
 
 .input-container.custom-range {
-  .irs-single {
-    background: #2aabff;
-  }
-  .irs-from:after, .irs-to:after, .irs-single:after {
-    border-top-color: #2aabff;
+  .irs-from, .irs-to, .irs-single {
+    background: #ed5565;
+
+    &:after {
+      border-top-color: #ed5565;
+    }
   }
 }
 
