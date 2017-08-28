@@ -20,7 +20,9 @@ var G_Index_Controller = (function () {
             Local_vars.elements.device_doughnut_chart = $("#device_doughnut_chart");
 
             G_Index_Controller.drawDoughnutCharts();
-            Global_vars_lapp_app.window.on('resize', G_Index_Controller.resizeDoughnutCharts());
+            Global_vars_lapp_app.window.on('resize', function() {
+                G_Index_Controller.resizeDoughnutCharts()
+            });
         },
         drawDoughnutCharts: function () {
             Local_vars.elements.clickscore_doughnut_piechart.drawDoughnutChart([
