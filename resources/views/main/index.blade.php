@@ -12,8 +12,11 @@
 @stop
 @section('custom_js')
     <!-- libs -->
-    <script src="{{ URL::asset('js/libs/wow.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/libs/slick.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/wow.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/slick.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/jquery.ba-throttle-debounce.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/jquery.stickyheader.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/doughnut-chart.js', env('HTTPS')) }}"></script>
     <!-- plugins -->
     <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
@@ -112,7 +115,7 @@
             </div>
         </div>
 
-        <div class="container custom-scroll-box"
+        <div class="container custom-scroll-box btmspace-30"
              style="height: 1000px; max-height: 300px; padding: 25px;">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper consectetur fringilla. Morbi
                 egestas enim in egestas porttitor. Ut convallis mollis ipsum, ut scelerisque mi tristique et. Fusce nunc
@@ -147,6 +150,179 @@
                 amet luctus lorem. Phasellus efficitur consectetur augue, id eleifend augue fringilla sit amet. Fusce
                 consectetur risus non lacus tempor fermentum. Cras venenatis dui a justo scelerisque pharetra. Nulla
                 vulputate nisi ac ullamcorper malesuada.</p>
+        </div>
+
+        <div class="container btmspace-30">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 chart-half-screen"> <?php /* add class .full-screen to this div to view a single chart. Also remove col-md-6 */ ?>
+                    <h4 class="title btmspace-30">
+                        <span>Click score</span>
+                    </h4>
+
+                    <div class="cs-chart-container">
+                        <div class="chart-legend">
+                            <p><i class="fa fa-info rightspace-10" aria-hidden="true"></i> Legenda:</p>
+                            <div class="ct"></div>
+                        </div>
+
+                        <div id="clickscore_doughnut_chart" class="doughnut-chart small"
+                             data-ok="500"
+                             data-fraud="200"
+                             data-undefined="50">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 chart-half-screen">
+                    <h4 class="title btmspace-30">
+                        <span>Urządzenia</span>
+                    </h4>
+
+                    <div class="cs-chart-container">
+                        <div class="chart-legend">
+                            <p><i class="fa fa-info rightspace-10" aria-hidden="true"></i> Legenda:</p>
+                            <div class="ct"></div>
+                        </div>
+
+                        <div id="device_doughnut_chart" class="doughnut-chart small"
+                             data-pc="600"
+                             data-mobile="120"
+                             data-undefined="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container btmspace-30">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="horizontal-bar-wrap">
+                        <p class="title">
+                            <span>Podejrzane IP</span>
+                        </p>
+
+                        <div class="barGraph">
+                            <div class="graph">
+                                <div class="graph-barBack">
+                                    <div class="graph-bar" data-value="25">
+                                        <div class="graph-legend">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-bar-wrap">
+                        <p class="title inline-block">
+                            <span>Podejrzane IP zablokowane w Adwords</span>
+                        </p>
+
+                        <div class="barGraph">
+                            <div class="graph">
+                                <div class="graph-barBack">
+                                    <div class="graph-bar" data-value="15">
+                                        <div class="graph-legend">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-bar-wrap">
+                        <p class="title inline-block">
+                            <span>IP OK</span>
+                        </p>
+
+                        <div class="barGraph">
+                            <div class="graph">
+                                <div class="graph-barBack">
+                                    <div class="graph-bar green" data-value="60">
+                                        <div class="graph-legend">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-bar-wrap multiple">
+                        <p class="title inline-block">
+                            <span>test</span>
+                        </p>
+
+                        <div class="barGraph">
+                            <div class="graph">
+                                <div class="graph-barBack">
+                                    <div class="graph-bar green" data-value="20" data-background-color="#FF595E">
+                                        <div class="graph-legend">abc</div>
+                                    </div>
+
+                                    <div class="graph-bar green" data-value="35" data-background-color="#FFCA3A">
+                                        <div class="graph-legend">def</div>
+                                    </div>
+
+                                    <div class="graph-bar green" data-value="40" data-background-color="#8AC926">
+                                        <div class="graph-legend">ghi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover bg-white table-clickable sticky-table">
+                            <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>GID</th>
+                                <th>Data</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">4</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">5</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">6</td>
+                                <td>150179102735563</td>
+                                <td>2017-08-03 22:10:21</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @stop

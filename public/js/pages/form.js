@@ -2,14 +2,16 @@
 
 var Global_Form_Page_vars = {
     elements: {
-        roundsliders : []
+        roundsliders: []
     }
 };
 
 var G_Form_Page_Controller = (function () {
     var Local_vars = {
         'elements': {
-            range_sliders: null
+            range_sliders: null,
+            clickscore_doughnut_piechart: null,
+            device_doughnut_chart: null
         }
     };
 
@@ -19,7 +21,7 @@ var G_Form_Page_Controller = (function () {
             G_Form_Page_Controller.initRangeSliders();
             G_Form_Page_Controller.initFancySelect();
         },
-        
+
         /* ---- fncs ---- */
         initRoundSliders: function () {
             //Amount
@@ -35,14 +37,14 @@ var G_Form_Page_Controller = (function () {
                 max: 100000,
                 min: 1000,
                 value: 3000,
-                drag: function(args) {
+                drag: function (args) {
                     G_Form_Page_Controller.setBackgroundColorRoundSliders(args, 100000);
                     //console.log(args.id, args.value);
                 },
-                change: function(args) {
+                change: function (args) {
                     G_Form_Page_Controller.setBackgroundColorRoundSliders(args, 100000);
                 },
-                tooltipFormat: function(args) {
+                tooltipFormat: function (args) {
                     return numberFormat(args.value, 0, ',', ' ') + ' zł';
                 }
             });
@@ -78,12 +80,12 @@ var G_Form_Page_Controller = (function () {
                 });
             });
         },
-        refreshRoundSliders: function() {
-            for(var i=0;i<Global_Form_Page_vars.elements.roundsliders.length;i++) {
+        refreshRoundSliders: function () {
+            for (var i = 0; i < Global_Form_Page_vars.elements.roundsliders.length; i++) {
                 Global_Form_Page_vars.elements.roundsliders[i].slider.roundSlider("refresh");
             }
         },
-        setBackgroundColorRoundSliders: function(args, maxVal) {
+        setBackgroundColorRoundSliders: function (args, maxVal) {
             var el_to_change = Global_Form_Page_vars.elements.roundsliders.filter(function (el) {
                 return el.id === args.id;
             });
@@ -91,15 +93,15 @@ var G_Form_Page_Controller = (function () {
             //console.log(el_to_change[0].range_color_el)
             el_to_change[0].range_color_el.css('background-color', 'rgb('
                 + Math.round(121 + 77 * (args.value / maxVal)) + ',' +
-                + Math.round(53 - 13 * (args.value / maxVal)) + ',' +
-                + Math.round(152 - 173 * (args.value / maxVal)) +
+                +Math.round(53 - 13 * (args.value / maxVal)) + ',' +
+                +Math.round(152 - 173 * (args.value / maxVal)) +
                 ')'
             );
         },
-        initFancySelect: function() {
+        initFancySelect: function () {
             $('select').fancySelect();
             $('.fancy-select .options').mCustomScrollbar();
-        }
+        },
     };
 })();
 
@@ -137,7 +139,7 @@ $.fn.roundSlider.prototype._processStepByValue = function (value) {
     if (!this._isHandleDrag) return d;
     this._lastValue = d.value;
     this._lastAngle = d.angle;
-    return { value: this._lastValue, angle: this._valueToAngle(value) };
+    return {value: this._lastValue, angle: this._valueToAngle(value)};
 };
 
 var srcFn2 = $.fn.roundSlider.prototype._handleDown;

@@ -3,18 +3,67 @@
 var G_Index_Controller = (function () {
     var Local_vars = {
         'elements': {
-
+            clickscore_doughnut_piechart: null,
+            device_doughnut_chart: null
         }
     };
 
     return {
         initElements: function () {
-
+            G_Index_Controller.initDoughnutCharts();
+            G_Index_Controller.initHorizontalBarCharts();
         },
         
         /* ---- fncs ---- */
-        xxx: function () {
+        initDoughnutCharts: function() {
+            Local_vars.elements.clickscore_doughnut_piechart = $("#clickscore_doughnut_chart");
+            Local_vars.elements.device_doughnut_chart = $("#device_doughnut_chart");
 
+            G_Index_Controller.drawDoughnutCharts();
+            Global_vars_lapp_app.window.on('resize', G_Index_Controller.resizeDoughnutCharts());
+        },
+        drawDoughnutCharts: function () {
+            Local_vars.elements.clickscore_doughnut_piechart.drawDoughnutChart([
+                {title: "OK", value: Number(Local_vars.elements.clickscore_doughnut_piechart.attr('data-ok')), color: "#51c855"},
+                {title: "Fraud", value: Number(Local_vars.elements.clickscore_doughnut_piechart.attr('data-fraud')), color: "#FC4349"},
+                {title: "Nieokreślony", value: Number(Local_vars.elements.clickscore_doughnut_piechart.attr('data-undefined')), color: "#212121"},
+            ]);
+
+            Local_vars.elements.device_doughnut_chart.drawDoughnutChart([
+                {title: "PC", value: Number(Local_vars.elements.device_doughnut_chart.attr('data-pc')), color: "#03a5eb"},
+                {title: "Mobile", value: Number(Local_vars.elements.device_doughnut_chart.attr('data-mobile')), color: "#324ad6"},
+                {title: "Nieokreślony", value: Number(Local_vars.elements.device_doughnut_chart.attr('data-undefined')), color: "#212121"},
+            ]);
+        },
+        resizeDoughnutCharts: function () {
+            //cleanup
+            var temp = $(".doughnut-chart, .chart-legend .ct");
+            temp.empty();
+            $('.doughnutTip').remove();
+
+            G_Index_Controller.drawDoughnutCharts();
+        },
+        initHorizontalBarCharts: function() {
+            //Bar charts
+            // Produces width of .barChart
+            $('.horizontal-bar-wrap').each(function () { //.horizontal-bar-wrap .graph-bar
+                var $this = $(this);
+                var items = $this.find('.graph-bar');
+                var dataFloat = $this.hasClass('multiple');
+                items.each(function() {
+                    var $this = $(this);
+                    var dataWidth = $this.data('value');
+                    var dataBackgroundColor = $this.data('background-color');
+                    $this.css("width", dataWidth + "%");
+                    if(dataBackgroundColor) {
+                        $this.css("background-color", dataBackgroundColor);
+                        $this.css("color", G_Main_Controller.ShadeColor(dataBackgroundColor, 120));
+                    }
+                });
+                if(dataFloat) {
+                    $this.find('.graph-barBack').append('<div class="clearfix"></div>');
+                }
+            });
         }
     };
 })();
@@ -36,6 +85,8 @@ $(document).ready(function (e) {
     $('.iterator-container-1').iterator({});
     $('.iterator-container-2').iterator({});
     $('.custom-scroll-box').mCustomScrollbar();
+
+    G_Index_Controller.initElements();
 });
 
 $(window).scroll(function () {

@@ -16,13 +16,14 @@
 @stop
 @section('custom_js')
     <!-- libs -->
-    <script src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/libs/ion.rangeSlider.min.js', env('HTTPS')) }}"></script>
     <!-- plugins -->
     <script type="text/javascript" src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
     <!-- main -->
     <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
+
     <script type="text/javascript" src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/pages/form.js', env('HTTPS')) }}"></script>
@@ -30,7 +31,7 @@
 
 @section('content')
     <section class="page big-form">
-        <div class="container">
+        <div class="container btmspace-30">
             <h1 class="text-center">Formularz kontaktowy</h1>
 
             {!! Form::open(['url' => url('api/submitLead', null, env('HTTPS')), 'method' => 'post', 'class' =>'contact-form']) !!}
@@ -237,6 +238,18 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="switch-container red ml10">
+                        <label class="switch">
+                            <input type="checkbox" checked="checked">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="row submit-row">
                 <div class="col-xs-12 col-sm-12 col-md-12 no-padding">

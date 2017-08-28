@@ -667,6 +667,680 @@ a.stretch {
 
 /* /Input range plugin */
 
+/* ------------- CUSTOM CHARTS ------------- */
+.chart-half-screen {
+  &.full-screen {
+    border: none;
+
+    .cs-chart-container {
+      @media (min-width: 992px) {
+        & {
+          white-space: nowrap;
+        }
+
+        & > div {
+          display: inline-block;
+          vertical-align: top;
+          white-space: normal;
+        }
+
+        .chart-legend {
+          width: 30%;
+          margin-right: 5%;
+        }
+
+        .doughnut-chart {
+          width: 60%;
+          margin-left: 5%;
+        }
+      }
+
+      @media (max-width: 992px) {
+        & > div {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    &:first-child {
+      padding-right: 5%;
+    }
+    &:last-child {
+      padding-left: 5%;
+    }
+
+    &:nth-child(odd) {
+      border-right: solid 1px #ddd;
+    }
+    &:nth-child(even) {
+      border-left: solid 1px #ddd;
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding-bottom: 25px;
+    border-bottom: solid 2px #ddd;
+
+    & {
+      margin-bottom: 25px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}
+
+.cs-chart-container {
+  position: relative;
+
+  .chart-legend {
+    margin-bottom: 25px;
+    font-size: 14px;
+
+    .ct {
+      .ct-bod, .ct-sqr, .ct-label {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .ct-sqr {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+      .ct-bod {
+        margin-right: 15px;
+        margin-bottom: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .ct-bod {
+          display: block;
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      min-height: 100px;
+    }
+  }
+
+  /* DOUGHNUT CHART */
+  .doughnut-chart {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    //height: 450px;
+    margin: 0 auto;
+    .doughnutSummary {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #d5d5d5;
+      text-align: center;
+      //text-shadow: 0 -1px 0 #111;
+      cursor: default;
+    }
+    .doughnutSummaryTitle {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin: -27% 0 0 0;
+      font-size: 22px;
+      letter-spacing: .06em;
+      color: inherit;
+      font-weight: inherit;
+    }
+    .doughnutSummaryNumber {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin: -5% 0 0 0;
+      font-size: 55px;
+      color: inherit;
+      font-weight: inherit;
+    }
+
+    g path:hover {
+      opacity: 0.65;
+    }
+
+    @media (max-width: 991px) {
+      & {
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .doughnutSummaryTitle {
+        margin-top: -23%;
+        font-size: 20px;
+      }
+      .doughnutSummaryNumber {
+        margin-top: -5%;
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 399px) {
+      .doughnutSummaryTitle {
+        margin-top: -19%;
+        font-size: 18px;
+      }
+      .doughnutSummaryNumber {
+        margin-top: 0;
+        font-size: 32px;
+      }
+    }
+
+    &.small {
+      max-width: 300px;
+
+      .doughnutSummaryTitle {
+        margin-top: -24%;
+        font-size: 18px;
+      }
+      .doughnutSummaryNumber {
+        font-size: 42px;
+      }
+
+      @media (max-width: 991px) {
+        & {
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .doughnutSummaryTitle {
+          margin-top: -26%;
+          font-size: 16px;
+        }
+        .doughnutSummaryNumber {
+          margin-top: -5%;
+          font-size: 38px;
+        }
+      }
+
+      @media (max-width: 399px) {
+        .doughnutSummaryTitle {
+          margin-top: -16%;
+          font-size: 18px;
+        }
+        .doughnutSummaryNumber {
+          margin-top: 0;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+  /* /DOUGHNUT CHART */
+}
+
+/* MISC */
+.doughnutTip {
+  position: absolute;
+  min-width: 30px;
+  max-width: 300px;
+  padding: 5px 15px;
+  border-radius: 1px;
+  background: rgba(0, 0, 0, .8);
+  color: #ddd;
+  font-size: 17px;
+  text-shadow: 0 1px 0 #000;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    content: "";
+    height: 0;
+    margin: 0 0 0 -6px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, .7);
+    line-height: 0;
+  }
+
+  &.stylized {
+    padding: 15px 20px;
+    background-color: #337ab7;
+    border: solid 1px #fff;
+    border-radius: 0;
+    font-size: 100%;
+    color: #fff;
+    text-shadow: none;
+
+    &::after {
+      bottom: -7px;
+      margin: 0 0 0 -7px;
+      border-top: 6px solid #fff;
+    }
+  }
+}
+
+/* HORIZONTAL BAR GRAPH */
+
+/* Mixings &  Variables */
+$bar-graph-barHeight: 20px;
+$bar-graph-borders: #212121;
+$bar-graph-primary: #e72f0b;
+$bar-graph-primary_hover: #ff310b;
+$bar-graph-background: #ddd;
+$bar-graph-indent: 0; //4%
+$bar-graph-border-radius: 0; //2px;
+
+.horizontal-bar-wrap {
+  margin: 0 auto;
+  //padding: 50px;
+  max-width: 1200px;
+
+  .title {
+    font-size: 16px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+
+  @mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -o-transition: $property;
+    transition: $property
+  }
+
+  @mixin transform($degree) {
+    transform: rotate($degree);
+    -ms-transform: rotate($degree);
+    -webkit-transform: rotate($degree);
+  }
+
+  .clearfix,
+  .clearfix:before,
+  .clearfix:after {
+    display: block;
+    content: " ";
+    clear: both;
+    zoom: 1;
+  }
+
+  /* Bar Graph Class */
+
+  .barGraph {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+
+  .graph {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: calc(100% - #{$bar-graph-indent});
+    left: $bar-graph-indent;
+
+    &-barBack {
+      border-radius: $bar-graph-border-radius;
+      background: $bar-graph-background;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    &-bar {
+      background-color: $bar-graph-primary;
+      @include transition(all 1s ease-out);
+      border-radius: $bar-graph-border-radius;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      display: block;
+      height: 20px;
+      width: 0;
+      color: #fff;
+
+      &:hover {
+        @include transition(all 0.5s ease);
+        background: $bar-graph-primary_hover;
+      }
+
+      //colored
+
+      &.green {
+        background-color: #59d05f;
+
+        &:hover {
+          background: #5be461;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:after {
+        position: absolute;
+        content: attr(data-value);
+        display: none;
+
+        font-size: 12px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+
+        line-height: $bar-graph-barHeight;
+        height: $bar-graph-barHeight;
+        padding: 0 10px;
+
+        margin-left: 5px;
+        left: 100%;
+        top: 0;
+      }
+
+      &:hover:after {
+        display: block;
+      }
+    }
+
+    &-legend {
+      position: absolute;
+      margin-right: 10px;
+      left: -40px;
+      z-index: 1;
+      font-size: 12px;
+    }
+  }
+
+  &.multiple {
+    .graph {
+      &-bar {
+        float: left;
+
+        &:after {
+          margin-left: 0;
+          left: auto;
+          right: 0;
+          border-top-right-radius: 0;
+          -webkit-border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          -webkit-border-bottom-right-radius: 0;
+        }
+      }
+      &-legend {
+        left: 10px;
+      }
+    }
+  }
+
+  /* Lines for Charts */
+
+  .lines {
+    $bar-graph-bars: fade($bar-graph-borders, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    top: 0;
+
+    &-horz {
+      border-bottom: 1px dashed $bar-graph-bars;
+      position: absolute;
+      width: 100%;
+      height: 0px;
+
+      &:nth-of-type(1) {
+        top: 20%;
+      }
+      &:nth-of-type(2) {
+        top: 40%;
+      }
+      &:nth-of-type(3) {
+        top: 60%;
+      }
+      &:nth-of-type(4) {
+        top: 80%;
+      }
+    }
+
+    &-vert {
+      border-right: 1px dashed $bar-graph-bars;
+      position: absolute;
+      height: 100%;
+      width: 1px;
+
+      &:nth-of-type(5) {
+        left: 20%;
+      }
+      &:nth-of-type(6) {
+        left: 40%;
+      }
+      &:nth-of-type(7) {
+        left: 60%;
+      }
+      &:nth-of-type(8) {
+        left: 80%;
+      }
+    }
+  }
+
+  /* Line Graph */
+  .lineChart {
+    @include transition(all 0.5s ease);
+    border-radius: 3px;
+    border: 2px solid fade($bar-graph-borders, 45%);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+
+    svg {
+      position: absolute;
+      z-index: 999;
+    }
+
+    circle {
+      @include transition(all 0.5s ease);
+      position: relative;
+      cursor: pointer;
+      stroke: $bar-graph-primary;
+      stroke-width: 3;
+      fill: $bar-graph-primary;
+
+      &:hover {
+        stroke-width: 8;
+      }
+    }
+
+    line {
+      stroke: $bar-graph-borders;
+      stroke-width: 4;
+    }
+
+    &-lines {
+    }
+
+    &-points {
+    }
+  }
+
+  .trend line {
+    stroke: rgba(204, 51, 51, 0.8);
+  }
+}
+
+/* Sticky-table */
+.sticky-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  //margin: 3em 0;
+  width: 100%;
+
+  .sticky-thead,
+  .sticky-col,
+  .sticky-intersect {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .125s ease-in-out;
+    z-index: 50;
+    width: auto; /* Prevent table from stretching to full size */
+  }
+
+  .sticky-thead {
+    box-shadow: 0 0.25em 0.1em -0.1em rgba(0, 0, 0, .125);
+    z-index: 100;
+    width: 100%; /* Force stretch */
+  }
+
+  .sticky-intersect {
+    opacity: 1;
+    z-index: 150;
+  }
+
+  .sticky-intersect th {
+    background-color: #666;
+    color: #eee;
+  }
+
+  td, th {
+    box-sizing: border-box;
+  }
+
+  /* Not needed for sticky header/column functionality */
+  td.user-name {
+    text-transform: capitalize;
+  }
+
+  &.overflow-y {
+    overflow-y: auto;
+    max-height: 50vh;
+  }
+
+  /* Component styles */
+  .component {
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 2em 0 3em;
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+  }
+
+  .component .filler {
+    color: #d3d3d3;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-bottom: 3em;
+    width: 100%;
+    background: #fff;
+
+    &, &.table-hover {
+      & > thead > tr,
+      & > tbody > tr
+      {
+        &, &:hover {
+          & > th, & > td {
+            border: none !important;
+          }
+        }
+        &:hover > td, &.active > td {
+          background-color: #dff8ff !important;
+          border: none !important;
+        }
+        &:hover > th, &.active > th {
+          background-color: #30bf8e;
+        }
+      }
+    }
+
+    td, th {
+      //padding: 0.75em 1.5em;
+      padding: 8px;
+      border: none;
+      text-align: left;
+
+      &.text-center {
+        text-align: center;
+      }
+    }
+
+    td.err {
+      background-color: #e992b9;
+      color: #fff;
+      font-size: 0.75em;
+      text-align: center;
+      line-height: 1;
+    }
+
+    th {
+      background-color: #31bc86;
+      //font-weight: bold;
+      color: #fff;
+      font-weight: normal;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tbody th {
+      background-color: #2ea879;
+    }
+
+    tbody tr:nth-child(2n-1) {
+      background-color: #f5f5f5;
+      transition: all .125s ease-in-out;
+    }
+
+    tbody tr:hover {
+      background-color: rgba(129, 208, 177, .3);
+    }
+
+    span {
+      &.inline-block {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin: 0 3px;
+
+        &.small {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+/* /Sticky table */
+
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
 
 /* Nicescroll */

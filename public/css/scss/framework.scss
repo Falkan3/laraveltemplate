@@ -164,15 +164,13 @@ body {
   margin-right: auto;
 }
 
+/* general classes */
+
 .margin-vertical {
   margin: 20px 0;
   &.medium {
     margin: 40px 0;
   }
-}
-
-.margin-top-big {
-  margin-top: 130px;
 }
 
 .padding-horizontal.medium {
@@ -401,6 +399,10 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section 
 
 .btmspace-80 {
   margin-bottom: 80px;
+}
+
+.rightspace-10 {
+  margin-right: 10px;
 }
 
 .inspace-5 {
