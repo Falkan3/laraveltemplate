@@ -164,6 +164,10 @@ body {
   margin-right: auto;
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
 /* general classes */
 
 .margin-vertical {
@@ -176,6 +180,10 @@ body {
 .padding-horizontal.medium {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .text-block {

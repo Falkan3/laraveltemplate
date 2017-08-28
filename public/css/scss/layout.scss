@@ -600,27 +600,28 @@ a.stretch {
 
 /* Buttons */
 
-.button.sliding_bg {
-  color: #31302B;
-  background: #FFF;
-  padding: 12px 17px;
-  margin: 25px;
-  border: 3px solid #31302B;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: 2px;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #31302B;
-  -webkit-transition: all ease 0.8s;
-  -moz-transition: all ease 0.8s;
-  transition: all ease 0.8s;
-  &:hover {
-    box-shadow: inset 0 100px 0 0 #31302B;
-    color: #FFF;
+.button {
+  &.sliding_bg {
+    color: #31302B;
+    background: #FFF;
+    padding: 12px 17px;
+    border: 3px solid #31302B;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #31302B;
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    transition: all ease 0.8s;
+    &:hover {
+      box-shadow: inset 0 100px 0 0 #31302B;
+      color: #FFF;
+    }
   }
 }
 
@@ -653,6 +654,8 @@ a.stretch {
 
 /* /Accordion */
 
+/* ------------- CUSTOM INPUT ELEMENTS ------------- */
+
 /* Input range plugin */
 
 .input-container.custom-range {
@@ -666,6 +669,77 @@ a.stretch {
 }
 
 /* /Input range plugin */
+
+/* The switch - the box around the slider */
+.switch-container {
+  display: inline-block;
+  vertical-align: middle;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 14px;
+    margin: 0;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 6px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:disabled + .slider {
+    cursor: default;
+  }
+
+  //colored
+  &.red {
+    input:checked + .slider {
+      background-color: #e72f0b;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #e72f0b;
+    }
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+}
 
 /* ------------- CUSTOM CHARTS ------------- */
 .chart-half-screen {
@@ -1262,8 +1336,7 @@ $bar-graph-border-radius: 0; //2px;
 
     &, &.table-hover {
       & > thead > tr,
-      & > tbody > tr
-      {
+      & > tbody > tr {
         &, &:hover {
           & > th, & > td {
             border: none !important;
@@ -1339,6 +1412,7 @@ $bar-graph-border-radius: 0; //2px;
     }
   }
 }
+
 /* /Sticky table */
 
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */

@@ -63,7 +63,7 @@
             <div class="row">
                 <p class="header">Lorem ipsum</p>
 
-                <div class="container-fluid boxes-container">
+                <div class="container-fluid boxes-container btmspace-30">
                     <div class="row">
                         {!! Form::hidden('test', "1,3", ['required', 'data-container' => 'true', 'data-index' => '0', 'data-multiselect' => 'true']) !!}
                         <div class="col-xs-12 col-sm-6 col-md-15">
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 20px;" class="agreements">
+            <div class="agreements btmspace-30">
                 <div>
                     {{Form::checkbox('agree1', '1', 1, ['id' => 'agree1'])}}
                     {!!Html::decode(Form::label('agree1', '<span></span>Zgoda na gromadzenie i przetwarzanie danych osobowych', ['class' => 'control-label']))!!}
@@ -195,7 +195,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin: 30px 0;">
+            <div class="row btmspace-30">
                 <div class="col-xs-12">
                     <input id="f_n_amount" type="range" name="f_n_amount" min="1000"
                            max="100000"
@@ -205,7 +205,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin: 30px 0;">
+            <div class="row btmspace-30">
                 <div class="col-xs-12" style="margin: 30px 0;">
                     <select class="basic">
                         <option value="">Select something…</option>
@@ -239,13 +239,16 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row btmspace-30">
                 <div class="col-xs-12">
-                    <div class="switch-container red ml10">
-                        <label class="switch">
-                            <input type="checkbox" checked="checked">
-                            <span class="slider"></span>
-                        </label>
+                    <div class="align-middle">
+                        <p class="inline-block">Option</p>
+                        <div class="switch-container red">
+                            <label class="switch">
+                                <input type="checkbox" checked="checked">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
