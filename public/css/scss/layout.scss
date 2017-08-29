@@ -115,7 +115,7 @@ nav.navbar {
     max-height: 30px;
   }
   .navbar-right {
-    float: left !important;
+    float: none !important;
     margin-right: 0;
   }
 }
@@ -653,6 +653,206 @@ a.stretch {
 }
 
 /* /Accordion */
+
+/* Halfscreen container */
+
+.half-screen-container {
+  position: relative;
+  .half-screen {
+    width: 50%;
+    height: 200px;
+    padding: 0;
+
+    &.first {
+      position: absolute;
+      z-index: 1;
+      > div {
+        background-color: #212121;
+        border-right-width: 2px;
+        &:hover {
+          background-color: #ff9c10;
+        }
+      }
+    }
+    &.second {
+      position: relative;
+      margin-left: auto;
+      > div {
+        position: relative;
+        border-left-width: 2px;
+        background-color: #212121;
+        &:hover {
+          background-color: #ff9c10;
+        }
+      }
+    }
+
+    > div {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 15px 20px;
+      border: solid 4px #ff9c10;
+      -webkit-transition: ease-in-out 0.3s;
+      -moz-transition: ease-in-out 0.3s;
+      -ms-transition: ease-in-out 0.3s;
+      -o-transition: ease-in-out 0.3s;
+      transition: ease-in-out 0.3s;
+
+      &:hover p > .fa {
+        width: 30px;
+        opacity: 1;
+      }
+    }
+    p {
+      margin: 0;
+      color: #fff;
+      font-size: 200%;
+      /*text-shadow: 1px 1px #212121;*/
+      z-index: 1;
+      > .fa {
+        width: 0;
+        opacity: 0;
+        margin-left: 10px;
+        -webkit-transition: ease-in-out 0.3s;
+        -moz-transition: ease-in-out 0.3s;
+        -ms-transition: ease-in-out 0.3s;
+        -o-transition: ease-in-out 0.3s;
+        transition: ease-in-out 0.3s;
+      }
+    }
+    a.stretch {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .half-screen-container {
+    padding: 0 15px;
+    .half-screen {
+      width: 100%;
+      height: 100px;
+      &.first {
+        position: relative;
+        > div {
+          width: 100%;
+          webkit-animation-name: none !important;
+          animation-name: none !important;
+          border-width: 2px 2px 1px 2px;
+        }
+      }
+      &.second > div {
+        width: 100%;
+        border-width: 1px 2px 2px 2px;
+      }
+    }
+  }
+}
+
+/* /Halfscreen container */
+
+/* Halfscreen header */
+
+.header-section-container {
+  position: relative;
+  overflow: hidden;
+  .half-screen {
+    width: 50%;
+    height: 400px;
+    padding: 0;
+
+    &.first {
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      > div {
+        background-color: #ff9c10;
+      }
+      p {
+        font-size: 400%;
+      }
+    }
+    &.second {
+      position: relative;
+      margin-left: auto;
+      > div {
+        position: relative;
+        background-color: #fff;
+      }
+      p {
+        font-size: 140%;
+        color: #212121;
+      }
+    }
+
+    > div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 25px 40px;
+      -webkit-transition: ease-in-out 0.3s;
+      -moz-transition: ease-in-out 0.3s;
+      -ms-transition: ease-in-out 0.3s;
+      -o-transition: ease-in-out 0.3s;
+      transition: ease-in-out 0.3s;
+    }
+    p {
+      color: #fff;
+      font-size: 200%;
+      line-height: 1;
+      /*text-shadow: 1px 1px #212121;*/
+      z-index: 1;
+    }
+    a.stretch {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .header-section-container .half-screen {
+    height: 300px;
+
+    &.first {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 150px;
+      > div {
+        width: 100%;
+        webkit-animation-name: none !important;
+        animation-name: none !important;
+        transitionDuration: 0;
+      }
+    }
+    &.second {
+      width: 100%;
+      height: auto;
+      > div {
+        width: 100%;
+        webkit-animation-name: none !important;
+        animation-name: none !important;
+        float: none;
+      }
+      p {
+        font-size: 120%;
+      }
+    }
+  }
+}
+
+/* /Halfscreen header */
 
 /* ------------- CUSTOM INPUT ELEMENTS ------------- */
 

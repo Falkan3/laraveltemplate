@@ -1,6 +1,9 @@
 //Author: Adam Kocić [Falkan3]
 
 var Global_vars_lapp_app = {
+    'contants': {
+        window_initial_width: null,
+    },
     window: null,
     body_html: null,
     ResizeGlobalTimer: [],
@@ -19,6 +22,7 @@ var G_Main_Controller = (function () {
         initElementsPrim: function () {
             //window
             Global_vars_lapp_app.window = $(window);
+            Global_vars_lapp_app.contants.window_initial_width = Global_vars_lapp_app.window.width();
         },
         initElements: function () {
             //body, html
@@ -47,11 +51,11 @@ var G_Main_Controller = (function () {
 
         /* ---- Back to top visibility ---- */
         Load_hideAll: function () {
-            if(!Local_vars.elements.hideAll) {
+            if (!Local_vars.elements.hideAll) {
                 Local_vars.elements.hideAll = $('#hideAll');
             }
 
-            if(Local_vars.elements.hideAll) {
+            if (Local_vars.elements.hideAll) {
                 Local_vars.elements.hideAll.slideUp();
             }
         },
@@ -74,7 +78,7 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Shrink navbar ---- */
-        fn: function() {
+        fn: function () {
 
         },
 
@@ -109,10 +113,27 @@ var G_Main_Controller = (function () {
 
             return "#" + RR + GG + BB;
         },
+        /*
+        var colors = {
+            green: {from: {r: 232, g: 255, b: 233}, to: {r: 200, g: 255, b: 202}},
+            red: {from: {r: 255, g: 239, b: 241}, to: {r: 255, g: 192, b: 200}},
+            grey: {from: {r: 221, g: 221, b: 221}, to: {r: 170, g: 170, b: 170}},
+        };
+        style_color = CalculateColorValue(colors.green, Math.abs((raw_value / 100)));
+        element.css('background', 'rgb(' + style_color + ')');
+        */
+        CalculateColorValue: function (color_json, percentage) {
+            var color;
+            color = Math.floor(color_json.from.r + (color_json.to.r - color_json.from.r) * percentage) + ',' +
+                Math.floor(color_json.from.g + (color_json.to.g - color_json.from.g) * percentage) + ',' +
+                Math.floor(color_json.from.b + (color_json.to.b - color_json.from.b) * percentage);
+
+            return color;
+        },
 
         //ANCHORS -------------------------------------------------------
 
-        IgnoreNullLinks: function() {
+        IgnoreNullLinks: function () {
             $("a").click(function (e) {
                 var dest = G_Main_Controller.RemoveBaseUrl($(this).attr('href'), 1);
                 if (dest[0] === '\#') {
@@ -125,7 +146,7 @@ var G_Main_Controller = (function () {
                         }
                         else {
                             var $dest = $(dest);
-                            if($dest.length) {
+                            if ($dest.length) {
                                 e.preventDefault();
                                 if (Global_vars_lapp_app.window.scrollTop() > 150) {
                                     Global_vars_lapp_app.body_html.animate({
@@ -168,7 +189,7 @@ var G_Main_Controller = (function () {
                 this.start();
             }
         },
-        Interval: function(fn, time) {
+        Interval: function (fn, time) {
             var timer = false;
             this.start = function () {
                 if (!this.isRunning())
@@ -188,7 +209,7 @@ var G_Main_Controller = (function () {
                 this.start();
             }
         },
-        Delayed_resize_init: function() {
+        Delayed_resize_init: function () {
             Global_vars_lapp_app.ResizeGlobalTimer = [];
 
             /*
@@ -201,13 +222,13 @@ var G_Main_Controller = (function () {
              });
              */
         },
-        Delayed_resize: function(name, fn, time) {
-            if(time === undefined || time === null)
+        Delayed_resize: function (name, fn, time) {
+            if (time === undefined || time === null)
                 time = 1000;
 
-            if(!Global_vars_lapp_app.ResizeGlobalTimer)
+            if (!Global_vars_lapp_app.ResizeGlobalTimer)
                 Global_vars_lapp_app.ResizeGlobalTimer = [];
-            if(name in Global_vars_lapp_app.ResizeGlobalTimer) {
+            if (name in Global_vars_lapp_app.ResizeGlobalTimer) {
                 clearTimeout(Global_vars_lapp_app.ResizeGlobalTimer[name]);
                 Global_vars_lapp_app.ResizeGlobalTimer[name] = setTimeout(fn, time);
                 //Global_vars_lapp_app.ResizeGlobalTimer[name].reset();
@@ -217,16 +238,33 @@ var G_Main_Controller = (function () {
                 //Global_vars_lapp_app.ResizeGlobalTimer[name] = new G_Main_Controller.Interval(fn,time);
             }
         },
-        Delayed_resize_stopAll: function() {
-            if(Global_vars_lapp_app.ResizeGlobalTimer.length) {
-                for(var i=0;i<Global_vars_lapp_app.ResizeGlobalTimer.length;i++) {
+        Delayed_resize_stopAll: function () {
+            if (Global_vars_lapp_app.ResizeGlobalTimer.length) {
+                for (var i = 0; i < Global_vars_lapp_app.ResizeGlobalTimer.length; i++) {
                     clearTimeout(Global_vars_lapp_app.ResizeGlobalTimer[i]);
                     //Global_vars_lapp_app.ResizeGlobalTimer[i].stop();
                 }
             }
             Global_vars_lapp_app.ResizeGlobalTimer = [];
         },
-        RemoveBaseUrl : function (url, rm_first_slash) {
+        fix_css_animations: function() {
+            if(G_Main_Controller.Viewport().width <= 991) {
+                $('.wow').each(function() {
+                    var $this = $(this);
+                    if($this.hasClass('slideInRightResize')) {
+                        $this.css('width', '100%');
+                    }
+                });
+            } else {
+                $('.wow').each(function() {
+                    var $this = $(this);
+                    if($this.hasClass('slideInRightResize')) {
+                        $this.css('width', '50%');
+                    }
+                });
+            }
+        },
+        RemoveBaseUrl: function (url, rm_first_slash) {
             /*
              * Replace base URL in given string, if it exists, and return the result.
              *
@@ -234,7 +272,7 @@ var G_Main_Controller = (function () {
              *      "/api/v1/blah/" stays "/api/v1/blah/"
              */
             var baseUrlPattern = /^https?:\/\/[a-z\:0-9.]+/;
-            if(rm_first_slash != undefined && rm_first_slash == 1)
+            if (rm_first_slash != undefined && rm_first_slash == 1)
                 baseUrlPattern = /^https?:\/\/[a-z\:0-9.\/]+/;
             var result = "";
 
@@ -285,6 +323,7 @@ Global_vars_lapp_app.window.scroll(function () {
 
 Global_vars_lapp_app.window.on('resize', function () {
     //G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn, 500);
+    G_Main_Controller.Delayed_resize('fix_css_animations', G_Main_Controller.fix_css_animations, 500);
 });
 
 Global_vars_lapp_app.window.on("load", function () {

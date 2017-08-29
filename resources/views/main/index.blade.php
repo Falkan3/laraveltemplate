@@ -46,19 +46,28 @@
             </div>
         </div>
     </section>
+
     <section class="page no-padding">
         <div class="container-fluid">
             <div class="row">
-                <div style="position: absolute; width: 100%; height: 400px; margin-bottom: 50px;  z-index: 1;">
-                    <div class="slideInRightResize animated wow" data-wow-duration="1.5s"
-                         style="width: 100%; height:100%; background-color: #ff9c10; float: left;"></div>
-                </div>
-                <div style="position: relative; width: 50%; height: 400px; margin-bottom: 50px; background-color: #fff; margin-left: auto;">
+                <div class="header-section-container">
+                    <div class="half-screen first">
+                        <div class="slideInRightResize animated wow aligner all" data-wow-duration="1.5s">
+                            <p class="uppercase">index</p>
+                        </div>
+                    </div>
 
+                    <div class="half-screen second">
+                        <div class="slideInUp animated wow aligner all" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                            <p>description</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
+    <section class="page">
         <div class="container">
             <p>{{__('pages/index.congrats')}}</p>
             <p>{{__('pages/index.lang_is')}}: {{$app->getLocale()}}</p>

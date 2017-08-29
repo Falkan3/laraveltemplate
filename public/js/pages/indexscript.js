@@ -21,7 +21,9 @@ var G_Index_Controller = (function () {
 
             G_Index_Controller.drawDoughnutCharts();
             Global_vars_lapp_app.window.on('resize', function() {
-                G_Index_Controller.resizeDoughnutCharts()
+                if(Global_vars_lapp_app.window.width() !== Global_vars_lapp_app.contants.window_initial_width) {
+                    G_Index_Controller.resizeDoughnutCharts();
+                }
             });
         },
         drawDoughnutCharts: function () {
