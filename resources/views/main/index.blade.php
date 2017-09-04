@@ -4,24 +4,24 @@
 @section('description', '')
 @section('custom_css')
     <!-- libs -->
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/animate_custom.css', env('HTTPS')) }}" type="text/css"
+    <link rel="stylesheet" href="{{ URL::asset('libs/animate/css/animate_custom.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/slick.css', env('HTTPS')) }}" type="text/css" media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/slick-theme.css', env('HTTPS')) }}" type="text/css"
+    <link rel="stylesheet" href="{{ URL::asset('libs/slick/css/slick.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('libs/slick/css/slick-theme.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
 @stop
 @section('custom_js')
     <!-- libs -->
-    <script type="text/javascript" src="{{ URL::asset('js/libs/wow.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/slick.min.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/jquery.ba-throttle-debounce.min.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/jquery.stickyheader.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/doughnut-chart.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/wow/js/wow.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/slick/js/slick.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/jquery_extensions/js/jquery.ba-throttle-debounce.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/table_sticky_header/js/jquery.stickyheader.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/doughnut_chart/js/doughnut-chart.js', env('HTTPS')) }}"></script>
     <!-- plugins -->
-    <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/plugins/iterator.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('plugins/js/flippers.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('plugins/js/iterator.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('plugins/js/square.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('plugins/js/accordion.js', env('HTTPS')) }}"></script>
     <!-- main -->
     <script src="{{ URL::asset('js/utility.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/pages/indexscript.js', env('HTTPS')) }}"></script>

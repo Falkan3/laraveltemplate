@@ -17,4 +17,10 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
     'admin_only' => 'Access for admins only.',
+
+    //email confirmation
+    'account_must_be_validated' => 'Your account isn\'t active. Please confirm your e-mail address. An e-mail has been sent to the given address.',
+    'email_confirmation_sent' => 'Verification e-mail sent. Please check your inbox.',
+    'email_confirmation_error' => 'E-mail verification error. Please try again later.',
+    'email_confirmation_success' => 'E-mail verification successful. You may now login.',
 ];

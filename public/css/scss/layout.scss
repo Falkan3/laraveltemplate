@@ -1679,23 +1679,6 @@ $bar-graph-border-radius: 0; //2px;
 
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
 
-/* Nicescroll */
-
-.nicescroll-rails {
-	div, > div {
-		width: 4px !important;
-		transition: ease-in-out 0.3s;
-	}
-	&:hover, &:active {
-		width: 8px !important;
-	}
-	> div {
-		&:hover, &:active {
-			width: 8px !important;
-		}
-	}
-}
-
 /* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
 
 footer {

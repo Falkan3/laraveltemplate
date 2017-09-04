@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendConfirmationEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -57,6 +58,11 @@ class LoginController extends Controller
 
     protected function authenticated($request,$user)
     {
+        if($user->verified==0) {
+            dispatch(new SendConfirmationEmail($user));
+            auth()->logout();
+            return redirect(url('lang_' . \Lang::getLocale() . '/login', null, env('HTTPS')))->withInput()->with('error', __('auth.account_must_be_validated'));
+        }
         if($user->isAdmin()){
             return redirect()->intended('lang_' . \Lang::getLocale() . '/admin');
         }

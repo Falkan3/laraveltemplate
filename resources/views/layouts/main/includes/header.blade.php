@@ -94,3 +94,20 @@
         <p>{{__('system.noscript')}}</p>
     </div>
 </noscript>
+
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+@if(session()->has('error'))
+    <div class="alert alert-danger">
+        @if(is_array(session()->get('error')))
+            @foreach(session()->get('error') as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        @else
+            {{ session()->get('error') }}
+        @endif
+    </div>
+@endif

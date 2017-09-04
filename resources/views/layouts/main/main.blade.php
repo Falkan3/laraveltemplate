@@ -23,11 +23,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap-theme.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('libs/bootstrap/css/bootstrap.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('libs/bootstrap/css/bootstrap-theme.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('fonts/fontawesome/fontawesome-4.3.0.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/jquery.mCustomScrollbar.min.css', env('HTTPS')) }}" type="text/css"
+    <link rel="stylesheet" href="{{ URL::asset('libs/malihu_custom_scrollbar/css/jquery.mCustomScrollbar.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
 
     @yield('custom_css')
@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/style.css', env('HTTPS')) }}" type="text/css" media="all"/>
 
     <!-- Scripts -->
-    <script src="{{ URL::asset('js/jquery/jquery-3.1.1.min.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/bootstrap/bootstrap.min.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('libs/jquery/js/jquery-3.1.1.min.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('libs/bootstrap/js/bootstrap.min.js', env('HTTPS')) }}"></script>
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -63,18 +63,15 @@
 <div class="loader global_ajax_loader loading_ajax hidden"></div>
 
 <!-- Scripts -->
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.easing.min.js', env('HTTPS')) }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery-inputmask.js', env('HTTPS')) }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.counterup.min.js', env('HTTPS')) }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/libs/malihu_custom_scrollbar/jquery.mCustomScrollbar.min.js', env('HTTPS')) }}"></script>
-<script src="{{ URL::asset('js/libs/malihu_custom_scrollbar/jquery.mousewheel.min.js', env('HTTPS')) }}"></script>
-<?php /*
-<script type="text/javascript" src="{{ URL::asset('js/jquery/jquery.nicescroll.min.js', env('HTTPS')) }}"></script>
- */ ?>
-<script type="text/javascript" src="{{ URL::asset('js/libs/notify.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery.easing.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery-inputmask.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery.counterup.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery.waypoints.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery.mobilemenu.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery/js/jquery.lazyload.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/jquery_extensions/js/jquery.mousewheel.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/malihu_custom_scrollbar/js/jquery.mCustomScrollbar.min.js', env('HTTPS')) }}"></script>
+<script type="text/javascript" src="{{ URL::asset('libs/notify/js/notify.min.js', env('HTTPS')) }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/mainscript.js', env('HTTPS')) }}"></script>
 @yield('custom_js')
 

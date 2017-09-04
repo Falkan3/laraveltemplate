@@ -14,6 +14,8 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
+    //Option setting MySQL constraints if enabled
+    'enable_constraints' => env('SQL_ENABLE_CONSTRAINTS', false),
 
     /*
     |--------------------------------------------------------------------------

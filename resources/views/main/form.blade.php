@@ -5,25 +5,23 @@
 
 @section('custom_css')
     <!-- libs -->
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/fancySelect.css', env('HTTPS')) }}" type="text/css"
+    <link rel="stylesheet" href="{{ URL::asset('libs/fancy_select/css/fancySelect.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/roundslider.min.css', env('HTTPS')) }}" type="text/css"
+    <link rel="stylesheet" href="{{ URL::asset('libs/roundslider/css/roundslider.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/ion_range_slider/ion.rangeSlider.css', env('HTTPS')) }}" type="text/css" media="all"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/libs/ion_range_slider/ion.rangeSlider.skinFlat.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('libs/ion_range_slider/css/ion.rangeSlider.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('libs/ion_range_slider/css/ion.rangeSlider.skinFlat.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <!-- main -->
     <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
     <!-- libs -->
-    <script type="text/javascript" src="{{ URL::asset('js/libs/fancySelect.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/libs/ion.rangeSlider.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/fancy_select/js/fancySelect.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/roundslider/js/roundslider.min.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/ion_range_slider/js/ion.rangeSlider.min.js', env('HTTPS')) }}"></script>
     <!-- plugins -->
-    <script type="text/javascript" src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('plugins/js/square.js', env('HTTPS')) }}"></script>
     <!-- main -->
-    <script type="text/javascript" src="{{ URL::asset('js/libs/roundslider.min.js', env('HTTPS')) }}"></script>
-
     <script type="text/javascript" src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/pages/form.js', env('HTTPS')) }}"></script>

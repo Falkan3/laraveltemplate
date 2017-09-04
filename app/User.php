@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\MyResetPassword;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Notifications\MyResetPassword;
+use App\Notifications\MyEmailConfirmation;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -32,16 +34,35 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new MyResetPassword($token));
-    }
-
     public function isAdmin() {
         return $this->role === 'admin';
     }
 
     public function isClient() {
-        return $this->role === NULL;
+        return $this->role === NULL || $this->role === '';
+    }
+
+    /* --- */
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MyResetPassword($token));
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return mixed
+     */
+    public function sendEmailConfirmationNotification($token)
+    {
+        try {
+            $this->notify(new MyEmailConfirmation($token, $this->name));
+        } catch (\Exception $ex) {
+            Log::error('Error while sending email confirmation notification | ' . $ex->getMessage());
+            return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
+        }
+
+        return 1;
     }
 }

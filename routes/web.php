@@ -28,6 +28,7 @@ Route::post('logout', 'Auth\LoginController@logout');
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('register', 'Auth\RegisterController@register');
+Route::get('verifyemail/{token}', 'Auth\RegisterController@verify');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');

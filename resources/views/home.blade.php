@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/auth.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop
 @section('custom_js')
-    <script src="{{ URL::asset('js/plugins/flippers.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('plugins/js/flippers.js', env('HTTPS')) }}"></script>
 @stop
 
 
