@@ -1166,11 +1166,14 @@ a.stretch {
 
 .doughnutTip.stylized {
   padding: 15px 20px;
-  background-color: #337ab7;
-  border: solid 1px #fff;
+  background-color: #fff;
+  border: none;
   border-radius: 0;
   font-size: 100%;
-  color: #fff;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+  color: #212121;
   text-shadow: none;
 }
 
