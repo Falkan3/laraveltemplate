@@ -23,6 +23,7 @@
     <script src="{{ URL::asset('js/plugins/square.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/plugins/accordion.js', env('HTTPS')) }}"></script>
     <!-- main -->
+    <script src="{{ URL::asset('js/utility.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('js/pages/indexscript.js', env('HTTPS')) }}"></script>
 @stop
 
@@ -214,7 +215,7 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar" data-value="25">
+                                    <div class="graph-bar" data-value="1557" data-percentage="25">
                                         <div class="graph-legend">
                                         </div>
                                     </div>
@@ -223,7 +224,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap">
+                    <div class="horizontal-bar-wrap" data-legend="false">
                         <p class="title inline-block">
                             <span>Podejrzane IP zablokowane w Adwords</span>
                         </p>
@@ -231,7 +232,7 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar" data-value="15">
+                                    <div class="graph-bar" data-value="83" data-percentage="15">
                                         <div class="graph-legend">
                                         </div>
                                     </div>
@@ -240,7 +241,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap">
+                    <div class="horizontal-bar-wrap" data-legend="false">
                         <p class="title inline-block">
                             <span>IP OK</span>
                         </p>
@@ -248,7 +249,7 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar green" data-value="60">
+                                    <div class="graph-bar green" data-value="120" data-percentage="60">
                                         <div class="graph-legend">
                                         </div>
                                     </div>
@@ -257,7 +258,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap multiple">
+                    <div class="horizontal-bar-wrap multiple" data-legend="true">
                         <p class="title inline-block">
                             <span>test</span>
                         </p>
@@ -265,15 +266,15 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar green" data-value="20" data-background-color="#FF595E">
+                                    <div class="graph-bar green thicc" data-value="300" data-percentage="30" data-background-color="#5cf562" data-legend-text="wysoki">
                                         <div class="graph-legend">abc</div>
                                     </div>
 
-                                    <div class="graph-bar green" data-value="35" data-background-color="#FFCA3A">
+                                    <div class="graph-bar green thicc" data-value="150" data-percentage="15" data-background-color="#fff500" data-legend-text="średni">
                                         <div class="graph-legend">def</div>
                                     </div>
 
-                                    <div class="graph-bar green" data-value="40" data-background-color="#8AC926">
+                                    <div class="graph-bar green thicc" data-value="550" data-percentage="55" data-background-color="#ff310b" data-legend-text="niski">
                                         <div class="graph-legend">ghi</div>
                                     </div>
                                 </div>

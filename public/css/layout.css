@@ -1,4 +1,3 @@
-/* line 1, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 body {
   background-color: #fff;
   font-family: 'Kanit', sans-serif;
@@ -7,7 +6,6 @@ body {
   color: #000;
 }
 
-/* line 9, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 input, textarea, select {
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
@@ -15,7 +13,6 @@ input, textarea, select {
   color: #000;
 }
 
-/* line 16, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.bged, section.bged, article.bged {
   background-position: top center;
   background-repeat: no-repeat;
@@ -23,7 +20,6 @@ div.bged, section.bged, article.bged {
   position: relative;
 }
 
-/* line 23, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.bged::before, section.bged::before, article.bged::before {
   content: '';
   background: rgba(0, 0, 0, 0.6);
@@ -35,41 +31,34 @@ div.bged::before, section.bged::before, article.bged::before {
   z-index: 1;
 }
 
-/* line 34, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.bged.bgcolor_transparent::before, section.bged.bgcolor_transparent::before, article.bged.bgcolor_transparent::before {
   content: none;
 }
 
-/* line 38, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.bged.bgcolor1::before, section.bged.bgcolor1::before, article.bged.bgcolor1::before {
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* line 42, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.bged.circle::before, section.bged.circle::before, article.bged.circle::before {
   border-radius: 50%;
 }
 
-/* line 46, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 img.lazy {
   background-color: transparent;
   display: none;
 }
 
 /* -------------------------------------------------------- HEADER -------------------------------------------------------- */
-/* line 53, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 header {
   z-index: 10;
 }
 
-/* line 57, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .alert-success, .alert-warning, .alert-danger {
   background-image: none;
   border-radius: 0;
 }
 
 /* ---------------------------- NAVBAR ---------------------------- */
-/* line 64, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 nav.navbar {
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   box-shadow: none;
@@ -78,43 +67,35 @@ nav.navbar {
   transition: ease-in-out 0.2s;
 }
 
-/* line 73, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border: none;
 }
 
-/* line 77, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default.background .navbar-collapse, .navbar-default.background .navbar-form {
   border-top: solid 1px #e7e7e7;
 }
 
-/* line 83, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .nav > li > a {
   padding: 10px 20px;
 }
 
-/* line 87, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav {
   margin: 0;
 }
 
-/* line 89, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav.background {
   margin: 7.5px -15px;
 }
 
-/* line 94, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-brand {
   padding: 5px;
 }
 
-/* line 96, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-brand > img {
   max-height: 40px;
 }
 
 @media (min-width: 992px) {
-  /* line 102, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.background.shrinked {
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
@@ -122,17 +103,14 @@ nav.navbar {
 }
 
 @media (max-width: 991px) {
-  /* line 109, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.background {
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   }
-  /* line 114, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .navbar-brand > img {
     max-height: 30px;
   }
-  /* line 117, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .navbar-right {
     float: none !important;
     margin-right: 0;
@@ -140,7 +118,6 @@ nav.navbar {
 }
 
 /* a text */
-/* line 126, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > li > a {
   color: #fff;
   font-weight: 700;
@@ -148,7 +125,6 @@ nav.navbar {
   transition: ease-in-out 0.2s;
 }
 
-/* line 131, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > li > a:focus {
   color: #fff;
   font-weight: 700;
@@ -156,106 +132,87 @@ nav.navbar {
   transition: ease-in-out 0.2s;
 }
 
-/* line 138, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default.background .navbar-nav > li > a {
   color: #212121;
 }
 
-/* line 140, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default.background .navbar-nav > li > a:focus {
   color: #212121;
 }
 
-/* line 145, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav li:hover > a {
   color: #fff;
 }
 
-/* line 149, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav a:focus, .navbar-default .navbar-nav a:hover {
   color: #fff;
   background: #ff9c10;
 }
 
-/* line 155, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .active > a {
   color: #fff;
   background: #ff9c10;
 }
 
-/* line 158, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   color: #fff;
   background: #ff9c10;
 }
 
-/* line 163, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .open > a {
   color: #fff;
   background: #ff9c10;
 }
 
-/* line 166, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
   color: #fff;
   background: #ff9c10;
 }
 
 /* li bg */
-/* line 177, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li {
   background-color: #3F88C5;
   transition: ease-in-out 0.2s;
 }
 
-/* line 180, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_1 {
   background-color: #4CB944;
 }
 
-/* line 183, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_2 {
   background-color: #F06543;
 }
 
-/* line 186, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_3 {
   background-color: #042A2B;
 }
 
-/* line 189, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_4 {
   background-color: #2F4858;
 }
 
-/* line 192, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_5 {
   background-color: #FF206E;
 }
 
-/* line 195, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_6 {
   background-color: #4B4E6D;
 }
 
-/* line 198, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.color_7 {
   background-color: #B6174B;
 }
 
-/* line 201, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav > li.active {
   background-color: #ff9c10;
 }
 
 /* backgrounds */
 /* -- */
-/* line 211, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > li:hover {
   background-color: #ff9c10;
 }
 
-/* line 214, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
   background-image: none;
   background-color: #ff9c10;
@@ -264,36 +221,30 @@ nav.navbar {
 }
 
 /* dropdown */
-/* line 225, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .dropdown-menu > li > a:focus, .dropdown-menu > li:hover {
   background-color: #ff9c10;
   background-image: none;
 }
 
-/* line 230, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
   background-color: transparent;
   background-image: none;
 }
 
-/* line 237, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .open {
   background-color: #ff9c10;
 }
 
-/* line 239, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .open > a {
   color: #fff;
   background-color: transparent;
 }
 
-/* line 242, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
   color: #fff;
   background-color: transparent;
 }
 
-/* line 249, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .navbar-nav .open .dropdown-menu {
   padding: 0;
   background-color: #fff;
@@ -301,66 +252,55 @@ nav.navbar {
   border-radius: 0;
 }
 
-/* line 256, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .dropdown-header, .dropdown-menu > li > a {
   padding: 8px 20px;
 }
 
 /* flags */
-/* line 262, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flag-icons img, .nav li.flag-icons > a > img {
   max-width: 24px;
 }
 
 /* mobile */
 @media (min-width: 992px) {
-  /* line 269, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .navbar-nav .navbar-default .navbar-nav > li a {
     padding-left: 1em;
     padding-right: 1em;
   }
-  /* line 275, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.navbar-default .navbar-nav > li > a {
     color: #fff;
   }
-  /* line 279, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.navbar-default .navbar-nav li:hover > a, nav.navbar.navbar-default .navbar-nav li:active > a {
     color: #fff;
   }
-  /* line 284, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.background.shrinked.navbar-default .navbar-nav > li a {
     color: #212121;
   }
-  /* line 288, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.navbar-default .navbar-nav > li:hover > a, nav.navbar.navbar-default .navbar-nav > li.active > a, nav.navbar.navbar-default .navbar-nav > li.open > a {
     padding-bottom: 25px;
     color: #fff;
   }
-  /* line 295, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.background.shrinked.navbar-default .navbar-nav > li:hover > a, nav.navbar.background.shrinked.navbar-default .navbar-nav > li.active > a {
     padding-bottom: 25px;
     color: #fff;
   }
-  /* line 301, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   nav.navbar.background.shrinked.navbar-default .navbar-nav li.open > a, nav.navbar.background.shrinked.navbar-default .navbar-nav li.open .dropdown-menu li:hover a {
     padding-bottom: 25px;
     color: #fff;
   }
   /* backgrounds */
   /*
-  nav.navbar.navbar-default .navbar-nav > li.color_7 > a {
-      color: #212121;
-  }
-  */
+	nav.navbar.navbar-default .navbar-nav > li.color_7 > a {
+		color: #212121;
+	}
+	*/
   /* -- */
 }
 
 @media (max-width: 767px) {
-  /* line 319, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .navbar-default.background .navbar-nav .open .dropdown-menu > li > a {
     color: #212121;
   }
-  /* line 323, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
     color: #fff;
     background-color: #ff9c10;
@@ -371,92 +311,76 @@ nav.navbar {
 /* -------------------------------------------------------- /HEADER -------------------------------------------------------- */
 /* -------------------------------------------------------- CONTENT -------------------------------------------------------- */
 /* ---------------------------- Full-screen ---------------------------- */
-/* line 339, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.full-height, section.full-height, article.full-height {
   min-height: 100%;
   margin: 0;
 }
 
-/* line 344, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.height-100, section.height-100, article.height-100 {
   height: 100%;
 }
 
 @media (max-width: 991px) {
-  /* line 349, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   div.full-height, section.full-height, article.full-height {
     min-height: 400px;
   }
 }
 
 /* ---------------------------- /Full-screen ---------------------------- */
-/* line 356, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.lazy, section.lazy, article.lazy {
   background-color: #434343 !important;
 }
 
 /* /////// */
-/* line 362, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.zebra, section.zebra, article.zebra {
   background-color: #fff;
   color: #000;
 }
 
-/* line 367, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.zebra:nth-child(odd), section.zebra:nth-child(odd), article.zebra:nth-child(odd) {
   background-color: #163A51;
   color: #fff;
 }
 
-/* line 373, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.zebra:nth-child(odd) h1, div.zebra:nth-child(odd) h2, div.zebra:nth-child(odd) h3, div.zebra:nth-child(odd) h4, div.zebra:nth-child(odd) p {
   color: #fff;
 }
 
-/* line 379, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 section.zebra:nth-child(odd) h1, section.zebra:nth-child(odd) h2, section.zebra:nth-child(odd) h3, section.zebra:nth-child(odd) h4, section.zebra:nth-child(odd) p {
   color: #fff;
 }
 
-/* line 385, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 article.zebra:nth-child(odd) h1, article.zebra:nth-child(odd) h2, article.zebra:nth-child(odd) h3, article.zebra:nth-child(odd) h4, article.zebra:nth-child(odd) p {
   color: #fff;
 }
 
-/* line 390, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.page, section.page, article.page {
   padding: 70px 0;
 }
 
-/* line 394, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.page.no-padding, section.page.no-padding, article.page.no-padding {
   padding: 0;
 }
 
 /* carousel */
-/* line 400, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel {
   margin-top: -70px;
 }
 
-/* line 404, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .slick-dotted.slick-slider {
   margin-bottom: 0;
 }
 
-/* line 408, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item {
   height: 600px;
 }
 
-/* line 410, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item.slide {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 415, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item .slide_caption {
   position: absolute;
   bottom: 10%;
@@ -464,109 +388,90 @@ div.page.no-padding, section.page.no-padding, article.page.no-padding {
   z-index: 2;
 }
 
-/* line 420, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item .slide_caption p {
   font-size: 40px;
   text-align: center;
   color: #fff;
 }
 
-/* line 428, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .slick-dots {
   bottom: 16px;
   z-index: 2;
 }
 
-/* line 432, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .slick-dots li.slick-active button:before {
   opacity: .75;
   color: #ff9c10;
 }
 
-/* line 436, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .slick-dots li button:before {
   color: #fff;
 }
 
 /* images */
-/* line 445, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item.slide.slide1 {
   background-image: url(../images/banners/bg1.jpg);
 }
 
-/* line 448, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item.slide.slide2 {
   background-image: url(../images/banners/bg2.jpg);
 }
 
-/* line 451, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .carousel .item.slide.slide3 {
   background-image: url(../images/banners/bg3.jpg);
 }
 
 /* /images */
 /* carousel */
-/* line 461, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 div.row > h1, div.row > h2, div.row > h3, div.row > h4, div.row > p {
   padding: 0 15px;
 }
 
-/* line 466, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 h1 {
   font-size: 275%;
   color: #212121;
 }
 
-/* line 471, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 h2 {
   font-size: 175%;
 }
 
-/* line 475, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 h3 {
   font-size: 150%;
 }
 
-/* line 479, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 p {
   font-size: 115%;
   color: #212121;
   font-weight: 300;
 }
 
-/* line 483, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 p.line-height-150 {
   line-height: 150%;
 }
 
-/* line 488, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .wrapper .container h1 {
   margin-bottom: 50px;
 }
 
-/* line 493, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 span.highlight {
   font-size: 125%;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-/* line 498, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 span.colored {
   color: #163A51;
 }
 
-/* line 501, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 span.colored2 {
   color: #22AED1;
 }
 
-/* line 504, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 span.colored3 {
   color: #ff9c10;
 }
 
-/* line 509, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 h2.highlight {
   padding: 20px 5px;
   text-transform: uppercase;
@@ -574,13 +479,11 @@ h2.highlight {
 }
 
 @media (max-width: 991px) {
-  /* line 516, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   h2.highlight {
     font-size: 175%;
   }
 }
 
-/* line 521, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 a.stretch {
   position: absolute;
   width: 100%;
@@ -590,83 +493,68 @@ a.stretch {
 }
 
 /* Flippers */
-/* line 532, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 #page_cards div {
   padding: 0;
 }
 
-/* line 535, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 #page_cards .row {
   margin: 0;
 }
 
-/* line 540, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .tile-container {
   margin-top: 15px;
 }
 
-/* line 542, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .tile-container .flip-container {
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 549, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper {
   background-size: cover;
 }
 
-/* line 550, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper .front > a, .flipper .back > a {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 556, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper img {
   width: 100%;
   max-height: 300px;
 }
 
-/* line 562, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper-height {
   height: 480px;
 }
 
-/* line 567, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper p {
   color: #fff;
 }
 
-/* line 570, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper.color_1 {
   background: #ff9c10;
 }
 
-/* line 572, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper.color_1 p {
   color: #000;
 }
 
-/* line 576, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper.color_2 {
   background: #000;
 }
 
-/* line 579, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper.color_3 {
   background: #ddd;
 }
 
-/* line 581, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .flipper.color_3 p {
   color: #000;
 }
 
 /* Iterators */
-/* line 589, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .iterator > div {
   background-color: #eee;
   width: 100%;
@@ -674,14 +562,12 @@ a.stretch {
   transition: ease-in-out 0.3s;
 }
 
-/* line 594, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .iterator > div.hover {
   background-color: #ff9c10;
 }
 
 /* /Iterators */
 /* Buttons */
-/* line 604, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .button.sliding_bg {
   color: #31302B;
   background: #FFF;
@@ -701,7 +587,6 @@ a.stretch {
   transition: all ease 0.8s;
 }
 
-/* line 621, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .button.sliding_bg:hover {
   box-shadow: inset 0 100px 0 0 #31302B;
   color: #FFF;
@@ -709,88 +594,73 @@ a.stretch {
 
 /* /Buttons */
 /* Accordion */
-/* line 632, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-container {
   margin-top: 30px;
 }
 
-/* line 634, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-container p {
   color: #000;
 }
 
-/* line 639, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-item {
   position: relative;
 }
 
-/* line 641, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-item a {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 644, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-item a:focus {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 651, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .accordion-container .accordion-item .accordion-item-content p {
   font-size: 70%;
 }
 
 /* /Accordion */
 /* Halfscreen container */
-/* line 659, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container {
   position: relative;
 }
 
-/* line 661, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen {
   width: 50%;
   height: 200px;
   padding: 0;
 }
 
-/* line 666, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.first {
   position: absolute;
   z-index: 1;
 }
 
-/* line 669, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.first > div {
   background-color: #212121;
   border-right-width: 2px;
 }
 
-/* line 672, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.first > div:hover {
   background-color: #ff9c10;
 }
 
-/* line 677, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.second {
   position: relative;
   margin-left: auto;
 }
 
-/* line 680, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.second > div {
   position: relative;
   border-left-width: 2px;
   background-color: #212121;
 }
 
-/* line 684, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen.second > div:hover {
   background-color: #ff9c10;
 }
 
-/* line 690, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen > div {
   width: 100%;
   height: 100%;
@@ -804,13 +674,11 @@ a.stretch {
   transition: ease-in-out 0.3s;
 }
 
-/* line 702, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen > div:hover p > .fa {
   width: 30px;
   opacity: 1;
 }
 
-/* line 707, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen p {
   margin: 0;
   color: #fff;
@@ -819,7 +687,6 @@ a.stretch {
   z-index: 1;
 }
 
-/* line 713, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen p > .fa {
   width: 0;
   opacity: 0;
@@ -831,7 +698,6 @@ a.stretch {
   transition: ease-in-out 0.3s;
 }
 
-/* line 724, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .half-screen-container .half-screen a.stretch {
   position: absolute;
   width: 100%;
@@ -842,27 +708,22 @@ a.stretch {
 }
 
 @media (max-width: 991px) {
-  /* line 736, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .half-screen-container {
     padding: 0 15px;
   }
-  /* line 738, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .half-screen-container .half-screen {
     width: 100%;
     height: 100px;
   }
-  /* line 741, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .half-screen-container .half-screen.first {
     position: relative;
   }
-  /* line 743, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .half-screen-container .half-screen.first > div {
     width: 100%;
     webkit-animation-name: none !important;
     animation-name: none !important;
     border-width: 2px 2px 1px 2px;
   }
-  /* line 750, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .half-screen-container .half-screen.second > div {
     width: 100%;
     border-width: 1px 2px 2px 2px;
@@ -871,55 +732,46 @@ a.stretch {
 
 /* /Halfscreen container */
 /* Halfscreen header */
-/* line 762, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container {
   position: relative;
   overflow: hidden;
 }
 
-/* line 765, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen {
   width: 50%;
   height: 400px;
   padding: 0;
 }
 
-/* line 770, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.first {
   width: 100%;
   position: absolute;
   z-index: 1;
 }
 
-/* line 774, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.first > div {
   background-color: #ff9c10;
 }
 
-/* line 777, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.first p {
   font-size: 400%;
 }
 
-/* line 781, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.second {
   position: relative;
   margin-left: auto;
 }
 
-/* line 784, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.second > div {
   position: relative;
   background-color: #fff;
 }
 
-/* line 788, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen.second p {
   font-size: 140%;
   color: #212121;
 }
 
-/* line 794, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen > div {
   position: relative;
   width: 100%;
@@ -932,7 +784,6 @@ a.stretch {
   transition: ease-in-out 0.3s;
 }
 
-/* line 805, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen p {
   color: #fff;
   font-size: 200%;
@@ -941,7 +792,6 @@ a.stretch {
   z-index: 1;
 }
 
-/* line 812, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .header-section-container .half-screen a.stretch {
   position: absolute;
   width: 100%;
@@ -952,37 +802,31 @@ a.stretch {
 }
 
 @media (max-width: 991px) {
-  /* line 824, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen {
     height: 300px;
   }
-  /* line 827, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen.first {
     position: relative;
     width: 100%;
     max-width: 100%;
     height: 150px;
   }
-  /* line 832, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen.first > div {
     width: 100%;
     webkit-animation-name: none !important;
     animation-name: none !important;
     transitionDuration: 0;
   }
-  /* line 839, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen.second {
     width: 100%;
     height: auto;
   }
-  /* line 842, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen.second > div {
     width: 100%;
     webkit-animation-name: none !important;
     animation-name: none !important;
     float: none;
   }
-  /* line 848, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .header-section-container .half-screen.second p {
     font-size: 120%;
   }
@@ -991,19 +835,16 @@ a.stretch {
 /* /Halfscreen header */
 /* ------------- CUSTOM INPUT ELEMENTS ------------- */
 /* Input range plugin */
-/* line 862, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .input-container.custom-range .irs-from, .input-container.custom-range .irs-to, .input-container.custom-range .irs-single {
   background: #ed5565;
 }
 
-/* line 865, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .input-container.custom-range .irs-from:after, .input-container.custom-range .irs-to:after, .input-container.custom-range .irs-single:after {
   border-top-color: #ed5565;
 }
 
 /* /Input range plugin */
 /* The switch - the box around the slider */
-/* line 874, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container {
   display: inline-block;
   vertical-align: middle;
@@ -1011,7 +852,6 @@ a.stretch {
   /* The slider */
 }
 
-/* line 878, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container .switch {
   position: relative;
   display: inline-block;
@@ -1020,12 +860,10 @@ a.stretch {
   margin: 0;
 }
 
-/* line 887, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container .switch input {
   display: none;
 }
 
-/* line 890, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container .slider {
   position: absolute;
   cursor: pointer;
@@ -1038,7 +876,6 @@ a.stretch {
   transition: .4s;
 }
 
-/* line 902, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container .slider:before {
   position: absolute;
   content: "";
@@ -1051,32 +888,26 @@ a.stretch {
   transition: .4s;
 }
 
-/* line 914, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container input:checked + .slider {
   background-color: #2196F3;
 }
 
-/* line 918, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
 
-/* line 922, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container input:disabled + .slider {
   cursor: default;
 }
 
-/* line 928, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container.red input:checked + .slider {
   background-color: #e72f0b;
 }
 
-/* line 932, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container.red input:focus + .slider {
   box-shadow: 0 0 1px #e72f0b;
 }
 
-/* line 937, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .switch-container input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
@@ -1084,28 +915,23 @@ a.stretch {
 }
 
 /* ------------- CUSTOM CHARTS ------------- */
-/* line 946, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .chart-half-screen.full-screen {
   border: none;
 }
 
 @media (min-width: 992px) {
-  /* line 951, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen.full-screen .cs-chart-container {
     white-space: nowrap;
   }
-  /* line 955, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen.full-screen .cs-chart-container > div {
     display: inline-block;
     vertical-align: top;
     white-space: normal;
   }
-  /* line 961, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen.full-screen .cs-chart-container .chart-legend {
     width: 30%;
     margin-right: 5%;
   }
-  /* line 966, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen.full-screen .cs-chart-container .doughnut-chart {
     width: 60%;
     margin-left: 5%;
@@ -1113,7 +939,6 @@ a.stretch {
 }
 
 @media (max-width: 992px) {
-  /* line 973, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen.full-screen .cs-chart-container > div {
     display: block;
     width: 100%;
@@ -1121,35 +946,28 @@ a.stretch {
 }
 
 @media (min-width: 992px) {
-  /* line 982, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen:first-child {
     padding-right: 5%;
   }
-  /* line 985, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen:last-child {
     padding-left: 5%;
   }
-  /* line 989, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen:nth-child(odd) {
     border-right: solid 1px #ddd;
   }
-  /* line 992, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen:nth-child(even) {
     border-left: solid 1px #ddd;
   }
 }
 
 @media (max-width: 991px) {
-  /* line 945, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen {
     padding-bottom: 25px;
     border-bottom: solid 2px #ddd;
   }
-  /* line 1001, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen {
     margin-bottom: 25px;
   }
-  /* line 1004, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .chart-half-screen:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -1157,63 +975,53 @@ a.stretch {
   }
 }
 
-/* line 1012, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container {
   position: relative;
   /* DOUGHNUT CHART */
   /* /DOUGHNUT CHART */
 }
 
-/* line 1015, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .chart-legend {
   margin-bottom: 25px;
   font-size: 14px;
 }
 
-/* line 1020, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .chart-legend .ct .ct-bod, .cs-chart-container .chart-legend .ct .ct-sqr, .cs-chart-container .chart-legend .ct .ct-label {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 1025, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .chart-legend .ct .ct-sqr {
   width: 16px;
   height: 16px;
   margin-right: 5px;
 }
 
-/* line 1030, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .chart-legend .ct .ct-bod {
   margin-right: 15px;
   margin-bottom: 5px;
 }
 
-/* line 1034, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .chart-legend .ct .ct-bod:last-child {
   margin-right: 0;
 }
 
 @media (max-width: 500px) {
-  /* line 1040, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .chart-legend .ct .ct-bod {
     display: block;
     margin-bottom: 10px;
   }
-  /* line 1044, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .chart-legend .ct .ct-bod:last-child {
     margin-bottom: 0;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 1015, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .chart-legend {
     min-height: 100px;
   }
 }
 
-/* line 1057, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart {
   position: relative;
   width: 100%;
@@ -1221,7 +1029,6 @@ a.stretch {
   margin: 0 auto;
 }
 
-/* line 1063, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart .doughnutSummary {
   position: absolute;
   top: 50%;
@@ -1231,7 +1038,6 @@ a.stretch {
   cursor: default;
 }
 
-/* line 1072, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart .doughnutSummaryTitle {
   position: absolute;
   top: 50%;
@@ -1243,7 +1049,6 @@ a.stretch {
   font-weight: inherit;
 }
 
-/* line 1082, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart .doughnutSummaryNumber {
   position: absolute;
   top: 50%;
@@ -1254,25 +1059,21 @@ a.stretch {
   font-weight: inherit;
 }
 
-/* line 1092, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart g path:hover {
   opacity: 0.65;
 }
 
 @media (max-width: 991px) {
-  /* line 1097, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart {
     max-width: 400px;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1103, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart .doughnutSummaryTitle {
     margin-top: -23%;
     font-size: 20px;
   }
-  /* line 1107, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart .doughnutSummaryNumber {
     margin-top: -5%;
     font-size: 40px;
@@ -1280,48 +1081,40 @@ a.stretch {
 }
 
 @media (max-width: 399px) {
-  /* line 1114, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart .doughnutSummaryTitle {
     margin-top: -19%;
     font-size: 18px;
   }
-  /* line 1118, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart .doughnutSummaryNumber {
     margin-top: 0;
     font-size: 32px;
   }
 }
 
-/* line 1124, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart.small {
   max-width: 300px;
 }
 
-/* line 1127, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart.small .doughnutSummaryTitle {
   margin-top: -24%;
   font-size: 18px;
 }
 
-/* line 1131, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .cs-chart-container .doughnut-chart.small .doughnutSummaryNumber {
   font-size: 42px;
 }
 
 @media (max-width: 991px) {
-  /* line 1136, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart.small {
     max-width: 300px;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1142, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart.small .doughnutSummaryTitle {
     margin-top: -26%;
     font-size: 16px;
   }
-  /* line 1146, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart.small .doughnutSummaryNumber {
     margin-top: -5%;
     font-size: 38px;
@@ -1329,12 +1122,10 @@ a.stretch {
 }
 
 @media (max-width: 399px) {
-  /* line 1153, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart.small .doughnutSummaryTitle {
     margin-top: -16%;
     font-size: 18px;
   }
-  /* line 1157, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .cs-chart-container .doughnut-chart.small .doughnutSummaryNumber {
     margin-top: 0;
     font-size: 32px;
@@ -1342,7 +1133,6 @@ a.stretch {
 }
 
 /* MISC */
-/* line 1168, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .doughnutTip {
   position: absolute;
   min-width: 30px;
@@ -1361,7 +1151,6 @@ a.stretch {
   pointer-events: none;
 }
 
-/* line 1185, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .doughnutTip::after {
   position: absolute;
   left: 50%;
@@ -1375,7 +1164,6 @@ a.stretch {
   line-height: 0;
 }
 
-/* line 1198, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .doughnutTip.stylized {
   padding: 15px 20px;
   background-color: #337ab7;
@@ -1386,7 +1174,6 @@ a.stretch {
   text-shadow: none;
 }
 
-/* line 1207, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .doughnutTip.stylized::after {
   bottom: -7px;
   margin: 0 0 0 -7px;
@@ -1395,7 +1182,6 @@ a.stretch {
 
 /* HORIZONTAL BAR GRAPH */
 /* Mixings &  Variables */
-/* line 1226, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap {
   margin: 0 auto;
   max-width: 1200px;
@@ -1404,19 +1190,21 @@ a.stretch {
   /* Line Graph */
 }
 
-/* line 1231, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .title {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (max-width: 767px) {
-  /* line 1231, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
   .horizontal-bar-wrap .title {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
-/* line 1252, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
+.horizontal-bar-wrap .title > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .horizontal-bar-wrap .clearfix,
 .horizontal-bar-wrap .clearfix:before,
 .horizontal-bar-wrap .clearfix:after {
@@ -1426,7 +1214,6 @@ a.stretch {
   zoom: 1;
 }
 
-/* line 1263, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .barGraph {
   position: relative;
   width: 100%;
@@ -1434,7 +1221,6 @@ a.stretch {
   margin-bottom: 5px;
 }
 
-/* line 1270, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph {
   position: relative;
   list-style-type: none;
@@ -1444,7 +1230,6 @@ a.stretch {
   left: 0;
 }
 
-/* line 1278, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-barBack {
   border-radius: 0;
   background: #ddd;
@@ -1452,7 +1237,6 @@ a.stretch {
   display: block;
 }
 
-/* line 1285, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-bar {
   background-color: #e72f0b;
   -webkit-transition: all 1s ease-out;
@@ -1466,10 +1250,9 @@ a.stretch {
   display: block;
   height: 20px;
   width: 0;
-  color: #fff;
+  color: #551104;
 }
 
-/* line 1297, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-bar:hover {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1478,25 +1261,31 @@ a.stretch {
   background: #ff310b;
 }
 
-/* line 1304, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
-.horizontal-bar-wrap .graph-bar.green {
-  background-color: #59d05f;
+.horizontal-bar-wrap .graph-bar.yellow {
+  background-color: #ffd900;
+  color: #665700;
 }
 
-/* line 1307, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
+.horizontal-bar-wrap .graph-bar.yellow:hover {
+  background: #ffef01;
+}
+
+.horizontal-bar-wrap .graph-bar.green {
+  background-color: #59d05f;
+  color: #207024;
+}
+
 .horizontal-bar-wrap .graph-bar.green:hover {
   background: #5be461;
 }
 
-/* line 1312, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-bar:last-child {
   margin-bottom: 0;
 }
 
-/* line 1316, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
-.horizontal-bar-wrap .graph-bar:after {
+.horizontal-bar-wrap .graph-bar::after {
   position: absolute;
-  content: attr(data-value);
+  content: attr(data-percentage);
   display: none;
   font-size: 12px;
   border-radius: 4px;
@@ -1510,26 +1299,36 @@ a.stretch {
   top: 0;
 }
 
-/* line 1335, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-bar:hover:after {
   display: block;
 }
 
-/* line 1340, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
+.horizontal-bar-wrap .graph-bar.thicc {
+  height: 36px;
+}
+
+.horizontal-bar-wrap .graph-bar.thicc::after {
+  line-height: 36px;
+  height: 36px;
+}
+
 .horizontal-bar-wrap .graph-legend {
   position: absolute;
   margin-right: 10px;
-  left: -40px;
-  z-index: 1;
-  font-size: 12px;
+  left: 10px;
+  z-index: 2;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-/* line 1351, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap.multiple .graph-bar {
   float: left;
 }
 
-/* line 1354, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap.multiple .graph-bar:after {
   margin-left: 0;
   left: auto;
@@ -1540,12 +1339,10 @@ a.stretch {
   -webkit-border-bottom-right-radius: 0;
 }
 
-/* line 1364, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap.multiple .graph-legend {
   left: 10px;
 }
 
-/* line 1372, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines {
   position: absolute;
   height: 100%;
@@ -1555,7 +1352,6 @@ a.stretch {
   top: 0;
 }
 
-/* line 1381, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-horz {
   border-bottom: 1px dashed fade(#212121, 40%);
   position: absolute;
@@ -1563,27 +1359,22 @@ a.stretch {
   height: 0px;
 }
 
-/* line 1387, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-horz:nth-of-type(1) {
   top: 20%;
 }
 
-/* line 1390, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-horz:nth-of-type(2) {
   top: 40%;
 }
 
-/* line 1393, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-horz:nth-of-type(3) {
   top: 60%;
 }
 
-/* line 1396, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-horz:nth-of-type(4) {
   top: 80%;
 }
 
-/* line 1401, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-vert {
   border-right: 1px dashed fade(#212121, 40%);
   position: absolute;
@@ -1591,27 +1382,22 @@ a.stretch {
   width: 1px;
 }
 
-/* line 1407, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-vert:nth-of-type(5) {
   left: 20%;
 }
 
-/* line 1410, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-vert:nth-of-type(6) {
   left: 40%;
 }
 
-/* line 1413, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-vert:nth-of-type(7) {
   left: 60%;
 }
 
-/* line 1416, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lines-vert:nth-of-type(8) {
   left: 80%;
 }
 
-/* line 1423, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lineChart {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1625,13 +1411,11 @@ a.stretch {
   height: 300px;
 }
 
-/* line 1432, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lineChart svg {
   position: absolute;
   z-index: 999;
 }
 
-/* line 1437, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lineChart circle {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1644,24 +1428,46 @@ a.stretch {
   fill: #e72f0b;
 }
 
-/* line 1445, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lineChart circle:hover {
   stroke-width: 8;
 }
 
-/* line 1450, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .lineChart line {
   stroke: #212121;
   stroke-width: 4;
 }
 
-/* line 1462, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .trend line {
   stroke: rgba(204, 51, 51, 0.8);
 }
 
+.horizontal-bar-wrap .legend {
+  margin-bottom: 10px;
+}
+
+.horizontal-bar-wrap .legend .legend-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.horizontal-bar-wrap .legend .legend-item:last-child {
+  margin-right: 0;
+}
+
+.horizontal-bar-wrap .legend .legend-item .little_square, .horizontal-bar-wrap .legend .legend-item span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.horizontal-bar-wrap .legend .legend-item .little_square {
+  width: 16px;
+  height: 16px;
+  background-color: #ddd;
+  margin-right: 5px;
+}
+
 /* Sticky-table */
-/* line 1468, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap {
   overflow-x: auto;
   overflow-y: hidden;
@@ -1671,7 +1477,6 @@ a.stretch {
   /* Component styles */
 }
 
-/* line 1475, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .sticky-thead,
 .sticky-wrap .sticky-col,
 .sticky-wrap .sticky-intersect {
@@ -1685,7 +1490,6 @@ a.stretch {
   /* Prevent table from stretching to full size */
 }
 
-/* line 1487, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .sticky-thead {
   box-shadow: 0 0.25em 0.1em -0.1em rgba(0, 0, 0, 0.125);
   z-index: 100;
@@ -1693,35 +1497,29 @@ a.stretch {
   /* Force stretch */
 }
 
-/* line 1493, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .sticky-intersect {
   opacity: 1;
   z-index: 150;
 }
 
-/* line 1498, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .sticky-intersect th {
   background-color: #666;
   color: #eee;
 }
 
-/* line 1503, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap td, .sticky-wrap th {
   box-sizing: border-box;
 }
 
-/* line 1508, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap td.user-name {
   text-transform: capitalize;
 }
 
-/* line 1512, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap.overflow-y {
   overflow-y: auto;
   max-height: 50vh;
 }
 
-/* line 1518, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .component {
   line-height: 1.5em;
   margin: 0 auto;
@@ -1731,12 +1529,10 @@ a.stretch {
   overflow: hidden;
 }
 
-/* line 1527, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap .component .filler {
   color: #d3d3d3;
 }
 
-/* line 1531, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table {
   border-collapse: collapse;
   margin-bottom: 3em;
@@ -1744,7 +1540,6 @@ a.stretch {
   background: #fff;
 }
 
-/* line 1541, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table > thead > tr > th, .sticky-wrap table > thead > tr > td, .sticky-wrap table > thead > tr:hover > th, .sticky-wrap table > thead > tr:hover > td,
 .sticky-wrap table > tbody > tr > th,
 .sticky-wrap table > tbody > tr > td,
@@ -1757,7 +1552,6 @@ a.stretch {
   border: none !important;
 }
 
-/* line 1545, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table > thead > tr:hover > td, .sticky-wrap table > thead > tr.active > td,
 .sticky-wrap table > tbody > tr:hover > td,
 .sticky-wrap table > tbody > tr.active > td, .sticky-wrap table.table-hover > thead > tr:hover > td, .sticky-wrap table.table-hover > thead > tr.active > td,
@@ -1767,7 +1561,6 @@ a.stretch {
   border: none !important;
 }
 
-/* line 1549, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table > thead > tr:hover > th, .sticky-wrap table > thead > tr.active > th,
 .sticky-wrap table > tbody > tr:hover > th,
 .sticky-wrap table > tbody > tr.active > th, .sticky-wrap table.table-hover > thead > tr:hover > th, .sticky-wrap table.table-hover > thead > tr.active > th,
@@ -1776,19 +1569,16 @@ a.stretch {
   background-color: #30bf8e;
 }
 
-/* line 1555, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table td, .sticky-wrap table th {
   padding: 8px;
   border: none;
   text-align: left;
 }
 
-/* line 1561, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table td.text-center, .sticky-wrap table th.text-center {
   text-align: center;
 }
 
-/* line 1566, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table td.err {
   background-color: #e992b9;
   color: #fff;
@@ -1797,7 +1587,6 @@ a.stretch {
   line-height: 1;
 }
 
-/* line 1574, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table th {
   background-color: #31bc86;
   color: #fff;
@@ -1806,36 +1595,30 @@ a.stretch {
   white-space: nowrap;
 }
 
-/* line 1583, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table tbody th {
   background-color: #2ea879;
 }
 
-/* line 1587, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table tbody tr:nth-child(2n-1) {
   background-color: #f5f5f5;
   transition: all .125s ease-in-out;
 }
 
-/* line 1592, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table tbody tr:hover {
   background-color: rgba(129, 208, 177, 0.3);
 }
 
-/* line 1597, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table span.inline-block {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 1602, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table span .icon {
   width: 24px;
   height: 24px;
   margin: 0 3px;
 }
 
-/* line 1607, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .sticky-wrap table span .icon.small {
   width: 16px;
   height: 16px;
@@ -1844,24 +1627,20 @@ a.stretch {
 /* /Sticky table */
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
 /* Nicescroll */
-/* line 1623, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .nicescroll-rails div, .nicescroll-rails > div {
   width: 4px !important;
   transition: ease-in-out 0.3s;
 }
 
-/* line 1627, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .nicescroll-rails:hover, .nicescroll-rails:active {
   width: 8px !important;
 }
 
-/* line 1631, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .nicescroll-rails > div:hover, .nicescroll-rails > div:active {
   width: 8px !important;
 }
 
 /* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
-/* line 1639, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 footer {
   position: absolute;
   left: 0;
@@ -1873,5 +1652,3 @@ footer {
 }
 
 /* -------------------------------------------------------- /FOOTER -------------------------------------------------------- */
-
-/*# sourceMappingURL=../layout.map */

@@ -1,7 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 
 var Global_vars_lapp_app = {
-    'contants': {
+    'constants': {
         window_initial_width: null,
     },
     window: null,
@@ -22,7 +22,7 @@ var G_Main_Controller = (function () {
         initElementsPrim: function () {
             //window
             Global_vars_lapp_app.window = $(window);
-            Global_vars_lapp_app.contants.window_initial_width = Global_vars_lapp_app.window.width();
+            Global_vars_lapp_app.constants.window_initial_width = Global_vars_lapp_app.window.width();
         },
         initElements: function () {
             //body, html
@@ -90,45 +90,6 @@ var G_Main_Controller = (function () {
                 e = document.documentElement || document.body;
             }
             return {width: e[a + 'Width'], height: e[a + 'Height']};
-        },
-        /**
-         * @return {string}
-         */
-        ShadeColor: function (color, percent) {
-            var R = parseInt(color.substring(1, 3), 16);
-            var G = parseInt(color.substring(3, 5), 16);
-            var B = parseInt(color.substring(5, 7), 16);
-
-            R = parseInt(R * (100 + percent) / 100);
-            G = parseInt(G * (100 + percent) / 100);
-            B = parseInt(B * (100 + percent) / 100);
-
-            R = (R < 255) ? R : 255;
-            G = (G < 255) ? G : 255;
-            B = (B < 255) ? B : 255;
-
-            var RR = ((R.toString(16).length === 1) ? "0" + R.toString(16) : R.toString(16));
-            var GG = ((G.toString(16).length === 1) ? "0" + G.toString(16) : G.toString(16));
-            var BB = ((B.toString(16).length === 1) ? "0" + B.toString(16) : B.toString(16));
-
-            return "#" + RR + GG + BB;
-        },
-        /*
-        var colors = {
-            green: {from: {r: 232, g: 255, b: 233}, to: {r: 200, g: 255, b: 202}},
-            red: {from: {r: 255, g: 239, b: 241}, to: {r: 255, g: 192, b: 200}},
-            grey: {from: {r: 221, g: 221, b: 221}, to: {r: 170, g: 170, b: 170}},
-        };
-        style_color = CalculateColorValue(colors.green, Math.abs((raw_value / 100)));
-        element.css('background', 'rgb(' + style_color + ')');
-        */
-        CalculateColorValue: function (color_json, percentage) {
-            var color;
-            color = Math.floor(color_json.from.r + (color_json.to.r - color_json.from.r) * percentage) + ',' +
-                Math.floor(color_json.from.g + (color_json.to.g - color_json.from.g) * percentage) + ',' +
-                Math.floor(color_json.from.b + (color_json.to.b - color_json.from.b) * percentage);
-
-            return color;
         },
 
         //ANCHORS -------------------------------------------------------

@@ -1,4 +1,7 @@
 //Author: Adam Kocić [Falkan3]
+/*
+    dependency_js: mainscript, utility
+ */
 
 var G_Index_Controller = (function () {
     var Local_vars = {
@@ -22,8 +25,8 @@ var G_Index_Controller = (function () {
             G_Index_Controller.drawDoughnutCharts();
             Global_vars_lapp_app.window.on('resize', function() {
                 var wd = Global_vars_lapp_app.window.width();
-                if(wd !== Global_vars_lapp_app.contants.window_initial_width) {
-                    Global_vars_lapp_app.contants.window_initial_width = wd;
+                if(wd !== Global_vars_lapp_app.constants.window_initial_width) {
+                    Global_vars_lapp_app.constants.window_initial_width = wd;
                     G_Index_Controller.resizeDoughnutCharts();
                 }
             });
@@ -56,17 +59,40 @@ var G_Index_Controller = (function () {
                 var $this = $(this);
                 var items = $this.find('.graph-bar');
                 var dataFloat = $this.hasClass('multiple');
-                items.each(function() {
+                var show_legend = $this.data('legend');
+                if (show_legend) {
+                    $this.find('.legend').remove();
+                    var legend = $('<div class="legend"></div>');
+                }
+                items.each(function () {
                     var $this = $(this);
-                    var dataWidth = $this.data('value');
+                    var dataVal = $this.data('value');
+                    var dataPercentage = $this.data('percentage');
+                    var dataWidth = dataPercentage;
                     var dataBackgroundColor = $this.data('background-color');
+                    $this.find('.graph-legend').html(dataVal);
                     $this.css("width", dataWidth + "%");
-                    if(dataBackgroundColor) {
+
+                    if (dataBackgroundColor) {
                         $this.css("background-color", dataBackgroundColor);
-                        $this.css("color", G_Main_Controller.ShadeColor(dataBackgroundColor, 120));
+                        $this.css("color", G_Utility_Controller.ShadeColor(dataBackgroundColor, -40));
+                    }
+
+                    if (show_legend) {
+                        var legendText = $this.data('legend-text');
+                        var little_square = $('<div class="little_square"></div>');
+                        var legend_item_label = $('<span></span>');
+                        legend_item_label.html(legendText + ": " + dataVal + ' (' + dataPercentage + '%)');
+                        if (dataBackgroundColor) {
+                            little_square.css("background-color", dataBackgroundColor);
+                        }
+                        var legend_item = $('<div class="legend-item"></div>');
+                        legend_item.append(little_square).append(legend_item_label);
+                        legend.append(legend_item);
+                        $this.closest('.barGraph').prepend(legend);
                     }
                 });
-                if(dataFloat) {
+                if (dataFloat) {
                     $this.find('.graph-barBack').append('<div class="clearfix"></div>');
                 }
             });

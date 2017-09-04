@@ -1,4 +1,3 @@
-/* line 3, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 html {
   overflow-y: scroll;
   position: relative;
@@ -13,7 +12,6 @@ html {
   overflow-x: hidden;
 }
 
-/* line 17, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 body {
   margin: 0 auto;
   padding: 0;
@@ -26,17 +24,14 @@ body {
   overflow-x: hidden;
 }
 
-/* line 29, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 31, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 *::before, *::after {
   box-sizing: border-box;
 }
 
-/* line 36, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 #hideAll {
   display: none;
   position: fixed;
@@ -52,7 +47,6 @@ body {
   background-position: center center;
 }
 
-/* line 51, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .loader {
   border: 12px solid #f3f3f3;
   /* Light grey */
@@ -63,7 +57,6 @@ body {
   animation: spin 2s linear infinite;
 }
 
-/* line 59, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .loader.loading_ajax.global_ajax_loader {
   position: fixed;
   width: 32px;
@@ -84,74 +77,60 @@ body {
   }
 }
 
-/* line 82, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 86, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .center {
   text-align: center;
 }
 
-/* line 90, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .right {
   text-align: right;
 }
 
-/* line 94, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .uppercase {
   text-transform: uppercase;
 }
 
-/* line 98, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .capitalise {
   text-transform: capitalize;
 }
 
-/* line 102, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .hidden {
   display: none;
 }
 
-/* line 106, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .nospace {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 112, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inline * {
   display: inline-block;
 }
 
-/* line 114, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inline *:last-child {
   margin-right: 0;
 }
 
-/* line 119, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .pushright li {
   margin-right: 20px;
 }
 
-/* line 121, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .pushright li:last-child {
   margin-right: 0;
 }
 
-/* line 126, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .borderedbox {
   border: 1px solid;
 }
 
-/* line 130, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .overlay {
   position: relative;
 }
 
-/* line 132, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .overlay::after {
   display: block;
   position: absolute;
@@ -163,20 +142,17 @@ body {
   z-index: -1;
 }
 
-/* line 144, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .bgded {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 150, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .circle {
   border-radius: 50%;
   background-clip: padding-box;
 }
 
-/* line 155, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btn {
   display: inline-block;
   padding: 15px 25px 17px;
@@ -184,67 +160,55 @@ body {
   border: 1px solid;
 }
 
-/* line 162, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .center-mrg {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 167, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .align-middle {
   vertical-align: middle;
 }
 
 /* general classes */
-/* line 173, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .margin-vertical {
   margin: 20px 0;
 }
 
-/* line 175, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .margin-vertical.medium {
   margin: 40px 0;
 }
 
-/* line 180, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .padding-horizontal.medium {
   padding-left: 30px;
   padding-right: 30px;
 }
 
-/* line 185, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 189, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .text-block {
   display: block;
 }
 
-/* line 193, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .text-nowrap {
   white-space: nowrap;
 }
 
-/* line 197, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .no-float {
   float: none;
 }
 
-/* line 201, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.flexbox {
   display: flex;
 }
 
 @media (max-width: 991px) {
-  /* line 206, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   div.flexbox {
     display: block;
   }
 }
 
-/* line 211, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .absolute-middle {
   /* Internet Explorer 10 */
   display: -ms-flexbox;
@@ -264,56 +228,46 @@ div.flexbox {
   box-align: center;
 }
 
-/* line 230, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .clear, .group {
   display: block;
 }
 
-/* line 235, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .clear::before, .clear::after {
   display: table;
   content: "";
 }
 
-/* line 242, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .group::before, .group::after {
   display: table;
   content: "";
 }
 
-/* line 248, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .clear, .group {
   clear: both;
 }
 
-/* line 250, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .clear::after, .group::after {
   clear: both;
 }
 
-/* line 255, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 a {
   outline: none;
   text-decoration: none;
 }
 
-/* line 258, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 a:hover, a:active {
   outline: none;
   text-decoration: none;
 }
 
-/* line 264, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .fl_left, .imgl {
   float: left;
 }
 
-/* line 268, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .fl_right, .imgr {
   float: right;
 }
 
-/* line 272, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 img {
   width: auto;
   max-width: 100%;
@@ -325,61 +279,51 @@ img {
   vertical-align: middle;
 }
 
-/* line 283, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .imgl {
   margin: 0 15px 10px 0;
   clear: left;
 }
 
-/* line 288, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .imgr {
   margin: 0 0 10px 15px;
   clear: right;
 }
 
 /* FULL HEIGHT SECTIONS */
-/* line 295, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.screen-height, section.screen-height {
   min-height: 100vh;
   height: calc(100%);
   height: 100%;
 }
 
-/* line 302, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.tri-screen-height {
   height: 75%;
 }
 
-/* line 305, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.duo-screen-height {
   height: 50%;
 }
 
-/* line 308, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.pri-screen-height {
   height: 25%;
 }
 
-/* line 311, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.flex-fit {
   display: flex;
   flex-flow: column;
 }
 
-/* line 315, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.darkened {
   background-color: #f1f1f1;
   border: 1px solid #ddd;
 }
 
 /* Custom */
-/* line 323, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .overlay::after {
   color: inherit;
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* line 328, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -389,7 +333,6 @@ div.darkened {
 
 /* Generalise
 --------------------------------------------------------------------------------------------------------------- */
-/* line 338, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 h1, h2, h3, h4, h5, h6, .heading {
   margin: 0 0 20px 0;
   font-size: 22px;
@@ -397,13 +340,11 @@ h1, h2, h3, h4, h5, h6, .heading {
   font-weight: normal;
 }
 
-/* line 345, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 address {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 350, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 hr {
   display: block;
   width: 100%;
@@ -412,22 +353,18 @@ hr {
   border-width: 1px 0 0 0;
 }
 
-/* line 358, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .font-x1 {
   font-size: 1.2rem;
 }
 
-/* line 362, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .font-x2 {
   font-size: 1.8rem;
 }
 
-/* line 366, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .font-x3 {
   font-size: 2.8rem;
 }
 
-/* line 370, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .wrapper {
   display: block;
   width: 100%;
@@ -440,7 +377,6 @@ hr {
 
 /* HTML 5 Overrides
 --------------------------------------------------------------------------------------------------------------- */
-/* line 383, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 address, article, aside, figcaption, figure, footer, header, main, nav, section {
   display: block;
   margin: 0;
@@ -449,88 +385,72 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section 
 
 /* Spacing
 --------------------------------------------------------------------------------------------------------------- */
-/* line 392, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btmspace-10 {
   margin-bottom: 10px;
 }
 
-/* line 396, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btmspace-15 {
   margin-bottom: 15px;
 }
 
-/* line 400, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btmspace-30 {
   margin-bottom: 30px;
 }
 
-/* line 404, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btmspace-50 {
   margin-bottom: 50px;
 }
 
-/* line 408, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .btmspace-80 {
   margin-bottom: 80px;
 }
 
-/* line 412, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .rightspace-10 {
   margin-right: 10px;
 }
 
-/* line 416, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-5 {
   padding: 5px;
 }
 
-/* line 420, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-10 {
   padding: 10px;
 }
 
-/* line 424, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-15 {
   padding: 15px;
 }
 
-/* line 428, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-30 {
   padding: 30px;
 }
 
-/* line 432, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-50 {
   padding: 50px;
 }
 
-/* line 436, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .inspace-80 {
   padding: 80px;
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
-/* line 442, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 body {
   padding-top: 50px;
   margin-bottom: 100px;
 }
 
 @media (max-width: 991px) {
-  /* line 448, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   body {
     margin-bottom: 200px;
   }
 }
 
-/* line 453, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .noscript-warning {
   padding: 20px 10%;
   background-color: #d02323;
   background-image: url(../images/els/bg-warning.png);
 }
 
-/* line 457, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .noscript-warning p {
   margin: 0;
   padding: 10px 15px;
@@ -540,7 +460,6 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 467, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 #backtotop {
   z-index: 2;
   display: inline-block;
@@ -561,7 +480,6 @@ body {
   background-color: #ff9c10;
 }
 
-/* line 485, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 #backtotop i {
   display: block;
   width: 100%;
@@ -569,20 +487,17 @@ body {
   line-height: inherit;
 }
 
-/* line 491, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 #backtotop.visible {
   visibility: visible;
   opacity: 0.5;
 }
 
-/* line 494, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 #backtotop.visible:hover {
   visibility: visible;
   opacity: 1;
 }
 
 /* 5 Columns */
-/* line 503, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15 {
   position: relative;
   min-height: 1px;
@@ -590,60 +505,49 @@ body {
   padding-left: 15px;
 }
 
-/* line 510, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .col-xs-15 {
   width: 20%;
   float: left;
 }
 
-/* line 515, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .col-xs-offset-20, .col-xs-offset-80 {
   margin-left: 20%;
 }
 
 @media (min-width: 768px) {
-  /* line 520, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-sm-15 {
     width: 20%;
     float: left;
   }
-  /* line 524, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-sm-offset-20 {
     margin-left: 20%;
   }
-  /* line 527, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-sm-offset-80 {
     margin-left: 80%;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 533, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-md-15 {
     width: 20%;
     float: left;
   }
-  /* line 537, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-md-offset-20 {
     margin-left: 20%;
   }
-  /* line 540, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-md-offset-80 {
     margin-left: 80%;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 546, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-lg-15 {
     width: 20%;
     float: left;
   }
-  /* line 550, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-lg-offset-20 {
     margin-left: 20%;
   }
-  /* line 553, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .col-lg-offset-80 {
     margin-left: 80%;
   }
@@ -651,14 +555,12 @@ body {
 
 /* FLIPPER ///////////////////////////////////////////////// */
 /* entire container, keeps perspective */
-/* line 561, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flip-container {
   perspective: 1000px;
   width: 100%;
   height: auto;
 }
 
-/* line 563, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flip-container.hover .flipper {
   transform: rotateX(180deg);
   transition-delay: 0s;
@@ -666,7 +568,6 @@ body {
 
 /* flip the pane when hovered */
 /* .flip-container:hover .flipper, */
-/* line 574, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper {
   transition: 0.6s;
   transition-delay: 0.6s;
@@ -675,13 +576,11 @@ body {
   height: 100%;
 }
 
-/* line 575, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front, .flipper .back {
   width: 100%;
   height: auto;
 }
 
-/* line 584, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front, .flipper .back {
   backface-visibility: hidden;
   position: absolute;
@@ -690,14 +589,12 @@ body {
   height: 100%;
 }
 
-/* line 591, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateX(0deg);
 }
 
-/* line 596, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .back {
   transform: rotateX(180deg);
 }
@@ -708,7 +605,6 @@ body {
 /* back, initially hidden pane */
 /* FLIPPER ///////////////////////////////////////////////// */
 /* ALIGNER -------------------------------------------------- */
-/* line 613, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 div.aligner.all {
   display: -webkit-box;
   display: -webkit-flex;
@@ -721,21 +617,18 @@ div.aligner.all {
   justify-content: center;
 }
 
-/* line 625, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .aligner-item--fixed.all {
   -webkit-box-flex: 0;
   -webkit-flex: none;
   flex: none;
 }
 
-/* line 631, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .aligner-item.all {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
 }
 
-/* line 637, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flex-center.all {
   display: flex;
   flex-direction: column;
@@ -744,24 +637,20 @@ div.aligner.all {
   resize: vertical;
 }
 
-/* line 643, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flex-center.all.vertical-center {
   align-items: center;
   justify-content: flex-start;
 }
 
-/* line 647, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flex-center.all.absolute-center {
   align-items: center;
   justify-content: center;
 }
 
-/* line 651, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flex-center.all.flex-row {
   flex-direction: row;
 }
 
-/* line 654, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flex-center.all p {
   margin: 0;
   padding: 20px;
@@ -769,22 +658,18 @@ div.aligner.all {
 
 /* /ALIGNER -------------------------------------------------- */
 @media (min-width: 1600px) {
-  /* line 663, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .container {
     width: 1400px;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 669, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .margin-vertical.medium.mobile {
     margin: 30px 0;
   }
-  /* line 672, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .margin-on-mobile {
     margin: 15px 0 !important;
   }
-  /* line 675, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .absolute-middle {
     /* Internet Explorer 10 */
     display: -ms-flexbox;
@@ -803,7 +688,6 @@ div.aligner.all {
     box-pack: center;
     box-align: center;
   }
-  /* line 693, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   div.aligner {
     display: -webkit-box;
     display: -webkit-flex;
@@ -815,19 +699,16 @@ div.aligner.all {
     -webkit-justify-content: center;
     justify-content: center;
   }
-  /* line 704, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .aligner-item--fixed {
     -webkit-box-flex: 0;
     -webkit-flex: none;
     flex: none;
   }
-  /* line 709, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .aligner-item {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
   }
-  /* line 714, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .flex-center {
     display: flex;
     flex-direction: column;
@@ -835,21 +716,17 @@ div.aligner.all {
     height: 200px;
     resize: vertical;
   }
-  /* line 720, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .flex-center.vertical-center {
     align-items: center;
     justify-content: flex-start;
   }
-  /* line 724, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .flex-center.absolute-center {
     align-items: center;
     justify-content: center;
   }
-  /* line 728, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .flex-center.flex-row {
     flex-direction: row;
   }
-  /* line 731, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .flex-center p {
     margin: 0;
     padding: 20px;
@@ -857,14 +734,10 @@ div.aligner.all {
 }
 
 @media (max-width: 767px) {
-  /* line 739, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .no-margin-mobile {
     margin: 0 !important;
   }
-  /* line 742, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .no-padding-mobile, .padding-horizontal.no-padding-mobile, .padding-vertical.no-padding-mobile {
     padding: 0;
   }
 }
-
-/*# sourceMappingURL=../framework.map */
