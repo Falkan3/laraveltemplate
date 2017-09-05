@@ -557,6 +557,8 @@ body {
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
+  /* flip the pane when hovered */
+  /* .flip-container:hover .flipper, */
   width: 100%;
   height: auto;
 }
@@ -566,14 +568,18 @@ body {
   transition-delay: 0s;
 }
 
-/* flip the pane when hovered */
-/* .flip-container:hover .flipper, */
 .flipper {
+  /* flip speed goes here */
   transition: 0.6s;
   transition-delay: 0.6s;
   transform-style: preserve-3d;
   position: relative;
   height: 100%;
+  min-width: 100px;
+  min-height: 100px;
+  /* hide back of pane during swap */
+  /* front pane, placed above back */
+  /* back, initially hidden pane */
 }
 
 .flipper .front, .flipper .back {
@@ -599,10 +605,6 @@ body {
   transform: rotateX(180deg);
 }
 
-/* flip speed goes here */
-/* hide back of pane during swap */
-/* front pane, placed above back */
-/* back, initially hidden pane */
 /* FLIPPER ///////////////////////////////////////////////// */
 /* ALIGNER -------------------------------------------------- */
 div.aligner.all {
