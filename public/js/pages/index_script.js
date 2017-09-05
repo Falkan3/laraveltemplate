@@ -1,7 +1,7 @@
 //Author: Adam Kocić [Falkan3]
 /*
-    dependency_js: mainscript, utility
- */
+   dependency_js: mainscript, utility
+*/
 
 var G_Index_Controller = (function () {
     var Local_vars = {

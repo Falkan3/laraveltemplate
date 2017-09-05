@@ -24,7 +24,7 @@
     <!-- main -->
     <script type="text/javascript" src="{{ URL::asset('js/form_js.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sendform.js', env('HTTPS')) }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/pages/form.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/pages/form_script.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')

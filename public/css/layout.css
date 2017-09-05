@@ -1629,20 +1629,6 @@ a.stretch {
 
 /* /Sticky table */
 /* -------------------------------------------------------- /CONTENT -------------------------------------------------------- */
-/* Nicescroll */
-.nicescroll-rails div, .nicescroll-rails > div {
-  width: 4px !important;
-  transition: ease-in-out 0.3s;
-}
-
-.nicescroll-rails:hover, .nicescroll-rails:active {
-  width: 8px !important;
-}
-
-.nicescroll-rails > div:hover, .nicescroll-rails > div:active {
-  width: 8px !important;
-}
-
 /* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
 footer {
   position: absolute;

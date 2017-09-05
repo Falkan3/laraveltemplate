@@ -24,7 +24,7 @@
     <script src="{{ URL::asset('plugins/js/accordion.js', env('HTTPS')) }}"></script>
     <!-- main -->
     <script src="{{ URL::asset('js/utility.js', env('HTTPS')) }}"></script>
-    <script src="{{ URL::asset('js/pages/indexscript.js', env('HTTPS')) }}"></script>
+    <script src="{{ URL::asset('js/pages/index_script.js', env('HTTPS')) }}"></script>
 @stop
 
 @section('content')
