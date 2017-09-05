@@ -7,7 +7,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Notifications\MyResetPassword;
 use App\Notifications\MyEmailConfirmation;
-use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -20,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'verification_token'
     ];
 
     protected $dates = ['deleted_at'];
@@ -52,17 +51,9 @@ class User extends Authenticatable
     /**
      * Execute the job.
      *
-     * @return mixed
      */
     public function sendEmailConfirmationNotification($token)
     {
-        try {
-            $this->notify(new MyEmailConfirmation($token, $this->name));
-        } catch (\Exception $ex) {
-            Log::error('Error while sending email confirmation notification | ' . $ex->getMessage());
-            return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
-        }
-
-        return 1;
+        $this->notify(new MyEmailConfirmation($token, $this->name));
     }
 }

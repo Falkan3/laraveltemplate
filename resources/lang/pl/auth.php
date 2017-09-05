@@ -20,7 +20,7 @@ return [
 
     //email confirmation
     'account_must_be_validated' => 'Twoje konto nie jest aktywne. E-mail z kodem weryfikacyjnym został wysłany na podany adres e-mail.',
-    'email_confirmation_sent' => 'E-mail weryfikacyjny wysłany. Sprawdź swoją skrzynkę.',
+    'email_confirmation_sent' => 'Twój e-mail weryfikacyjny jest przetwarzany i po chwili powinien pojawić się na Twojej skrzynce pocztowej.',
     'email_confirmation_error' => 'Błąd weryfikacji adresu e-mail. Proszę spróbować później.',
     'email_confirmation_success' => 'Weryfikacja przebiegła pomyślnie.',
 ];

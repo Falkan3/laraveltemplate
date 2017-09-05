@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'email_token' => str_random(10)
+            'verification_token' => str_random(10)
         ]);
     }
 
@@ -77,7 +77,7 @@ class RegisterController extends Controller
      * Handle a registration request for the application.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function register(Request $request)
     {
@@ -95,7 +95,7 @@ class RegisterController extends Controller
      */
     public function verify($lang = null, $token)
     {
-        $user = User::where('email_token',$token)->first();
+        $user = User::where('verification_token',$token)->first();
         if(empty($user)) {
             return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
         }

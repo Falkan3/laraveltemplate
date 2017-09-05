@@ -7,7 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use App\Notifications\MyEmailConfirmation;
+use Illuminate\Support\Facades\Log;
 use App\User;
 
 class SendConfirmationEmail implements ShouldQueue
@@ -34,10 +34,23 @@ class SendConfirmationEmail implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @return void
      */
     public function handle()
     {
-        $this->user->sendEmailConfirmationNotification($this->user->email_token);
+        try {
+            $this->user->sendEmailConfirmationNotification($this->user->verification_token);
+        } catch (\Exception $ex) {
+            $this->failed($ex);
+        }
+    }
+
+    /**
+     * Handle a job failure.
+     *
+     * @param \Exception $ex
+     */
+    public function failed(\Exception $ex)
+    {
+        Log::error('Error while sending email confirmation notification. | ' . $ex->getMessage());
     }
 }
