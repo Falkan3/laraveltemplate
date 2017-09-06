@@ -17,6 +17,7 @@
     <script type="text/javascript" src="{{ URL::asset('libs/jquery_extensions/js/jquery.ba-throttle-debounce.min.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('libs/table_sticky_header/js/jquery.stickyheader.js', env('HTTPS')) }}"></script>
     <script type="text/javascript" src="{{ URL::asset('libs/doughnut_chart/js/doughnut-chart.js', env('HTTPS')) }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('libs/horizontal_bar/js/horizontal-bar.js', env('HTTPS')) }}"></script>
     <!-- plugins -->
     <script src="{{ URL::asset('plugins/js/flippers.js', env('HTTPS')) }}"></script>
     <script src="{{ URL::asset('plugins/js/iterator.js', env('HTTPS')) }}"></script>
@@ -197,7 +198,8 @@
                         <div id="device_doughnut_chart" class="doughnut-chart small"
                              data-pc="600"
                              data-mobile="120"
-                             data-undefined="30">
+                             data-undefined="30"
+                            >
                         </div>
                     </div>
                 </div>
@@ -207,7 +209,7 @@
         <div class="container btmspace-30">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="horizontal-bar-wrap">
+                    <div class="horizontal-bar-wrap" data-show-legend="true">
                         <p class="title">
                             <span>Podejrzane IP</span>
                         </p>
@@ -215,7 +217,7 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar" data-value="1557" data-percentage="25">
+                                    <div class="graph-bar" data-value="1557" data-percentage="25" data-background-color="#e72f0b" data-legend-text="label">
                                         <div class="graph-legend">
                                         </div>
                                     </div>
@@ -224,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap" data-legend="false">
+                    <div class="horizontal-bar-wrap">
                         <p class="title inline-block">
                             <span>Podejrzane IP zablokowane w Adwords</span>
                         </p>
@@ -241,7 +243,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap" data-legend="false">
+                    <div class="horizontal-bar-wrap">
                         <p class="title inline-block">
                             <span>IP OK</span>
                         </p>
@@ -258,7 +260,7 @@
                         </div>
                     </div>
 
-                    <div class="horizontal-bar-wrap multiple" data-legend="true">
+                    <div class="horizontal-bar-wrap multiple" data-show-legend="true">
                         <p class="title inline-block">
                             <span>test</span>
                         </p>
@@ -266,7 +268,8 @@
                         <div class="barGraph">
                             <div class="graph">
                                 <div class="graph-barBack">
-                                    <div class="graph-bar green thicc" data-value="300" data-percentage="30" data-background-color="#5cf562" data-legend-text="wysoki">
+                                    <div class="graph-bar green thicc" data-value="300" data-percentage="30" data-background-color="#5cf562" data-legend-text="wysoki"
+                                         data-value-change="+5.2" data-value-change-color="green" data-value-change-icon="up">
                                         <div class="graph-legend">abc</div>
                                     </div>
 

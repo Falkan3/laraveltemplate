@@ -116,25 +116,27 @@
             //only fill with color if applicable (has title
             var fill;
             if (data[i].title && data[i].title.length > 0) {
-                data[i].titleless = true;
+                data[i].hastitle = true;
                 fill = data[i].color;
             } else {
-                data[i].titleless = false;
+                data[i].hastitle = false;
                 fill = "transparent";
             }
-            //draw path
-            $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
-                .attr({
-                    "stroke-width": settings.segmentStrokeWidth,
-                    "stroke": settings.segmentStrokeColor,
-                    "fill": fill,
-                    "data-order": i
-                })
-                .appendTo($pathGroup)
-                .on("mouseenter", pathMouseEnter)
-                .on("mouseleave", pathMouseLeave)
-                .on("mousemove", pathMouseMove);
 
+            if(data[i].hastitle) {
+                //draw path
+                $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+                    .attr({
+                        "stroke-width": settings.segmentStrokeWidth,
+                        "stroke": settings.segmentStrokeColor,
+                        "fill": fill,
+                        "data-order": i
+                    })
+                    .appendTo($pathGroup)
+                    .on("mouseenter", pathMouseEnter)
+                    .on("mouseleave", pathMouseLeave)
+                    .on("mousemove", pathMouseMove);
+            }
         }
         for (var i = 0, len = data.length; i < len; i++) {
             //set percentage
@@ -150,7 +152,7 @@
             //$this.parent().find('.chart-legend').first().find('.ct');
             // $this.siblings('.chart-legend').first().find('.ct');
             for (var i = 0, len = data.length; i < len; i++) {
-                if (data[i].titleless) {
+                if (data[i].hastitle) {
                     var el = $('<div class="ct-bod"></div>');
                     var sqr = $('<div class="ct-sqr"></div>');
                     sqr.css('background-color', data[i].color);
@@ -190,7 +192,7 @@
             ];
             cmd = cmd.join(' ');
             return cmd;
-        };
+        }
 
         function pathMouseEnter(e) {
             var order = $(this).data().order;
@@ -228,26 +230,28 @@
                 return;
             }
             for (var i = 0, len = data.length; i < len; i++) {
-                var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
-                    endRadius = startRadius + segmentAngle,
-                    largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
-                    startX = centerX + cos(startRadius) * doughnutRadius,
-                    startY = centerY + sin(startRadius) * doughnutRadius,
-                    endX2 = centerX + cos(startRadius) * cutoutRadius,
-                    endY2 = centerY + sin(startRadius) * cutoutRadius,
-                    endX = centerX + cos(endRadius) * doughnutRadius,
-                    endY = centerY + sin(endRadius) * doughnutRadius,
-                    startX2 = centerX + cos(endRadius) * cutoutRadius,
-                    startY2 = centerY + sin(endRadius) * cutoutRadius;
-                var cmd = [
-                    'M', startX, startY,//Move pointer
-                    'A', doughnutRadius, doughnutRadius, 0, largeArc, 1, endX, endY,//Draw outer arc path
-                    'L', startX2, startY2,//Draw line path(this line connects outer and innner arc paths)
-                    'A', cutoutRadius, cutoutRadius, 0, largeArc, 0, endX2, endY2,//Draw inner arc path
-                    'Z'//Cloth path
-                ];
-                $paths[i].attr("d", cmd.join(' '));
-                startRadius += segmentAngle;
+                if(data[i].hastitle) {
+                    var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
+                        endRadius = startRadius + segmentAngle,
+                        largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
+                        startX = centerX + cos(startRadius) * doughnutRadius,
+                        startY = centerY + sin(startRadius) * doughnutRadius,
+                        endX2 = centerX + cos(startRadius) * cutoutRadius,
+                        endY2 = centerY + sin(startRadius) * cutoutRadius,
+                        endX = centerX + cos(endRadius) * doughnutRadius,
+                        endY = centerY + sin(endRadius) * doughnutRadius,
+                        startX2 = centerX + cos(endRadius) * cutoutRadius,
+                        startY2 = centerY + sin(endRadius) * cutoutRadius;
+                    var cmd = [
+                        'M', startX, startY,//Move pointer
+                        'A', doughnutRadius, doughnutRadius, 0, largeArc, 1, endX, endY,//Draw outer arc path
+                        'L', startX2, startY2,//Draw line path(this line connects outer and innner arc paths)
+                        'A', cutoutRadius, cutoutRadius, 0, largeArc, 0, endX2, endY2,//Draw inner arc path
+                        'Z'//Cloth path
+                    ];
+                    $paths[i].attr("d", cmd.join(' '));
+                    startRadius += segmentAngle;
+                }
             }
         }
 
