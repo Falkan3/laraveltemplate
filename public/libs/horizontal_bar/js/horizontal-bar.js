@@ -69,10 +69,13 @@
             $this.find('.clearfix').remove();
         }
 
+        //legend init
+        $this.find('.legend').remove();
         if (settings.showLegend) {
-            $this.find('.legend').remove();
             var legend = $('<div class="legend"></div>');
+            $this.find('.barGraph').first().prepend(legend);
         }
+
         /* -- */
 
         for (var i = 0; i < data.length; i++) {
@@ -83,12 +86,14 @@
             }
 
             //data
+            //params
             var dataVal = data[i].val_num ? data[i].val_num : $item.data('value');
             var dataPercentage = data[i].percentage ? data[i].percentage : $item.data('percentage');
             var dataWidth = null;
             var dataBackgroundColor = data[i].background_color ? data[i].background_color : $item.data('background-color');
             var dataThicc = data[i].thicc ? data[i].thicc : $item.data('thicc');
             var dataAnimated = data[i].animated ? data[i].animated : $item.data('animated');
+            //legend
             var legendText = null;
             var valueChange = null;
             var valueChangeColor = null;
@@ -188,9 +193,6 @@
             }
         }
 
-        if (settings.showLegend) {
-            $this.find('.barGraph').first().prepend(legend);
-        }
         if (settings.multiple) {
             $this.find('.graph-barBack').append('<div class="clearfix"></div>');
         }

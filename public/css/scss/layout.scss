@@ -1038,6 +1038,13 @@ a.stretch {
 				}
 			}
 
+			span.ml {
+				margin-left: 5px;
+			}
+			span.mr {
+				margin-right: 5px;
+			}
+
 			@media (max-width: 500px) {
 				.ct-bod {
 					display: block;

@@ -40,7 +40,7 @@
                 legend: false,
                 beforeDraw: function () {
                 },
-                afterDrawed: function () {
+                afterDrawn: function () {
                 },
                 onPathEnter: function (e, data) {
                 },
@@ -110,7 +110,7 @@
 
         for (var i = 0, len = data.length; i < len; i++) {
             //don't count to total number if stated
-            if(!data[i].nocount) {
+            if (!data[i].nocount) {
                 segmentTotal += data[i].value;
             }
             //only fill with color if applicable (has title
@@ -123,7 +123,7 @@
                 fill = "transparent";
             }
 
-            if(data[i].hastitle) {
+            if (data[i].hastitle) {
                 //draw path
                 $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
                     .attr({
@@ -147,8 +147,15 @@
         animationLoop(drawPieSegments);
 
         //Draw chart legend
+
+        var chart_legend = $this.closest('.cs-chart-container').find('.chart-legend').first();
         if (settings.legend) {
-            var chart_legend_body = $this.closest('.cs-chart-container').find('.chart-legend').first().find('.ct');
+            var chart_legend_body = chart_legend.find('.ct');
+
+            //cleanup
+            chart_legend_body.empty();
+            chart_legend.show();
+
             //$this.parent().find('.chart-legend').first().find('.ct');
             // $this.siblings('.chart-legend').first().find('.ct');
             for (var i = 0, len = data.length; i < len; i++) {
@@ -158,13 +165,24 @@
                     sqr.css('background-color', data[i].color);
                     var name = $('<span class="ct-label">' + data[i].title + ": " + data[i].value + " (" + data[i].percent + "%)" + "</span>");
 
+                    //base info
                     el.append(sqr);
                     el.append(name);
+
+                    //val change
+                    var valueChange = data[i].valueChange;
+                    if (valueChange) {
+                        var valueChangeColor = data[i].valueChangeColor;
+                        var valueChangeIcon = data[i].valueChangeIcon;
+
+                        el.append(legendValueChange(valueChange, valueChangeColor, valueChangeIcon));
+                    }
+
                     chart_legend_body.append(el);
                 }
             }
         } else {
-            $this.parent().find('.chart-legend').remove();
+            chart_legend.hide();
         }
 
         //Functions
@@ -230,7 +248,7 @@
                 return;
             }
             for (var i = 0, len = data.length; i < len; i++) {
-                if(data[i].hastitle) {
+                if (data[i].hastitle) {
                     var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
                         endRadius = startRadius + segmentAngle,
                         largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
@@ -275,15 +293,73 @@
                 if (cnt <= 1) {
                     requestAnimFrame(arguments.callee);
                 } else {
-                    settings.afterDrawed.call($this);
+                    settings.afterDrawn.call($this);
                 }
             });
         }
 
+        function legendValueChange(in_valueChange, in_valueChangeColor, in_valueChangeIcon) {
+            var legend_item_text = '', valueChange = in_valueChange, valueChangeColor = in_valueChangeColor, valueChangeIcon = in_valueChangeIcon;
+
+            if (valueChange) {
+                /* color */
+                if (valueChangeColor) {
+                    switch (valueChangeColor) {
+                        case 'green':
+                            valueChangeColor = 'rgb(0, 201, 8)';
+                            break;
+                        case 'red':
+                            valueChangeColor = 'rgb(207, 32, 0)';
+                            break;
+                        case 'grey':
+                            valueChangeColor = 'rgb(84, 83, 73)';
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    valueChangeColor = 'inherit';
+                }
+                /* icon */
+                if (valueChangeIcon) {
+                    switch (valueChangeIcon) {
+                        case 'up':
+                            valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>';
+                            break;
+                        case 'down':
+                            valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-down" aria-hidden="true"></i></span>';
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    valueChangeIcon = '';
+                }
+
+                legend_item_text
+                    += '<span class="ml">'
+                    + '<span>(</span>'
+                    + '<span style="color: ' + valueChangeColor + '">'
+                    + valueChangeIcon
+                    + '<span class="mr">' + valueChange + '</span>'
+                    + '</span>'
+                    + '<span>p.p.)</span>'
+                    + '</span>';
+            }
+
+            return $(legend_item_text);
+        }
+
+        /**
+         * @return {number}
+         */
         function Max(arr) {
             return Math.max.apply(null, arr);
         }
 
+        /**
+         * @return {number}
+         */
         function Min(arr) {
             return Math.min.apply(null, arr);
         }

@@ -1006,6 +1006,14 @@ a.stretch {
   margin-right: 0;
 }
 
+.cs-chart-container .chart-legend .ct span.ml {
+  margin-left: 5px;
+}
+
+.cs-chart-container .chart-legend .ct span.mr {
+  margin-right: 5px;
+}
+
 @media (max-width: 500px) {
   .cs-chart-container .chart-legend .ct .ct-bod {
     display: block;
