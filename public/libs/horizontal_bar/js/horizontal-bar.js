@@ -17,7 +17,7 @@
 
             settings = $.extend({
                 items: $this.find('.graph-bar'),
-                dataFloat: $this.hasClass('multiple'),
+                multiple: $this.hasClass('multiple'),
                 showLegend: $this.data('show-legend'),
                 clear: false,
                 animationSpeed: 1000,
@@ -33,11 +33,42 @@
 
         settings.beforeDraw.call($this);
 
+        if (data.length) {
+            if (data.length < settings.items.length) {
+                var x = 0;
+                var items_to_remove = [];
+                for (x = data.length; x < settings.items.length; x++) {
+                    items_to_remove.push(settings.items[x]);
+                }
+                console.log(items_to_remove);
+                $(items_to_remove).each(function() {
+                    var $this = $(this);
+                    //set timeout to alleviate erroneous css transition behavior
+                    $this.css('width', 0);
+                    setTimeout(function () {
+                        $this.remove();
+                    }, settings.animationSpeed);
+
+                    //use this if not using css transitions
+                    /*
+                    $this.animate(
+                        {'width': 0}, settings.animationSpeed, function () {
+                            $this.remove();
+                        }
+                    );
+                    */
+                });
+            }
+        } else {
+            data = settings.items;
+        }
         /* cleanup */
-        $this.find('.clearfix').remove();
         if (settings.clear) {
             barBack.empty();
+        } else {
+            $this.find('.clearfix').remove();
         }
+
         if (settings.showLegend) {
             $this.find('.legend').remove();
             var legend = $('<div class="legend"></div>');
@@ -66,6 +97,8 @@
             dataWidth = dataPercentage;
 
             /* -- */
+
+            $item.attr({'data-value': dataVal,'data-percentage': dataPercentage});
 
             var graph_legend = $item.find('.graph-legend');
             if (!graph_legend.length) {
@@ -158,7 +191,7 @@
         if (settings.showLegend) {
             $this.find('.barGraph').first().prepend(legend);
         }
-        if (settings.dataFloat) {
+        if (settings.multiple) {
             $this.find('.graph-barBack').append('<div class="clearfix"></div>');
         }
 
@@ -194,5 +227,6 @@
         }
 
         return $this;
-    };
+    }
+    ;
 })(jQuery);

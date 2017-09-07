@@ -96,6 +96,18 @@ var G_Index_Controller = (function () {
                     {showLegend: true}
                 );
             }, 3500);
+
+            setTimeout(function() {
+                hor_bars.eq(3).drawHorizontalBar(
+                    [
+                        {val_num: 40, percentage: 10, background_color: "#ee343f", legend_text: "wysoki",
+                            value_change: "+5.2", value_change_color: "green", value_change_icon: "up"},
+                        {val_num: 30, percentage: 10, background_color: "#6cff46", legend_text: "średni"},
+                        {val_num: 30, percentage: 10, background_color: "#31fff0", legend_text: "niski"},
+                    ],
+                    {showLegend: true}
+                );
+            }, 7000);
         },
         initHorizontalBarCharts_lite: function () {
             //Bar charts
