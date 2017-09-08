@@ -984,8 +984,10 @@ a.stretch {
 
 .chart-three-screen {
 	@media (min-width: 992px) {
-		.chart-legend {
-			min-height: 140px;
+		.cs-chart-container {
+			.chart-legend {
+				min-height: 140px;
+			}
 		}
 
 		&:first-child {
