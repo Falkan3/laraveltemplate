@@ -1,6 +1,11 @@
+/*
+	fonts
+	font-family: 'Arbutus Slab', serif;
+	font-family: 'Open Sans', sans-serif;
+*/
 body {
   background-color: #fff;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.6em;
   color: #000;
@@ -915,36 +920,6 @@ a.stretch {
 }
 
 /* ------------- CUSTOM CHARTS ------------- */
-.chart-half-screen.full-screen {
-  border: none;
-}
-
-@media (min-width: 992px) {
-  .chart-half-screen.full-screen .cs-chart-container {
-    white-space: nowrap;
-  }
-  .chart-half-screen.full-screen .cs-chart-container > div {
-    display: inline-block;
-    vertical-align: top;
-    white-space: normal;
-  }
-  .chart-half-screen.full-screen .cs-chart-container .chart-legend {
-    width: 30%;
-    margin-right: 5%;
-  }
-  .chart-half-screen.full-screen .cs-chart-container .doughnut-chart {
-    width: 60%;
-    margin-left: 5%;
-  }
-}
-
-@media (max-width: 992px) {
-  .chart-half-screen.full-screen .cs-chart-container > div {
-    display: block;
-    width: 100%;
-  }
-}
-
 @media (min-width: 992px) {
   .chart-half-screen:first-child {
     padding-right: 5%;
@@ -975,6 +950,79 @@ a.stretch {
   }
 }
 
+@media (min-width: 992px) {
+  .chart-three-screen .chart-legend {
+    min-height: 140px;
+  }
+  .chart-three-screen:first-child {
+    padding-right: 2.5%;
+  }
+  .chart-three-screen:nth-child(2) {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  .chart-three-screen:last-child {
+    padding-left: 2.5%;
+  }
+  .chart-three-screen:nth-child(odd) {
+    border-right: solid 1px #ddd;
+  }
+  .chart-three-screen:nth-child(even) {
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+  }
+  .chart-three-screen:last-child {
+    border-right: none;
+    border-left: solid 1px #ddd;
+  }
+}
+
+@media (max-width: 991px) {
+  .chart-three-screen {
+    padding-bottom: 25px;
+    border-bottom: solid 2px #ddd;
+  }
+  .chart-three-screen {
+    margin-bottom: 25px;
+  }
+  .chart-three-screen:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.chart-half-screen.full-screen, .chart-three-screen.full-screen {
+  border: none;
+}
+
+@media (min-width: 992px) {
+  .chart-half-screen.full-screen .cs-chart-container, .chart-three-screen.full-screen .cs-chart-container {
+    white-space: nowrap;
+  }
+  .chart-half-screen.full-screen .cs-chart-container > div, .chart-three-screen.full-screen .cs-chart-container > div {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+  .chart-half-screen.full-screen .cs-chart-container .chart-legend, .chart-three-screen.full-screen .cs-chart-container .chart-legend {
+    width: 30%;
+    padding-right: 5%;
+  }
+  .chart-half-screen.full-screen .cs-chart-container .doughnut-chart, .chart-three-screen.full-screen .cs-chart-container .doughnut-chart {
+    width: 60%;
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .chart-half-screen.full-screen .cs-chart-container > div, .chart-three-screen.full-screen .cs-chart-container > div {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* -- */
 .cs-chart-container {
   position: relative;
   /* DOUGHNUT CHART */
@@ -1203,6 +1251,7 @@ a.stretch {
 
 .horizontal-bar-wrap .title {
   font-size: 14px;
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
@@ -1455,6 +1504,7 @@ a.stretch {
 
 .horizontal-bar-wrap .legend {
   margin-bottom: 10px;
+  font-weight: lighter;
 }
 
 .horizontal-bar-wrap .legend .legend-item {
@@ -1584,6 +1634,14 @@ a.stretch {
 .sticky-wrap table.table-hover > tbody > tr.active > td {
   background-color: #dff8ff !important;
   border: none !important;
+}
+
+.sticky-wrap table > thead > tr:nth-child(2n-1):hover > td, .sticky-wrap table > thead > tr:nth-child(2n-1).active > td,
+.sticky-wrap table > tbody > tr:nth-child(2n-1):hover > td,
+.sticky-wrap table > tbody > tr:nth-child(2n-1).active > td, .sticky-wrap table.table-hover > thead > tr:nth-child(2n-1):hover > td, .sticky-wrap table.table-hover > thead > tr:nth-child(2n-1).active > td,
+.sticky-wrap table.table-hover > tbody > tr:nth-child(2n-1):hover > td,
+.sticky-wrap table.table-hover > tbody > tr:nth-child(2n-1).active > td {
+  background-color: #dcf0f4 !important;
 }
 
 .sticky-wrap table > thead > tr:hover > th, .sticky-wrap table > thead > tr.active > th,

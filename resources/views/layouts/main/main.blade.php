@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ URL::asset('libs/malihu_custom_scrollbar/css/jquery.mCustomScrollbar.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 
     @yield('custom_css')
     <link rel="stylesheet" href="{{ URL::asset('css/framework.css', env('HTTPS')) }}" type="text/css" media="all"/>

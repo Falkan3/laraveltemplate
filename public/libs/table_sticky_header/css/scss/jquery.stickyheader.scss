@@ -80,6 +80,9 @@
 					background-color: #dff8ff !important;
 					border: none !important;
 				}
+				&:nth-child(2n-1):hover > td, &:nth-child(2n-1).active > td {
+					background-color: #dcf0f4 !important;
+				}
 				&:hover > th, &.active > th {
 					background-color: #30bf8e;
 				}

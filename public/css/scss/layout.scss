@@ -1,6 +1,12 @@
+/*
+	fonts
+	font-family: 'Arbutus Slab', serif;
+	font-family: 'Open Sans', sans-serif;
+*/
+
 body {
 	background-color: #fff;
-	font-family: 'Kanit', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.6em;
 	color: #000;
@@ -945,41 +951,6 @@ a.stretch {
 
 /* ------------- CUSTOM CHARTS ------------- */
 .chart-half-screen {
-	&.full-screen {
-		border: none;
-
-		.cs-chart-container {
-			@media (min-width: 992px) {
-				& {
-					white-space: nowrap;
-				}
-
-				& > div {
-					display: inline-block;
-					vertical-align: top;
-					white-space: normal;
-				}
-
-				.chart-legend {
-					width: 30%;
-					margin-right: 5%;
-				}
-
-				.doughnut-chart {
-					width: 60%;
-					margin-left: 5%;
-				}
-			}
-
-			@media (max-width: 992px) {
-				& > div {
-					display: block;
-					width: 100%;
-				}
-			}
-		}
-	}
-
 	@media (min-width: 992px) {
 		&:first-child {
 			padding-right: 5%;
@@ -1010,6 +981,90 @@ a.stretch {
 		}
 	}
 }
+
+.chart-three-screen {
+	@media (min-width: 992px) {
+		.chart-legend {
+			min-height: 140px;
+		}
+
+		&:first-child {
+			padding-right: 2.5%;
+		}
+		&:nth-child(2) {
+			padding-left: 2.5%;
+			padding-right: 2.5%;
+		}
+		&:last-child {
+			padding-left: 2.5%;
+		}
+
+		&:nth-child(odd) {
+			border-right: solid 1px #ddd;
+		}
+		&:nth-child(even) {
+			border-left: solid 1px #ddd;
+			border-right: solid 1px #ddd;
+		}
+		&:last-child {
+			border-right: none;
+			border-left: solid 1px #ddd;
+		}
+	}
+
+	@media (max-width: 991px) {
+		padding-bottom: 25px;
+		border-bottom: solid 2px #ddd;
+
+		& {
+			margin-bottom: 25px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+}
+
+.chart-half-screen, .chart-three-screen {
+	&.full-screen {
+		border: none;
+
+		.cs-chart-container {
+			@media (min-width: 992px) {
+				& {
+					white-space: nowrap;
+				}
+
+				& > div {
+					display: inline-block;
+					vertical-align: top;
+					white-space: normal;
+				}
+
+				.chart-legend {
+					width: 30%;
+					padding-right: 5%;
+				}
+
+				.doughnut-chart {
+					width: 60%;
+					padding-left: 5%;
+				}
+			}
+
+			@media (max-width: 992px) {
+				& > div {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+/* -- */
 
 .cs-chart-container {
 	position: relative;
@@ -1243,6 +1298,7 @@ $bar-graph-border-radius: 0; //2px;
 
 	.title {
 		font-size: 14px;
+		font-weight: bold;
 
 		@media (max-width: 767px) {
 			font-size: 12px;
@@ -1510,6 +1566,7 @@ $bar-graph-border-radius: 0; //2px;
 
 	.legend {
 		margin-bottom: 10px;
+		font-weight: lighter;
 
 		.legend-item {
 			display: inline-block;
@@ -1626,6 +1683,9 @@ $bar-graph-border-radius: 0; //2px;
 				&:hover > td, &.active > td {
 					background-color: #dff8ff !important;
 					border: none !important;
+				}
+				&:nth-child(2n-1):hover > td, &:nth-child(2n-1).active > td {
+					background-color: #dcf0f4 !important;
 				}
 				&:hover > th, &.active > th {
 					background-color: #30bf8e;
