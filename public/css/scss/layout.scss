@@ -336,6 +336,548 @@ nav.navbar {
 
 /* ---------------------------- /NAVBAR ---------------------------- */
 
+/* ------------ CUSTOM SIDEBAR ------------ */
+
+//@import "https://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+
+/*-------------------------------*/
+/*           VARIABLES           */
+/*-------------------------------*/
+
+// BACKGROUND COLOR
+$bg-color : #fff;
+$menu-bg-color : #0094d9;//#583e7e;
+
+// TEXT COLOR
+$text-color : #212121;
+$active-text-color : #fff;
+
+// SIDEBAR LINK COLOR VARIABLES
+$side-color-1 : #1a1a1a;
+$side-color-4 : $menu-bg-color;
+$side-color-dropdown-open: darken($menu-bg-color , 20%);
+$side-color-3 : darken($side-color-4 , 5%);
+$side-color-2 : darken($side-color-3 , 5%);
+$side-color-5 : lighten($side-color-4 , 5%);
+$side-color-6 : lighten($side-color-5 , 5%);
+$side-color-7 : lighten($side-color-6 , 5%);
+$side-color-8 : lighten($side-color-7 , 5%);
+$side-color-9 : lighten($side-color-8 , 5%);
+$side-color-10 : lighten($side-color-9 , 5%);
+$side-color-11 : lighten($side-color-10 , 5%);
+$side-color-12 : lighten($side-color-11 , 5%);
+
+// HAMBURGER COLOR
+$hamburger-color-closed : transparentize($text-color , 0.3);
+$hamburger-color-open : $active-text-color ;
+
+// WIDTH VARIABLES
+$width1 : 320px;
+$width2 : 100px;
+$full-width : 100%;
+
+// HEIGHT VARIABLES
+$full-height : 100%;
+
+/*
+body {
+	position: relative;
+	overflow-x: hidden;
+}
+*/
+
+/*
+body,
+html {
+	height: $full-height;
+	background-color: $bg-color;
+}
+*/
+
+#sidebar-wrapper { //.nav
+	.open > a {
+		background-color: transparent;
+		&:hover {
+			background-color: transparent;
+		}
+		&:focus {
+			background-color: transparent;
+		}
+	}
+}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#page-wrapper {
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	padding-left: 0;
+	transition: all 0.5s ease;
+}
+
+#page-wrapper.toggled {
+	//padding-left: $width1;
+	#sidebar-wrapper {
+		width: $width1;
+
+		@media (max-width: 767px) {
+			& {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+	#content {
+		margin-right: -$width1;
+		//position: absolute;
+
+		@media (max-width: 767px) {
+			& {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+#sidebar-wrapper {
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	background: $bg-color;
+	height: $full-height;
+	left: $width1;
+	margin-left: -$width1;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: all 0.5s ease;
+	width: 0;
+	z-index: 1032;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.navbar-header {
+		width: $width1;
+		float: none;
+
+		.navbar-brand {
+			height: auto;
+
+			img {
+				float: none;
+			}
+		}
+
+		@media (max-width: 767px) {
+			& {
+				width: 75%;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		& {
+			width: 100%;
+			left: -100%;
+			margin-left: 0;
+		}
+	}
+}
+
+#content {
+	//padding-top: 70px;
+	width: $full-width;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+	//position: absolute;
+	//top: 0;
+	width: $width1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+
+	li {
+		display: inline-block;
+		line-height: 20px;
+		position: relative;
+		width: $full-width;
+		&::before {
+			background-color: #1c1c1c;
+			content: '';
+			height: $full-height;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transition: width .2s ease-in;
+			width: 3px;
+			z-index: -1;
+		}
+
+		/*
+		&:first-child {
+			a {
+				background-color: $side-color-1;
+				color: #ffffff;
+			}
+		}
+		*/
+		&:first-child {
+			&:before {
+				background-color: $side-color-2;
+			}
+		}
+		&:nth-child(2) {
+			&:before {
+				background-color: $side-color-3;
+			}
+		}
+		&:nth-child(3) {
+			&:before {
+				background-color: $side-color-4;
+			}
+		}
+		&:nth-child(4) {
+			&:before {
+				background-color: $side-color-5;
+			}
+		}
+		&:nth-child(5) {
+			&:before {
+				background-color: $side-color-6;
+			}
+		}
+		&:nth-child(6) {
+			&:before {
+				background-color: $side-color-7;
+			}
+		}
+		&:nth-child(7) {
+			&:before {
+				background-color: $side-color-8;
+			}
+		}
+		&:nth-child(8) {
+			&:before {
+				background-color: $side-color-9;
+			}
+		}
+		&:nth-child(9) {
+			&:before {
+				background-color: $side-color-10;
+			}
+		}
+		&:nth-child(10) {
+			&:before {
+				background-color: $side-color-11;
+			}
+		}
+		&:nth-child(11) {
+			&:before {
+				background-color: $side-color-12;
+			}
+		}
+		&:hover {
+			&:before {
+				transition: width .2s ease-in;
+				width: $full-width;
+			}
+		}
+		a {
+			color: $text-color;//color: #dddddd;
+			display: block;
+			padding: 10px 15px 10px 30px;
+			text-decoration: none;
+			-webkit-transition: ease-in-out 0.3s;
+			-moz-transition: ease-in-out 0.3s;
+			-ms-transition: ease-in-out 0.3s;
+			-o-transition: ease-in-out 0.3s;
+			transition: ease-in-out 0.3s;
+		}
+	}
+	li {
+		&, &.open {
+			a:hover, a:focus, a:active {
+				background-color: transparent;
+			}
+			a:hover { //a:active, a:focus
+				color: $active-text-color;
+				text-decoration: none;
+			}
+		}
+
+		&.open, &:hover, &:active, &:focus {
+			&::before {
+				transition: width .2s ease-in;
+				width: $full-width;
+			}
+		}
+	}
+	/*
+	li.open {
+		&, &:hover {
+			&::before {
+				transition: width .2s ease-in;
+				width: $full-width;
+			}
+		}
+	}
+	*/
+	.dropdown {
+		&:hover, &.open {
+			a {
+				color: $active-text-color;
+			}
+		}
+	}
+	.dropdown-menu {
+		//background-color: #222222;
+		background-color: $side-color-dropdown-open;
+		border-radius: 0;
+		border: none;
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		width: $full-width;
+		font-size: 14px;
+
+		& > li {
+			> a:focus, &:hover {
+				background: none;
+			}
+			> a {
+				&:focus, &:hover {
+					background: none;
+				}
+			}
+		}
+
+		li, li.active {
+			> a {
+				background-color: transparent;
+				color: $active-text-color;
+			}
+		}
+
+		&.open {
+			display: block;
+		}
+	}
+
+	/* dropdown */
+
+	.dropdown-submenu > .dropdown-menu {
+		left: 0;
+		margin: 0;
+	}
+
+	& > .sidebar-brand {
+		font-size: 20px;
+		height: 65px;
+		line-height: 44px;
+	}
+	/*
+	li a:hover, li a:active, li a:focus, li.open a:hover, li.open a:active, li.open a:focus {
+		background-color: transparent;
+		color: #ffffff;
+		text-decoration: none;
+	}
+	*/
+
+	@media (max-width: 767px) {
+		& {
+			width: 100%;
+		}
+	}
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+	background: transparent;
+	border: none;
+	display: block;
+	height: 32px;
+	margin-left: 15px;
+	position: fixed;
+	top: 20px;
+	width: 32px;
+	z-index: 1031;
+	&:hover {
+		outline: none;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:active {
+		outline: none;
+	}
+}
+
+.hamburger.is-closed {
+	&::before {
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-transition: all .35s ease-in-out;
+		color: $active-text-color;
+		content: '';
+		display: block;
+		font-size: 14px;
+		line-height: 32px;
+		opacity: 0;
+		text-align: center;
+		width: $width2;
+	}
+	&:hover {
+		&::before {
+			-webkit-transform: translate3d(-100px, 0, 0);
+			-webkit-transition: all .35s ease-in-out;
+			display: block;
+			opacity: 1;
+		}
+		.hamb-top {
+			-webkit-transition: all .35s ease-in-out;
+			top: 0;
+		}
+		.hamb-bottom {
+			-webkit-transition: all .35s ease-in-out;
+			bottom: 0;
+		}
+	}
+	.hamb-top {
+		-webkit-transition: all .35s ease-in-out;
+		background-color: $hamburger-color-closed;
+		top: 5px;
+	}
+	.hamb-middle {
+		background-color: $hamburger-color-closed;
+		margin-top: -2px;
+		top: 50%;
+	}
+	.hamb-bottom {
+		-webkit-transition: all .35s ease-in-out;
+		background-color: $hamburger-color-closed;
+		bottom: 5px;
+	}
+
+	@media (max-width: 767px) {
+		.hamb-top {
+			background-color: $hamburger-color-closed;
+		}
+		.hamb-middle {
+			background-color: $hamburger-color-closed;
+		}
+		.hamb-bottom {
+			background-color: $hamburger-color-closed;
+		}
+	}
+}
+
+.hamburger.is-closed .hamb-top, .hamburger.is-closed .hamb-middle, .hamburger.is-closed .hamb-bottom, .hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
+	height: 4px;
+	left: 0;
+	position: absolute;
+	width: $full-width;
+	box-shadow: 0 0 4px #fff;
+}
+
+.hamburger.is-open {
+	left: $width1;
+
+	.hamb-top {
+		-webkit-transform: rotate(45deg);
+		-webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
+		background-color: $hamburger-color-open;
+		margin-top: -2px;
+		top: 50%;
+	}
+	.hamb-middle {
+		background-color: $hamburger-color-open;
+		display: none;
+	}
+	.hamb-bottom {
+		-webkit-transform: rotate(-45deg);
+		-webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
+		// background-color: #1a1a1a;
+		background-color: $hamburger-color-open;
+		margin-top: -2px;
+		top: 50%;
+	}
+	&::before {
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-transition: all .35s ease-in-out;
+		color: #ffffff;
+		content: '';
+		display: block;
+		font-size: 14px;
+		line-height: 32px;
+		opacity: 0;
+		text-align: center;
+		width: $width2;
+	}
+	&:hover {
+		&::before {
+			-webkit-transform: translate3d(-100px, 0, 0);
+			-webkit-transition: all .35s ease-in-out;
+			display: block;
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.hamb-top {
+			background-color: $hamburger-color-closed;
+		}
+		.hamb-middle {
+			background-color: $hamburger-color-closed;
+		}
+		.hamb-bottom {
+			background-color: $hamburger-color-closed;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.hamburger {
+		top: 50px;
+
+		&, &.is-closed, &.is-open {
+			z-index: 1033;
+			left: auto;
+			right: 20px;
+		}
+	}
+}
+
+/*-------------------------------*/
+/*          Dark Overlay         */
+/*-------------------------------*/
+
+.overlay {
+	position: fixed;
+	display: none;
+	width: $full-width;
+	height: $full-height;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4);
+	z-index: 1031;
+}
+
+/* ------------ /CUSTOM SIDEBAR ------------ */
+
 /* -------------------------------------------------------- /HEADER -------------------------------------------------------- */
 
 /* -------------------------------------------------------- CONTENT -------------------------------------------------------- */

@@ -53,13 +53,24 @@
     document.getElementById("hideAll").style.display = "block";
 </script>
 
-@include('layouts.main.includes.header')
+<div id="page-wrapper">
+    @include('layouts.main.includes.header')
 
-<div class="wrapper full-height">
-    @yield('content')
+    <div id="content" class="wrapper full-height">
+        <div class="overlay"></div>
+
+        <!-- sidebar hamburger button -->
+        <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+
+        @yield('content')
+    </div>
+
+    @include('layouts.main.includes.footer')
 </div>
-
-@include('layouts.main.includes.footer')
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <div class="loader global_ajax_loader loading_ajax hidden"></div>
