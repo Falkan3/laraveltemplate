@@ -2078,6 +2078,7 @@ a.stretch {
   width: 100%;
   /* Not needed for sticky header/column functionality */
   /* Component styles */
+  /* malihu custom scrollbar css */
 }
 
 .sticky-wrap .sticky-thead,
@@ -2233,6 +2234,20 @@ a.stretch {
 .sticky-wrap table span .icon.small {
   width: 16px;
   height: 16px;
+}
+
+.sticky-wrap .mCustomScrollBox .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #31BC86;
+  background-color: rgba(49, 188, 134, 0.75);
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)";
+}
+
+.sticky-wrap .mCustomScrollBox .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: #31BC86;
+  background-color: rgba(49, 188, 134, 0.85);
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)";
 }
 
 /* /Sticky table */

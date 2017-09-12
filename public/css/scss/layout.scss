@@ -2368,6 +2368,24 @@ $bar-graph-border-radius: 0; //2px;
 			}
 		}
 	}
+
+	/* malihu custom scrollbar css */
+	.mCustomScrollBox {
+		.mCSB_scrollTools .mCSB_dragger {
+			.mCSB_dragger_bar {
+				background-color: #31BC86;
+				background-color: rgba(49, 188, 134, 0.75);
+				filter: "alpha(opacity=75)";
+				-ms-filter: "alpha(opacity=75)";
+			}
+			&:hover .mCSB_dragger_bar {
+				background-color: #31BC86;
+				background-color: rgba(49, 188, 134, 0.85);
+				filter: "alpha(opacity=75)";
+				-ms-filter: "alpha(opacity=75)";
+			}
+		}
+	}
 }
 
 /* /Sticky table */
