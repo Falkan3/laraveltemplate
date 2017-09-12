@@ -154,24 +154,16 @@ nav.navbar {
 		a {
 			&:focus, &:hover {
 				color: #fff;
-				background: #ff9c10;
+				background-color: #ff9c10;
 			}
 		}
 		> {
-			.active > a {
+			.active > a, .open > a {
 				color: #fff;
-				background: #ff9c10;
+				background: rgba(255, 156, 16, 0.5);
 				&:focus, &:hover {
 					color: #fff;
-					background: #ff9c10;
-				}
-			}
-			.open > a {
-				color: #fff;
-				background: #ff9c10;
-				&:focus, &:hover {
-					color: #fff;
-					background: #ff9c10;
+					background-color: #ff9c10;
 				}
 			}
 		}
@@ -181,8 +173,20 @@ nav.navbar {
 /* li bg */
 
 .navbar-nav > li {
-	background-color: #3F88C5;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-transition: ease-in-out 0.2s;
+	-moz-transition: ease-in-out 0.2s;
+	-ms-transition: ease-in-out 0.2s;
+	-o-transition: ease-in-out 0.2s;
 	transition: ease-in-out 0.2s;
+
+	&.active {
+		background-color: rgba(255, 156, 16, 0.5);
+	}
+}
+
+.navbar-nav.colored > li {
+	background-color: #3F88C5;
 	&.color_1 {
 		background-color: #4CB944;
 	}
@@ -204,59 +208,127 @@ nav.navbar {
 	&.color_7 {
 		background-color: #B6174B;
 	}
-	&.active {
-		background-color: #ff9c10;
-	}
 }
 
 /* backgrounds */
 
 /* -- */
 
-.navbar-default .navbar-nav > {
-	li:hover {
-		background-color: #ff9c10;
+.navbar-default .navbar-nav {
+	& {
+		li:hover {
+			background-color: #ff9c10;
+		}
+		li.active > a, li.open > a {
+			background: #ff9c10 none;
+			box-shadow: none;
+			color: #fff;
+		}
+
+		@media (max-width: 767px) {
+			li:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+		}
 	}
-	.active > a, .open > a {
-		background-image: none;
-		background-color: #ff9c10;
-		box-shadow: none;
-		color: #fff;
+
+	&.colored {
+		@media (max-width: 767px) {
+			li:hover {
+				background-color: #ff9c10;
+			}
+		}
 	}
 }
 
 /* dropdown */
 
-.dropdown-menu > li {
+.navbar-default .navbar-nav .dropdown-menu > li {
 	> a:focus, &:hover {
-		background-color: #ff9c10;
-		background-image: none;
+		background: #ff9c10 none;
 	}
 	> a {
 		&:focus, &:hover {
-			background-color: transparent;
-			background-image: none;
+			background: transparent none;
 		}
 	}
-}
 
-.navbar-default .navbar-nav > .open {
-	background-color: #ff9c10;
-	> a {
-		color: #fff;
-		background-color: transparent;
-		&:focus, &:hover {
+	&.open {
+		background-color: #ff9c10;
+		> a {
 			color: #fff;
 			background-color: transparent;
+			&:focus, &:hover {
+				color: #fff;
+				background-color: transparent;
+			}
+		}
+
+		@media (max-width: 767px) {
+			> a {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
 		}
 	}
 }
 
-.navbar-nav .open .dropdown-menu {
-	padding: 0;
-	background-color: #fff;
-	border: none;
-	border-radius: 0;
+.navbar-default .navbar-nav {
+	.dropdown {
+		.dropdown-menu {
+			padding: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			border: none;
+			border-radius: 0;
+
+			display: block;
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transform: translateY(10px);
+			-ms-transform: translateY(10px);
+			-o-transform: translateY(10px);
+			transform: translateY(10px);
+			-webkit-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+			-moz-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+			-ms-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+			-o-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+			transition: .2s visibility ease, .2s opacity ease, .2s ease;
+
+			& > li > a {
+				color: #fff;
+			}
+
+			@media (max-width: 767px) {
+				background-color: transparent;
+
+				& > li > a {
+					color: #fff;
+				}
+			}
+		}
+		&.open {
+			.dropdown-menu {
+				visibility: visible;
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				-ms-transform: translateY(0);
+				-o-transform: translateY(0);
+				transform: translateY(0);
+			}
+		}
+	}
+	&.colored {
+		.dropdown {
+			.dropdown-menu {
+				background-color: #fff;
+
+				@media (max-width: 767px) {
+					& > li > a {
+						color: #212121;
+					}
+				}
+			}
+		}
+	}
 }
 
 .dropdown-header, .dropdown-menu > li > a {
@@ -345,39 +417,39 @@ nav.navbar {
 /*-------------------------------*/
 
 // BACKGROUND COLOR
-$bg-color : #fff;
-$menu-bg-color : #0094d9;//#583e7e;
+$bg-color: #fff;
+$menu-bg-color: #0094d9; //#583e7e;
 
 // TEXT COLOR
-$text-color : #212121;
-$active-text-color : #fff;
+$text-color: #212121;
+$active-text-color: #fff;
 
 // SIDEBAR LINK COLOR VARIABLES
-$side-color-1 : #1a1a1a;
-$side-color-4 : $menu-bg-color;
-$side-color-dropdown-open: darken($menu-bg-color , 20%);
-$side-color-3 : darken($side-color-4 , 5%);
-$side-color-2 : darken($side-color-3 , 5%);
-$side-color-5 : lighten($side-color-4 , 5%);
-$side-color-6 : lighten($side-color-5 , 5%);
-$side-color-7 : lighten($side-color-6 , 5%);
-$side-color-8 : lighten($side-color-7 , 5%);
-$side-color-9 : lighten($side-color-8 , 5%);
-$side-color-10 : lighten($side-color-9 , 5%);
-$side-color-11 : lighten($side-color-10 , 5%);
-$side-color-12 : lighten($side-color-11 , 5%);
+$side-color-1: #1a1a1a;
+$side-color-4: $menu-bg-color;
+$side-color-dropdown-open: darken($menu-bg-color, 20%);
+$side-color-3: darken($side-color-4, 5%);
+$side-color-2: darken($side-color-3, 5%);
+$side-color-5: lighten($side-color-4, 5%);
+$side-color-6: lighten($side-color-5, 5%);
+$side-color-7: lighten($side-color-6, 5%);
+$side-color-8: lighten($side-color-7, 5%);
+$side-color-9: lighten($side-color-8, 5%);
+$side-color-10: lighten($side-color-9, 5%);
+$side-color-11: lighten($side-color-10, 5%);
+$side-color-12: lighten($side-color-11, 5%);
 
 // HAMBURGER COLOR
-$hamburger-color-closed : transparentize($text-color , 0.3);
-$hamburger-color-open : $active-text-color ;
+$hamburger-color-closed: transparentize($text-color, 0.3);
+$hamburger-color-open: $active-text-color;
 
 // WIDTH VARIABLES
-$width1 : 320px;
-$width2 : 100px;
-$full-width : 100%;
+$width1: 320px;
+$width2: 100px;
+$full-width: 100%;
 
 // HEIGHT VARIABLES
-$full-height : 100%;
+$full-height: 100%;
 
 /*
 body {
@@ -592,7 +664,7 @@ html {
 			}
 		}
 		a {
-			color: $text-color;//color: #dddddd;
+			color: $text-color; //color: #dddddd;
 			display: block;
 			padding: 10px 15px 10px 30px;
 			text-decoration: none;
@@ -1838,7 +1910,7 @@ $bar-graph-border-radius: 0; //2px;
 .horizontal-bar-wrap {
 	margin: 0 auto;
 	//padding: 50px;
-	max-width: 1200px;
+	//max-width: 1200px;
 
 	.title {
 		font-size: 14px;

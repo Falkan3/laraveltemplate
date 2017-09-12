@@ -151,110 +151,167 @@ nav.navbar {
 
 .navbar-default .navbar-nav a:focus, .navbar-default .navbar-nav a:hover {
   color: #fff;
-  background: #ff9c10;
-}
-
-.navbar-default .navbar-nav > .active > a {
-  color: #fff;
-  background: #ff9c10;
-}
-
-.navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  color: #fff;
-  background: #ff9c10;
-}
-
-.navbar-default .navbar-nav > .open > a {
-  color: #fff;
-  background: #ff9c10;
-}
-
-.navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
-  color: #fff;
-  background: #ff9c10;
-}
-
-/* li bg */
-.navbar-nav > li {
-  background-color: #3F88C5;
-  transition: ease-in-out 0.2s;
-}
-
-.navbar-nav > li.color_1 {
-  background-color: #4CB944;
-}
-
-.navbar-nav > li.color_2 {
-  background-color: #F06543;
-}
-
-.navbar-nav > li.color_3 {
-  background-color: #042A2B;
-}
-
-.navbar-nav > li.color_4 {
-  background-color: #2F4858;
-}
-
-.navbar-nav > li.color_5 {
-  background-color: #FF206E;
-}
-
-.navbar-nav > li.color_6 {
-  background-color: #4B4E6D;
-}
-
-.navbar-nav > li.color_7 {
-  background-color: #B6174B;
-}
-
-.navbar-nav > li.active {
-  background-color: #ff9c10;
-}
-
-/* backgrounds */
-/* -- */
-.navbar-default .navbar-nav > li:hover {
   background-color: #ff9c10;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
-  background-image: none;
+  color: #fff;
+  background: rgba(255, 156, 16, 0.5);
+}
+
+.navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+  color: #fff;
   background-color: #ff9c10;
+}
+
+/* li bg */
+.navbar-nav > li {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -ms-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+
+.navbar-nav > li.active {
+  background-color: rgba(255, 156, 16, 0.5);
+}
+
+.navbar-nav.colored > li {
+  background-color: #3F88C5;
+}
+
+.navbar-nav.colored > li.color_1 {
+  background-color: #4CB944;
+}
+
+.navbar-nav.colored > li.color_2 {
+  background-color: #F06543;
+}
+
+.navbar-nav.colored > li.color_3 {
+  background-color: #042A2B;
+}
+
+.navbar-nav.colored > li.color_4 {
+  background-color: #2F4858;
+}
+
+.navbar-nav.colored > li.color_5 {
+  background-color: #FF206E;
+}
+
+.navbar-nav.colored > li.color_6 {
+  background-color: #4B4E6D;
+}
+
+.navbar-nav.colored > li.color_7 {
+  background-color: #B6174B;
+}
+
+/* backgrounds */
+/* -- */
+.navbar-default .navbar-nav li:hover {
+  background-color: #ff9c10;
+}
+
+.navbar-default .navbar-nav li.active > a, .navbar-default .navbar-nav li.open > a {
+  background: #ff9c10 none;
   box-shadow: none;
   color: #fff;
 }
 
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav.colored li:hover {
+    background-color: #ff9c10;
+  }
+}
+
 /* dropdown */
-.dropdown-menu > li > a:focus, .dropdown-menu > li:hover {
-  background-color: #ff9c10;
-  background-image: none;
+.navbar-default .navbar-nav .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .dropdown-menu > li:hover {
+  background: #ff9c10 none;
 }
 
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
-  background-color: transparent;
-  background-image: none;
+.navbar-default .navbar-nav .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .dropdown-menu > li > a:hover {
+  background: transparent none;
 }
 
-.navbar-default .navbar-nav > .open {
+.navbar-default .navbar-nav .dropdown-menu > li.open {
   background-color: #ff9c10;
 }
 
-.navbar-default .navbar-nav > .open > a {
+.navbar-default .navbar-nav .dropdown-menu > li.open > a {
   color: #fff;
   background-color: transparent;
 }
 
-.navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+.navbar-default .navbar-nav .dropdown-menu > li.open > a:focus, .navbar-default .navbar-nav .dropdown-menu > li.open > a:hover {
   color: #fff;
   background-color: transparent;
 }
 
-.navbar-nav .open .dropdown-menu {
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .dropdown-menu > li.open > a {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.navbar-default .navbar-nav .dropdown .dropdown-menu {
   padding: 0;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 0;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+  -moz-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+  -ms-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+  -o-transition: .2s visibility ease, .2s opacity ease, .2s ease;
+  transition: .2s visibility ease, .2s opacity ease, .2s ease;
+}
+
+.navbar-default .navbar-nav .dropdown .dropdown-menu > li > a {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .dropdown .dropdown-menu {
+    background-color: transparent;
+  }
+  .navbar-default .navbar-nav .dropdown .dropdown-menu > li > a {
+    color: #fff;
+  }
+}
+
+.navbar-default .navbar-nav .dropdown.open .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.navbar-default .navbar-nav.colored .dropdown .dropdown-menu {
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav.colored .dropdown .dropdown-menu > li > a {
+    color: #212121;
+  }
 }
 
 .dropdown-header, .dropdown-menu > li > a {
@@ -1715,7 +1772,6 @@ a.stretch {
 /* Mixings &  Variables */
 .horizontal-bar-wrap {
   margin: 0 auto;
-  max-width: 1200px;
   /* Bar Graph Class */
   /* Lines for Charts */
   /* Line Graph */
