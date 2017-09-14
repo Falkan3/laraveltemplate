@@ -15,6 +15,7 @@ var G_Index_Controller = (function () {
         initElements: function () {
             G_Index_Controller.initDoughnutCharts();
             G_Index_Controller.initHorizontalBarCharts();
+            G_Index_Controller.initStickyTable();
         },
 
         /* ---- fncs ---- */
@@ -208,6 +209,31 @@ var G_Index_Controller = (function () {
                 }
             });
         },
+        initStickyTable: function () {
+            /* custom table nav */
+
+            var custom_table_nav = $('.table-nav');
+            var custom_table_nav_a = custom_table_nav.find('a');
+            custom_table_nav_a.on('click', function() {
+                var $this = $(this);
+                var $table = $this.closest('.container, .container-fluid').find('table');
+                if($this.hasClass('scroll-to-btm')) {
+                    var topOfTable = $table.offset().top + $table.outerHeight() - 70;
+                    if(Global_vars_lapp_app.window.scrollTop() < topOfTable) {
+                        Global_vars_lapp_app.body_html.animate({
+                            scrollTop: topOfTable
+                        }, 600);
+                    }
+                } else if($this.hasClass('scroll-to-top')) {
+                    var bottomOfTable = $table.offset().top - 70;
+                    if(Global_vars_lapp_app.window.scrollTop() > bottomOfTable) {
+                        Global_vars_lapp_app.body_html.animate({
+                            scrollTop: bottomOfTable
+                        }, 600);
+                    }
+                }
+            });
+        }
     };
 })();
 

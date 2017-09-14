@@ -1536,11 +1536,11 @@ a.stretch {
   }
   .chart-half-screen.full-screen .cs-chart-container .chart-legend, .chart-three-screen.full-screen .cs-chart-container .chart-legend {
     width: 30%;
-    padding-right: 5%;
+    margin-right: 5%;
   }
   .chart-half-screen.full-screen .cs-chart-container .doughnut-chart, .chart-three-screen.full-screen .cs-chart-container .doughnut-chart {
     width: 60%;
-    padding-left: 5%;
+    margin-left: 5%;
   }
 }
 
@@ -2264,3 +2264,42 @@ footer {
 }
 
 /* -------------------------------------------------------- /FOOTER -------------------------------------------------------- */
+/* --------- MISC --------- */
+/* Custom nav */
+.table-nav a {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #31bc86;
+  color: #fff;
+  text-decoration: none;
+}
+
+.table-nav a .fa {
+  margin-right: 5px;
+}
+
+.table-nav.bottom {
+  margin-top: 10px;
+}
+
+/* Custom scrollbar malihu */
+.mCustomScrollbar, .mCustomScrollbar.mCS_touch_action, .mCustomScrollbar.mCS_touch_action .mCS-aviva.mCSB_scrollTools {
+  -ms-touch-action: auto;
+  touch-action: auto;
+}
+
+.mCustomScrollBox {
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal {
+  -ms-touch-action: auto;
+  touch-action: auto;
+}
+
+.mCustomScrollBox.mCSB_horizontal {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}

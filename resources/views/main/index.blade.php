@@ -291,6 +291,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
+                    <div class="table-nav">
+                        <a href="#" class="scroll-to-btm"><i class="fa fa-level-down" aria-hidden="true"></i> Przewiń na dół</a>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="table table-hover bg-white table-clickable sticky-table">
                             <thead>
@@ -333,6 +337,10 @@
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="table-nav bottom">
+                        <a href="#" class="scroll-to-top"><i class="fa fa-level-up" aria-hidden="true"></i> Przewiń do góry</a>
                     </div>
                 </div>
             </div>
