@@ -16,6 +16,7 @@ var G_Main_Controller = (function () {
             'backToTop': null,
             'nav': null,
             'sidebar': {
+                page_wrapper: null,
                 trigger: null,
                 overlay: null,
                 isClosed: null
@@ -76,6 +77,7 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Back to top visibility ---- */
+
         /* ---- Shrink navbar ---- */
         Scroll_navbarShrink: function () {
             if (Global_vars_lapp_app.window.scrollTop() > 0) {
@@ -86,18 +88,23 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Shrink navbar ---- */
+
+        /* ---- Sidebar ---- */
         init_sidebar_menu: function() {
             Local_vars.elements.sidebar.trigger = $('.hamburger');
             Local_vars.elements.sidebar.overlay = $('.overlay');
             Local_vars.elements.sidebar.isClosed = false;
+            Local_vars.elements.sidebar.page_wrapper = $('#page-wrapper');
 
             Local_vars.elements.sidebar.trigger.on('click', function () {
-                G_Main_Controller.sidebar_hamburger_cross();
+                G_Main_Controller.toggle_sidebar();
             });
 
+            /*
             $('[data-toggle="offcanvas"]').on('click', function () {
-                $('#page-wrapper').toggleClass('toggled');
+                Local_vars.elements.sidebar.page_wrapper.toggleClass('toggled');
             });
+            */
 
             //dropdown submenu click toggle
             var sidebar_nav = $('.sidebar-nav');
@@ -119,6 +126,15 @@ var G_Main_Controller = (function () {
             sidebar_nav.find('.dropdown > a').on('click.dropdown.data-api', function () {
                 $(this).next('.dropdown-menu').find('.dropdown-submenu .dropdown-menu').removeClass('open');
             });
+
+            /* overlay closing sidebar */
+            Local_vars.elements.sidebar.overlay.on('click', function() {
+                G_Main_Controller.toggle_sidebar();
+            });
+        },
+        toggle_sidebar: function() {
+            G_Main_Controller.sidebar_hamburger_cross();
+            Local_vars.elements.sidebar.page_wrapper.toggleClass('toggled');
         },
         sidebar_hamburger_cross: function () {
             if (Local_vars.elements.sidebar.isClosed === true) {
@@ -133,6 +149,7 @@ var G_Main_Controller = (function () {
                 Local_vars.elements.sidebar.isClosed = true;
             }
         },
+        /* ---- /Sidebar ---- */
 
         /* --- Helpers --- */
         Viewport: function () {
