@@ -18,6 +18,7 @@
             cos = Math.cos,
             sin = Math.sin,
             PI = Math.PI,
+            basePath = null,
             settings = $.extend({
                 segmentShowStroke: true,
                 segmentStrokeColor: "#0C1013",
@@ -38,9 +39,13 @@
                 summaryTitleClass: "doughnutSummaryTitle",
                 summaryNumberClass: "doughnutSummaryNumber",
                 legend: false,
+                removeBase: true,
                 beforeDraw: function () {
                 },
                 afterDrawn: function () {
+                    if(settings.removeBase) {
+                        basePath.fadeOut(300, function() {basePath.remove();});
+                    }
                 },
                 onPathEnter: function (e, data) {
                 },
@@ -79,7 +84,7 @@
         //Draw base doughnut
         var baseDoughnutRadius = doughnutRadius + settings.baseOffset,
             baseCutoutRadius = cutoutRadius - settings.baseOffset;
-        $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+        basePath = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
             .attr({
                 "d": getHollowCirclePath(baseDoughnutRadius, baseCutoutRadius),
                 "fill": settings.baseColor
