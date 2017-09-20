@@ -43,8 +43,10 @@
                 beforeDraw: function () {
                 },
                 afterDrawn: function () {
-                    if(settings.removeBase) {
-                        basePath.fadeOut(300, function() {basePath.remove();});
+                    if (settings.removeBase) {
+                        basePath.fadeOut(300, function () {
+                            basePath.remove();
+                        });
                     }
                 },
                 onPathEnter: function (e, data) {
@@ -218,6 +220,9 @@
         }
 
         function pathMouseEnter(e) {
+            //hide all other tips
+            $('.doughnutTip').hide();
+
             var order = $(this).data().order;
             if (data[order].title && data[order].title.length > 0) {
                 $tip.text(data[order].title + ": " + data[order].value + " (" + data[order].percent + "%)")
