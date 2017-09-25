@@ -1563,7 +1563,7 @@ a.stretch {
   font-size: 14px;
 }
 
-.cs-chart-container .chart-legend .ct .ct-bod, .cs-chart-container .chart-legend .ct .ct-sqr, .cs-chart-container .chart-legend .ct .ct-label {
+.cs-chart-container .chart-legend .ct .ct-bod, .cs-chart-container .chart-legend .ct .ct-sqr, .cs-chart-container .chart-legend .ct .ct-label, .cs-chart-container .chart-legend .ct .ct-bod span {
   display: inline-block;
   vertical-align: middle;
 }

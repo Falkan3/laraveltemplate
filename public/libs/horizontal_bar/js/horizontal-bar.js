@@ -19,6 +19,10 @@
                 items: $this.find('.graph-bar'),
                 multiple: $this.hasClass('multiple'),
                 showLegend: $this.data('show-legend'),
+                showTotal: true,//$this.data('show-total'),
+                totalValueChange: $this.data('total-value-change'),
+                totalValueChangeColor: $this.data('total-value-change-color'),
+                totalValueChangeIcon: $this.data('total-value-change-icon'),
                 clear: false,
                 animationSpeed: 1000,
 
@@ -40,7 +44,7 @@
                 for (x = data.length; x < settings.items.length; x++) {
                     items_to_remove.push(settings.items[x]);
                 }
-                console.log(items_to_remove);
+
                 $(items_to_remove).each(function() {
                     var $this = $(this);
                     //set timeout to alleviate erroneous css transition behavior
@@ -74,6 +78,9 @@
         if (settings.showLegend) {
             var legend = $('<div class="legend"></div>');
             $this.find('.barGraph').first().prepend(legend);
+
+            //total
+            var totalValue = 0;
         }
 
         /* -- */
@@ -98,6 +105,7 @@
             var valueChange = null;
             var valueChangeColor = null;
             var valueChangeIcon = null;
+            var valueChangeAppendix = null;
 
             dataWidth = dataPercentage;
 
@@ -131,45 +139,23 @@
                 valueChange = data[i].value_change ? data[i].value_change : $item.data('value-change');
                 valueChangeColor = data[i].value_change_color ? data[i].value_change_color : $item.data('value-change-color');
                 valueChangeIcon = data[i].value_change_icon ? data[i].value_change_icon : $item.data('value-change-icon');
+                valueChangeAppendix = data[i].value_change_appendix ? //if
+                    data[i].value_change_appendix : //true
+                    $item.data('value-change-appendix') ? //false: if
+                        $item.data('value-change-appendix') : //true
+                        'p.p.'; //false
+
                 var little_square = $('<div class="little_square"></div>');
                 var legend_item_label = $('<span></span>');
                 var legend_item_text = '<span>' + (legendText + ": " + dataVal + ' (' + dataPercentage + '%)') + '</span>';
+                totalValue += dataVal;
 
                 /* -- additional params to legend -- */
                 if (valueChange) {
                     /* color */
-                    if (valueChangeColor) {
-                        switch (valueChangeColor) {
-                            case 'green':
-                                valueChangeColor = 'rgb(0, 201, 8)';
-                                break;
-                            case 'red':
-                                valueChangeColor = 'rgb(207, 32, 0)';
-                                break;
-                            case 'grey':
-                                valueChangeColor = 'rgb(84, 83, 73)';
-                                break;
-                            default:
-                                break;
-                        }
-                    } else {
-                        valueChangeColor = 'inherit';
-                    }
+                    valueChangeColor = setValueChangeColor(valueChangeColor);
                     /* icon */
-                    if (valueChangeIcon) {
-                        switch (valueChangeIcon) {
-                            case 'up':
-                                valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>';
-                                break;
-                            case 'down':
-                                valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-down" aria-hidden="true"></i></span>';
-                                break;
-                            default:
-                                break;
-                        }
-                    } else {
-                        valueChangeIcon = '';
-                    }
+                    valueChangeIcon = setValueChangeIcon(valueChangeIcon);
 
                     legend_item_text
                         += '<span class="ml">'
@@ -178,7 +164,7 @@
                         + valueChangeIcon
                         + '<span class="mr">' + valueChange + '</span>'
                         + '</span>'
-                        + '<span>p.p.)</span>'
+                        + '<span>' + valueChangeAppendix + ')</span>'
                         + '</span>';
                 }
                 /* -- additional params to legend -- */
@@ -190,6 +176,45 @@
                 var legend_item = $('<div class="legend-item"></div>');
                 legend_item.append(little_square).append(legend_item_label);
                 legend.append(legend_item);
+            }
+        }
+
+        if (settings.showLegend) {
+            if (settings.showTotal) {
+                //total
+                var legend_item_total = $('<div class="legend-item"></div>');
+                var legend_item_total_label = $('<span></span>');
+
+                var legend_item_total_text = '<span>' + ('total: ' + totalValue) + '</span>';
+
+                //add colored arrow if value change is set visible
+                if (settings.totalValueChange) {
+                    var legend_item_total_increase_percentage = settings.totalValueChange; //"(new_value / totalValue) * 100";
+                    var totalValueChangeColor = settings.totalValueChangeColor ? settings.totalValueChangeColor : '';
+                    var totalValueChangeIcon = settings.totalValueChangeIcon ? settings.totalValueChangeIcon : '';
+
+                    /* color */
+                    totalValueChangeColor = setValueChangeColor(totalValueChangeColor);
+                    /* icon */
+                    totalValueChangeIcon = setValueChangeIcon(totalValueChangeIcon);
+
+                    legend_item_total_text
+                        += '<span class="ml">'
+                        + '<span>(</span>'
+                        + '<span style="color: ' + totalValueChangeColor + '">'
+                        + totalValueChangeIcon
+                        + '<span>' + legend_item_total_increase_percentage + '%' + '</span>'
+                        + '</span>'
+                        + '<span>' + ')</span>'
+                        + '</span>';
+                    //' (' + legend_item_total_increase_percentage + '%)';
+                }
+
+                legend_item_total_label.html(legend_item_total_text);
+                legend_item_total.append(legend_item_total_label);
+
+                //add total to legend in front of other labels
+                legend.prepend(legend_item_total);
             }
         }
 
@@ -228,7 +253,43 @@
             return valueToCap;
         }
 
+        function setValueChangeColor(input) {
+            var valueChangeColor = input;
+            switch (valueChangeColor) {
+                case 'green':
+                    valueChangeColor = 'rgb(0, 201, 8)';
+                    break;
+                case 'red':
+                    valueChangeColor = 'rgb(207, 32, 0)';
+                    break;
+                case 'grey':
+                    valueChangeColor = 'rgb(84, 83, 73)';
+                    break;
+                default:
+                    valueChangeColor = 'inherit';
+                    break;
+            }
+
+            return valueChangeColor;
+        }
+
+        function setValueChangeIcon(input) {
+            var valueChangeIcon = input;
+            switch (valueChangeIcon) {
+                case 'up':
+                    valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>';
+                    break;
+                case 'down':
+                    valueChangeIcon = '<span class="mr"><i class="fa fa-arrow-down" aria-hidden="true"></i></span>';
+                    break;
+                default:
+                    valueChangeIcon = '';
+                    break;
+            }
+
+            return valueChangeIcon;
+        }
+
         return $this;
-    }
-    ;
+    };
 })(jQuery);

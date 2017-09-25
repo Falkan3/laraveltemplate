@@ -106,7 +106,7 @@ var G_Index_Controller = (function () {
                         {val_num: 30, percentage: 10, background_color: "#6cff46", legend_text: "średni"},
                         {val_num: 30, percentage: 10, background_color: "#31fff0", legend_text: "niski"},
                     ],
-                    {showLegend: true}
+                    {showLegend: true, totalValueChange: '+20', totalValueChangeColor: 'green', totalValueChangeIcon: 'up'}
                 );
             }, 7000);
         },
