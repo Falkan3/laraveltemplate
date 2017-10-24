@@ -48,7 +48,9 @@
     </script>
 </head>
 <body>
-<div id="hideAll">&nbsp;</div>
+<div id="hideAll">
+    <div class="loader"></div>
+</div>
 <script type="text/javascript">
     document.getElementById("hideAll").style.display = "block";
 </script>

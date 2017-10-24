@@ -42,9 +42,24 @@ body {
   background-color: white;
   z-index: 99;
   /* Higher than anything else in the document */
-  background-image: url("../images/ajax-loader.gif");
-  background-repeat: no-repeat;
-  background-position: center center;
+  /*
+	background-image: url('../images/ajax-loader.gif');
+	background-repeat: no-repeat;
+	background-position: center center;
+	*/
+}
+
+#hideAll .loader {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+  border: 8px solid #ddd;
+  border-top: 8px solid #ff9c10;
 }
 
 .loader {

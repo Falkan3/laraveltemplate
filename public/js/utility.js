@@ -35,7 +35,11 @@ var G_Utility_Controller = (function () {
         /**
          * @return {string}
          */
-        ShadeColor: function (hex_color, percent) {
+        ShadeColor: function (input_hex_color, percent) {
+            var hex_color = input_hex_color;
+            if(hex_color.length === 4) {
+                hex_color += hex_color.substring(1, 3);
+            }
             var R = parseInt(hex_color.substring(1, 3), 16);
             var G = parseInt(hex_color.substring(3, 5), 16);
             var B = parseInt(hex_color.substring(5, 7), 16);
