@@ -32,10 +32,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 
-    @yield('custom_css')
     <link rel="stylesheet" href="{{ URL::asset('css/framework.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/layout.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/style.css', env('HTTPS')) }}" type="text/css" media="all"/>
+    @yield('custom_css')
 
     <!-- Scripts -->
     <script src="{{ URL::asset('libs/jquery/js/jquery-3.1.1.min.js', env('HTTPS')) }}"></script>
