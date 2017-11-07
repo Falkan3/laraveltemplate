@@ -1,0 +1,78 @@
+{
+	"files": {
+		"less/metro.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../build/css/metro_cst.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true
+					}
+				}
+			],
+			"sources": [
+				"accordion.less",
+				"animations.less",
+				"appbar.less",
+				"audio-player.less",
+				"breadcrumbs.less",
+				"buttons.less",
+				"calendar.less",
+				"carousel.less",
+				"charms.less",
+				"colors.less",
+				"countdown.less",
+				"datatable.less",
+				"dialog.less",
+				"donut.less",
+				"flex-grid.less",
+				"flex.less",
+				"fluent-menu.less",
+				"fonts.less",
+				"grid.less",
+				"hints.less",
+				"images.less",
+				"inputs.less",
+				"keypad.less",
+				"layout.less",
+				"lists.less",
+				"listview.less",
+				"menu.less",
+				"mixins.less",
+				"notify.less",
+				"pagination.less",
+				"panels.less",
+				"popovers.less",
+				"preloaders.less",
+				"presenter.less",
+				"progressbar.less",
+				"rating.less",
+				"reset.less",
+				"scheme-builder.less",
+				"select2.less",
+				"sidebar.less",
+				"slider.less",
+				"stepper.less",
+				"streamer.less",
+				"tabcontrol.less",
+				"tables.less",
+				"tiles.less",
+				"toolbars.less",
+				"transform.less",
+				"treeview.less",
+				"typography.less",
+				"utils.less",
+				"vars.less",
+				"video-player.less",
+				"windows.less",
+				"wizard.less",
+				"wizard2.less"
+			]
+		}
+	}
+}
