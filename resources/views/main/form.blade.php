@@ -3,7 +3,7 @@
 @section('title', 'index')
 @section('description', '')
 
-@section('custom_css')
+@section('custom_css_libs')
     <!-- libs -->
     <link rel="stylesheet" href="{{ URL::asset('libs/fancy_select/css/fancySelect.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
@@ -11,6 +11,8 @@
           media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/ion_range_slider/css/ion.rangeSlider.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/ion_range_slider/css/ion.rangeSlider.skinFlat.css', env('HTTPS')) }}" type="text/css" media="all"/>
+@stop
+@section('custom_css')
     <!-- main -->
     <link rel="stylesheet" href="{{ URL::asset('css/form_css.css', env('HTTPS')) }}" type="text/css" media="all"/>
 @stop

@@ -112,9 +112,9 @@
 
 
 	&.small-tile {
-		width: @tileHalfSize;
+		width: @tileHalfSize - @tileMargin * 2;
 		//height: @tileHalfSize;
-		padding-bottom: @tileHalfSize;
+		padding-bottom: @tileHalfSize - @tileMargin * 2;
 	}
 
 	&.wide-tile {
@@ -136,15 +136,15 @@
 	}
 
 	&.big-tile {
-		width: @tileBig;
+		width: @tileBig + @tileMargin * 2;
 		//height: @tileBig;
-		padding-bottom: @tileBig;
+		padding-bottom: @tileBig + @tileMargin * 2;
 	}
 
 	&.super-tile {
-		width: @tileLarge;
+		width: @tileLarge + @tileMargin * 4;
 		//height: @tileLarge;
-		padding-bottom: @tileLarge;
+		padding-bottom: @tileLarge + @tileMargin * 4;
 	}
 }
 
@@ -153,55 +153,55 @@
 }
 .tile-small {
 	.tile;
-	width: @tileHalfSize;
+	width: @tileHalfSize - @tileMargin * 2;
 	//height: @tileHalfSize;
-	padding-bottom: @tileHalfSize;
+	padding-bottom: @tileHalfSize - @tileMargin * 2;
 }
 .tile-wide {
 	.tile;
-	width: @tileMedium;
+	width: @tileMedium + @tileMargin * 2;
 	//height: @tileSize;
 	padding-bottom: @tileSize;
 }
 .tile-large {
 	.tile;
-	width: @tileMedium;
+	width: @tileMedium + @tileMargin * 2;
 	//height: @tileMedium;
-	padding-bottom: @tileMedium;
+	padding-bottom: @tileMedium + @tileMargin * 2;
 }
 .tile-big {
 	.tile;
-	width: @tileBig;
+	width: @tileBig + @tileMargin * 2;
 	//height: @tileBig;
-	padding-bottom: @tileBig;
+	padding-bottom: @tileBig + @tileMargin * 2;
 }
 .tile-super {
 	.tile;
-	width: @tileLarge;
+	width: @tileLarge + @tileMargin * 4;
 	//height: @tileLarge;
-	padding-bottom: @tileLarge;
+	padding-bottom: @tileLarge + @tileMargin * 4;
 }
 .tile-small-x {
-	width: @tileHalfSize;
+	width: @tileHalfSize - @tileMargin * 2;
 }
 .tile-square-x {
 	width: @tileSize;
 }
 .tile-wide-x {
-	width: @tileMedium;
+	width: @tileMedium + @tileMargin * 2;
 }
 .tile-large-x {
-	width: @tileMedium;
+	width: @tileMedium + @tileMargin * 2;
 }
 .tile-big-x {
-	width: @tileBig;
+	width: @tileBig + @tileMargin * 2;
 }
 .tile-super-x {
-	width: @tileLarge;
+	width: @tileLarge + @tileMargin * 4;
 }
 .tile-small-y {
 	//height: @tileHalfSize;
-	padding-bottom: @tileHalfSize;
+	padding-bottom: @tileHalfSize - @tileMargin * 2;
 }
 .tile-square-y {
 	//height: @tileSize;
@@ -213,15 +213,15 @@
 }
 .tile-large-y {
 	//height: @tileMedium;
-	padding-bottom: @tileMedium;
+	padding-bottom: @tileMedium + @tileMargin * 2;
 }
 .tile-big-y {
 	//height: @tileBig;
-	padding-bottom: @tileBig;
+	padding-bottom: @tileBig + @tileMargin * 2;
 }
 .tile-super-y {
 	//height: @tileLarge;
-	padding-bottom: @tileLarge;
+	padding-bottom: @tileLarge + @tileMargin * 4;
 }
 
 // Patterns

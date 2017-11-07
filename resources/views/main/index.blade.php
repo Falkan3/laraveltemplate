@@ -2,13 +2,16 @@
 
 @section('title', 'index')
 @section('description', '')
-@section('custom_css')
+@section('custom_css_libs')
     <!-- libs -->
     <link rel="stylesheet" href="{{ URL::asset('libs/animate/css/animate_custom.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/slick/css/slick.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/slick/css/slick-theme.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
+@stop
+@section('custom_css')
+
 @stop
 @section('custom_js')
     <!-- libs -->

@@ -57,6 +57,17 @@ validation-status.json
 # Folders to ignore
 bower_components
 node_modules
+/js/
+/less/
+/test/
+/fonts/
 /docs/
 /LICENSE
+/bower.json
+/package.json
 /CHANGELOG.md
+/.crunch
+/Gruntfile.js
+/.gitattributes
+/metro.nuspec
+/README.md

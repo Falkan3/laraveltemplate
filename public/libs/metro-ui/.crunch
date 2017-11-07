@@ -73,6 +73,27 @@
 				"wizard.less",
 				"wizard2.less"
 			]
+		},
+		"less/metro-responsive.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../build/css/metro-responsive_cst.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true
+					}
+				}
+			],
+			"sources": [
+				"flex.less",
+				"metro-responsive.less",
+				"vars.less"
+			]
 		}
 	}
 }

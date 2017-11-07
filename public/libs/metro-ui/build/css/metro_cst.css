@@ -10141,7 +10141,7 @@ input[type="submit"].link:active {
 }
 .tile-group {
   margin-left: 80px;
-  min-width: 9.166%;
+  min-width: 9.16%;
   width: auto;
   float: left;
   display: block;
@@ -10149,28 +10149,28 @@ input[type="submit"].link:active {
   position: relative;
 }
 .tile-group.one {
-  width: 16.666%;
+  width: 16.66%;
 }
 .tile-group.two,
 .tile-group.double {
-  width: 18.326%;
+  width: 31.66%;
 }
 .tile-group.three,
 .tile-group.triple {
-  width: 33.326%;
+  width: 31.66%;
 }
 .tile-group.four,
 .tile-group.quadro {
-  width: 49.996%;
+  width: 46.66%;
 }
 .tile-group.five {
-  width: 66.662%;
+  width: 63.32%;
 }
 .tile-group.six {
-  width: 68.322%;
+  width: 78.32%;
 }
 .tile-group.seven {
-  width: 83.322%;
+  width: 78.32%;
 }
 .tile-group .tile-group-title {
   color: #ffffff;
@@ -10199,7 +10199,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10218,34 +10218,34 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-square {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10265,28 +10265,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-square.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-square.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-square.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-square.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-square.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-square.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-square .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10364,7 +10364,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10373,8 +10373,8 @@ input[type="submit"].link:active {
   overflow: hidden;
   user-select: none;
   overflow: visible;
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-small:hover {
   outline: #999999 solid 3px;
@@ -10386,28 +10386,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-small.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-small.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-small.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-small.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-small.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-small.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-small .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10485,7 +10485,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
@@ -10493,7 +10493,7 @@ input[type="submit"].link:active {
   overflow: hidden;
   user-select: none;
   overflow: visible;
-  width: 16.66%;
+  width: 31.66%;
   padding-bottom: 15%;
 }
 .tile-wide:hover {
@@ -10506,28 +10506,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-wide.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-wide.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-wide.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-wide.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-wide.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-wide.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-wide .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10605,7 +10605,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10614,8 +10614,8 @@ input[type="submit"].link:active {
   overflow: hidden;
   user-select: none;
   overflow: visible;
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 31.66%;
+  padding-bottom: 31.66%;
 }
 .tile-large:hover {
   outline: #999999 solid 3px;
@@ -10627,28 +10627,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-large.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-large.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-large.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-large.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-large.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-large.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-large .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10726,7 +10726,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10748,28 +10748,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-big.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-big.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-big.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-big.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-big.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-big.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-big .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10847,7 +10847,7 @@ input[type="submit"].link:active {
   width: 15%;
   display: block;
   float: left;
-  margin: 0.833%;
+  margin: 0.83%;
   padding-bottom: 15%;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
@@ -10856,8 +10856,8 @@ input[type="submit"].link:active {
   overflow: hidden;
   user-select: none;
   overflow: visible;
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-super:hover {
   outline: #999999 solid 3px;
@@ -10869,28 +10869,28 @@ input[type="submit"].link:active {
   outline-color: transparent;
 }
 .tile-super.small-tile {
-  width: 7.5%;
-  padding-bottom: 7.5%;
+  width: 5.84%;
+  padding-bottom: 5.84%;
 }
 .tile-super.wide-tile {
-  width: 16.66%;
+  width: 30%;
   padding-bottom: 15%;
 }
 .tile-super.wide-tile-v {
   width: 15%;
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-super.large-tile {
-  width: 16.66%;
-  padding-bottom: 16.66%;
+  width: 30%;
+  padding-bottom: 30%;
 }
 .tile-super.big-tile {
   width: 31.66%;
   padding-bottom: 31.66%;
 }
 .tile-super.super-tile {
-  width: 48.33%;
-  padding-bottom: 48.33%;
+  width: 48.32%;
+  padding-bottom: 48.32%;
 }
 .tile-super .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10965,40 +10965,40 @@ input[type="submit"].link:active {
   z-index: 999;
 }
 .tile-small-x {
-  width: 7.5%;
+  width: 5.84%;
 }
 .tile-square-x {
   width: 15%;
 }
 .tile-wide-x {
-  width: 16.66%;
+  width: 31.66%;
 }
 .tile-large-x {
-  width: 16.66%;
+  width: 31.66%;
 }
 .tile-big-x {
   width: 31.66%;
 }
 .tile-super-x {
-  width: 48.33%;
+  width: 48.32%;
 }
 .tile-small-y {
-  padding-bottom: 7.5%;
+  padding-bottom: 5.84%;
 }
 .tile-square-y {
   padding-bottom: 15%;
 }
 .tile-wide-y {
-  padding-bottom: 16.66%;
+  padding-bottom: 30%;
 }
 .tile-large-y {
-  padding-bottom: 16.66%;
+  padding-bottom: 31.66%;
 }
 .tile-big-y {
   padding-bottom: 31.66%;
 }
 .tile-super-y {
-  padding-bottom: 48.33%;
+  padding-bottom: 48.32%;
 }
 .tile-content {
   position: absolute;

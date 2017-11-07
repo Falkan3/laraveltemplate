@@ -29,6 +29,7 @@
           media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/malihu_custom_scrollbar/css/jquery.mCustomScrollbar.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
+    @yield('custom_css_libs')
 
     <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 
