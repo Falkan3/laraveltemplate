@@ -94,6 +94,29 @@
 				"metro-responsive.less",
 				"vars.less"
 			]
+		},
+		"less/tiles.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../build/css/x.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true
+					}
+				}
+			],
+			"sources": [
+				"vars.less",
+				"utils.less",
+				"transform.less",
+				"tiles.less",
+				"mixins.less"
+			]
 		}
 	}
 }

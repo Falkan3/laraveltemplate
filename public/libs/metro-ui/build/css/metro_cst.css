@@ -10227,19 +10227,19 @@ input[type="submit"].link:active {
 }
 .tile.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-square {
   width: 15%;
@@ -10274,19 +10274,19 @@ input[type="submit"].link:active {
 }
 .tile-square.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-square.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-square.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-square.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-square .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10395,19 +10395,19 @@ input[type="submit"].link:active {
 }
 .tile-small.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-small.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-small.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-small.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-small .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10515,19 +10515,19 @@ input[type="submit"].link:active {
 }
 .tile-wide.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-wide.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-wide.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-wide.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-wide .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10615,7 +10615,7 @@ input[type="submit"].link:active {
   user-select: none;
   overflow: visible;
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-large:hover {
   outline: #999999 solid 3px;
@@ -10636,19 +10636,19 @@ input[type="submit"].link:active {
 }
 .tile-large.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-large.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-large.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-large.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-large .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10736,7 +10736,7 @@ input[type="submit"].link:active {
   user-select: none;
   overflow: visible;
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-big:hover {
   outline: #999999 solid 3px;
@@ -10757,19 +10757,19 @@ input[type="submit"].link:active {
 }
 .tile-big.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-big.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-big.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-big.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-big .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10857,7 +10857,7 @@ input[type="submit"].link:active {
   user-select: none;
   overflow: visible;
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-super:hover {
   outline: #999999 solid 3px;
@@ -10878,19 +10878,19 @@ input[type="submit"].link:active {
 }
 .tile-super.wide-tile-v {
   width: 15%;
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-super.large-tile {
-  width: 30%;
-  padding-bottom: 30%;
+  width: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-super.big-tile {
   width: 31.66%;
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-super.super-tile {
   width: 48.32%;
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-super .tile-content.flipVertical {
   transform: perspective(1000px);
@@ -10989,16 +10989,16 @@ input[type="submit"].link:active {
   padding-bottom: 15%;
 }
 .tile-wide-y {
-  padding-bottom: 30%;
+  padding-bottom: 31.65%;
 }
 .tile-large-y {
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-big-y {
-  padding-bottom: 31.66%;
+  padding-bottom: 31.65%;
 }
 .tile-super-y {
-  padding-bottom: 48.32%;
+  padding-bottom: 48.31%;
 }
 .tile-content {
   position: absolute;
