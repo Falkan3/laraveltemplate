@@ -314,6 +314,11 @@ function wrongInput(ele) {
     ele.removeClass('right-input');
 }
 
+validationForms.on('click', 'span.errormsg', function() {
+    var $this = $(this);
+    var closest_input = $this.siblings('input, button, textarea');
+    removeErrorMsg(closest_input);
+});
 var inputs = $('input, textarea, select');
 inputs.blur(function () {
     var $this = $(this);
