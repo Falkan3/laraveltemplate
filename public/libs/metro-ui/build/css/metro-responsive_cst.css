@@ -534,7 +534,7 @@
     width: 16px;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile {
     width: 22.5%;
     padding-bottom: 22.5%;
@@ -548,7 +548,7 @@
     margin: 1.66%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.small-tile {
     width: 8.75%;
     padding-bottom: 8.75%;
@@ -557,10 +557,10 @@
 @media screen and (max-width: 500px) {
   .tile.small-tile {
     width: 13.34%;
-    padding-bottom: 8.25%;
+    padding-bottom: 12%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.wide-tile {
     width: 47.5%;
     padding-bottom: 22.5%;
@@ -569,58 +569,58 @@
 @media screen and (max-width: 500px) {
   .tile.wide-tile {
     width: 63%;
-    padding-bottom: 22.5%;
+    padding-bottom: 30%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.wide-tile-v {
     width: 22.5%;
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile.wide-tile-v {
     width: 30%;
-    padding-bottom: 48%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.large-tile {
     width: 47.5%;
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile.large-tile {
     width: 61.66%;
-    padding-bottom: 48%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.big-tile {
     width: 47.5%;
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile.big-tile {
     width: 61.66%;
-    padding-bottom: 48%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile.super-tile {
     width: 72.5%;
-    padding-bottom: 72.5%;
+    padding-bottom: 72.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile.super-tile {
     width: 96%;
-    padding-bottom: 73.5%;
+    padding-bottom: 95.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-square {
     width: 22.5%;
     padding-bottom: 22.5%;
@@ -629,10 +629,10 @@
 @media screen and (max-width: 500px) {
   .tile-square {
     width: 30%;
-    padding-bottom: 22.5%;
+    padding-bottom: 30%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-small {
     width: 8.75%;
     padding-bottom: 8.75%;
@@ -641,10 +641,10 @@
 @media screen and (max-width: 500px) {
   .tile-small {
     width: 12%;
-    padding-bottom: 8.25%;
+    padding-bottom: 12%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-wide {
     width: 47.5%;
     padding-bottom: 22.5%;
@@ -653,46 +653,46 @@
 @media screen and (max-width: 500px) {
   .tile-wide {
     width: 63%;
-    padding-bottom: 22.5%;
+    padding-bottom: 30%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-big {
     width: 47.5%;
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile-big {
     width: 63%;
-    padding-bottom: 63%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-large {
     width: 47.5%;
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile-large {
     width: 63%;
-    padding-bottom: 63%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-super {
     width: 72.5%;
-    padding-bottom: 72.5%;
+    padding-bottom: 72.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile-super {
     width: 96%;
-    padding-bottom: 96%;
+    padding-bottom: 95.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-small-x {
     width: 8.75%;
   }
@@ -702,7 +702,7 @@
     width: 12%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-square-x {
     width: 22.5%;
   }
@@ -712,7 +712,7 @@
     width: 30%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-wide-x {
     width: 47.5%;
   }
@@ -722,7 +722,7 @@
     width: 63%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-large-x {
     width: 47.5%;
   }
@@ -732,7 +732,7 @@
     width: 63%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-big-x {
     width: 47.5%;
   }
@@ -742,7 +742,7 @@
     width: 63%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-super-x {
     width: 72.5%;
   }
@@ -752,7 +752,7 @@
     width: 96%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-small-y {
     padding-bottom: 8.75%;
   }
@@ -762,7 +762,7 @@
     padding-bottom: 12%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-square-y {
     padding-bottom: 22.5%;
   }
@@ -772,7 +772,7 @@
     padding-bottom: 30%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-wide-y {
     padding-bottom: 45%;
   }
@@ -782,7 +782,7 @@
     padding-bottom: 60%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-large-y {
     padding-bottom: 45%;
   }
@@ -792,27 +792,27 @@
     padding-bottom: 60%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-big-y {
-    padding-bottom: 47.5%;
+    padding-bottom: 47.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile-big-y {
-    padding-bottom: 63%;
+    padding-bottom: 62.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-super-y {
-    padding-bottom: 72.5%;
+    padding-bottom: 72.49%;
   }
 }
 @media screen and (max-width: 500px) {
   .tile-super-y {
-    padding-bottom: 96%;
+    padding-bottom: 95.99%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-content.iconic .icon {
     width: 42.66666667px;
     height: 42.66666667px;
@@ -821,7 +821,7 @@
     font-size: 42.66666667px;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .tile-small .tile-content.iconic .icon {
     font-size: 21.33333333px;
     width: 21.33333333px;

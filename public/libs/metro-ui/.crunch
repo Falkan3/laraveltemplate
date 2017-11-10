@@ -111,11 +111,11 @@
 				}
 			],
 			"sources": [
-				"vars.less",
-				"utils.less",
-				"transform.less",
+				"mixins.less",
 				"tiles.less",
-				"mixins.less"
+				"transform.less",
+				"utils.less",
+				"vars.less"
 			]
 		}
 	}

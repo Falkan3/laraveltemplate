@@ -96,7 +96,7 @@
 
 	.no-user-select;
 
-	&:hover {
+	&:hover, &.hover {
 		outline: @grayLight solid @tileOutlineSize;
 	}
 	&:active {
@@ -322,9 +322,11 @@
 			.transition(.3s);
 
 		}
-		&:hover > .slide {
-			.scale(1.5);
-			.transition(.6s);
+		&.hover-enabled:hover, &.hover {
+			& > .slide {
+				.scale(1.5);
+				.transition(.6s);
+			}
 		}
 	}
 
@@ -336,7 +338,7 @@
 			.transition(.6s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide-over {
 				top: 25%;
 				.transition(.3s);
@@ -352,7 +354,7 @@
 			.transition(.3s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide {
 				.scale(1);
 				top: -100%;
@@ -373,7 +375,7 @@
 			.transition(.6s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide-over {
 				top: 0;
 				.transition(.3s);
@@ -389,7 +391,7 @@
 			.transition(.3s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide {
 				.scale(1);
 				top: 100%;
@@ -411,7 +413,7 @@
 			.transition(.6s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide-over {
 				left: 0;
 				.transition(.3s);
@@ -432,7 +434,7 @@
 			.transition(.3s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide {
 				.scale(1);
 				left: 100%;
@@ -454,7 +456,7 @@
 			.transition(.6s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide-over {
 				left: 25%;
 				.transition(.3s);
@@ -475,7 +477,7 @@
 			.transition(.3s);
 		}
 
-		&:hover {
+		&.hover-enabled:hover, &.hover {
 			& > .slide {
 				.scale(1);
 				left: -100%;
@@ -497,7 +499,7 @@
 			position: relative;
 			.transition(.6s);
 
-			&:hover {
+			&.hover-enabled:hover, &.hover {
 				.scale(1.5);
 				.transition(.6s);
 			}
@@ -513,7 +515,7 @@
 			.scale(1.5);
 			.transition(.6s);
 
-			&:hover {
+			&.hover-enabled:hover, &.hover {
 				.scale(1);
 				.transition(.6s);
 			}
@@ -573,7 +575,7 @@
 		overflow: visible;
 	}
 
-	&:hover, &.hover, &.flip {
+	&.hover-enabled:hover, &.hover, &.flip {
 		.tile-content.flipHorizontal {
 			.rotateX(180deg);
 		}

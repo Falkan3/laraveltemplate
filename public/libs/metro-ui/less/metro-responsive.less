@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileSize * @tileMDFactor;
         //height: @tileSize / @tileMDFactor;
         padding-bottom: @tileSize * @tileMDFactor;
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6, p  {
     }
 
     &.small-tile {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
             //height: @tileHalfSize / @tileMDFactor;
             padding-bottom: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
@@ -232,12 +232,12 @@ h1, h2, h3, h4, h5, h6, p  {
         @media screen and (max-width: 500px) {
             width: @tileHalfSize * @tileMDFactor2 - @tileMargin * 2;
             //height: @tileHalfSize / @tileMDFactor;
-            padding-bottom: @tileHalfSize * @tileMDFactor - floor(@tileMargin3 * 2);
+            padding-bottom: @tileHalfSize * @tileMDFactor2 - floor(@tileMargin3 * 2);
         }
     }
 
     &.wide-tile {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
             //height: @tileSize / @tileMDFactor;
             padding-bottom: @tileSize * @tileMDFactor;
@@ -246,69 +246,69 @@ h1, h2, h3, h4, h5, h6, p  {
         @media screen and (max-width: 500px) {
             width: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2);
             //height: @tileSize / @tileMDFactor;
-            padding-bottom: @tileSize * @tileMDFactor;
+            padding-bottom: @tileSize * @tileMDFactor2;
         }
     }
 
     &.wide-tile-v {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileSize * @tileMDFactor;
             //height: @tileMedium / @tileMDFactor;
-            padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
+            padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
         }
         
         @media screen and (max-width: 500px) {
             width: @tileSize * @tileMDFactor2;
             //height: @tileMedium / @tileMDFactor;
-            padding-bottom: @tileMedium * @tileMDFactor + floor(@tileMargin3 * 2);
+            padding-bottom: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
         }
     }
 
     &.large-tile {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
             //height: @tileMedium / @tileMDFactor;
-            padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
+            padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
         }
         
         @media screen and (max-width: 500px) {
             width: @tileMedium * @tileMDFactor2 + @tileMargin * 2;
             //height: @tileMedium / @tileMDFactor;
-            padding-bottom: @tileMedium * @tileMDFactor + floor(@tileMargin3 * 2);
+            padding-bottom: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
         }
     }
 
     &.big-tile {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileBig * @tileMDFactor + @tileMargin4 * 2;
             //height: @tileBig / @tileMDFactor;
-            padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2;
+            padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
         }
         
         @media screen and (max-width: 500px) {
             width: @tileBig * @tileMDFactor2 + @tileMargin * 2;
             //height: @tileBig / @tileMDFactor;
-            padding-bottom: @tileBig * @tileMDFactor + floor(@tileMargin3 * 2);
+            padding-bottom: @tileBig * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
         }
     }
 
     &.super-tile {
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 991px) {
             width: @tileLarge * @tileMDFactor + @tileMargin4 * 4;
             //height: @tileLarge / @tileMDFactor;
-            padding-bottom: @tileLarge * @tileMDFactor + @tileMargin4 * 4;
+            padding-bottom: @tileLarge * @tileMDFactor + @tileMargin4 * 4 - 0.01%;
         }
         
         @media screen and (max-width: 500px) {
             width: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4);
             //height: @tileLarge / @tileMDFactor;
-            padding-bottom: @tileLarge * @tileMDFactor + floor(@tileMargin3 * 4);
+            padding-bottom: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4) - 0.01%;
         }
     }
 }
 
 .tile-square {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileSize * @tileMDFactor;
         //height: @tileSize / @tileMDFactor;
         padding-bottom: @tileSize * @tileMDFactor;
@@ -317,12 +317,12 @@ h1, h2, h3, h4, h5, h6, p  {
     @media screen and (max-width: 500px) {
         width: @tileSize * @tileMDFactor2;
         //height: @tileSize / @tileMDFactor;
-        padding-bottom: @tileSize * @tileMDFactor;
+        padding-bottom: @tileSize * @tileMDFactor2;
     }
 }
 
 .tile-small {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
         //height: @tileHalfSize / @tileMDFactor;
         padding-bottom: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
@@ -331,12 +331,12 @@ h1, h2, h3, h4, h5, h6, p  {
     @media screen and (max-width: 500px) {
         width: @tileHalfSize * @tileMDFactor2 - floor(@tileMargin3 * 2);
         //height: @tileHalfSize / @tileMDFactor;
-        padding-bottom: @tileHalfSize * @tileMDFactor - floor(@tileMargin3 * 2);
+        padding-bottom: @tileHalfSize * @tileMDFactor2 - floor(@tileMargin3 * 2);
     }
 }
 
 .tile-wide {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
         //height: @tileSize / @tileMDFactor;
         padding-bottom: @tileSize * @tileMDFactor;
@@ -345,54 +345,54 @@ h1, h2, h3, h4, h5, h6, p  {
     @media screen and (max-width: 500px) {
         width: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2);
         //height: @tileSize / @tileMDFactor;
-        padding-bottom: @tileSize * @tileMDFactor;
+        padding-bottom: @tileSize * @tileMDFactor2;
     }
 }
 
 .tile-big {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileBig * @tileMDFactor + @tileMargin4 * 2;
         //height: @tileBig / @tileMDFactor;
-        padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2;
+        padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
     }
     
     @media screen and (max-width: 500px) {
         width: floor(@tileBig * @tileMDFactor2) + floor(@tileMargin3 * 2);
         //height: @tileBig / @tileMDFactor;
-        padding-bottom: @tileBig * @tileMDFactor2 + floor(@tileMargin3 * 2);
+        padding-bottom: @tileBig * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
     }
 }
 
 .tile-large {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
         //height: @tileMedium / @tileMDFactor;
-        padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
+        padding-bottom: @tileMedium * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
     }
     
     @media screen and (max-width: 500px) {
         width: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2);
         //height: @tileMedium / @tileMDFactor;
-        padding-bottom: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2);
+        padding-bottom: @tileMedium * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
     }
 }
 
 .tile-super {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileLarge * @tileMDFactor + @tileMargin4 * 4;
         //height: @tileLarge / @tileMDFactor;
-        padding-bottom: @tileLarge * @tileMDFactor + @tileMargin4 * 4;
+        padding-bottom: @tileLarge * @tileMDFactor + @tileMargin4 * 4 - 0.01%;
     }
     
     @media screen and (max-width: 500px) {
         width: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4);
         //height: @tileLarge / @tileMDFactor;
-        padding-bottom: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4);
+        padding-bottom: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4) - 0.01%;
     }
 }
 
 .tile-small-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
     }
     
@@ -402,7 +402,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-square-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileSize * @tileMDFactor;
     }
     
@@ -412,7 +412,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-wide-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
     }
     
@@ -422,7 +422,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-large-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileMedium * @tileMDFactor + @tileMargin4 * 2;
     }
     
@@ -432,7 +432,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-big-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileBig * @tileMDFactor + @tileMargin4 * 2;
     }
     
@@ -442,7 +442,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-super-x {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         width: @tileLarge * @tileMDFactor + @tileMargin4 * 4;
     }
     
@@ -452,7 +452,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-small-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileHalfSize / @tileMDFactor;
         padding-bottom: @tileHalfSize * @tileMDFactor - @tileMargin4 * 2;
     }
@@ -464,7 +464,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-square-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileSize / @tileMDFactor;
         padding-bottom: @tileSize * @tileMDFactor;
     }
@@ -476,7 +476,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-wide-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileMedium / @tileMDFactor;
         padding-bottom: @tileMedium * @tileMDFactor;
     }
@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-large-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileMedium / @tileMDFactor;
         padding-bottom: @tileMedium * @tileMDFactor;
     }
@@ -500,33 +500,33 @@ h1, h2, h3, h4, h5, h6, p  {
 }
 
 .tile-big-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileBig / @tileMDFactor;
-        padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2;
+        padding-bottom: @tileBig * @tileMDFactor + @tileMargin4 * 2 - 0.01%;
     }
     
     @media screen and (max-width: 500px) {
         //height: @tileBig / @tileMDFactor;
-        padding-bottom: @tileBig * @tileMDFactor2 + floor(@tileMargin3 * 2);
+        padding-bottom: @tileBig * @tileMDFactor2 + floor(@tileMargin3 * 2) - 0.01%;
     }
 }
 
 .tile-super-y {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 991px) {
         //height: @tileLarge / @tileMDFactor;
-        padding-bottom: @tileLarge * @tileMDFactor  + @tileMargin4 * 4;
+        padding-bottom: @tileLarge * @tileMDFactor  + @tileMargin4 * 4 - 0.01%;
     }
     
     @media screen and (max-width: 500px) {
         //height: @tileLarge / @tileMDFactor;
-        padding-bottom: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4);
+        padding-bottom: @tileLarge * @tileMDFactor2 + floor(@tileMargin3 * 4) - 0.01%;
     }
 }
 
 .tile-content {
     &.iconic {
         .icon {
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 991px) {
                 width: 64px / @tileMDFactor;
                 height: 64px / @tileMDFactor;
                 margin-left: -32px / @tileMDFactor;
@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6, p  {
     .tile-small & {
         &.iconic {
             .icon {
-                @media screen and (max-width: 800px) {
+                @media screen and (max-width: 991px) {
                     font-size: 32px / @tileMDFactor;
                     width: 32px / @tileMDFactor;
                     height: 32px / @tileMDFactor;
