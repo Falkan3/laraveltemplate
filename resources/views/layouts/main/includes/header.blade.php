@@ -94,7 +94,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
     <div class="navbar-header">
         <a href="/" class="navbar-brand">
-            <img class="pull-left img-responsive logo" src="/img/logo2.svg"/>
+            <img class="pull-left img-responsive logo" src="/img/logo2.svg" alt="logo" />
         </a>
     </div>
 

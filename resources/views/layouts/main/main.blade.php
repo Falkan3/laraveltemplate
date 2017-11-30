@@ -25,8 +25,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('libs/bootstrap/css/bootstrap.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/bootstrap/css/bootstrap-theme.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('fonts/fontawesome/fontawesome-4.3.0.min.css', env('HTTPS')) }}" type="text/css"
-          media="all"/>
+    <link rel="stylesheet" href="{{ URL::asset('fonts/fontawesome/fontawesome-4.3.0.min.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('libs/malihu_custom_scrollbar/css/jquery.mCustomScrollbar.min.css', env('HTTPS')) }}" type="text/css"
           media="all"/>
     @yield('custom_css_libs')
