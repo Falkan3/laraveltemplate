@@ -80,7 +80,7 @@
 
             <div class="col-xs-12 col-sm-4">
                 <div class="flipper-main-container">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flip-container" data-ontouchstart-hover="true">
                         <div class="flipper color_1">
                             <div class="front">
 

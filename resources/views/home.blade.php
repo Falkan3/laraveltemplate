@@ -24,7 +24,7 @@
                                     <div class="flipper-main-container">
 
                                         <div class="col-xs-12 col-sm-6 col-md-4">
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flip-container" data-ontouchstart-hover="true">
                                                 <div class="flipper color_1">
                                                     <div class="front">
 
@@ -38,7 +38,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4">
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flip-container" data-ontouchstart-hover="true">
                                                 <div class="flipper color_1">
                                                     <div class="front">
 
@@ -52,7 +52,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4">
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flip-container" data-ontouchstart-hover="true">
                                                 <div class="flipper color_1">
                                                     <div class="front">
 

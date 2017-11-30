@@ -55,6 +55,8 @@ var G_Main_Controller = (function () {
                 G_Main_Controller.Scroll_navbarShrink();
             });
 
+            G_Main_Controller.initOnEvents();
+
             G_Main_Controller.Load_hideAll();
         },
 
@@ -150,6 +152,13 @@ var G_Main_Controller = (function () {
             }
         },
         /* ---- /Sidebar ---- */
+
+        initOnEvents: function() {
+            //touchstart hover for divs
+            $('[data="ontouchstart-hover]"]').on('touchstart', function() {
+                this.classList.toggle('hover')
+            });
+        },
 
         /* --- Helpers --- */
         Viewport: function () {

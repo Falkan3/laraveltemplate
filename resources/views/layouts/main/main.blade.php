@@ -30,7 +30,7 @@
           media="all"/>
     @yield('custom_css_libs')
 
-    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab%7COpen+Sans:300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ URL::asset('css/framework.css', env('HTTPS')) }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ URL::asset('css/layout.css', env('HTTPS')) }}" type="text/css" media="all"/>
