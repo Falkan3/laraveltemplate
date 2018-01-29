@@ -357,7 +357,7 @@ lazyImgs.lazyload({
 /* /Lazy loading */
 
 Global_vars_lapp_app.window.scroll(function () {
-
+    // window.requestAnimationFrame(scrollHandler);
 });
 
 Global_vars_lapp_app.window.on('resize', function () {

@@ -259,7 +259,7 @@ $(document).ready(function (e) {
 });
 
 $(window).scroll(function () {
-
+    //window.requestAnimationFrame(scrollHandler);
 });
 
 $(window).on('resize', function () {
