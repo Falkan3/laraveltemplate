@@ -12,6 +12,11 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png', env('HTTPS')) }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png', env('HTTPS')) }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png', env('HTTPS')) }}">
+    <link rel="manifest" href="{{ asset('manifest.json', env('HTTPS')) }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg', env('HTTPS')) }}" color="#5bbad5">
     <link rel="shortcut icon" href="{{ asset('favicon.ico', env('HTTPS')) }}" type="image/x-icon">
 
     <!-- Chrome, Firefox OS and Opera -->
