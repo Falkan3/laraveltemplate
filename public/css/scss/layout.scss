@@ -101,7 +101,8 @@ nav.navbar {
 
 .navbar-brand {
 	padding: 5px;
-	> img {
+
+	& > img {
 		max-height: 40px;
 	}
 }
@@ -150,11 +151,15 @@ nav.navbar {
 		}
 	}
 	.navbar-nav {
-		li:hover > a {
-			color: #fff;
+		li {
+			&:hover, &:focus, &:active {
+				& > a {
+					color: #fff;
+				}
+			}
 		}
 		a {
-			&:focus, &:hover {
+			&:hover, &:focus, &:active {
 				color: #fff;
 				background-color: #ff9c10;
 			}
@@ -163,7 +168,7 @@ nav.navbar {
 			.active > a, .open > a {
 				color: #fff;
 				background: rgba(255, 156, 16, 0.5);
-				&:focus, &:hover {
+				&:focus, &:hover, &:active {
 					color: #fff;
 					background-color: #ff9c10;
 				}
@@ -228,16 +233,20 @@ nav.navbar {
 		}
 
 		@media (max-width: 767px) {
-			li:hover {
-				background-color: rgba(0, 0, 0, 0.5);
+			li {
+				&:hover, &:focus, &:active {
+					background-color: rgba(0, 0, 0, 0.5);
+				}
 			}
 		}
 	}
 
 	&.colored {
 		@media (max-width: 767px) {
-			li:hover {
-				background-color: #ff9c10;
+			li {
+				&:hover, &:focus, &:active {
+					background-color: #ff9c10;
+				}
 			}
 		}
 	}
@@ -246,28 +255,31 @@ nav.navbar {
 /* dropdown */
 
 .navbar-default .navbar-nav .dropdown-menu > li {
-	> a:focus, &:hover {
+	& > &:hover, &:focus, &:active {
 		background: #ff9c10 none;
 	}
-	> a {
-		&:focus, &:hover {
+	&.divider {
+		&:hover, &:focus, &:active {
+			background: #e5e5e5;
+		}
+	}
+	& > a {
+		&:focus, &:hover, &:active {
 			background: transparent none;
 		}
 	}
 
 	&.open {
 		background-color: #ff9c10;
-		> a {
+		& > a {
 			color: #fff;
 			background-color: transparent;
-			&:focus, &:hover {
+			&:focus, &:hover, &:active {
 				color: #fff;
 				background-color: transparent;
 			}
-		}
 
-		@media (max-width: 767px) {
-			> a {
+			@media (max-width: 767px) {
 				background-color: rgba(0, 0, 0, 0.5);
 			}
 		}
@@ -323,6 +335,17 @@ nav.navbar {
 			.dropdown-menu {
 				background-color: #fff;
 
+				& > li {
+					& > a {
+						color: #212121;
+					}
+					&:hover, &:focus, &:active {
+						& > a {
+							color: #fff;
+						}
+					}
+				}
+
 				@media (max-width: 767px) {
 					& > li > a {
 						color: #212121;
@@ -356,8 +379,20 @@ nav.navbar {
 				color: #fff;
 			}
 			li {
-				&:hover > a, &:active > a {
-					color: #fff;
+				&:hover, &:focus, &:active {
+					& > a {
+						color: #fff;
+					}
+				}
+			}
+
+			&.colored {
+				li {
+					&:hover, &:focus, &:active {
+						& > a {
+							color: #fff;
+						}
+					}
 				}
 			}
 		}
@@ -400,7 +435,7 @@ nav.navbar {
 			color: #212121;
 		}
 		.navbar-nav .open .dropdown-menu > li > a {
-			&:focus, &:hover {
+			&:focus, &:hover, &:active {
 				color: #fff;
 				background-color: #ff9c10;
 			}

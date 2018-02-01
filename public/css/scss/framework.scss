@@ -438,7 +438,19 @@ footer {
 /* /5 Columns */
 
 
-/* FLIPPER ///////////////////////////////////////////////// */
+/* ------------------------ ALIGNER ------------------------ */
+
+.aligner {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* ------------------------ /ALIGNER ------------------------ */
+
+/* ------------------------ FLIPPER ------------------------ */
+
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
@@ -485,7 +497,7 @@ footer {
 	}
 }
 
-/* FLIPPER ///////////////////////////////////////////////// */
+/* ------------------------ /FLIPPER ------------------------*/
 
 @media (min-width: 1600px) {
 	.container {

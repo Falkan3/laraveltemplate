@@ -673,9 +673,19 @@ footer {
 }
 
 /* /5 Columns */
-/* FLIPPER ///////////////////////////////////////////////// */
-/* entire container, keeps perspective */
+/* ------------------------ ALIGNER ------------------------ */
 /* line 443, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+.aligner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------ /ALIGNER ------------------------ */
+/* ------------------------ FLIPPER ------------------------ */
+/* entire container, keeps perspective */
+/* line 455, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flip-container {
   perspective: 1000px;
   /* flip the pane when hovered */
@@ -684,13 +694,13 @@ footer {
   height: auto;
 }
 
-/* line 447, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 459, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flip-container.hover .flipper {
   transform: rotateX(180deg);
   transition-delay: 0s;
 }
 
-/* line 455, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 467, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper {
   /* flip speed goes here */
   transition: 0.6s;
@@ -705,13 +715,13 @@ footer {
   /* back, initially hidden pane */
 }
 
-/* line 456, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 468, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front, .flipper .back {
   width: 100%;
   height: auto;
 }
 
-/* line 469, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 481, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front, .flipper .back {
   backface-visibility: hidden;
   position: absolute;
@@ -720,43 +730,43 @@ footer {
   height: 100%;
 }
 
-/* line 477, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 489, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .front {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateX(0deg);
 }
 
-/* line 483, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+/* line 495, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
 .flipper .back {
   transform: rotateX(180deg);
 }
 
-/* FLIPPER ///////////////////////////////////////////////// */
+/* ------------------------ /FLIPPER ------------------------*/
 @media (min-width: 1600px) {
-  /* line 491, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+  /* line 503, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .container {
     width: 1400px;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 497, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+  /* line 509, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .margin-vertical.medium.mobile {
     margin: 30px 0;
   }
-  /* line 500, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+  /* line 512, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .margin-on-mobile {
     margin: 15px 0 !important;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 506, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+  /* line 518, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .no-margin-mobile {
     margin: 0 !important;
   }
-  /* line 509, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
+  /* line 521, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/framework.scss */
   .no-padding-mobile, .padding-horizontal.no-padding-mobile, .padding-vertical.no-padding-mobile {
     padding: 0;
   }
