@@ -1,0 +1,25 @@
+$bg_primary: #fff;
+$bg_secondary: #fefefe;
+$bg_tertiary: #00aeef;
+$bg_quaterniary: #1f4e78;
+
+$font_primary: #212121;
+$font_secondary: #1f4e78;
+$font_tertiary: #fff;
+$font_quaternary: #00aeef;
+$font_quinary: #737373;
+
+$wrong_color: #fe4e4e;
+$right_color: #73dd43;
+
+@mixin transition($prop, $duration) {
+	-webkit-transition: $prop $duration;
+	-moz-transition: $prop $duration;
+	-ms-transition: $prop $duration;
+	-o-transition: $prop $duration;
+	transition: $prop $duration;
+}
+
+/* -- */
+/* sticky footer */
+$sticky_footer_height: 100px;

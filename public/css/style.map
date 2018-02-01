@@ -2,11 +2,13 @@
 	"version": 3,
 	"file": "scss/style.css",
 	"sources": [
-		"scss/style.scss"
+		"scss/style.scss",
+		"scss/utilities/_variables.scss"
 	],
 	"sourcesContent": [
-		""
+		"@import 'utilities/variables';\r\n\r\n/* -------------- */",
+		"$bg_primary: #fff;\r\n$bg_secondary: #fefefe;\r\n$bg_tertiary: #00aeef;\r\n$bg_quaterniary: #1f4e78;\r\n\r\n$font_primary: #212121;\r\n$font_secondary: #1f4e78;\r\n$font_tertiary: #fff;\r\n$font_quaternary: #00aeef;\r\n$font_quinary: #737373;\r\n\r\n$wrong_color: #fe4e4e;\r\n$right_color: #73dd43;\r\n\r\n@mixin transition($prop, $duration) {\r\n\t-webkit-transition: $prop $duration;\r\n\t-moz-transition: $prop $duration;\r\n\t-ms-transition: $prop $duration;\r\n\t-o-transition: $prop $duration;\r\n\ttransition: $prop $duration;\r\n}\r\n\r\n/* -- */\r\n/* sticky footer */\r\n$sticky_footer_height: 100px;"
 	],
-	"mappings": "",
+	"mappings": "ACsBA,QAAQ;AACR,mBAAmB;ADrBnB,oBAAoB",
 	"names": []
 }
