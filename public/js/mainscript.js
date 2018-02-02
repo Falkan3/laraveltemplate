@@ -3,6 +3,7 @@
 var Global_vars_lapp_app = {
     'constants': {
         window_initial_width: null,
+        'viewport': {width: null, height: null}
     },
     window: null,
     body_html: null,
@@ -50,14 +51,20 @@ var G_Main_Controller = (function () {
             G_Main_Controller.Scroll_backToTop();
             G_Main_Controller.Delayed_resize_init();
 
+            /*
             Global_vars_lapp_app.window.scroll(function () {
                 G_Main_Controller.Scroll_backToTop();
                 G_Main_Controller.Scroll_navbarShrink();
             });
+            */
 
+            G_Main_Controller.initLazyLoading();
             G_Main_Controller.initOnEvents();
 
             G_Main_Controller.Load_hideAll();
+
+            //set viewport vars after resize
+            G_Main_Controller.getViewport();
         },
 
         /* ---- Back to top visibility ---- */
@@ -72,10 +79,14 @@ var G_Main_Controller = (function () {
         },
         Scroll_backToTop: function () {
             if (Global_vars_lapp_app.window.scrollTop() > 100) {
-                Local_vars.elements.backToTop.addClass('visible');
+                window.requestAnimationFrame(function() {
+                    Local_vars.elements.backToTop.addClass('visible');
+                });
             }
             else {
-                Local_vars.elements.backToTop.removeClass('visible');
+                window.requestAnimationFrame(function() {
+                    Local_vars.elements.backToTop.removeClass('visible');
+                });
             }
         },
         /* ---- /Back to top visibility ---- */
@@ -83,10 +94,14 @@ var G_Main_Controller = (function () {
         /* ---- Shrink navbar ---- */
         Scroll_navbarShrink: function () {
             if (Global_vars_lapp_app.window.scrollTop() > 0) {
-                Local_vars.elements.nav.addClass('shrinked');
+                window.requestAnimationFrame(function() {
+                    Local_vars.elements.nav.addClass('shrinked');
+                });
             }
             else {
-                Local_vars.elements.nav.removeClass('shrinked');
+                window.requestAnimationFrame(function() {
+                    Local_vars.elements.nav.removeClass('shrinked');
+                });
             }
         },
         /* ---- /Shrink navbar ---- */
@@ -153,11 +168,39 @@ var G_Main_Controller = (function () {
         },
         /* ---- /Sidebar ---- */
 
+        initLazyLoading: function() {
+            /* Lazy loading */
+
+            var lazyBgs = $("div.lazy, section.lazy, article.lazy");
+            lazyBgs.css('background-image', "none");
+            lazyBgs.lazyload({
+                effect: "fadeIn",
+                effectTime: 2000,
+                threshold: 0
+            });
+            var lazyImgs = $("img.lazy");
+            lazyImgs.attr('src', '');
+            lazyImgs.lazyload({
+                event: "lazyload",
+                effect: "fadeIn",
+                effectTime: 2000,
+                threshold: 0
+            }).trigger("lazyload");
+
+            /* /Lazy loading */
+        },
+
         initOnEvents: function() {
             //touchstart hover for divs
             $('[data="ontouchstart-hover]"]').on('touchstart', function() {
                 this.classList.toggle('hover')
             });
+        },
+
+        /* ---- Scroll handler ---- */
+        Scroll_handler: function() {
+            G_Main_Controller.Scroll_backToTop();
+            G_Main_Controller.Scroll_navbarShrink();
         },
 
         /* --- Helpers --- */
@@ -303,6 +346,9 @@ var G_Main_Controller = (function () {
                 });
             }
         },
+        getViewport: function() {
+            Global_vars_lapp_app.constants.viewport = G_Main_Controller.Viewport();
+        },
         RemoveBaseUrl: function (url, rm_first_slash) {
             /*
              * Replace base URL in given string, if it exists, and return the result.
@@ -334,35 +380,20 @@ G_Main_Controller.initElementsPrim();
 $(document).ready(function (e) {
     G_Main_Controller.initElements();
     G_Main_Controller.IgnoreNullLinks();
+
+    Global_vars_lapp_app.window.scroll(function () {
+        G_Main_Controller.Scroll_handler();
+    });
+
+    Global_vars_lapp_app.window.on('resize', function () {
+        //G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn, 500);
+        G_Main_Controller.Delayed_resize('get_viewport', G_Main_Controller.getViewport, 500);
+        G_Main_Controller.Delayed_resize('fix_css_animations', G_Main_Controller.fix_css_animations, 500);
+    });
 });
-
-/* Lazy loading */
-
-var lazyBgs = $("div.lazy, section.lazy, article.lazy");
-lazyBgs.css('background-image', "none");
-lazyBgs.lazyload({
-    effect: "fadeIn",
-    effectTime: 2000,
-    threshold: 0
-});
-var lazyImgs = $("img.lazy");
-lazyImgs.attr('src', '');
-lazyImgs.lazyload({
-    event: "lazyload",
-    effect: "fadeIn",
-    effectTime: 2000,
-    threshold: 0
-}).trigger("lazyload");
-
-/* /Lazy loading */
 
 Global_vars_lapp_app.window.scroll(function () {
     // window.requestAnimationFrame(scrollHandler);
-});
-
-Global_vars_lapp_app.window.on('resize', function () {
-    //G_Main_Controller.Delayed_resize('fn_name', G_Main_Controller.fn, 500);
-    G_Main_Controller.Delayed_resize('fix_css_animations', G_Main_Controller.fix_css_animations, 500);
 });
 
 Global_vars_lapp_app.window.on("load", function () {
