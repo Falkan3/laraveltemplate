@@ -61,7 +61,7 @@ class MyEmailConfirmation extends Notification
                     ->subject(__('emails/emailconfirmation.subject'))
                     ->greeting(__('emails/emailconfirmation.greeting', ['name' => $this->name]))
                     ->line(__('emails/emailconfirmation.introduction'))
-                    ->action(__('emails/emailconfirmation.confirm'), url('lang_' . \Lang::getLocale() . '/verify_email/' . $this->token))
+                    ->action(__('emails/emailconfirmation.confirm'), url(\Lang::getLocale() . '/verify_email/' . $this->token))
                     ->line(__('emails/emailconfirmation.ending'))
                     ->salutation(__('emails/emailconfirmation.salutation'));
     }

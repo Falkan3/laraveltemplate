@@ -14,7 +14,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST"
-                              action="{{ url('lang_' . $app->getLocale() . '/login', null, env('HTTPS')) }}">
+                              action="{{ url($app->getLocale() . '/login', null, env('HTTPS')) }}">
                             {{ csrf_field() }}
 
                             <div class="auth-container">
@@ -65,7 +65,7 @@
                                         </button>
 
                                         <a class="btn btn-link"
-                                           href="{{ url('lang_' . $app->getLocale() . '/password/reset', null, env('HTTPS')) }}">
+                                           href="{{ url($app->getLocale() . '/password/reset', null, env('HTTPS')) }}">
                                             {{__('system.forgotpassword')}}
                                         </a>
                                     </div>

@@ -84,7 +84,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         dispatch(new SendConfirmationEmail($user));
-        return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('message', __('auth.email_confirmation_sent'));
+        return redirect(url(\App::getLocale() . '/login', null, env('HTTPS')))->with('message', __('auth.email_confirmation_sent'));
     }
     /**
      * Handle a registration request for the application.
@@ -97,13 +97,13 @@ class RegisterController extends Controller
     {
         $user = User::where('verification_token',$token)->first();
         if(empty($user)) {
-            return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
+            return redirect(url(\App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
         }
         $user->verified = 1;
         if($user->save()){
-            return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('message', __('auth.email_confirmation_success'));
+            return redirect(url(\App::getLocale() . '/login', null, env('HTTPS')))->with('message', __('auth.email_confirmation_success'));
         }
 
-        return redirect(url('lang_' . \App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
+        return redirect(url(\App::getLocale() . '/login', null, env('HTTPS')))->with('error', __('auth.email_confirmation_error'));
     }
 }

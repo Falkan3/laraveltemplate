@@ -61,19 +61,19 @@ class LoginController extends Controller
         if($user->verified==0) {
             dispatch(new SendConfirmationEmail($user));
             auth()->logout();
-            return redirect(url('lang_' . \Lang::getLocale() . '/login', null, env('HTTPS')))->withInput()->with('error', __('auth.account_must_be_validated'));
+            return redirect(url(\Lang::getLocale() . '/login', null, env('HTTPS')))->withInput()->with('error', __('auth.account_must_be_validated'));
         }
         if($user->isAdmin()){
-            return redirect()->intended('lang_' . \Lang::getLocale() . '/admin');
+            return redirect()->intended(\Lang::getLocale() . '/admin');
         }
 
-        return redirect()->intended('lang_' . \Lang::getLocale() . '/home');
+        return redirect()->intended(\Lang::getLocale() . '/home');
     }
 
     public function logout(\Illuminate\Http\Request $request)
     {
         $this->performLogout($request);
         return redirect()->back();
-        //return redirect('lang_' . \Lang::getLocale());
+        //return redirect(\Lang::getLocale());
     }
 }

@@ -22,11 +22,11 @@ class Admin
                 return $next($request);
             }
 
-            return redirect()->guest('lang_' . \Lang::getLocale() . '/home')->with('error', __('auth.admin_only'));
+            return redirect()->guest(\Lang::getLocale() . '/home')->with('error', __('auth.admin_only'));
         }
 
-        return redirect()->guest('lang_' . \Lang::getLocale() . '/login');
-        //return redirect()->intended('lang_' . \Lang::getLocale() . '/home');
-        //return redirect('lang_' . \Lang::getLocale() . '/home');
+        return redirect()->guest(\Lang::getLocale() . '/login');
+        //return redirect()->intended(\Lang::getLocale() . '/home');
+        //return redirect(\Lang::getLocale() . '/home');
     }
 }

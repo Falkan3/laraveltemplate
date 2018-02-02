@@ -60,8 +60,8 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest(url('lang_' . \Lang::getLocale() . '/login', null, env('HTTPS')));
-        //return redirect(url('lang_' . \Lang::getLocale() . '/login', null, env('HTTPS')));
+        return redirect()->guest(url(\Lang::getLocale() . '/login', null, env('HTTPS')));
+        //return redirect(url(\Lang::getLocale() . '/login', null, env('HTTPS')));
         //return redirect()->guest('login');
     }
 }

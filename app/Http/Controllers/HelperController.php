@@ -19,11 +19,11 @@ class HelperController extends Controller
         // Make sure locale exists.
         if (isset($new_lang)) {
             $locale = $request->segment(1);
-            if (strlen($locale) >= 6 && array_key_exists(substr($locale, 5), config('app.locales'))) {
+            if (array_key_exists($locale, config('app.locales'))) {
                 $locale = $new_lang;
                 if(array_key_exists($locale, config('app.locales'))) {
                     $segments = explode('/', \URL::previous());
-                    $segments[3] = 'lang_' . $locale;
+                    $segments[3] = $locale;
                     $newUrl = implode('/', $segments);
                     if (array_key_exists('QUERY_STRING', $_SERVER))
                         $newUrl .= '?' . $_SERVER['QUERY_STRING'];

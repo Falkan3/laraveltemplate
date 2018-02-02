@@ -18,9 +18,9 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            //return redirect()->intended('lang_' . \Lang::getLocale() . '/login');
-            //return redirect()->guest('lang_' . \Lang::getLocale() . '/login');
-            return redirect()->guest('lang_' . \Lang::getLocale() . '/login');
+            //return redirect()->intended(\Lang::getLocale() . '/login');
+            //return redirect()->guest(\Lang::getLocale() . '/login');
+            return redirect()->guest(\Lang::getLocale() . '/login');
         }
 
         return $next($request);

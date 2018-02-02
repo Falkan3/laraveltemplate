@@ -53,7 +53,7 @@ class MyResetPassword extends Notification
                     ->subject(__('emails.subject'))
                     ->greeting(__('emails.greeting'))
                     ->line(__('emails.introduction'))
-                    ->action(__('emails.resetpassword'), url('lang_' . \Lang::getLocale() . '/password/reset/' . $this->token, null, env('HTTPS')))
+                    ->action(__('emails.resetpassword'), url(\Lang::getLocale() . '/password/reset/' . $this->token, null, env('HTTPS')))
                     ->line(__('emails.ending'))
                     ->salutation(__('emails.salutation'));
     }

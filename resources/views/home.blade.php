@@ -30,7 +30,7 @@
 
                                                     </div>
                                                     <div class="back">
-                                                        <a href="{{url('lang_' . $app->getLocale() . '/admin', null, env('HTTPS'))}}"
+                                                        <a href="{{url($app->getLocale() . '/admin', null, env('HTTPS'))}}"
                                                            class="flipper"></a>
                                                     </div>
                                                 </div>
@@ -44,7 +44,7 @@
 
                                                     </div>
                                                     <div class="back">
-                                                        <a href="{{url('lang_' . $app->getLocale() . '/admin', null, env('HTTPS'))}}"
+                                                        <a href="{{url($app->getLocale() . '/admin', null, env('HTTPS'))}}"
                                                            class="flipper"></a>
                                                     </div>
                                                 </div>
@@ -58,7 +58,7 @@
 
                                                     </div>
                                                     <div class="back">
-                                                        <a href="{{url('lang_' . $app->getLocale() . '/admin', null, env('HTTPS'))}}"
+                                                        <a href="{{url($app->getLocale() . '/admin', null, env('HTTPS'))}}"
                                                            class="flipper"></a>
                                                     </div>
                                                 </div>
