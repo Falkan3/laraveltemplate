@@ -1,32 +1,6 @@
 //Author: Adam Kocić [Falkan3]
 //Toggle height of item on click
 
-var AccordionGlobalVars = {
-    'elements' : {
-        //'index' : 0,
-        'parents' : [],
-        'children' : [],
-    }
-};
-
-var Squares_controller = (function () {
-    var config = {
-        'elements': {
-            'parents' : [],
-            'children' : []
-        }
-    };
-
-    return {
-        initElements: function () {
-        },
-
-        AccordionClick: function (el) {
-
-        },
-    };
-})();
-
 (function($) {
 
     $.fn.accordion = function( options ) {
@@ -34,6 +8,8 @@ var Squares_controller = (function () {
         // Establish our default settings
         var settings = $.extend({
             caller: this,
+            parents: [],
+            children: [],
             complete: null
         }, options);
 
@@ -42,20 +18,24 @@ var Squares_controller = (function () {
             //AccordionGlobalVars.elements.parents.push($(settings.caller));
             temp_parents.each(function() {
                 var $this = $(this);
-                AccordionGlobalVars.elements.parents.push($this);
-                AccordionGlobalVars.elements.children.push($this.find('div.accordion-item-content'));
+                settings.parents.push($this);
+                settings.children.push($this.find('div.accordion-item-content'));
             });
 
-            $(AccordionGlobalVars.elements.parents).each(function(e) {
+            $(settings.parents).each(function(e) {
                 var $this = $(this);
                 var index = $this.index();
 
                 $this.removeClass('active');
-                AccordionGlobalVars.elements.children[index].hide();
+                settings.children[index].hide();
 
                 $this.find('a').first().on('click', function(e) {
+                    for(var i=0; i<settings.children.length; i++) {
+                        settings.children[i].slideUp().removeClass('active');
+                    }
+
                     $this.toggleClass('active');
-                    AccordionGlobalVars.elements.children[index].slideToggle();
+                    settings.children[index].slideToggle();
                 });
             });
 
@@ -73,4 +53,6 @@ var Squares_controller = (function () {
 
 //
 
-$('div.accordion-container').accordion();
+$(function() {
+    $('div.accordion-container').accordion();
+});
