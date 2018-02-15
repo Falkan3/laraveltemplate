@@ -31,7 +31,9 @@
 
                 $this.find('a').first().on('click', function(e) {
                     for(var i=0; i<settings.children.length; i++) {
-                        settings.children[i].slideUp().removeClass('active');
+                        if(i!==index) {
+                            settings.children[i].slideUp().removeClass('active');
+                        }
                     }
 
                     $this.toggleClass('active');
