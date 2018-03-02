@@ -24,7 +24,7 @@
 
             $(settings.parents).each(function(e) {
                 var $this = $(this);
-                var index = $this.index();
+                var index = $this.data('index') ? $this.data('index') : $this.index();
 
                 $this.removeClass('active');
                 settings.children[index].hide();
@@ -32,11 +32,12 @@
                 $this.find('a').first().on('click', function(e) {
                     for(var i=0; i<settings.children.length; i++) {
                         if(i!==index) {
+                            settings.parents[i].removeClass('active');
                             settings.children[i].slideUp().removeClass('active');
                         }
                     }
 
-                    $this.toggleClass('active');
+                    settings.parents[index].toggleClass('active');
                     settings.children[index].slideToggle();
                 });
             });
