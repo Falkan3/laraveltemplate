@@ -96,6 +96,7 @@
             //params
             var dataVal = data[i].val_num ? data[i].val_num : $item.data('value');
             var dataPercentage = data[i].percentage ? data[i].percentage : $item.data('percentage');
+            var dataPercentageDisplay = data[i]['percentage-display'] ? data[i]['percentage-display'] : Math.round(dataPercentage * 10) / 10;
             var dataWidth = null;
             var dataBackgroundColor = data[i].background_color ? data[i].background_color : $item.data('background-color');
             var dataThicc = data[i].thicc ? data[i].thicc : $item.data('thicc');
@@ -111,7 +112,7 @@
 
             /* -- */
 
-            $item.attr({'data-value': dataVal,'data-percentage': dataPercentage});
+            $item.attr({'data-value': dataVal,'data-percentage': dataPercentage,'data-percentage-display': dataPercentageDisplay});
 
             var graph_legend = $item.find('.graph-legend');
             if (!graph_legend.length) {
@@ -122,7 +123,7 @@
 
             if (dataBackgroundColor) {
                 $item.css("background-color", dataBackgroundColor);
-                $item.css("color", G_Utility_Controller.ShadeColor(dataBackgroundColor, -40));
+                $item.css("color", G_Utilities.shadeColor(dataBackgroundColor, -40));
             }
             if (dataThicc) {
                 $item.addClass('thicc');
@@ -185,7 +186,7 @@
                 var legend_item_total = $('<div class="legend-item"></div>');
                 var legend_item_total_label = $('<span></span>');
 
-                var legend_item_total_text = '<span>' + ('total: ' + totalValue) + '</span>';
+                var legend_item_total_text = '<span>' + ('razem: ' + totalValue) + '</span>';
 
                 //add colored arrow if value change is set visible
                 if (settings.totalValueChange) {

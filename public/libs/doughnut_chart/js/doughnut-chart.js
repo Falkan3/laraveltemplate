@@ -34,6 +34,7 @@
                 tipOffsetX: -18,//-8,
                 tipOffsetY: -60,//-45,
                 tipClass: "doughnutTip stylized",
+                tipClassFormatted: "",
                 summaryClass: "doughnutSummary",
                 summaryTitle: "RAZEM:",
                 summaryTitleClass: "doughnutSummaryTitle",
@@ -75,6 +76,9 @@
             }();
 
         settings.beforeDraw.call($this);
+
+        //format tip class
+        settings.tipClassFormatted = formatClasses(settings.tipClass);
 
         var $svg = $('<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>').appendTo($this),
             $paths = [],
@@ -147,7 +151,11 @@
         }
         for (var i = 0, len = data.length; i < len; i++) {
             //set percentage
-            data[i].percent = ((data[i].value / segmentTotal) * 100).toFixed(1).toString();
+            if(segmentTotal === 0) {
+                data[i].percent = '0'.toString();
+            } else {
+                data[i].percent = ((data[i].value / segmentTotal) * 100).toFixed(1).toString();
+            }
         }
 
         //Animation start
@@ -193,6 +201,14 @@
         }
 
         //Functions
+        function formatClasses(string) {
+            var output = (string.split(' ')).join('.');
+            if(output) {
+                output = ['.', output].join('');
+            }
+            return output;
+        }
+
         function getHollowCirclePath(doughnutRadius, cutoutRadius) {
             //Calculate values for the path.
             //We needn't calculate startRadius, segmentAngle and endRadius, because base doughnut doesn't animate.
@@ -221,7 +237,7 @@
 
         function pathMouseEnter(e) {
             //hide all other tips
-            $('.doughnutTip').hide();
+            $(settings.tipClassFormatted).hide();
 
             var order = $(this).data().order;
             if (data[order].title && data[order].title.length > 0) {
@@ -253,14 +269,25 @@
             $pathGroup.attr("opacity", animationDecimal);
 
             //If data have only one value, we draw hollow circle(#1).
-            if (data.length === 1 && (4.7122 < (rotateAnimation * ((data[0].value / segmentTotal) * (PI * 2)) + startRadius))) {
-                $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
-                return;
+            if(segmentTotal === 0) {
+                if (data.length === 1 && (4.7122 < (startRadius))) {
+                    $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
+                    return;
+                }
+            } else {
+                if (data.length === 1 && (4.7122 < (rotateAnimation * ((data[0].value / segmentTotal) * (PI * 2)) + startRadius))) {
+                    $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
+                    return;
+                }
             }
+
             for (var i = 0, len = data.length; i < len; i++) {
                 if (data[i].hastitle) {
-                    var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
-                        endRadius = startRadius + segmentAngle,
+                    var segmentAngle = 0;
+                    if(segmentTotal > 0) {
+                        segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2))
+                    }
+                    var endRadius = startRadius + segmentAngle,
                         largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
                         startX = centerX + cos(startRadius) * doughnutRadius,
                         startY = centerY + sin(startRadius) * doughnutRadius,

@@ -2211,7 +2211,7 @@ a.stretch {
 /* line 2052, C:/Users/Adam/Documents/Repos/LaravelTemplate/public/css/scss/layout.scss */
 .horizontal-bar-wrap .graph-bar::after {
   position: absolute;
-  content: attr(data-percentage);
+  content: attr(data-percentage-display) "%";
   display: none;
   font-size: 12px;
   border-radius: 4px;

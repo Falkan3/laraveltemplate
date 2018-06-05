@@ -2051,7 +2051,7 @@ $bar-graph-border-radius: 0; //2px;
 
 			&::after {
 				position: absolute;
-				content: attr(data-percentage);
+				content: attr(data-percentage-display) "%";
 				display: none;
 
 				font-size: 12px;
